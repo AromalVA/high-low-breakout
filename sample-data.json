@@ -1,0 +1,3384 @@
+{
+    "stock_name": "SBIN-EQ",
+    "data_start_date": "01/12/2023",
+    "data_end_date": "15/06/2024",
+    "data": {
+        "01/12/2023": [
+            {
+                "timestamp_readable_IST": "01/12/2023 09:15 AM",
+                "timestamp_epoch": 1701402300,
+                "open": 567,
+                "high": 567.5,
+                "low": 566.55,
+                "close": 567.3,
+                "volume": 151987
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:16 AM",
+                "timestamp_epoch": 1701402360,
+                "open": 567.1,
+                "high": 567.7,
+                "low": 566.85,
+                "close": 567.7,
+                "volume": 73624
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:17 AM",
+                "timestamp_epoch": 1701402420,
+                "open": 567.65,
+                "high": 567.65,
+                "low": 567.1,
+                "close": 567.15,
+                "volume": 39645
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:18 AM",
+                "timestamp_epoch": 1701402480,
+                "open": 567.2,
+                "high": 567.55,
+                "low": 567.2,
+                "close": 567.4,
+                "volume": 64371
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:19 AM",
+                "timestamp_epoch": 1701402540,
+                "open": 567.5,
+                "high": 567.65,
+                "low": 567.15,
+                "close": 567.2,
+                "volume": 28216
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:20 AM",
+                "timestamp_epoch": 1701402600,
+                "open": 567.2,
+                "high": 567.6,
+                "low": 567.15,
+                "close": 567.35,
+                "volume": 68420
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:21 AM",
+                "timestamp_epoch": 1701402660,
+                "open": 567.35,
+                "high": 567.6,
+                "low": 567.15,
+                "close": 567.5,
+                "volume": 42393
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:22 AM",
+                "timestamp_epoch": 1701402720,
+                "open": 567.2,
+                "high": 568.3,
+                "low": 567.15,
+                "close": 568.1,
+                "volume": 77942
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:23 AM",
+                "timestamp_epoch": 1701402780,
+                "open": 568.05,
+                "high": 568.15,
+                "low": 567.65,
+                "close": 567.85,
+                "volume": 31950
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:24 AM",
+                "timestamp_epoch": 1701402840,
+                "open": 567.8,
+                "high": 568.1,
+                "low": 567.6,
+                "close": 568.1,
+                "volume": 28826
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:25 AM",
+                "timestamp_epoch": 1701402900,
+                "open": 568.1,
+                "high": 568.45,
+                "low": 568,
+                "close": 568.35,
+                "volume": 35088
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:26 AM",
+                "timestamp_epoch": 1701402960,
+                "open": 568.4,
+                "high": 568.5,
+                "low": 568.15,
+                "close": 568.3,
+                "volume": 41323
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:27 AM",
+                "timestamp_epoch": 1701403020,
+                "open": 568.3,
+                "high": 568.6,
+                "low": 568.15,
+                "close": 568.3,
+                "volume": 36920
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:28 AM",
+                "timestamp_epoch": 1701403080,
+                "open": 568.3,
+                "high": 568.5,
+                "low": 568.1,
+                "close": 568.35,
+                "volume": 27241
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:29 AM",
+                "timestamp_epoch": 1701403140,
+                "open": 568.35,
+                "high": 568.45,
+                "low": 567.85,
+                "close": 568.1,
+                "volume": 34944
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:30 AM",
+                "timestamp_epoch": 1701403200,
+                "open": 568.05,
+                "high": 568.3,
+                "low": 568,
+                "close": 568.1,
+                "volume": 21495
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:31 AM",
+                "timestamp_epoch": 1701403260,
+                "open": 568.05,
+                "high": 568.3,
+                "low": 567.8,
+                "close": 568.05,
+                "volume": 20815
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:32 AM",
+                "timestamp_epoch": 1701403320,
+                "open": 568.05,
+                "high": 568.05,
+                "low": 567.65,
+                "close": 567.9,
+                "volume": 14364
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:33 AM",
+                "timestamp_epoch": 1701403380,
+                "open": 567.9,
+                "high": 568.1,
+                "low": 567.55,
+                "close": 568.1,
+                "volume": 30302
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:34 AM",
+                "timestamp_epoch": 1701403440,
+                "open": 568.1,
+                "high": 568.2,
+                "low": 567.9,
+                "close": 568.2,
+                "volume": 15957
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:35 AM",
+                "timestamp_epoch": 1701403500,
+                "open": 568.2,
+                "high": 568.4,
+                "low": 568,
+                "close": 568.4,
+                "volume": 43273
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:36 AM",
+                "timestamp_epoch": 1701403560,
+                "open": 568.3,
+                "high": 568.9,
+                "low": 568.3,
+                "close": 568.9,
+                "volume": 64888
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:37 AM",
+                "timestamp_epoch": 1701403620,
+                "open": 568.9,
+                "high": 569.3,
+                "low": 568.75,
+                "close": 569.25,
+                "volume": 100765
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:38 AM",
+                "timestamp_epoch": 1701403680,
+                "open": 569.25,
+                "high": 570.6,
+                "low": 569.1,
+                "close": 570.45,
+                "volume": 266814
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:39 AM",
+                "timestamp_epoch": 1701403740,
+                "open": 570.45,
+                "high": 571.15,
+                "low": 570.35,
+                "close": 570.5,
+                "volume": 168223
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:40 AM",
+                "timestamp_epoch": 1701403800,
+                "open": 570.5,
+                "high": 570.65,
+                "low": 570,
+                "close": 570.35,
+                "volume": 91171
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:41 AM",
+                "timestamp_epoch": 1701403860,
+                "open": 570.35,
+                "high": 570.55,
+                "low": 570,
+                "close": 570.1,
+                "volume": 54856
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:42 AM",
+                "timestamp_epoch": 1701403920,
+                "open": 570.1,
+                "high": 570.5,
+                "low": 569.7,
+                "close": 570.5,
+                "volume": 98063
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:43 AM",
+                "timestamp_epoch": 1701403980,
+                "open": 570.4,
+                "high": 570.45,
+                "low": 570,
+                "close": 570.05,
+                "volume": 66694
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:44 AM",
+                "timestamp_epoch": 1701404040,
+                "open": 570.05,
+                "high": 570.2,
+                "low": 569.5,
+                "close": 569.8,
+                "volume": 30370
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:45 AM",
+                "timestamp_epoch": 1701404100,
+                "open": 569.8,
+                "high": 570.35,
+                "low": 569.55,
+                "close": 570.2,
+                "volume": 68635
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:46 AM",
+                "timestamp_epoch": 1701404160,
+                "open": 570.3,
+                "high": 570.3,
+                "low": 569.75,
+                "close": 570,
+                "volume": 51252
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:47 AM",
+                "timestamp_epoch": 1701404220,
+                "open": 570,
+                "high": 570,
+                "low": 569.5,
+                "close": 569.7,
+                "volume": 29841
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:48 AM",
+                "timestamp_epoch": 1701404280,
+                "open": 569.7,
+                "high": 569.9,
+                "low": 569.5,
+                "close": 569.9,
+                "volume": 35878
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:49 AM",
+                "timestamp_epoch": 1701404340,
+                "open": 569.8,
+                "high": 570.45,
+                "low": 569.8,
+                "close": 570.25,
+                "volume": 63630
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:50 AM",
+                "timestamp_epoch": 1701404400,
+                "open": 570.4,
+                "high": 571,
+                "low": 569.9,
+                "close": 570.95,
+                "volume": 136980
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:51 AM",
+                "timestamp_epoch": 1701404460,
+                "open": 571,
+                "high": 571.05,
+                "low": 570.3,
+                "close": 570.65,
+                "volume": 114769
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:52 AM",
+                "timestamp_epoch": 1701404520,
+                "open": 570.5,
+                "high": 570.9,
+                "low": 570.2,
+                "close": 570.85,
+                "volume": 51314
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:53 AM",
+                "timestamp_epoch": 1701404580,
+                "open": 570.9,
+                "high": 571.95,
+                "low": 570.8,
+                "close": 571.8,
+                "volume": 159472
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:54 AM",
+                "timestamp_epoch": 1701404640,
+                "open": 571.95,
+                "high": 572,
+                "low": 571.35,
+                "close": 571.5,
+                "volume": 111567
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:55 AM",
+                "timestamp_epoch": 1701404700,
+                "open": 571.5,
+                "high": 571.6,
+                "low": 571.2,
+                "close": 571.4,
+                "volume": 55402
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:56 AM",
+                "timestamp_epoch": 1701404760,
+                "open": 571.5,
+                "high": 571.9,
+                "low": 571.5,
+                "close": 571.9,
+                "volume": 70728
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:57 AM",
+                "timestamp_epoch": 1701404820,
+                "open": 571.9,
+                "high": 571.95,
+                "low": 571.55,
+                "close": 571.8,
+                "volume": 56646
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:58 AM",
+                "timestamp_epoch": 1701404880,
+                "open": 571.8,
+                "high": 572.35,
+                "low": 571.65,
+                "close": 572.2,
+                "volume": 188755
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 09:59 AM",
+                "timestamp_epoch": 1701404940,
+                "open": 572.2,
+                "high": 572.4,
+                "low": 571.8,
+                "close": 572,
+                "volume": 41910
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:00 AM",
+                "timestamp_epoch": 1701405000,
+                "open": 571.95,
+                "high": 572.8,
+                "low": 571.85,
+                "close": 572.55,
+                "volume": 144045
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:01 AM",
+                "timestamp_epoch": 1701405060,
+                "open": 572.6,
+                "high": 573.65,
+                "low": 572.6,
+                "close": 573.55,
+                "volume": 198846
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:02 AM",
+                "timestamp_epoch": 1701405120,
+                "open": 573.45,
+                "high": 573.85,
+                "low": 573,
+                "close": 573.35,
+                "volume": 97006
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:03 AM",
+                "timestamp_epoch": 1701405180,
+                "open": 573.45,
+                "high": 573.5,
+                "low": 572.8,
+                "close": 572.8,
+                "volume": 51357
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:04 AM",
+                "timestamp_epoch": 1701405240,
+                "open": 572.9,
+                "high": 573.25,
+                "low": 572.55,
+                "close": 572.7,
+                "volume": 60619
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:05 AM",
+                "timestamp_epoch": 1701405300,
+                "open": 572.6,
+                "high": 573.75,
+                "low": 572.55,
+                "close": 573.55,
+                "volume": 151934
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:06 AM",
+                "timestamp_epoch": 1701405360,
+                "open": 573.7,
+                "high": 573.75,
+                "low": 573.2,
+                "close": 573.7,
+                "volume": 46372
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:07 AM",
+                "timestamp_epoch": 1701405420,
+                "open": 573.7,
+                "high": 573.7,
+                "low": 573.25,
+                "close": 573.45,
+                "volume": 60532
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:08 AM",
+                "timestamp_epoch": 1701405480,
+                "open": 573.45,
+                "high": 573.5,
+                "low": 572.85,
+                "close": 573,
+                "volume": 25066
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:09 AM",
+                "timestamp_epoch": 1701405540,
+                "open": 573.15,
+                "high": 573.75,
+                "low": 573,
+                "close": 573.75,
+                "volume": 89965
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:10 AM",
+                "timestamp_epoch": 1701405600,
+                "open": 573.65,
+                "high": 574.1,
+                "low": 573.3,
+                "close": 573.3,
+                "volume": 170657
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:11 AM",
+                "timestamp_epoch": 1701405660,
+                "open": 573.35,
+                "high": 573.9,
+                "low": 573.25,
+                "close": 573.75,
+                "volume": 47165
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:12 AM",
+                "timestamp_epoch": 1701405720,
+                "open": 573.75,
+                "high": 573.8,
+                "low": 573.2,
+                "close": 573.4,
+                "volume": 30929
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:13 AM",
+                "timestamp_epoch": 1701405780,
+                "open": 573.3,
+                "high": 573.4,
+                "low": 573.1,
+                "close": 573.1,
+                "volume": 30346
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:14 AM",
+                "timestamp_epoch": 1701405840,
+                "open": 573.1,
+                "high": 573.5,
+                "low": 573.1,
+                "close": 573.3,
+                "volume": 23477
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:15 AM",
+                "timestamp_epoch": 1701405900,
+                "open": 573.1,
+                "high": 573.3,
+                "low": 572.6,
+                "close": 572.7,
+                "volume": 40092
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:16 AM",
+                "timestamp_epoch": 1701405960,
+                "open": 572.7,
+                "high": 572.85,
+                "low": 572.55,
+                "close": 572.85,
+                "volume": 31129
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:17 AM",
+                "timestamp_epoch": 1701406020,
+                "open": 572.8,
+                "high": 573.4,
+                "low": 572.65,
+                "close": 573.15,
+                "volume": 44905
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:18 AM",
+                "timestamp_epoch": 1701406080,
+                "open": 573,
+                "high": 573.7,
+                "low": 573,
+                "close": 573.1,
+                "volume": 74473
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:19 AM",
+                "timestamp_epoch": 1701406140,
+                "open": 573.1,
+                "high": 573.3,
+                "low": 572.75,
+                "close": 572.9,
+                "volume": 19380
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:20 AM",
+                "timestamp_epoch": 1701406200,
+                "open": 572.85,
+                "high": 573.15,
+                "low": 572.55,
+                "close": 572.85,
+                "volume": 38141
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:21 AM",
+                "timestamp_epoch": 1701406260,
+                "open": 572.85,
+                "high": 573,
+                "low": 572.65,
+                "close": 572.75,
+                "volume": 18858
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:22 AM",
+                "timestamp_epoch": 1701406320,
+                "open": 572.75,
+                "high": 572.95,
+                "low": 572.5,
+                "close": 572.6,
+                "volume": 16927
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:23 AM",
+                "timestamp_epoch": 1701406380,
+                "open": 572.75,
+                "high": 573.1,
+                "low": 572.55,
+                "close": 573.1,
+                "volume": 43303
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:24 AM",
+                "timestamp_epoch": 1701406440,
+                "open": 573.1,
+                "high": 573.25,
+                "low": 572.75,
+                "close": 573.2,
+                "volume": 28411
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:25 AM",
+                "timestamp_epoch": 1701406500,
+                "open": 573.1,
+                "high": 573.45,
+                "low": 573.05,
+                "close": 573.2,
+                "volume": 39949
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:26 AM",
+                "timestamp_epoch": 1701406560,
+                "open": 573.3,
+                "high": 574.2,
+                "low": 573.15,
+                "close": 573.6,
+                "volume": 136710
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:27 AM",
+                "timestamp_epoch": 1701406620,
+                "open": 573.75,
+                "high": 574.1,
+                "low": 573.6,
+                "close": 573.95,
+                "volume": 21184
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:28 AM",
+                "timestamp_epoch": 1701406680,
+                "open": 574,
+                "high": 574,
+                "low": 573.5,
+                "close": 573.75,
+                "volume": 20230
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:29 AM",
+                "timestamp_epoch": 1701406740,
+                "open": 573.5,
+                "high": 573.85,
+                "low": 573.5,
+                "close": 573.7,
+                "volume": 23268
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:30 AM",
+                "timestamp_epoch": 1701406800,
+                "open": 573.7,
+                "high": 573.95,
+                "low": 573.7,
+                "close": 573.95,
+                "volume": 37583
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:31 AM",
+                "timestamp_epoch": 1701406860,
+                "open": 573.7,
+                "high": 573.95,
+                "low": 573.7,
+                "close": 573.8,
+                "volume": 11583
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:32 AM",
+                "timestamp_epoch": 1701406920,
+                "open": 573.75,
+                "high": 573.85,
+                "low": 573.45,
+                "close": 573.55,
+                "volume": 28506
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:33 AM",
+                "timestamp_epoch": 1701406980,
+                "open": 573.35,
+                "high": 573.6,
+                "low": 573.25,
+                "close": 573.5,
+                "volume": 22842
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:34 AM",
+                "timestamp_epoch": 1701407040,
+                "open": 573.45,
+                "high": 573.7,
+                "low": 573.4,
+                "close": 573.5,
+                "volume": 23403
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:35 AM",
+                "timestamp_epoch": 1701407100,
+                "open": 573.6,
+                "high": 573.6,
+                "low": 573.2,
+                "close": 573.2,
+                "volume": 21724
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:36 AM",
+                "timestamp_epoch": 1701407160,
+                "open": 573.4,
+                "high": 573.4,
+                "low": 573,
+                "close": 573.1,
+                "volume": 14008
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:37 AM",
+                "timestamp_epoch": 1701407220,
+                "open": 573.05,
+                "high": 573.3,
+                "low": 573,
+                "close": 573.25,
+                "volume": 28073
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:38 AM",
+                "timestamp_epoch": 1701407280,
+                "open": 573.25,
+                "high": 573.4,
+                "low": 573.15,
+                "close": 573.25,
+                "volume": 20730
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:39 AM",
+                "timestamp_epoch": 1701407340,
+                "open": 573.35,
+                "high": 573.45,
+                "low": 573.15,
+                "close": 573.25,
+                "volume": 11566
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:40 AM",
+                "timestamp_epoch": 1701407400,
+                "open": 573.3,
+                "high": 573.45,
+                "low": 573.2,
+                "close": 573.35,
+                "volume": 19912
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:41 AM",
+                "timestamp_epoch": 1701407460,
+                "open": 573.35,
+                "high": 573.5,
+                "low": 573.35,
+                "close": 573.4,
+                "volume": 19143
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:42 AM",
+                "timestamp_epoch": 1701407520,
+                "open": 573.5,
+                "high": 573.5,
+                "low": 572.7,
+                "close": 573,
+                "volume": 32333
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:43 AM",
+                "timestamp_epoch": 1701407580,
+                "open": 573,
+                "high": 573.4,
+                "low": 572.8,
+                "close": 573.4,
+                "volume": 21541
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:44 AM",
+                "timestamp_epoch": 1701407640,
+                "open": 573.4,
+                "high": 573.4,
+                "low": 572.9,
+                "close": 573,
+                "volume": 17329
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:45 AM",
+                "timestamp_epoch": 1701407700,
+                "open": 573,
+                "high": 573.15,
+                "low": 572.9,
+                "close": 573,
+                "volume": 13723
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:46 AM",
+                "timestamp_epoch": 1701407760,
+                "open": 573.05,
+                "high": 573.35,
+                "low": 572.95,
+                "close": 573.25,
+                "volume": 22471
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:47 AM",
+                "timestamp_epoch": 1701407820,
+                "open": 573.2,
+                "high": 573.4,
+                "low": 572.9,
+                "close": 573.25,
+                "volume": 17843
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:48 AM",
+                "timestamp_epoch": 1701407880,
+                "open": 573.3,
+                "high": 573.35,
+                "low": 572.95,
+                "close": 573.25,
+                "volume": 11800
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:49 AM",
+                "timestamp_epoch": 1701407940,
+                "open": 573.25,
+                "high": 573.4,
+                "low": 572.95,
+                "close": 573.25,
+                "volume": 15607
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:50 AM",
+                "timestamp_epoch": 1701408000,
+                "open": 573.4,
+                "high": 573.4,
+                "low": 573.1,
+                "close": 573.35,
+                "volume": 11429
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:51 AM",
+                "timestamp_epoch": 1701408060,
+                "open": 573.4,
+                "high": 573.4,
+                "low": 573.05,
+                "close": 573.2,
+                "volume": 21046
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:52 AM",
+                "timestamp_epoch": 1701408120,
+                "open": 573.2,
+                "high": 573.4,
+                "low": 573.05,
+                "close": 573.15,
+                "volume": 12778
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:53 AM",
+                "timestamp_epoch": 1701408180,
+                "open": 573.3,
+                "high": 573.4,
+                "low": 573.15,
+                "close": 573.3,
+                "volume": 16760
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:54 AM",
+                "timestamp_epoch": 1701408240,
+                "open": 573.15,
+                "high": 573.4,
+                "low": 573.1,
+                "close": 573.25,
+                "volume": 17057
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:55 AM",
+                "timestamp_epoch": 1701408300,
+                "open": 573.25,
+                "high": 573.35,
+                "low": 572.9,
+                "close": 572.9,
+                "volume": 17326
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:56 AM",
+                "timestamp_epoch": 1701408360,
+                "open": 573,
+                "high": 573.25,
+                "low": 572.9,
+                "close": 573.2,
+                "volume": 20613
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:57 AM",
+                "timestamp_epoch": 1701408420,
+                "open": 573.25,
+                "high": 573.45,
+                "low": 573,
+                "close": 573.15,
+                "volume": 31293
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:58 AM",
+                "timestamp_epoch": 1701408480,
+                "open": 573.15,
+                "high": 573.3,
+                "low": 572.95,
+                "close": 573.2,
+                "volume": 15915
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 10:59 AM",
+                "timestamp_epoch": 1701408540,
+                "open": 573.2,
+                "high": 573.3,
+                "low": 573.05,
+                "close": 573.25,
+                "volume": 29949
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:00 AM",
+                "timestamp_epoch": 1701408600,
+                "open": 573.25,
+                "high": 573.25,
+                "low": 572.95,
+                "close": 573.25,
+                "volume": 12277
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:01 AM",
+                "timestamp_epoch": 1701408660,
+                "open": 573.35,
+                "high": 573.5,
+                "low": 573.2,
+                "close": 573.5,
+                "volume": 20595
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:02 AM",
+                "timestamp_epoch": 1701408720,
+                "open": 573.5,
+                "high": 573.5,
+                "low": 573.2,
+                "close": 573.4,
+                "volume": 12624
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:03 AM",
+                "timestamp_epoch": 1701408780,
+                "open": 573.4,
+                "high": 573.6,
+                "low": 573.25,
+                "close": 573.5,
+                "volume": 24031
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:04 AM",
+                "timestamp_epoch": 1701408840,
+                "open": 573.55,
+                "high": 573.7,
+                "low": 573.4,
+                "close": 573.7,
+                "volume": 26149
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:05 AM",
+                "timestamp_epoch": 1701408900,
+                "open": 573.65,
+                "high": 573.85,
+                "low": 573.55,
+                "close": 573.85,
+                "volume": 25459
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:06 AM",
+                "timestamp_epoch": 1701408960,
+                "open": 573.7,
+                "high": 574,
+                "low": 573.15,
+                "close": 573.15,
+                "volume": 35194
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:07 AM",
+                "timestamp_epoch": 1701409020,
+                "open": 573.35,
+                "high": 573.35,
+                "low": 573.05,
+                "close": 573.1,
+                "volume": 5433
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:08 AM",
+                "timestamp_epoch": 1701409080,
+                "open": 573.1,
+                "high": 573.25,
+                "low": 573,
+                "close": 573.1,
+                "volume": 7830
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:09 AM",
+                "timestamp_epoch": 1701409140,
+                "open": 573.1,
+                "high": 573.1,
+                "low": 572.75,
+                "close": 572.75,
+                "volume": 19398
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:10 AM",
+                "timestamp_epoch": 1701409200,
+                "open": 572.75,
+                "high": 572.9,
+                "low": 572.5,
+                "close": 572.7,
+                "volume": 12762
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:11 AM",
+                "timestamp_epoch": 1701409260,
+                "open": 572.6,
+                "high": 572.75,
+                "low": 572.4,
+                "close": 572.4,
+                "volume": 15551
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:12 AM",
+                "timestamp_epoch": 1701409320,
+                "open": 572.45,
+                "high": 572.65,
+                "low": 572.25,
+                "close": 572.25,
+                "volume": 15054
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:13 AM",
+                "timestamp_epoch": 1701409380,
+                "open": 572.45,
+                "high": 572.5,
+                "low": 572.25,
+                "close": 572.3,
+                "volume": 14314
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:14 AM",
+                "timestamp_epoch": 1701409440,
+                "open": 572.4,
+                "high": 572.75,
+                "low": 572.2,
+                "close": 572.5,
+                "volume": 13186
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:15 AM",
+                "timestamp_epoch": 1701409500,
+                "open": 572.55,
+                "high": 572.75,
+                "low": 572.45,
+                "close": 572.6,
+                "volume": 8915
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:16 AM",
+                "timestamp_epoch": 1701409560,
+                "open": 572.6,
+                "high": 572.75,
+                "low": 572.35,
+                "close": 572.35,
+                "volume": 13463
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:17 AM",
+                "timestamp_epoch": 1701409620,
+                "open": 572.55,
+                "high": 572.8,
+                "low": 572.35,
+                "close": 572.7,
+                "volume": 26946
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:18 AM",
+                "timestamp_epoch": 1701409680,
+                "open": 572.7,
+                "high": 572.7,
+                "low": 572.5,
+                "close": 572.55,
+                "volume": 5121
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:19 AM",
+                "timestamp_epoch": 1701409740,
+                "open": 572.7,
+                "high": 572.75,
+                "low": 572.5,
+                "close": 572.7,
+                "volume": 4067
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:20 AM",
+                "timestamp_epoch": 1701409800,
+                "open": 572.7,
+                "high": 572.75,
+                "low": 572.5,
+                "close": 572.5,
+                "volume": 5902
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:21 AM",
+                "timestamp_epoch": 1701409860,
+                "open": 572.5,
+                "high": 572.55,
+                "low": 572.3,
+                "close": 572.4,
+                "volume": 10979
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:22 AM",
+                "timestamp_epoch": 1701409920,
+                "open": 572.4,
+                "high": 572.4,
+                "low": 572.15,
+                "close": 572.25,
+                "volume": 14948
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:23 AM",
+                "timestamp_epoch": 1701409980,
+                "open": 572.2,
+                "high": 572.35,
+                "low": 572.05,
+                "close": 572.25,
+                "volume": 11584
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:24 AM",
+                "timestamp_epoch": 1701410040,
+                "open": 572.15,
+                "high": 572.45,
+                "low": 572.15,
+                "close": 572.4,
+                "volume": 7485
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:25 AM",
+                "timestamp_epoch": 1701410100,
+                "open": 572.4,
+                "high": 572.65,
+                "low": 572.3,
+                "close": 572.5,
+                "volume": 20133
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:26 AM",
+                "timestamp_epoch": 1701410160,
+                "open": 572.6,
+                "high": 573,
+                "low": 572.5,
+                "close": 572.85,
+                "volume": 29613
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:27 AM",
+                "timestamp_epoch": 1701410220,
+                "open": 573,
+                "high": 573,
+                "low": 572.7,
+                "close": 573,
+                "volume": 29530
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:28 AM",
+                "timestamp_epoch": 1701410280,
+                "open": 572.9,
+                "high": 573,
+                "low": 572.7,
+                "close": 572.8,
+                "volume": 7528
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:29 AM",
+                "timestamp_epoch": 1701410340,
+                "open": 572.7,
+                "high": 572.85,
+                "low": 572.6,
+                "close": 572.85,
+                "volume": 9270
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:30 AM",
+                "timestamp_epoch": 1701410400,
+                "open": 572.85,
+                "high": 573,
+                "low": 572.4,
+                "close": 572.65,
+                "volume": 132076
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:31 AM",
+                "timestamp_epoch": 1701410460,
+                "open": 572.45,
+                "high": 572.8,
+                "low": 572.4,
+                "close": 572.55,
+                "volume": 9568
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:32 AM",
+                "timestamp_epoch": 1701410520,
+                "open": 572.75,
+                "high": 572.8,
+                "low": 572.3,
+                "close": 572.35,
+                "volume": 32513
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:33 AM",
+                "timestamp_epoch": 1701410580,
+                "open": 572.3,
+                "high": 572.8,
+                "low": 572.2,
+                "close": 572.8,
+                "volume": 33393
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:34 AM",
+                "timestamp_epoch": 1701410640,
+                "open": 572.55,
+                "high": 572.9,
+                "low": 572.5,
+                "close": 572.6,
+                "volume": 16927
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:35 AM",
+                "timestamp_epoch": 1701410700,
+                "open": 572.85,
+                "high": 573,
+                "low": 572.4,
+                "close": 572.7,
+                "volume": 11538
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:36 AM",
+                "timestamp_epoch": 1701410760,
+                "open": 572.7,
+                "high": 572.95,
+                "low": 572.35,
+                "close": 572.7,
+                "volume": 63105
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:37 AM",
+                "timestamp_epoch": 1701410820,
+                "open": 572.65,
+                "high": 572.9,
+                "low": 572.35,
+                "close": 572.4,
+                "volume": 18617
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:38 AM",
+                "timestamp_epoch": 1701410880,
+                "open": 572.6,
+                "high": 572.85,
+                "low": 572.45,
+                "close": 572.6,
+                "volume": 7810
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:39 AM",
+                "timestamp_epoch": 1701410940,
+                "open": 572.85,
+                "high": 572.95,
+                "low": 572.45,
+                "close": 572.75,
+                "volume": 9383
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:40 AM",
+                "timestamp_epoch": 1701411000,
+                "open": 572.95,
+                "high": 572.95,
+                "low": 572.55,
+                "close": 572.8,
+                "volume": 7374
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:41 AM",
+                "timestamp_epoch": 1701411060,
+                "open": 572.8,
+                "high": 572.85,
+                "low": 572.5,
+                "close": 572.5,
+                "volume": 6481
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:42 AM",
+                "timestamp_epoch": 1701411120,
+                "open": 572.7,
+                "high": 572.85,
+                "low": 572.5,
+                "close": 572.5,
+                "volume": 7346
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:43 AM",
+                "timestamp_epoch": 1701411180,
+                "open": 572.6,
+                "high": 572.7,
+                "low": 572.45,
+                "close": 572.65,
+                "volume": 7046
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:44 AM",
+                "timestamp_epoch": 1701411240,
+                "open": 572.7,
+                "high": 572.8,
+                "low": 572.4,
+                "close": 572.65,
+                "volume": 6567
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:45 AM",
+                "timestamp_epoch": 1701411300,
+                "open": 572.65,
+                "high": 572.75,
+                "low": 572.35,
+                "close": 572.45,
+                "volume": 14080
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:46 AM",
+                "timestamp_epoch": 1701411360,
+                "open": 572.5,
+                "high": 572.65,
+                "low": 572.1,
+                "close": 572.35,
+                "volume": 13998
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:47 AM",
+                "timestamp_epoch": 1701411420,
+                "open": 572.55,
+                "high": 572.75,
+                "low": 572.35,
+                "close": 572.75,
+                "volume": 9045
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:48 AM",
+                "timestamp_epoch": 1701411480,
+                "open": 572.75,
+                "high": 572.75,
+                "low": 572.45,
+                "close": 572.5,
+                "volume": 7984
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:49 AM",
+                "timestamp_epoch": 1701411540,
+                "open": 572.7,
+                "high": 572.75,
+                "low": 572.35,
+                "close": 572.4,
+                "volume": 10096
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:50 AM",
+                "timestamp_epoch": 1701411600,
+                "open": 572.65,
+                "high": 572.75,
+                "low": 572.4,
+                "close": 572.5,
+                "volume": 5322
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:51 AM",
+                "timestamp_epoch": 1701411660,
+                "open": 572.5,
+                "high": 572.7,
+                "low": 572.45,
+                "close": 572.65,
+                "volume": 7119
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:52 AM",
+                "timestamp_epoch": 1701411720,
+                "open": 572.5,
+                "high": 572.75,
+                "low": 572.35,
+                "close": 572.7,
+                "volume": 11908
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:53 AM",
+                "timestamp_epoch": 1701411780,
+                "open": 572.75,
+                "high": 572.75,
+                "low": 572.25,
+                "close": 572.25,
+                "volume": 12894
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:54 AM",
+                "timestamp_epoch": 1701411840,
+                "open": 572.45,
+                "high": 572.75,
+                "low": 572.25,
+                "close": 572.5,
+                "volume": 19418
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:55 AM",
+                "timestamp_epoch": 1701411900,
+                "open": 572.5,
+                "high": 572.7,
+                "low": 572.35,
+                "close": 572.65,
+                "volume": 5660
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:56 AM",
+                "timestamp_epoch": 1701411960,
+                "open": 572.55,
+                "high": 572.75,
+                "low": 572.35,
+                "close": 572.4,
+                "volume": 17919
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:57 AM",
+                "timestamp_epoch": 1701412020,
+                "open": 572.6,
+                "high": 572.7,
+                "low": 572.35,
+                "close": 572.4,
+                "volume": 4695
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:58 AM",
+                "timestamp_epoch": 1701412080,
+                "open": 572.35,
+                "high": 572.65,
+                "low": 572.35,
+                "close": 572.35,
+                "volume": 5320
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 11:59 AM",
+                "timestamp_epoch": 1701412140,
+                "open": 572.35,
+                "high": 572.65,
+                "low": 572.35,
+                "close": 572.55,
+                "volume": 5388
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:00 PM",
+                "timestamp_epoch": 1701412200,
+                "open": 572.55,
+                "high": 572.8,
+                "low": 572.35,
+                "close": 572.55,
+                "volume": 12465
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:01 PM",
+                "timestamp_epoch": 1701412260,
+                "open": 572.75,
+                "high": 572.75,
+                "low": 572.55,
+                "close": 572.55,
+                "volume": 4119
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:02 PM",
+                "timestamp_epoch": 1701412320,
+                "open": 572.6,
+                "high": 572.8,
+                "low": 572.55,
+                "close": 572.75,
+                "volume": 10035
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:03 PM",
+                "timestamp_epoch": 1701412380,
+                "open": 572.55,
+                "high": 572.8,
+                "low": 572.55,
+                "close": 572.75,
+                "volume": 9571
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:04 PM",
+                "timestamp_epoch": 1701412440,
+                "open": 572.75,
+                "high": 572.75,
+                "low": 572.35,
+                "close": 572.35,
+                "volume": 21679
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:05 PM",
+                "timestamp_epoch": 1701412500,
+                "open": 572.35,
+                "high": 572.6,
+                "low": 572.1,
+                "close": 572.6,
+                "volume": 24456
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:06 PM",
+                "timestamp_epoch": 1701412560,
+                "open": 572.6,
+                "high": 572.6,
+                "low": 572.2,
+                "close": 572.5,
+                "volume": 8979
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:07 PM",
+                "timestamp_epoch": 1701412620,
+                "open": 572.25,
+                "high": 572.5,
+                "low": 572.1,
+                "close": 572.1,
+                "volume": 10600
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:08 PM",
+                "timestamp_epoch": 1701412680,
+                "open": 572.35,
+                "high": 572.5,
+                "low": 572.1,
+                "close": 572.4,
+                "volume": 16683
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:09 PM",
+                "timestamp_epoch": 1701412740,
+                "open": 572.45,
+                "high": 572.45,
+                "low": 572.15,
+                "close": 572.3,
+                "volume": 5373
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:10 PM",
+                "timestamp_epoch": 1701412800,
+                "open": 572.3,
+                "high": 572.4,
+                "low": 572.1,
+                "close": 572.1,
+                "volume": 4355
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:11 PM",
+                "timestamp_epoch": 1701412860,
+                "open": 572.2,
+                "high": 572.45,
+                "low": 572.05,
+                "close": 572.4,
+                "volume": 9501
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:12 PM",
+                "timestamp_epoch": 1701412920,
+                "open": 572.4,
+                "high": 572.45,
+                "low": 572.15,
+                "close": 572.2,
+                "volume": 13899
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:13 PM",
+                "timestamp_epoch": 1701412980,
+                "open": 572.2,
+                "high": 572.45,
+                "low": 572.05,
+                "close": 572.2,
+                "volume": 15273
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:14 PM",
+                "timestamp_epoch": 1701413040,
+                "open": 572.2,
+                "high": 572.3,
+                "low": 571.6,
+                "close": 571.85,
+                "volume": 50554
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:15 PM",
+                "timestamp_epoch": 1701413100,
+                "open": 571.6,
+                "high": 572.3,
+                "low": 571.6,
+                "close": 572,
+                "volume": 22082
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:16 PM",
+                "timestamp_epoch": 1701413160,
+                "open": 572,
+                "high": 572.1,
+                "low": 571.75,
+                "close": 571.9,
+                "volume": 13433
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:17 PM",
+                "timestamp_epoch": 1701413220,
+                "open": 571.9,
+                "high": 571.95,
+                "low": 571.65,
+                "close": 571.85,
+                "volume": 9930
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:18 PM",
+                "timestamp_epoch": 1701413280,
+                "open": 571.7,
+                "high": 572,
+                "low": 571.7,
+                "close": 572,
+                "volume": 15356
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:19 PM",
+                "timestamp_epoch": 1701413340,
+                "open": 571.9,
+                "high": 572,
+                "low": 571.75,
+                "close": 571.8,
+                "volume": 12132
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:20 PM",
+                "timestamp_epoch": 1701413400,
+                "open": 571.75,
+                "high": 572,
+                "low": 571.65,
+                "close": 571.95,
+                "volume": 14514
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:21 PM",
+                "timestamp_epoch": 1701413460,
+                "open": 571.8,
+                "high": 572.05,
+                "low": 571.65,
+                "close": 571.85,
+                "volume": 20577
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:22 PM",
+                "timestamp_epoch": 1701413520,
+                "open": 571.85,
+                "high": 572,
+                "low": 571.75,
+                "close": 571.8,
+                "volume": 10118
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:23 PM",
+                "timestamp_epoch": 1701413580,
+                "open": 571.8,
+                "high": 572.05,
+                "low": 571.7,
+                "close": 572,
+                "volume": 10246
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:24 PM",
+                "timestamp_epoch": 1701413640,
+                "open": 572,
+                "high": 572,
+                "low": 571.7,
+                "close": 571.7,
+                "volume": 4623
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:25 PM",
+                "timestamp_epoch": 1701413700,
+                "open": 571.9,
+                "high": 572.1,
+                "low": 571.7,
+                "close": 571.8,
+                "volume": 20762
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:26 PM",
+                "timestamp_epoch": 1701413760,
+                "open": 571.7,
+                "high": 571.85,
+                "low": 571.7,
+                "close": 571.7,
+                "volume": 10062
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:27 PM",
+                "timestamp_epoch": 1701413820,
+                "open": 571.8,
+                "high": 571.8,
+                "low": 571.6,
+                "close": 571.75,
+                "volume": 11603
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:28 PM",
+                "timestamp_epoch": 1701413880,
+                "open": 571.75,
+                "high": 571.75,
+                "low": 571.3,
+                "close": 571.4,
+                "volume": 29194
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:29 PM",
+                "timestamp_epoch": 1701413940,
+                "open": 571.35,
+                "high": 571.85,
+                "low": 571.3,
+                "close": 571.85,
+                "volume": 11825
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:30 PM",
+                "timestamp_epoch": 1701414000,
+                "open": 571.6,
+                "high": 571.85,
+                "low": 571.35,
+                "close": 571.6,
+                "volume": 5717
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:31 PM",
+                "timestamp_epoch": 1701414060,
+                "open": 571.6,
+                "high": 571.6,
+                "low": 571.3,
+                "close": 571.5,
+                "volume": 3582
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:32 PM",
+                "timestamp_epoch": 1701414120,
+                "open": 571.5,
+                "high": 571.65,
+                "low": 571.3,
+                "close": 571.45,
+                "volume": 12258
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:33 PM",
+                "timestamp_epoch": 1701414180,
+                "open": 571.6,
+                "high": 571.85,
+                "low": 571.45,
+                "close": 571.8,
+                "volume": 7189
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:34 PM",
+                "timestamp_epoch": 1701414240,
+                "open": 571.85,
+                "high": 571.95,
+                "low": 571.65,
+                "close": 571.85,
+                "volume": 11736
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:35 PM",
+                "timestamp_epoch": 1701414300,
+                "open": 571.85,
+                "high": 572.1,
+                "low": 571.65,
+                "close": 572.05,
+                "volume": 11073
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:36 PM",
+                "timestamp_epoch": 1701414360,
+                "open": 571.75,
+                "high": 572.1,
+                "low": 571.75,
+                "close": 572,
+                "volume": 10374
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:37 PM",
+                "timestamp_epoch": 1701414420,
+                "open": 572,
+                "high": 572.2,
+                "low": 571.8,
+                "close": 572.2,
+                "volume": 6846
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:38 PM",
+                "timestamp_epoch": 1701414480,
+                "open": 572.2,
+                "high": 572.5,
+                "low": 572,
+                "close": 572.35,
+                "volume": 22446
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:39 PM",
+                "timestamp_epoch": 1701414540,
+                "open": 572.5,
+                "high": 572.65,
+                "low": 572.3,
+                "close": 572.5,
+                "volume": 8215
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:40 PM",
+                "timestamp_epoch": 1701414600,
+                "open": 572.5,
+                "high": 572.6,
+                "low": 572.3,
+                "close": 572.4,
+                "volume": 7060
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:41 PM",
+                "timestamp_epoch": 1701414660,
+                "open": 572.6,
+                "high": 572.75,
+                "low": 572.4,
+                "close": 572.75,
+                "volume": 12197
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:42 PM",
+                "timestamp_epoch": 1701414720,
+                "open": 572.75,
+                "high": 572.75,
+                "low": 572.3,
+                "close": 572.3,
+                "volume": 14959
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:43 PM",
+                "timestamp_epoch": 1701414780,
+                "open": 572.3,
+                "high": 572.7,
+                "low": 572.3,
+                "close": 572.7,
+                "volume": 13495
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:44 PM",
+                "timestamp_epoch": 1701414840,
+                "open": 572.7,
+                "high": 572.75,
+                "low": 572.35,
+                "close": 572.4,
+                "volume": 8975
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:45 PM",
+                "timestamp_epoch": 1701414900,
+                "open": 572.45,
+                "high": 572.65,
+                "low": 572.2,
+                "close": 572.55,
+                "volume": 16954
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:46 PM",
+                "timestamp_epoch": 1701414960,
+                "open": 572.6,
+                "high": 572.75,
+                "low": 572.4,
+                "close": 572.75,
+                "volume": 13129
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:47 PM",
+                "timestamp_epoch": 1701415020,
+                "open": 572.55,
+                "high": 572.75,
+                "low": 572.4,
+                "close": 572.5,
+                "volume": 4756
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:48 PM",
+                "timestamp_epoch": 1701415080,
+                "open": 572.55,
+                "high": 572.7,
+                "low": 572.35,
+                "close": 572.5,
+                "volume": 10051
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:49 PM",
+                "timestamp_epoch": 1701415140,
+                "open": 572.5,
+                "high": 572.7,
+                "low": 572.3,
+                "close": 572.35,
+                "volume": 11444
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:50 PM",
+                "timestamp_epoch": 1701415200,
+                "open": 572.35,
+                "high": 572.6,
+                "low": 572.2,
+                "close": 572.2,
+                "volume": 6787
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:51 PM",
+                "timestamp_epoch": 1701415260,
+                "open": 572.4,
+                "high": 572.4,
+                "low": 571.8,
+                "close": 571.8,
+                "volume": 26260
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:52 PM",
+                "timestamp_epoch": 1701415320,
+                "open": 571.8,
+                "high": 572.3,
+                "low": 571.8,
+                "close": 572.25,
+                "volume": 43186
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:53 PM",
+                "timestamp_epoch": 1701415380,
+                "open": 572.25,
+                "high": 572.35,
+                "low": 572,
+                "close": 572.1,
+                "volume": 7068
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:54 PM",
+                "timestamp_epoch": 1701415440,
+                "open": 572.3,
+                "high": 572.35,
+                "low": 572,
+                "close": 572.05,
+                "volume": 6615
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:55 PM",
+                "timestamp_epoch": 1701415500,
+                "open": 572.1,
+                "high": 572.25,
+                "low": 572,
+                "close": 572.25,
+                "volume": 6927
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:56 PM",
+                "timestamp_epoch": 1701415560,
+                "open": 572.25,
+                "high": 572.3,
+                "low": 572,
+                "close": 572.3,
+                "volume": 7401
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:57 PM",
+                "timestamp_epoch": 1701415620,
+                "open": 572.3,
+                "high": 572.3,
+                "low": 571.7,
+                "close": 571.8,
+                "volume": 21185
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:58 PM",
+                "timestamp_epoch": 1701415680,
+                "open": 571.8,
+                "high": 571.85,
+                "low": 571.5,
+                "close": 571.6,
+                "volume": 26361
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 12:59 PM",
+                "timestamp_epoch": 1701415740,
+                "open": 571.6,
+                "high": 571.9,
+                "low": 571.5,
+                "close": 571.9,
+                "volume": 8897
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:00 PM",
+                "timestamp_epoch": 1701415800,
+                "open": 571.9,
+                "high": 571.9,
+                "low": 571.6,
+                "close": 571.75,
+                "volume": 17497
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:01 PM",
+                "timestamp_epoch": 1701415860,
+                "open": 571.75,
+                "high": 571.85,
+                "low": 571.5,
+                "close": 571.55,
+                "volume": 13697
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:02 PM",
+                "timestamp_epoch": 1701415920,
+                "open": 571.75,
+                "high": 572,
+                "low": 571.45,
+                "close": 571.65,
+                "volume": 30597
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:03 PM",
+                "timestamp_epoch": 1701415980,
+                "open": 571.65,
+                "high": 571.7,
+                "low": 571.25,
+                "close": 571.25,
+                "volume": 15878
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:04 PM",
+                "timestamp_epoch": 1701416040,
+                "open": 571.25,
+                "high": 571.8,
+                "low": 571.25,
+                "close": 571.5,
+                "volume": 20800
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:05 PM",
+                "timestamp_epoch": 1701416100,
+                "open": 571.5,
+                "high": 571.7,
+                "low": 571.35,
+                "close": 571.65,
+                "volume": 9478
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:06 PM",
+                "timestamp_epoch": 1701416160,
+                "open": 571.65,
+                "high": 571.8,
+                "low": 571.45,
+                "close": 571.8,
+                "volume": 6143
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:07 PM",
+                "timestamp_epoch": 1701416220,
+                "open": 571.8,
+                "high": 571.85,
+                "low": 571.55,
+                "close": 571.85,
+                "volume": 4923
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:08 PM",
+                "timestamp_epoch": 1701416280,
+                "open": 571.85,
+                "high": 571.9,
+                "low": 571.6,
+                "close": 571.85,
+                "volume": 4212
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:09 PM",
+                "timestamp_epoch": 1701416340,
+                "open": 571.65,
+                "high": 572,
+                "low": 571.65,
+                "close": 571.95,
+                "volume": 4690
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:10 PM",
+                "timestamp_epoch": 1701416400,
+                "open": 571.75,
+                "high": 572,
+                "low": 571.75,
+                "close": 572,
+                "volume": 18133
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:11 PM",
+                "timestamp_epoch": 1701416460,
+                "open": 572,
+                "high": 572.3,
+                "low": 571.9,
+                "close": 572.3,
+                "volume": 8693
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:12 PM",
+                "timestamp_epoch": 1701416520,
+                "open": 572.3,
+                "high": 572.35,
+                "low": 572.1,
+                "close": 572.2,
+                "volume": 4845
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:13 PM",
+                "timestamp_epoch": 1701416580,
+                "open": 572.25,
+                "high": 572.35,
+                "low": 572.15,
+                "close": 572.35,
+                "volume": 4878
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:14 PM",
+                "timestamp_epoch": 1701416640,
+                "open": 572.35,
+                "high": 572.35,
+                "low": 572.2,
+                "close": 572.35,
+                "volume": 5180
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:15 PM",
+                "timestamp_epoch": 1701416700,
+                "open": 572.35,
+                "high": 572.5,
+                "low": 572.2,
+                "close": 572.4,
+                "volume": 9954
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:16 PM",
+                "timestamp_epoch": 1701416760,
+                "open": 572.5,
+                "high": 572.55,
+                "low": 572.4,
+                "close": 572.4,
+                "volume": 4440
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:17 PM",
+                "timestamp_epoch": 1701416820,
+                "open": 572.55,
+                "high": 572.6,
+                "low": 572.05,
+                "close": 572.4,
+                "volume": 16445
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:18 PM",
+                "timestamp_epoch": 1701416880,
+                "open": 572.15,
+                "high": 572.65,
+                "low": 572.15,
+                "close": 572.4,
+                "volume": 7783
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:19 PM",
+                "timestamp_epoch": 1701416940,
+                "open": 572.6,
+                "high": 572.65,
+                "low": 572.4,
+                "close": 572.5,
+                "volume": 5170
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:20 PM",
+                "timestamp_epoch": 1701417000,
+                "open": 572.5,
+                "high": 572.7,
+                "low": 572.4,
+                "close": 572.5,
+                "volume": 11073
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:21 PM",
+                "timestamp_epoch": 1701417060,
+                "open": 572.65,
+                "high": 572.7,
+                "low": 572.5,
+                "close": 572.5,
+                "volume": 6000
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:22 PM",
+                "timestamp_epoch": 1701417120,
+                "open": 572.6,
+                "high": 572.65,
+                "low": 572.5,
+                "close": 572.6,
+                "volume": 6542
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:23 PM",
+                "timestamp_epoch": 1701417180,
+                "open": 572.6,
+                "high": 573,
+                "low": 572.4,
+                "close": 572.9,
+                "volume": 66405
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:24 PM",
+                "timestamp_epoch": 1701417240,
+                "open": 573,
+                "high": 573.2,
+                "low": 572.85,
+                "close": 573.2,
+                "volume": 72602
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:25 PM",
+                "timestamp_epoch": 1701417300,
+                "open": 573.2,
+                "high": 573.2,
+                "low": 572.9,
+                "close": 573.15,
+                "volume": 18018
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:26 PM",
+                "timestamp_epoch": 1701417360,
+                "open": 573.15,
+                "high": 573.15,
+                "low": 572.75,
+                "close": 572.95,
+                "volume": 11441
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:27 PM",
+                "timestamp_epoch": 1701417420,
+                "open": 572.95,
+                "high": 573,
+                "low": 572.7,
+                "close": 572.7,
+                "volume": 3882
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:28 PM",
+                "timestamp_epoch": 1701417480,
+                "open": 572.85,
+                "high": 572.9,
+                "low": 572.7,
+                "close": 572.85,
+                "volume": 7776
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:29 PM",
+                "timestamp_epoch": 1701417540,
+                "open": 572.85,
+                "high": 572.85,
+                "low": 572.7,
+                "close": 572.7,
+                "volume": 8856
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:30 PM",
+                "timestamp_epoch": 1701417600,
+                "open": 572.75,
+                "high": 572.8,
+                "low": 572.5,
+                "close": 572.75,
+                "volume": 8564
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:31 PM",
+                "timestamp_epoch": 1701417660,
+                "open": 572.75,
+                "high": 572.95,
+                "low": 572.5,
+                "close": 572.7,
+                "volume": 16988
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:32 PM",
+                "timestamp_epoch": 1701417720,
+                "open": 572.7,
+                "high": 573,
+                "low": 572.55,
+                "close": 572.9,
+                "volume": 12284
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:33 PM",
+                "timestamp_epoch": 1701417780,
+                "open": 572.8,
+                "high": 572.9,
+                "low": 572.55,
+                "close": 572.55,
+                "volume": 8688
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:34 PM",
+                "timestamp_epoch": 1701417840,
+                "open": 572.55,
+                "high": 572.65,
+                "low": 572.5,
+                "close": 572.5,
+                "volume": 7304
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:35 PM",
+                "timestamp_epoch": 1701417900,
+                "open": 572.6,
+                "high": 572.75,
+                "low": 572.4,
+                "close": 572.75,
+                "volume": 11742
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:36 PM",
+                "timestamp_epoch": 1701417960,
+                "open": 572.75,
+                "high": 572.75,
+                "low": 572.5,
+                "close": 572.7,
+                "volume": 5933
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:37 PM",
+                "timestamp_epoch": 1701418020,
+                "open": 572.7,
+                "high": 572.7,
+                "low": 572.45,
+                "close": 572.7,
+                "volume": 4842
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:38 PM",
+                "timestamp_epoch": 1701418080,
+                "open": 572.7,
+                "high": 572.7,
+                "low": 572.5,
+                "close": 572.6,
+                "volume": 10420
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:39 PM",
+                "timestamp_epoch": 1701418140,
+                "open": 572.65,
+                "high": 572.75,
+                "low": 572.45,
+                "close": 572.75,
+                "volume": 16080
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:40 PM",
+                "timestamp_epoch": 1701418200,
+                "open": 572.75,
+                "high": 572.9,
+                "low": 572.7,
+                "close": 572.7,
+                "volume": 14229
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:41 PM",
+                "timestamp_epoch": 1701418260,
+                "open": 572.7,
+                "high": 573,
+                "low": 572.7,
+                "close": 573,
+                "volume": 21407
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:42 PM",
+                "timestamp_epoch": 1701418320,
+                "open": 572.95,
+                "high": 573.4,
+                "low": 572.95,
+                "close": 573.25,
+                "volume": 37805
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:43 PM",
+                "timestamp_epoch": 1701418380,
+                "open": 573.3,
+                "high": 573.35,
+                "low": 572.9,
+                "close": 572.9,
+                "volume": 13815
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:44 PM",
+                "timestamp_epoch": 1701418440,
+                "open": 573.05,
+                "high": 573.2,
+                "low": 572.85,
+                "close": 572.9,
+                "volume": 11434
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:45 PM",
+                "timestamp_epoch": 1701418500,
+                "open": 573.1,
+                "high": 573.2,
+                "low": 572.9,
+                "close": 573,
+                "volume": 3106
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:46 PM",
+                "timestamp_epoch": 1701418560,
+                "open": 573,
+                "high": 573.1,
+                "low": 572.9,
+                "close": 573,
+                "volume": 7065
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:47 PM",
+                "timestamp_epoch": 1701418620,
+                "open": 572.9,
+                "high": 573.1,
+                "low": 572.8,
+                "close": 573.1,
+                "volume": 7385
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:48 PM",
+                "timestamp_epoch": 1701418680,
+                "open": 573.1,
+                "high": 573.15,
+                "low": 572.85,
+                "close": 573.1,
+                "volume": 11269
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:49 PM",
+                "timestamp_epoch": 1701418740,
+                "open": 572.9,
+                "high": 573.5,
+                "low": 572.8,
+                "close": 573.35,
+                "volume": 59436
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:50 PM",
+                "timestamp_epoch": 1701418800,
+                "open": 573.4,
+                "high": 573.55,
+                "low": 573.3,
+                "close": 573.4,
+                "volume": 52217
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:51 PM",
+                "timestamp_epoch": 1701418860,
+                "open": 573.5,
+                "high": 573.6,
+                "low": 573.3,
+                "close": 573.45,
+                "volume": 17279
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:52 PM",
+                "timestamp_epoch": 1701418920,
+                "open": 573.4,
+                "high": 573.5,
+                "low": 573.25,
+                "close": 573.45,
+                "volume": 15305
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:53 PM",
+                "timestamp_epoch": 1701418980,
+                "open": 573.45,
+                "high": 573.5,
+                "low": 573.4,
+                "close": 573.4,
+                "volume": 16752
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:54 PM",
+                "timestamp_epoch": 1701419040,
+                "open": 573.5,
+                "high": 573.55,
+                "low": 573.25,
+                "close": 573.45,
+                "volume": 13274
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:55 PM",
+                "timestamp_epoch": 1701419100,
+                "open": 573.25,
+                "high": 573.55,
+                "low": 573.25,
+                "close": 573.5,
+                "volume": 16580
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:56 PM",
+                "timestamp_epoch": 1701419160,
+                "open": 573.45,
+                "high": 573.55,
+                "low": 573.4,
+                "close": 573.45,
+                "volume": 15260
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:57 PM",
+                "timestamp_epoch": 1701419220,
+                "open": 573.45,
+                "high": 573.55,
+                "low": 573.3,
+                "close": 573.5,
+                "volume": 17170
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:58 PM",
+                "timestamp_epoch": 1701419280,
+                "open": 573.5,
+                "high": 573.55,
+                "low": 573.25,
+                "close": 573.5,
+                "volume": 13482
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 01:59 PM",
+                "timestamp_epoch": 1701419340,
+                "open": 573.5,
+                "high": 573.55,
+                "low": 573.4,
+                "close": 573.45,
+                "volume": 6260
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:00 PM",
+                "timestamp_epoch": 1701419400,
+                "open": 573.55,
+                "high": 573.55,
+                "low": 573.25,
+                "close": 573.5,
+                "volume": 8773
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:01 PM",
+                "timestamp_epoch": 1701419460,
+                "open": 573.5,
+                "high": 573.5,
+                "low": 573.15,
+                "close": 573.4,
+                "volume": 14096
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:02 PM",
+                "timestamp_epoch": 1701419520,
+                "open": 573.4,
+                "high": 573.4,
+                "low": 573.2,
+                "close": 573.4,
+                "volume": 15815
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:03 PM",
+                "timestamp_epoch": 1701419580,
+                "open": 573.4,
+                "high": 573.45,
+                "low": 573.25,
+                "close": 573.45,
+                "volume": 9195
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:04 PM",
+                "timestamp_epoch": 1701419640,
+                "open": 573.45,
+                "high": 573.5,
+                "low": 573.2,
+                "close": 573.45,
+                "volume": 21170
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:05 PM",
+                "timestamp_epoch": 1701419700,
+                "open": 573.35,
+                "high": 573.5,
+                "low": 572.95,
+                "close": 573,
+                "volume": 20840
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:06 PM",
+                "timestamp_epoch": 1701419760,
+                "open": 572.95,
+                "high": 573.15,
+                "low": 572.5,
+                "close": 572.5,
+                "volume": 28468
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:07 PM",
+                "timestamp_epoch": 1701419820,
+                "open": 572.5,
+                "high": 572.95,
+                "low": 571.75,
+                "close": 572.25,
+                "volume": 46147
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:08 PM",
+                "timestamp_epoch": 1701419880,
+                "open": 572.05,
+                "high": 572.7,
+                "low": 572.05,
+                "close": 572.45,
+                "volume": 11569
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:09 PM",
+                "timestamp_epoch": 1701419940,
+                "open": 572.65,
+                "high": 572.9,
+                "low": 572.35,
+                "close": 572.9,
+                "volume": 12975
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:10 PM",
+                "timestamp_epoch": 1701420000,
+                "open": 572.9,
+                "high": 572.9,
+                "low": 572.5,
+                "close": 572.8,
+                "volume": 9720
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:11 PM",
+                "timestamp_epoch": 1701420060,
+                "open": 572.8,
+                "high": 572.8,
+                "low": 572.45,
+                "close": 572.5,
+                "volume": 5239
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:12 PM",
+                "timestamp_epoch": 1701420120,
+                "open": 572.65,
+                "high": 572.7,
+                "low": 572.4,
+                "close": 572.4,
+                "volume": 6080
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:13 PM",
+                "timestamp_epoch": 1701420180,
+                "open": 572.55,
+                "high": 572.55,
+                "low": 572.3,
+                "close": 572.5,
+                "volume": 4709
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:14 PM",
+                "timestamp_epoch": 1701420240,
+                "open": 572.35,
+                "high": 572.55,
+                "low": 572.25,
+                "close": 572.45,
+                "volume": 18211
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:15 PM",
+                "timestamp_epoch": 1701420300,
+                "open": 572.45,
+                "high": 572.65,
+                "low": 572.3,
+                "close": 572.55,
+                "volume": 7013
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:16 PM",
+                "timestamp_epoch": 1701420360,
+                "open": 572.55,
+                "high": 573,
+                "low": 572.5,
+                "close": 572.7,
+                "volume": 23730
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:17 PM",
+                "timestamp_epoch": 1701420420,
+                "open": 572.75,
+                "high": 573,
+                "low": 572.65,
+                "close": 572.95,
+                "volume": 11743
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:18 PM",
+                "timestamp_epoch": 1701420480,
+                "open": 572.95,
+                "high": 573.1,
+                "low": 572.85,
+                "close": 572.95,
+                "volume": 22250
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:19 PM",
+                "timestamp_epoch": 1701420540,
+                "open": 573,
+                "high": 573.35,
+                "low": 572.8,
+                "close": 573.15,
+                "volume": 21651
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:20 PM",
+                "timestamp_epoch": 1701420600,
+                "open": 573.4,
+                "high": 573.4,
+                "low": 573.05,
+                "close": 573.25,
+                "volume": 14621
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:21 PM",
+                "timestamp_epoch": 1701420660,
+                "open": 573.1,
+                "high": 573.3,
+                "low": 572.9,
+                "close": 573,
+                "volume": 10796
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:22 PM",
+                "timestamp_epoch": 1701420720,
+                "open": 573,
+                "high": 573.15,
+                "low": 572.9,
+                "close": 573.15,
+                "volume": 9762
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:23 PM",
+                "timestamp_epoch": 1701420780,
+                "open": 573.15,
+                "high": 573.5,
+                "low": 573,
+                "close": 573.4,
+                "volume": 32426
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:24 PM",
+                "timestamp_epoch": 1701420840,
+                "open": 573.25,
+                "high": 573.5,
+                "low": 573.25,
+                "close": 573.3,
+                "volume": 15000
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:25 PM",
+                "timestamp_epoch": 1701420900,
+                "open": 573.4,
+                "high": 573.45,
+                "low": 573.3,
+                "close": 573.3,
+                "volume": 16953
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:26 PM",
+                "timestamp_epoch": 1701420960,
+                "open": 573.45,
+                "high": 573.45,
+                "low": 573.3,
+                "close": 573.3,
+                "volume": 16487
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:27 PM",
+                "timestamp_epoch": 1701421020,
+                "open": 573.3,
+                "high": 573.45,
+                "low": 573,
+                "close": 573.45,
+                "volume": 21739
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:28 PM",
+                "timestamp_epoch": 1701421080,
+                "open": 573.5,
+                "high": 573.5,
+                "low": 573.25,
+                "close": 573.45,
+                "volume": 21473
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:29 PM",
+                "timestamp_epoch": 1701421140,
+                "open": 573.5,
+                "high": 573.5,
+                "low": 573.3,
+                "close": 573.4,
+                "volume": 11664
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:30 PM",
+                "timestamp_epoch": 1701421200,
+                "open": 573.4,
+                "high": 573.5,
+                "low": 573,
+                "close": 573.05,
+                "volume": 14958
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:31 PM",
+                "timestamp_epoch": 1701421260,
+                "open": 573.05,
+                "high": 573.15,
+                "low": 572.8,
+                "close": 573,
+                "volume": 13367
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:32 PM",
+                "timestamp_epoch": 1701421320,
+                "open": 573,
+                "high": 573.1,
+                "low": 572.65,
+                "close": 573,
+                "volume": 8710
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:33 PM",
+                "timestamp_epoch": 1701421380,
+                "open": 573,
+                "high": 573.25,
+                "low": 572.9,
+                "close": 573.2,
+                "volume": 20117
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:34 PM",
+                "timestamp_epoch": 1701421440,
+                "open": 573.2,
+                "high": 573.25,
+                "low": 572.85,
+                "close": 573.1,
+                "volume": 10905
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:35 PM",
+                "timestamp_epoch": 1701421500,
+                "open": 573.1,
+                "high": 573.1,
+                "low": 572.65,
+                "close": 572.95,
+                "volume": 11831
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:36 PM",
+                "timestamp_epoch": 1701421560,
+                "open": 572.9,
+                "high": 573,
+                "low": 572.6,
+                "close": 572.9,
+                "volume": 13148
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:37 PM",
+                "timestamp_epoch": 1701421620,
+                "open": 572.9,
+                "high": 573,
+                "low": 572.65,
+                "close": 572.65,
+                "volume": 13379
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:38 PM",
+                "timestamp_epoch": 1701421680,
+                "open": 572.65,
+                "high": 572.95,
+                "low": 572.6,
+                "close": 572.9,
+                "volume": 24981
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:39 PM",
+                "timestamp_epoch": 1701421740,
+                "open": 572.85,
+                "high": 573,
+                "low": 572.65,
+                "close": 572.9,
+                "volume": 19917
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:40 PM",
+                "timestamp_epoch": 1701421800,
+                "open": 572.95,
+                "high": 572.95,
+                "low": 572.4,
+                "close": 572.55,
+                "volume": 38231
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:41 PM",
+                "timestamp_epoch": 1701421860,
+                "open": 572.6,
+                "high": 572.9,
+                "low": 572.4,
+                "close": 572.7,
+                "volume": 17313
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:42 PM",
+                "timestamp_epoch": 1701421920,
+                "open": 572.65,
+                "high": 572.8,
+                "low": 572.25,
+                "close": 572.45,
+                "volume": 25707
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:43 PM",
+                "timestamp_epoch": 1701421980,
+                "open": 572.25,
+                "high": 572.5,
+                "low": 572.05,
+                "close": 572.1,
+                "volume": 11968
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:44 PM",
+                "timestamp_epoch": 1701422040,
+                "open": 572.1,
+                "high": 572.4,
+                "low": 572.05,
+                "close": 572.3,
+                "volume": 26650
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:45 PM",
+                "timestamp_epoch": 1701422100,
+                "open": 572.3,
+                "high": 572.3,
+                "low": 572,
+                "close": 572.1,
+                "volume": 18214
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:46 PM",
+                "timestamp_epoch": 1701422160,
+                "open": 572.2,
+                "high": 572.35,
+                "low": 572,
+                "close": 572.35,
+                "volume": 19817
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:47 PM",
+                "timestamp_epoch": 1701422220,
+                "open": 572.35,
+                "high": 572.5,
+                "low": 572.2,
+                "close": 572.4,
+                "volume": 16383
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:48 PM",
+                "timestamp_epoch": 1701422280,
+                "open": 572.4,
+                "high": 572.8,
+                "low": 572.3,
+                "close": 572.75,
+                "volume": 15770
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:49 PM",
+                "timestamp_epoch": 1701422340,
+                "open": 572.7,
+                "high": 572.8,
+                "low": 572.4,
+                "close": 572.45,
+                "volume": 17912
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:50 PM",
+                "timestamp_epoch": 1701422400,
+                "open": 572.45,
+                "high": 572.95,
+                "low": 572.3,
+                "close": 572.9,
+                "volume": 30123
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:51 PM",
+                "timestamp_epoch": 1701422460,
+                "open": 572.9,
+                "high": 573.2,
+                "low": 572.65,
+                "close": 572.7,
+                "volume": 82272
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:52 PM",
+                "timestamp_epoch": 1701422520,
+                "open": 572.85,
+                "high": 573.2,
+                "low": 572.7,
+                "close": 572.85,
+                "volume": 31511
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:53 PM",
+                "timestamp_epoch": 1701422580,
+                "open": 572.9,
+                "high": 572.9,
+                "low": 572.3,
+                "close": 572.45,
+                "volume": 21010
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:54 PM",
+                "timestamp_epoch": 1701422640,
+                "open": 572.5,
+                "high": 572.8,
+                "low": 572.4,
+                "close": 572.5,
+                "volume": 13231
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:55 PM",
+                "timestamp_epoch": 1701422700,
+                "open": 572.7,
+                "high": 572.7,
+                "low": 572.3,
+                "close": 572.5,
+                "volume": 13487
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:56 PM",
+                "timestamp_epoch": 1701422760,
+                "open": 572.6,
+                "high": 572.7,
+                "low": 572.3,
+                "close": 572.45,
+                "volume": 16322
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:57 PM",
+                "timestamp_epoch": 1701422820,
+                "open": 572.6,
+                "high": 572.7,
+                "low": 572.15,
+                "close": 572.15,
+                "volume": 15407
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:58 PM",
+                "timestamp_epoch": 1701422880,
+                "open": 572.4,
+                "high": 572.65,
+                "low": 572.15,
+                "close": 572.4,
+                "volume": 16366
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 02:59 PM",
+                "timestamp_epoch": 1701422940,
+                "open": 572.35,
+                "high": 572.6,
+                "low": 572.3,
+                "close": 572.3,
+                "volume": 14185
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:00 PM",
+                "timestamp_epoch": 1701423000,
+                "open": 572.3,
+                "high": 572.5,
+                "low": 572.1,
+                "close": 572.1,
+                "volume": 26986
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:01 PM",
+                "timestamp_epoch": 1701423060,
+                "open": 572.1,
+                "high": 572.35,
+                "low": 572,
+                "close": 572.2,
+                "volume": 52464
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:02 PM",
+                "timestamp_epoch": 1701423120,
+                "open": 572,
+                "high": 572.2,
+                "low": 571.85,
+                "close": 572,
+                "volume": 27453
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:03 PM",
+                "timestamp_epoch": 1701423180,
+                "open": 572.15,
+                "high": 572.5,
+                "low": 571.85,
+                "close": 572.15,
+                "volume": 50618
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:04 PM",
+                "timestamp_epoch": 1701423240,
+                "open": 572.05,
+                "high": 572.35,
+                "low": 572,
+                "close": 572.2,
+                "volume": 12636
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:05 PM",
+                "timestamp_epoch": 1701423300,
+                "open": 572.2,
+                "high": 572.3,
+                "low": 571.9,
+                "close": 572.15,
+                "volume": 58260
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:06 PM",
+                "timestamp_epoch": 1701423360,
+                "open": 572.15,
+                "high": 572.15,
+                "low": 571.85,
+                "close": 571.95,
+                "volume": 26573
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:07 PM",
+                "timestamp_epoch": 1701423420,
+                "open": 571.95,
+                "high": 572,
+                "low": 571.8,
+                "close": 571.8,
+                "volume": 31486
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:08 PM",
+                "timestamp_epoch": 1701423480,
+                "open": 571.8,
+                "high": 571.95,
+                "low": 571.6,
+                "close": 571.7,
+                "volume": 22732
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:09 PM",
+                "timestamp_epoch": 1701423540,
+                "open": 571.65,
+                "high": 571.7,
+                "low": 571.35,
+                "close": 571.35,
+                "volume": 26801
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:10 PM",
+                "timestamp_epoch": 1701423600,
+                "open": 571.55,
+                "high": 571.7,
+                "low": 571.4,
+                "close": 571.6,
+                "volume": 27047
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:11 PM",
+                "timestamp_epoch": 1701423660,
+                "open": 571.5,
+                "high": 571.7,
+                "low": 571.45,
+                "close": 571.65,
+                "volume": 27642
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:12 PM",
+                "timestamp_epoch": 1701423720,
+                "open": 571.65,
+                "high": 571.7,
+                "low": 571.45,
+                "close": 571.6,
+                "volume": 25471
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:13 PM",
+                "timestamp_epoch": 1701423780,
+                "open": 571.6,
+                "high": 571.85,
+                "low": 571.45,
+                "close": 571.8,
+                "volume": 32284
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:14 PM",
+                "timestamp_epoch": 1701423840,
+                "open": 571.6,
+                "high": 571.8,
+                "low": 571.5,
+                "close": 571.7,
+                "volume": 26087
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:15 PM",
+                "timestamp_epoch": 1701423900,
+                "open": 571.7,
+                "high": 571.75,
+                "low": 571.45,
+                "close": 571.75,
+                "volume": 43712
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:16 PM",
+                "timestamp_epoch": 1701423960,
+                "open": 571.65,
+                "high": 571.8,
+                "low": 571.55,
+                "close": 571.75,
+                "volume": 40246
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:17 PM",
+                "timestamp_epoch": 1701424020,
+                "open": 571.75,
+                "high": 571.8,
+                "low": 571.6,
+                "close": 571.65,
+                "volume": 51144
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:18 PM",
+                "timestamp_epoch": 1701424080,
+                "open": 571.8,
+                "high": 572,
+                "low": 571.6,
+                "close": 571.85,
+                "volume": 97201
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:19 PM",
+                "timestamp_epoch": 1701424140,
+                "open": 571.85,
+                "high": 572,
+                "low": 571.8,
+                "close": 571.9,
+                "volume": 29264
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:20 PM",
+                "timestamp_epoch": 1701424200,
+                "open": 571.85,
+                "high": 572.1,
+                "low": 571.55,
+                "close": 571.95,
+                "volume": 100904
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:21 PM",
+                "timestamp_epoch": 1701424260,
+                "open": 571.85,
+                "high": 572,
+                "low": 571.8,
+                "close": 572,
+                "volume": 30299
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:22 PM",
+                "timestamp_epoch": 1701424320,
+                "open": 571.8,
+                "high": 572,
+                "low": 571.6,
+                "close": 571.75,
+                "volume": 31495
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:23 PM",
+                "timestamp_epoch": 1701424380,
+                "open": 571.7,
+                "high": 571.85,
+                "low": 571.45,
+                "close": 571.45,
+                "volume": 39400
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:24 PM",
+                "timestamp_epoch": 1701424440,
+                "open": 571.65,
+                "high": 571.7,
+                "low": 571.3,
+                "close": 571.45,
+                "volume": 34384
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:25 PM",
+                "timestamp_epoch": 1701424500,
+                "open": 571.4,
+                "high": 571.55,
+                "low": 571.15,
+                "close": 571.45,
+                "volume": 53713
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:26 PM",
+                "timestamp_epoch": 1701424560,
+                "open": 571.4,
+                "high": 571.6,
+                "low": 571.25,
+                "close": 571.45,
+                "volume": 55864
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:27 PM",
+                "timestamp_epoch": 1701424620,
+                "open": 571.5,
+                "high": 571.65,
+                "low": 571.3,
+                "close": 571.5,
+                "volume": 45591
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:28 PM",
+                "timestamp_epoch": 1701424680,
+                "open": 571.55,
+                "high": 571.9,
+                "low": 571.5,
+                "close": 571.65,
+                "volume": 90120
+            },
+            {
+                "timestamp_readable_IST": "01/12/2023 03:29 PM",
+                "timestamp_epoch": 1701424740,
+                "open": 571.65,
+                "high": 571.85,
+                "low": 571.35,
+                "close": 571.85,
+                "volume": 54695
+            }
+        ]
+    }
+}
