@@ -6,6 +6,7 @@ const fs = require('fs');
 const defaultConfig = {
   threshold: 120, // in minutes
   riskRewardRatio: 1,
+  pullbackPercentage: 10, // Percentage of stop-loss points to wait for pullback
   dateFilter: {
     enabled: false,
     specificDate: "01/12/2023",
@@ -179,7 +180,7 @@ function isVolumeConfirmationMet(data, currentIndex, config) {
 }
 
 /**
- * Analyze a trading day with the given strategy
+ * Analyze a trading day with the given strategy (with pullback entry)
  * @param {string} date - Date string in DD/MM/YYYY format
  * @param {Array} dayData - Candle data for the day
  * @param {Object} config - Configuration object
@@ -206,6 +207,10 @@ function analyzeTradingDay(date, dayData, config) {
   let lowestSinceLastHighTime = dayData[0].timestamp_readable_IST;
   let highestSinceLastLow = dayData[0].high;
   let highestSinceLastLowTime = dayData[0].timestamp_readable_IST;
+  
+  // Track pending breakouts waiting for pullback
+  let pendingLongBreakout = null;
+  let pendingShortBreakout = null;
   
   let longEntry = null;
   let shortEntry = null;
@@ -238,27 +243,79 @@ function analyzeTradingDay(date, dayData, config) {
       }
     }
     
+    // Check if we have a pending long breakout and look for pullback entry
+    if (pendingLongBreakout && !longEntry) {
+      // Check if price has pulled back to our entry level
+      if (candle.low <= pendingLongBreakout.pullbackEntryPrice) {
+        // We have hit the pullback entry level, create the trade
+        longEntry = {
+          type: "long",
+          entry: {
+            price: pendingLongBreakout.pullbackEntryPrice,
+            time: formatTimestamp(candle.timestamp_readable_IST)
+          },
+          target: pendingLongBreakout.target,
+          stopLoss: pendingLongBreakout.stopLoss,
+          patterns: [...patterns],
+          volumeInfo: pendingLongBreakout.volumeInfo,
+          breakoutDetails: {
+            ...pendingLongBreakout.breakoutDetails,
+            actualEntryTime: formatTimestamp(candle.timestamp_readable_IST),
+            actualEntryPrice: pendingLongBreakout.pullbackEntryPrice,
+            pullbackPercentage: config.pullbackPercentage
+          }
+        };
+      }
+    }
+    
+    // Check if we have a pending short breakout and look for pullback entry
+    if (pendingShortBreakout && !shortEntry) {
+      // Check if price has pulled back to our entry level
+      if (candle.high >= pendingShortBreakout.pullbackEntryPrice) {
+        // We have hit the pullback entry level, create the trade
+        shortEntry = {
+          type: "short",
+          entry: {
+            price: pendingShortBreakout.pullbackEntryPrice,
+            time: formatTimestamp(candle.timestamp_readable_IST)
+          },
+          target: pendingShortBreakout.target,
+          stopLoss: pendingShortBreakout.stopLoss,
+          patterns: [...patterns],
+          volumeInfo: pendingShortBreakout.volumeInfo,
+          breakoutDetails: {
+            ...pendingShortBreakout.breakoutDetails,
+            actualEntryTime: formatTimestamp(candle.timestamp_readable_IST),
+            actualEntryPrice: pendingShortBreakout.pullbackEntryPrice,
+            pullbackPercentage: config.pullbackPercentage
+          }
+        };
+      }
+    }
+    
     // Check for new high (must be STRICTLY higher than previous high)
     if (candle.high > previousHighPrice + 0.05) { // Using a small threshold to account for precision issues
       const timeDiff = calculateTimeDiffInMinutes(candle.timestamp_readable_IST, previousHighTime);
       
-      if (timeDiff >= config.threshold && !longEntry) {
+      if (timeDiff >= config.threshold && !pendingLongBreakout && !longEntry) {
         // We have a valid high breakout with sufficient time difference
         const volumeConfirmation = isVolumeConfirmationMet(dayData, i, config);
         
         if (volumeConfirmation.passed) {
           // Calculate target and stop loss for long entry
-          const entryPrice = previousHighPrice;
+          const breakoutPrice = previousHighPrice;
           const stopLoss = lowestSinceLastHigh;
-          const risk = entryPrice - stopLoss;
-          const target = entryPrice + (risk * config.riskRewardRatio);
+          const risk = breakoutPrice - stopLoss;
+          const target = breakoutPrice + (risk * config.riskRewardRatio);
           
-          longEntry = {
+          // Calculate pullback entry price
+          const pullbackAmount = risk * (config.pullbackPercentage / 100);
+          const pullbackEntryPrice = breakoutPrice - pullbackAmount;
+          
+          pendingLongBreakout = {
             type: "long",
-            entry: {
-              price: entryPrice,
-              time: formatTimestamp(candle.timestamp_readable_IST)
-            },
+            breakoutPrice: breakoutPrice,
+            pullbackEntryPrice: pullbackEntryPrice,
             target: target,
             stopLoss: stopLoss,
             patterns: [...patterns],
@@ -268,13 +325,9 @@ function analyzeTradingDay(date, dayData, config) {
               averageLookbackVolume: volumeConfirmation.data.averageVolume,
               lookbackVolumes: volumeConfirmation.data.lookbackVolumes
             },
-            previousLowTime: formatTimestamp(previousLowTime),
-            previousHighTime: formatTimestamp(highestSinceLastLowTime),
-            previousHighTime: formatTimestamp(previousHighTime),
-            previousLowTime: formatTimestamp(lowestSinceLastHighTime),
             breakoutDetails: {
-              time: formatTimestamp(candle.timestamp_readable_IST),
-              price: entryPrice,
+              breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
+              breakoutPrice: breakoutPrice,
               previousExtremeTime: formatTimestamp(previousHighTime),
               timeSincePreviousExtreme: timeDiff,
               previousExtremeType: "high",
@@ -283,7 +336,9 @@ function analyzeTradingDay(date, dayData, config) {
               stopLossTime: formatTimestamp(lowestSinceLastHighTime),
               swingLow: lowestSinceLastHigh,
               swingHigh: previousHighPrice,
-              volumeConfirmation: volumeConfirmation
+              volumeConfirmation: volumeConfirmation,
+              pullbackEntryPrice: pullbackEntryPrice,
+              pullbackAmount: pullbackAmount
             }
           };
         }
@@ -300,23 +355,25 @@ function analyzeTradingDay(date, dayData, config) {
     if (candle.low < previousLowPrice - 0.05) { // Using a small threshold to account for precision issues
       const timeDiff = calculateTimeDiffInMinutes(candle.timestamp_readable_IST, previousLowTime);
       
-      if (timeDiff >= config.threshold && !shortEntry) {
+      if (timeDiff >= config.threshold && !pendingShortBreakout && !shortEntry) {
         // We have a valid low breakout with sufficient time difference
         const volumeConfirmation = isVolumeConfirmationMet(dayData, i, config);
         
         if (volumeConfirmation.passed) {
           // Calculate target and stop loss for short entry
-          const entryPrice = previousLowPrice;
+          const breakoutPrice = previousLowPrice;
           const stopLoss = highestSinceLastLow;
-          const risk = stopLoss - entryPrice;
-          const target = entryPrice - (risk * config.riskRewardRatio);
+          const risk = stopLoss - breakoutPrice;
+          const target = breakoutPrice - (risk * config.riskRewardRatio);
           
-          shortEntry = {
+          // Calculate pullback entry price
+          const pullbackAmount = risk * (config.pullbackPercentage / 100);
+          const pullbackEntryPrice = breakoutPrice + pullbackAmount;
+          
+          pendingShortBreakout = {
             type: "short",
-            entry: {
-              price: entryPrice,
-              time: formatTimestamp(candle.timestamp_readable_IST)
-            },
+            breakoutPrice: breakoutPrice,
+            pullbackEntryPrice: pullbackEntryPrice,
             target: target,
             stopLoss: stopLoss,
             patterns: [...patterns],
@@ -327,8 +384,8 @@ function analyzeTradingDay(date, dayData, config) {
               lookbackVolumes: volumeConfirmation.data.lookbackVolumes
             },
             breakoutDetails: {
-              time: formatTimestamp(candle.timestamp_readable_IST),
-              price: entryPrice,
+              breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
+              breakoutPrice: breakoutPrice,
               previousExtremeTime: formatTimestamp(previousLowTime),
               timeSincePreviousExtreme: timeDiff,
               previousExtremeType: "low",
@@ -337,7 +394,9 @@ function analyzeTradingDay(date, dayData, config) {
               stopLossTime: formatTimestamp(highestSinceLastLowTime),
               swingLow: previousLowPrice,
               swingHigh: highestSinceLastLow,
-              volumeConfirmation: volumeConfirmation
+              volumeConfirmation: volumeConfirmation,
+              pullbackEntryPrice: pullbackEntryPrice,
+              pullbackAmount: pullbackAmount
             }
           };
         }
@@ -355,6 +414,22 @@ function analyzeTradingDay(date, dayData, config) {
   if (longEntry || shortEntry) {
     const entry = longEntry || shortEntry;
     return simulateTrade(date, entry, dayData, config.capital);
+  }
+  
+  // Check if we had a breakout but no pullback entry
+  if (pendingLongBreakout || pendingShortBreakout) {
+    const pendingBreakout = pendingLongBreakout || pendingShortBreakout;
+    return {
+      date,
+      message: `Breakout detected but no pullback entry (${pendingBreakout.type})`,
+      breakoutDetected: true,
+      breakoutType: pendingBreakout.type,
+      breakoutTime: pendingBreakout.breakoutDetails.breakoutTime,
+      breakoutPrice: pendingBreakout.breakoutPrice,
+      requiredPullbackPrice: pendingBreakout.pullbackEntryPrice,
+      volumeRejection: false,
+      volumeData: null
+    };
   }
   
   // No valid trades for this day
@@ -650,6 +725,9 @@ function calculateStats(trades, capital) {
   // Calculate win rate
   const winRate = actualTrades.length > 0 ? positiveDays / actualTrades.length * 100 : 0;
   
+  // Count breakouts that didn't result in trades
+  const breakoutsWithoutEntry = trades.filter(trade => trade.breakoutDetected).length;
+  
   return {
     initialCapital: capital.initial,
     leverage: capital.leverage || 1,
@@ -681,7 +759,8 @@ function calculateStats(trades, capital) {
       plannedRR,
       winRate: winRate / 100 // Convert to decimal
     },
-    winRate
+    winRate,
+    breakoutsWithoutEntry // New stat for breakouts that didn't result in trades
   };
 }
 
@@ -714,51 +793,3 @@ module.exports = {
   calculateStats,
   defaultConfig
 };
-
-// Example usage
-if (require.main === module) {
-  const filePath = 'SBIN-EQ.json';
-  
-  // Example configuration
-  const config = {
-    threshold: 35, // in minutes
-    riskRewardRatio: 1,
-    dateFilter: {
-      enabled: false,
-      specificDate: null,
-      dateRange: {
-        start: null,
-        end: null
-      }
-    },
-    volumeConfirmation: {
-      enabled: true,
-      volumeMultiplier: 3,
-      lookbackPeriod: 4
-    },
-    capital: {
-      initial: 100000,
-      utilizationPercent: 100
-    }
-  };
-  
-  const results = runBacktest(filePath, config);
-  
-  // Print summary
-  console.log('=================== Backtest Results ===================');
-  console.log(`Initial Capital: ₹${results.initialCapital.toFixed(2)}`);
-  console.log(`Final Balance: ₹${results.finalBalance.toFixed(2)}`);
-  console.log(`Total Profit: ₹${results.totalProfit.toFixed(2)}`);
-  console.log(`Total Return: ${results.totalReturnPercentage.toFixed(2)}%`);
-  console.log(`Average Profit Per Trade: ₹${results.averageProfitPerTrade.toFixed(2)}`);
-  console.log(`Average Profit % Per Trade: ${results.averageProfitPercentagePerTrade.toFixed(2)}%`);
-  console.log(`Win Rate: ${results.winRate.toFixed(2)}%`);
-  console.log(`Total Trades: ${results.winningDays.length + results.losingDays.length}`);
-  console.log(`Winning Trades: ${results.totalWinningDays}`);
-  console.log(`Losing Trades: ${results.totalLosingDays}`);
-  console.log('======================================================');
-  
-  // Optionally write results to a file
-  fs.writeFileSync('backtest_results.json', JSON.stringify(results, null, 2));
-  console.log('Detailed results written to backtest_results.json');
-}
