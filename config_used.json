@@ -1,0 +1,33 @@
+{
+  "threshold": 70,
+  "riskRewardRatio": 1.5,
+  "pullbackPercentage": 10,
+  "entryTimeRange": {
+    "enabled": true,
+    "startTime": "10:16",
+    "endTime": "14:45"
+  },
+  "marketExitTime": {
+    "enabled": true,
+    "exitTime": "15:09"
+  },
+  "dateFilter": {
+    "enabled": false,
+    "specificDate": "01/12/2023",
+    "dateRange": {
+      "start": null,
+      "end": null
+    }
+  },
+  "volumeConfirmation": {
+    "enabled": true,
+    "volumeMultiplier": 1,
+    "lookbackPeriod": 20
+  },
+  "capital": {
+    "initial": 100000,
+    "utilizationPercent": 100,
+    "leverage": 5,
+    "brokerageFeePercent": 0.06
+  }
+}

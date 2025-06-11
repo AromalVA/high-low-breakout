@@ -7,6 +7,15 @@ const defaultConfig = {
   threshold: 120, // in minutes
   riskRewardRatio: 1,
   pullbackPercentage: 10, // Percentage of stop-loss points to wait for pullback
+  entryTimeRange: {
+    enabled: false, // Whether to restrict entry times
+    startTime: "10:15", // Entry allowed from this time (24-hour format HH:MM)
+    endTime: "14:00"   // Entry allowed until this time (24-hour format HH:MM)
+  },
+  marketExitTime: {
+    enabled: false, // Whether to force exit at specific time
+    exitTime: "15:00" // Force exit at this time (24-hour format HH:MM)
+  },
   dateFilter: {
     enabled: false,
     specificDate: "01/12/2023",
@@ -48,6 +57,51 @@ function parseTimeToMinutes(timestamp) {
   }
   
   return hours * 60 + minutes;
+}
+
+/**
+ * Parse 24-hour format time string to minutes since midnight
+ * @param {string} timeStr - Time string in format "HH:MM" (24-hour format)
+ * @returns {number} - Minutes since midnight
+ */
+function parse24HourTimeToMinutes(timeStr) {
+  const [hours, minutes] = timeStr.split(':').map(part => parseInt(part, 10));
+  return hours * 60 + minutes;
+}
+
+/**
+ * Check if current time is within entry time range
+ * @param {string} timestamp - Current timestamp in format "DD/MM/YYYY HH:MM AM/PM"
+ * @param {Object} config - Configuration with entryTimeRange settings
+ * @returns {boolean} - Whether entry is allowed at this time
+ */
+function isEntryTimeAllowed(timestamp, config) {
+  if (!config.entryTimeRange.enabled) {
+    return true;
+  }
+  
+  const currentTimeMinutes = parseTimeToMinutes(timestamp);
+  const startTimeMinutes = parse24HourTimeToMinutes(config.entryTimeRange.startTime);
+  const endTimeMinutes = parse24HourTimeToMinutes(config.entryTimeRange.endTime);
+  
+  return currentTimeMinutes >= startTimeMinutes && currentTimeMinutes <= endTimeMinutes;
+}
+
+/**
+ * Check if current time has reached market exit time
+ * @param {string} timestamp - Current timestamp in format "DD/MM/YYYY HH:MM AM/PM"
+ * @param {Object} config - Configuration with marketExitTime settings
+ * @returns {boolean} - Whether it's time to force exit
+ */
+function shouldForceMarketExit(timestamp, config) {
+  if (!config.marketExitTime.enabled) {
+    return false;
+  }
+  
+  const currentTimeMinutes = parseTimeToMinutes(timestamp);
+  const exitTimeMinutes = parse24HourTimeToMinutes(config.marketExitTime.exitTime);
+  
+  return currentTimeMinutes >= exitTimeMinutes;
 }
 
 /**
@@ -247,24 +301,29 @@ function analyzeTradingDay(date, dayData, config) {
     if (pendingLongBreakout && !longEntry) {
       // Check if price has pulled back to our entry level
       if (candle.low <= pendingLongBreakout.pullbackEntryPrice) {
-        // We have hit the pullback entry level, create the trade
-        longEntry = {
-          type: "long",
-          entry: {
-            price: pendingLongBreakout.pullbackEntryPrice,
-            time: formatTimestamp(candle.timestamp_readable_IST)
-          },
-          target: pendingLongBreakout.target,
-          stopLoss: pendingLongBreakout.stopLoss,
-          patterns: [...patterns],
-          volumeInfo: pendingLongBreakout.volumeInfo,
-          breakoutDetails: {
-            ...pendingLongBreakout.breakoutDetails,
-            actualEntryTime: formatTimestamp(candle.timestamp_readable_IST),
-            actualEntryPrice: pendingLongBreakout.pullbackEntryPrice,
-            pullbackPercentage: config.pullbackPercentage
-          }
-        };
+        if (isEntryTimeAllowed(candle.timestamp_readable_IST, config)) {
+          // We have hit the pullback entry level and entry time is allowed, create the trade
+          longEntry = {
+            type: "long",
+            entry: {
+              price: pendingLongBreakout.pullbackEntryPrice,
+              time: formatTimestamp(candle.timestamp_readable_IST)
+            },
+            target: pendingLongBreakout.target,
+            stopLoss: pendingLongBreakout.stopLoss,
+            patterns: [...patterns],
+            volumeInfo: pendingLongBreakout.volumeInfo,
+            breakoutDetails: {
+              ...pendingLongBreakout.breakoutDetails,
+              actualEntryTime: formatTimestamp(candle.timestamp_readable_IST),
+              actualEntryPrice: pendingLongBreakout.pullbackEntryPrice,
+              pullbackPercentage: config.pullbackPercentage
+            }
+          };
+        } else {
+          // Pullback hit but entry time not allowed - reject this breakout
+          pendingLongBreakout = null;
+        }
       }
     }
     
@@ -272,24 +331,29 @@ function analyzeTradingDay(date, dayData, config) {
     if (pendingShortBreakout && !shortEntry) {
       // Check if price has pulled back to our entry level
       if (candle.high >= pendingShortBreakout.pullbackEntryPrice) {
-        // We have hit the pullback entry level, create the trade
-        shortEntry = {
-          type: "short",
-          entry: {
-            price: pendingShortBreakout.pullbackEntryPrice,
-            time: formatTimestamp(candle.timestamp_readable_IST)
-          },
-          target: pendingShortBreakout.target,
-          stopLoss: pendingShortBreakout.stopLoss,
-          patterns: [...patterns],
-          volumeInfo: pendingShortBreakout.volumeInfo,
-          breakoutDetails: {
-            ...pendingShortBreakout.breakoutDetails,
-            actualEntryTime: formatTimestamp(candle.timestamp_readable_IST),
-            actualEntryPrice: pendingShortBreakout.pullbackEntryPrice,
-            pullbackPercentage: config.pullbackPercentage
-          }
-        };
+        if (isEntryTimeAllowed(candle.timestamp_readable_IST, config)) {
+          // We have hit the pullback entry level and entry time is allowed, create the trade
+          shortEntry = {
+            type: "short",
+            entry: {
+              price: pendingShortBreakout.pullbackEntryPrice,
+              time: formatTimestamp(candle.timestamp_readable_IST)
+            },
+            target: pendingShortBreakout.target,
+            stopLoss: pendingShortBreakout.stopLoss,
+            patterns: [...patterns],
+            volumeInfo: pendingShortBreakout.volumeInfo,
+            breakoutDetails: {
+              ...pendingShortBreakout.breakoutDetails,
+              actualEntryTime: formatTimestamp(candle.timestamp_readable_IST),
+              actualEntryPrice: pendingShortBreakout.pullbackEntryPrice,
+              pullbackPercentage: config.pullbackPercentage
+            }
+          };
+        } else {
+          // Pullback hit but entry time not allowed - reject this breakout
+          pendingShortBreakout = null;
+        }
       }
     }
     
@@ -413,7 +477,7 @@ function analyzeTradingDay(date, dayData, config) {
   // If we have a long or short entry, simulate the trade and return results
   if (longEntry || shortEntry) {
     const entry = longEntry || shortEntry;
-    return simulateTrade(date, entry, dayData, config.capital);
+    return simulateTrade(date, entry, dayData, config.capital, config);
   }
   
   // Check if we had a breakout but no pullback entry
@@ -447,9 +511,10 @@ function analyzeTradingDay(date, dayData, config) {
  * @param {Object} trade - The trade entry object
  * @param {Array} dayData - The candle data for the day
  * @param {Object} capital - Capital configuration with initial amount and utilization percent
+ * @param {Object} config - Configuration object with time-based restrictions
  * @returns {Object} - The trade result object
  */
-function simulateTrade(date, trade, dayData, capital) {
+function simulateTrade(date, trade, dayData, capital, config) {
   // Find the starting index (entry time)
   const entryTimeStr = trade.entry.time;
   let entryIndex = dayData.findIndex(candle => formatTimestamp(candle.timestamp_readable_IST) === entryTimeStr);
@@ -493,6 +558,14 @@ function simulateTrade(date, trade, dayData, capital) {
   // Start simulating from the next candle after entry
   for (let i = entryIndex + 1; i < dayData.length; i++) {
     const candle = dayData[i];
+    
+    // Check for forced market exit first
+    if (shouldForceMarketExit(candle.timestamp_readable_IST, config)) {
+      exitPrice = candle.close; // Use closing price of the exit time candle
+      exitTime = formatTimestamp(candle.timestamp_readable_IST);
+      exitReason = "forced market exit";
+      break;
+    }
     
     // Calculate current profit/loss based on trade type
     let currentPnL = 0;

@@ -2,22 +2,22 @@
   "initialCapital": 100000,
   "leverage": 5,
   "brokerageFeePercent": 0.06,
-  "finalBalance": 174720.50958600006,
-  "totalProfit": 74720.50958600006,
-  "totalGrossProfit": 111291.83000000012,
-  "totalNetProfit": 74720.50958600006,
-  "totalFees": 36571.32041399999,
-  "totalReturnPercentage": 74.72050958600006,
-  "totalGrossReturnPercentage": 111.29183000000012,
-  "totalNetReturnPercentage": 74.72050958600006,
-  "averageProfitPerTrade": 1224.9263866557387,
-  "averageGrossProfitPerTrade": 1824.4562295081987,
-  "averageNetProfitPerTrade": 1224.9263866557387,
-  "averageProfitPercentagePerTrade": 1.225978197257106,
-  "averageGrossProfitPercentagePerTrade": 1.8259020904625216,
-  "averageNetProfitPercentagePerTrade": 1.225978197257106,
-  "totalWinningDays": 36,
-  "totalLosingDays": 25,
+  "finalBalance": 156539.13550200005,
+  "totalProfit": 56539.13550200004,
+  "totalGrossProfit": 90107.99000000005,
+  "totalNetProfit": 56539.13550200004,
+  "totalFees": 33568.85449799999,
+  "totalReturnPercentage": 56.539135502000036,
+  "totalGrossReturnPercentage": 90.10799000000004,
+  "totalNetReturnPercentage": 56.539135502000036,
+  "averageProfitPerTrade": 1009.6274196785722,
+  "averageGrossProfitPerTrade": 1609.0712500000009,
+  "averageNetProfitPerTrade": 1009.6274196785722,
+  "averageProfitPercentagePerTrade": 1.0104905240201076,
+  "averageGrossProfitPercentagePerTrade": 1.6103246206106039,
+  "averageNetProfitPercentagePerTrade": 1.0104905240201076,
+  "totalWinningDays": 35,
+  "totalLosingDays": 21,
   "winningDays": [
     {
       "date": "04/12/2023",
@@ -28,10 +28,10 @@
         "fee": 299.874852
       },
       "exit": {
-        "price": 595.8,
-        "time": "2023-12-04 15:29",
-        "reason": "market close",
-        "fee": 302.42807999999997
+        "price": 594,
+        "time": "2023-12-04 15:09",
+        "reason": "forced market exit",
+        "fee": 301.51439999999997
       },
       "target": 601.6500000000001,
       "stopLoss": 584.65,
@@ -39,14 +39,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499791.42,
       "actualCapitalUsed": 99958.284,
-      "totalFees": 602.3029319999999,
+      "totalFees": 601.3892519999999,
       "riskPoints": 6.1200000000000045,
-      "profit": 3653.0770679999773,
-      "profitPercentage": 3.6546016216124495,
-      "grossProfit": 4255.379999999977,
-      "netProfit": 3653.0770679999773,
-      "grossProfitPercentage": 4.257155915161547,
-      "netProfitPercentage": 3.6546016216124495,
+      "profit": 2131.1907480000154,
+      "profitPercentage": 2.1320801665622984,
+      "grossProfit": 2732.5800000000154,
+      "netProfit": 2131.1907480000154,
+      "grossProfitPercentage": 2.7337203988015797,
+      "netProfitPercentage": 2.1320801665622984,
       "patterns": [
         "hammer",
         "hammer",
@@ -64,7 +64,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 4424.580000000015,
+      "maxFavorableExcursion": 3578.5800000000154,
       "volumeInfo": {
         "breakoutCandleVolume": 73317,
         "confirmationCandleVolume": 160396,
@@ -108,10 +108,10 @@
         "fee": 299.84694
       },
       "exit": {
-        "price": 607.7,
-        "time": "2023-12-06 15:29",
-        "reason": "market close",
-        "fee": 298.9884
+        "price": 608.6,
+        "time": "2023-12-06 15:09",
+        "reason": "forced market exit",
+        "fee": 299.4312
       },
       "target": 602.3249999999999,
       "stopLoss": 613.45,
@@ -119,14 +119,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499744.9,
       "actualCapitalUsed": 99948.98000000001,
-      "totalFees": 598.8353400000001,
+      "totalFees": 599.27814,
       "riskPoints": 4.0049999999999955,
-      "profit": 832.0646600000036,
-      "profitPercentage": 0.8324893960898886,
-      "grossProfit": 1430.9000000000037,
-      "netProfit": 832.0646600000036,
-      "grossProfitPercentage": 1.4316304178391852,
-      "netProfitPercentage": 0.8324893960898886,
+      "profit": 93.62186000002237,
+      "profitPercentage": 0.09366965025558276,
+      "grossProfit": 692.9000000000224,
+      "netProfit": 93.62186000002237,
+      "grossProfitPercentage": 0.6932536980367607,
+      "netProfitPercentage": 0.09366965025558276,
       "patterns": [
         "hammer",
         "hammer",
@@ -142,7 +142,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 1963.9000000000783,
+      "maxFavorableExcursion": 1635.9000000000037,
       "volumeInfo": {
         "breakoutCandleVolume": 109403,
         "confirmationCandleVolume": 24571,
@@ -186,10 +186,10 @@
         "fee": 299.87399999999997
       },
       "exit": {
-        "price": 611.5,
-        "time": "2023-12-07 15:29",
-        "reason": "market close",
-        "fee": 300.858
+        "price": 611.15,
+        "time": "2023-12-07 15:09",
+        "reason": "forced market exit",
+        "fee": 300.6858
       },
       "target": 617.5,
       "stopLoss": 605,
@@ -197,21 +197,21 @@
       "leverage": 5,
       "grossInvestedAmount": 499790,
       "actualCapitalUsed": 99958,
-      "totalFees": 600.732,
+      "totalFees": 600.5598,
       "riskPoints": 4.5,
-      "profit": 1039.268,
-      "profitPercentage": 1.0397046759639048,
-      "grossProfit": 1640,
-      "netProfit": 1039.268,
-      "grossProfitPercentage": 1.6406890894175554,
-      "netProfitPercentage": 1.0397046759639048,
+      "profit": 752.4401999999814,
+      "profitPercentage": 0.7527563576702029,
+      "grossProfit": 1352.9999999999814,
+      "netProfit": 752.4401999999814,
+      "grossProfitPercentage": 1.3535684987694645,
+      "netProfitPercentage": 0.7527563576702029,
       "patterns": [
         "hammer",
         "hammer",
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 2460,
+      "maxFavorableExcursion": 2377.9999999999814,
       "volumeInfo": {
         "breakoutCandleVolume": 237157,
         "confirmationCandleVolume": 32168,
@@ -255,10 +255,10 @@
         "fee": 299.64018
       },
       "exit": {
-        "price": 619,
-        "time": "2023-12-13 15:29",
-        "reason": "market close",
-        "fee": 301.5768
+        "price": 620.1,
+        "time": "2023-12-13 15:09",
+        "reason": "forced market exit",
+        "fee": 302.11272
       },
       "target": 621.025,
       "stopLoss": 611.65,
@@ -266,14 +266,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499400.3,
       "actualCapitalUsed": 99880.06,
-      "totalFees": 601.2169799999999,
+      "totalFees": 601.7529,
       "riskPoints": 3.375,
-      "profit": 2626.4830200000188,
-      "profitPercentage": 2.629637006625766,
-      "grossProfit": 3227.7000000000185,
-      "netProfit": 2626.4830200000188,
-      "grossProfitPercentage": 3.2315759521970833,
-      "netProfitPercentage": 2.629637006625766,
+      "profit": 3519.147100000037,
+      "profitPercentage": 3.5233730336165565,
+      "grossProfit": 4120.900000000037,
+      "netProfit": 3519.147100000037,
+      "grossProfitPercentage": 4.125848542742202,
+      "netProfitPercentage": 3.5233730336165565,
       "patterns": [
         "hammer",
         "hammer",
@@ -328,10 +328,10 @@
         "fee": 299.68454099999997
       },
       "exit": {
-        "price": 656,
-        "time": "2023-12-19 15:29",
-        "reason": "market close",
-        "fee": 301.89119999999997
+        "price": 655.65,
+        "time": "2023-12-19 15:09",
+        "reason": "forced market exit",
+        "fee": 301.73013
       },
       "target": 670.3249999999998,
       "stopLoss": 640.45,
@@ -339,14 +339,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499474.2349999999,
       "actualCapitalUsed": 99894.84699999998,
-      "totalFees": 601.5757409999999,
+      "totalFees": 601.414671,
       "riskPoints": 10.754999999999882,
-      "profit": 3076.189259000056,
-      "profitPercentage": 3.0794273692616567,
-      "grossProfit": 3677.765000000056,
-      "netProfit": 3076.189259000056,
-      "grossProfitPercentage": 3.6816363510723,
-      "netProfitPercentage": 3.0794273692616567,
+      "profit": 2807.9003290000383,
+      "profitPercentage": 2.8108560284396242,
+      "grossProfit": 3409.3150000000383,
+      "netProfit": 2807.9003290000383,
+      "grossProfitPercentage": 3.412903770702045,
+      "netProfitPercentage": 2.8108560284396242,
       "patterns": [
         "hammer",
         "hammer",
@@ -541,10 +541,10 @@
         "fee": 299.855178
       },
       "exit": {
-        "price": 637.2,
-        "time": "2023-12-22 15:29",
-        "reason": "market close",
-        "fee": 297.06264
+        "price": 636.55,
+        "time": "2023-12-22 15:09",
+        "reason": "forced market exit",
+        "fee": 296.75960999999995
       },
       "target": 632.1500000000001,
       "stopLoss": 649.4,
@@ -552,14 +552,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499758.63000000006,
       "actualCapitalUsed": 99951.72600000001,
-      "totalFees": 596.917818,
+      "totalFees": 596.614788,
       "riskPoints": 6.209999999999923,
-      "profit": 4057.312182000007,
-      "profitPercentage": 4.059271754846941,
-      "grossProfit": 4654.230000000007,
-      "netProfit": 4057.312182000007,
-      "grossProfitPercentage": 4.656477868126065,
-      "netProfitPercentage": 4.059271754846941,
+      "profit": 4562.665212000078,
+      "profitPercentage": 4.564868856792005,
+      "grossProfit": 5159.280000000078,
+      "netProfit": 4562.665212000078,
+      "grossProfitPercentage": 5.1617717937157765,
+      "netProfitPercentage": 4.564868856792005,
       "patterns": [
         "hammer",
         "hammer",
@@ -611,10 +611,10 @@
         "fee": 299.85146999999995
       },
       "exit": {
-        "price": 641.45,
-        "time": "2024-01-05 15:29",
-        "reason": "market close",
-        "fee": 297.88938
+        "price": 642.25,
+        "time": "2024-01-05 15:09",
+        "reason": "forced market exit",
+        "fee": 298.2609
       },
       "target": 634.875,
       "stopLoss": 651.75,
@@ -622,14 +622,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499752.44999999995,
       "actualCapitalUsed": 99950.48999999999,
-      "totalFees": 597.7408499999999,
+      "totalFees": 598.1123699999999,
       "riskPoints": 6.0750000000000455,
-      "profit": 2672.4091499999295,
-      "profitPercentage": 2.6737329151662284,
-      "grossProfit": 3270.1499999999296,
-      "netProfit": 2672.4091499999295,
-      "grossProfitPercentage": 3.2717698532542765,
-      "netProfitPercentage": 2.6737329151662284,
+      "profit": 2052.837629999965,
+      "profitPercentage": 2.0538544933596277,
+      "grossProfit": 2650.949999999965,
+      "netProfit": 2052.837629999965,
+      "grossProfitPercentage": 2.6522631354783406,
+      "netProfitPercentage": 2.0538544933596277,
       "patterns": [
         "hammer",
         "hammer",
@@ -673,6 +673,72 @@
       }
     },
     {
+      "date": "11/01/2024",
+      "type": "short",
+      "entry": {
+        "price": 621.6800000000001,
+        "time": "2024-01-11 11:54",
+        "fee": 299.898432
+      },
+      "exit": {
+        "price": 619.95,
+        "time": "2024-01-11 15:09",
+        "reason": "forced market exit",
+        "fee": 299.06388000000004
+      },
+      "target": 614.0000000000001,
+      "stopLoss": 626,
+      "shares": 804,
+      "leverage": 5,
+      "grossInvestedAmount": 499830.72000000003,
+      "actualCapitalUsed": 99966.144,
+      "totalFees": 598.9623120000001,
+      "riskPoints": 4.319999999999936,
+      "profit": 791.9576880000145,
+      "profitPercentage": 0.7922259040020734,
+      "grossProfit": 1390.9200000000146,
+      "netProfit": 791.9576880000145,
+      "grossProfitPercentage": 1.3913910693604572,
+      "netProfitPercentage": 0.7922259040020734,
+      "patterns": [
+        "hammer"
+      ],
+      "maxFavorableExcursion": 2556.720000000051,
+      "volumeInfo": {
+        "breakoutCandleVolume": 99306,
+        "confirmationCandleVolume": 40804,
+        "averageLookbackVolume": 38796.2
+      },
+      "breakout": {
+        "breakoutTime": "2024-01-11 11:51",
+        "breakoutPrice": 621.2,
+        "previousExtremeTime": "2024-01-11 10:11",
+        "timeSincePreviousExtreme": 100,
+        "previousExtremeType": "low",
+        "periodMinutesRequired": 70,
+        "stopLossValue": 626,
+        "stopLossTime": "2024-01-11 10:30",
+        "swingLow": 621.2,
+        "swingHigh": 626,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation passed",
+          "data": {
+            "preBreakoutCandleTime": "11/01/2024 11:50 AM",
+            "preBreakoutVolume": 40804,
+            "averageVolume": 38796.2,
+            "volumeThreshold": 38796.2,
+            "volumeMultiplier": 1
+          }
+        },
+        "pullbackEntryPrice": 621.6800000000001,
+        "pullbackAmount": 0.4799999999999955,
+        "actualEntryTime": "2024-01-11 11:54",
+        "actualEntryPrice": 621.6800000000001,
+        "pullbackPercentage": 10
+      }
+    },
+    {
       "date": "12/01/2024",
       "type": "long",
       "entry": {
@@ -681,10 +747,10 @@
         "fee": 299.65568999999994
       },
       "exit": {
-        "price": 635.4,
-        "time": "2024-01-12 15:29",
-        "reason": "market close",
-        "fee": 301.1796
+        "price": 633.5,
+        "time": "2024-01-12 15:09",
+        "reason": "forced market exit",
+        "fee": 300.279
       },
       "target": 641.2249999999999,
       "stopLoss": 627.1,
@@ -692,14 +758,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499426.14999999997,
       "actualCapitalUsed": 99885.23,
-      "totalFees": 600.83529,
+      "totalFees": 599.9346899999999,
       "riskPoints": 5.084999999999923,
-      "profit": 1939.014710000025,
-      "profitPercentage": 1.941242674217224,
-      "grossProfit": 2539.850000000025,
-      "netProfit": 1939.014710000025,
-      "grossProfitPercentage": 2.5427683352183554,
-      "netProfitPercentage": 1.941242674217224,
+      "profit": 438.9153100000432,
+      "profitPercentage": 0.43941963191158817,
+      "grossProfit": 1038.850000000043,
+      "netProfit": 438.9153100000432,
+      "grossProfitPercentage": 1.0400436581064518,
+      "netProfitPercentage": 0.43941963191158817,
       "patterns": [
         "hammer",
         "hammer",
@@ -757,10 +823,10 @@
         "fee": 299.754048
       },
       "exit": {
-        "price": 637.5,
-        "time": "2024-01-16 15:29",
-        "reason": "market close",
-        "fee": 298.7325
+        "price": 636.7,
+        "time": "2024-01-16 15:09",
+        "reason": "forced market exit",
+        "fee": 298.35762
       },
       "target": 630.4000000000001,
       "stopLoss": 644.9,
@@ -768,14 +834,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499590.0800000001,
       "actualCapitalUsed": 99918.01600000002,
-      "totalFees": 598.4865480000001,
+      "totalFees": 598.111668,
       "riskPoints": 5.219999999999914,
-      "profit": 1104.0934520000496,
-      "profitPercentage": 1.1049993746873932,
-      "grossProfit": 1702.5800000000497,
-      "netProfit": 1104.0934520000496,
-      "grossProfitPercentage": 1.7039769884942966,
-      "netProfitPercentage": 1.1049993746873932,
+      "profit": 1729.2683320000142,
+      "profitPercentage": 1.7306872186093187,
+      "grossProfit": 2327.380000000014,
+      "netProfit": 1729.2683320000142,
+      "grossProfitPercentage": 2.329289644822425,
+      "netProfitPercentage": 1.7306872186093187,
       "patterns": [
         "hammer",
         "hammer",
@@ -830,10 +896,10 @@
         "fee": 299.986299
       },
       "exit": {
-        "price": 641.55,
-        "time": "2024-01-31 15:29",
-        "reason": "market close",
-        "fee": 302.93991
+        "price": 639.25,
+        "time": "2024-01-31 15:09",
+        "reason": "forced market exit",
+        "fee": 301.85384999999997
       },
       "target": 643.3749999999999,
       "stopLoss": 630.75,
@@ -841,14 +907,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499977.165,
       "actualCapitalUsed": 99995.43299999999,
-      "totalFees": 602.926209,
+      "totalFees": 601.8401489999999,
       "riskPoints": 4.544999999999959,
-      "profit": 4319.758790999997,
-      "profitPercentage": 4.319956083394326,
-      "grossProfit": 4922.684999999997,
-      "netProfit": 4319.758790999997,
-      "grossProfitPercentage": 4.922909829291901,
-      "netProfitPercentage": 4.319956083394326,
+      "profit": 2510.744851000032,
+      "profitPercentage": 2.5108595219544,
+      "grossProfit": 3112.5850000000323,
+      "netProfit": 2510.744851000032,
+      "grossProfitPercentage": 3.11272715824935,
+      "netProfitPercentage": 2.5108595219544,
       "patterns": [
         "hammer",
         "hammer",
@@ -862,7 +928,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 6221.235000000068,
+      "maxFavorableExcursion": 6142.53500000005,
       "volumeInfo": {
         "breakoutCandleVolume": 83225,
         "confirmationCandleVolume": 127440,
@@ -906,10 +972,10 @@
         "fee": 299.94934200000006
       },
       "exit": {
-        "price": 648.5,
-        "time": "2024-02-01 15:29",
-        "reason": "market close",
-        "fee": 302.7198
+        "price": 647.7,
+        "time": "2024-02-01 15:09",
+        "reason": "forced market exit",
+        "fee": 302.34636
       },
       "target": 659.125,
       "stopLoss": 633.25,
@@ -917,14 +983,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499915.57000000007,
       "actualCapitalUsed": 99983.11400000002,
-      "totalFees": 602.6691420000001,
+      "totalFees": 602.2957020000001,
       "riskPoints": 9.315000000000055,
-      "profit": 4014.7608579999574,
-      "profitPercentage": 4.015438905013458,
-      "grossProfit": 4617.4299999999575,
-      "netProfit": 4014.7608579999574,
-      "grossProfitPercentage": 4.618209830912004,
-      "netProfitPercentage": 4.015438905013458,
+      "profit": 3392.734297999993,
+      "profitPercentage": 3.3933072918692977,
+      "grossProfit": 3995.029999999993,
+      "netProfit": 3392.734297999993,
+      "grossProfitPercentage": 3.9957047146981157,
+      "netProfitPercentage": 3.3933072918692977,
       "patterns": [
         "hammer",
         "hammer",
@@ -982,10 +1048,10 @@
         "fee": 299.648685
       },
       "exit": {
-        "price": 677.5,
-        "time": "2024-02-07 15:29",
-        "reason": "market close",
-        "fee": 302.8425
+        "price": 673.55,
+        "time": "2024-02-07 15:09",
+        "reason": "forced market exit",
+        "fee": 301.0768499999999
       },
       "target": 680.6750000000001,
       "stopLoss": 664.55,
@@ -993,14 +1059,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499414.47500000003,
       "actualCapitalUsed": 99882.895,
-      "totalFees": 602.491185,
+      "totalFees": 600.7255349999999,
       "riskPoints": 5.805000000000064,
-      "profit": 4720.533814999987,
-      "profitPercentage": 4.726068277256068,
-      "grossProfit": 5323.024999999987,
-      "netProfit": 4720.533814999987,
-      "grossProfitPercentage": 5.329265836758122,
-      "netProfitPercentage": 4.726068277256068,
+      "profit": 1779.5494649999523,
+      "profitPercentage": 1.7816358496616984,
+      "grossProfit": 2380.2749999999523,
+      "netProfit": 1779.5494649999523,
+      "grossProfitPercentage": 2.383065689075144,
+      "netProfitPercentage": 1.7816358496616984,
       "patterns": [
         "hammer",
         "hammer",
@@ -1009,7 +1075,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 5658.275000000021,
+      "maxFavorableExcursion": 3460.5249999999864,
       "volumeInfo": {
         "breakoutCandleVolume": 344167,
         "confirmationCandleVolume": 150478,
@@ -1053,10 +1119,10 @@
         "fee": 299.78248799999994
       },
       "exit": {
-        "price": 725.8,
-        "time": "2024-02-09 15:15",
-        "reason": "target hit",
-        "fee": 303.52956
+        "price": 724.15,
+        "time": "2024-02-09 15:09",
+        "reason": "forced market exit",
+        "fee": 302.83952999999997
       },
       "target": 725.8,
       "stopLoss": 711.8,
@@ -1064,14 +1130,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499637.4799999999,
       "actualCapitalUsed": 99927.49599999998,
-      "totalFees": 603.312048,
+      "totalFees": 602.6220179999999,
       "riskPoints": 5.039999999999964,
-      "profit": 5641.807952000026,
-      "profitPercentage": 5.645901456391969,
-      "grossProfit": 6245.120000000025,
-      "netProfit": 5641.807952000026,
-      "grossProfitPercentage": 6.249651247140253,
-      "netProfitPercentage": 5.645901456391969,
+      "profit": 4492.4479820000415,
+      "profitPercentage": 4.495707549801951,
+      "grossProfit": 5095.070000000042,
+      "netProfit": 4492.4479820000415,
+      "grossProfitPercentage": 5.098766809887883,
+      "netProfitPercentage": 4.495707549801951,
       "patterns": [
         "hammer",
         "hammer",
@@ -1084,7 +1150,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 6523.920000000089,
+      "maxFavorableExcursion": 5617.820000000042,
       "volumeInfo": {
         "breakoutCandleVolume": 184574,
         "confirmationCandleVolume": 73732,
@@ -1128,10 +1194,10 @@
         "fee": 299.93987100000004
       },
       "exit": {
-        "price": 707,
-        "time": "2024-02-12 15:29",
-        "reason": "market close",
-        "fee": 298.2126
+        "price": 709.55,
+        "time": "2024-02-12 15:09",
+        "reason": "forced market exit",
+        "fee": 299.28819
       },
       "target": 693.5749999999999,
       "stopLoss": 720.95,
@@ -1139,14 +1205,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499899.78500000003,
       "actualCapitalUsed": 99979.95700000001,
-      "totalFees": 598.1524710000001,
+      "totalFees": 599.228061,
       "riskPoints": 9.855000000000018,
-      "profit": 2280.6325290000186,
-      "profitPercentage": 2.281089727814164,
-      "grossProfit": 2878.785000000019,
-      "netProfit": 2280.6325290000186,
-      "grossProfitPercentage": 2.8793621105478358,
-      "netProfitPercentage": 2.281089727814164,
+      "profit": 486.9069390000511,
+      "profitPercentage": 0.48700454932187165,
+      "grossProfit": 1086.1350000000511,
+      "netProfit": 486.9069390000511,
+      "grossProfitPercentage": 1.086352737679264,
+      "netProfitPercentage": 0.48700454932187165,
       "patterns": [
         "hammer",
         "hammer",
@@ -1156,7 +1222,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 4636.285000000019,
+      "maxFavorableExcursion": 4249.635000000051,
       "volumeInfo": {
         "breakoutCandleVolume": 162683,
         "confirmationCandleVolume": 172218,
@@ -1200,10 +1266,10 @@
         "fee": 299.625132
       },
       "exit": {
-        "price": 760.35,
-        "time": "2024-02-23 15:29",
-        "reason": "market close",
-        "fee": 297.90513
+        "price": 759.8,
+        "time": "2024-02-23 15:09",
+        "reason": "forced market exit",
+        "fee": 297.68963999999994
       },
       "target": 754.5,
       "stopLoss": 770.5,
@@ -1211,14 +1277,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499375.22000000003,
       "actualCapitalUsed": 99875.04400000001,
-      "totalFees": 597.530262,
+      "totalFees": 597.314772,
       "riskPoints": 5.759999999999991,
-      "profit": 2269.1397379999908,
-      "profitPercentage": 2.2719787117190062,
-      "grossProfit": 2866.669999999991,
-      "netProfit": 2269.1397379999908,
-      "grossProfitPercentage": 2.8702565577843355,
-      "netProfitPercentage": 2.2719787117190062,
+      "profit": 2628.5052280000355,
+      "profitPercentage": 2.631793812276103,
+      "grossProfit": 3225.8200000000356,
+      "netProfit": 2628.5052280000355,
+      "grossProfitPercentage": 3.2298558987368606,
+      "netProfitPercentage": 2.631793812276103,
       "patterns": [
         "hammer",
         "hammer",
@@ -1269,10 +1335,10 @@
         "fee": 299.915784
       },
       "exit": {
-        "price": 742.5,
-        "time": "2024-02-28 15:29",
-        "reason": "market close",
-        "fee": 296.703
+        "price": 743.5,
+        "time": "2024-02-28 15:09",
+        "reason": "forced market exit",
+        "fee": 297.1026
       },
       "target": 739.5,
       "stopLoss": 756.75,
@@ -1280,14 +1346,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499859.63999999996,
       "actualCapitalUsed": 99971.92799999999,
-      "totalFees": 596.618784,
+      "totalFees": 597.018384,
       "riskPoints": 6.210000000000036,
-      "profit": 4758.0212159999755,
-      "profitPercentage": 4.759357262770781,
-      "grossProfit": 5354.639999999976,
-      "netProfit": 4758.0212159999755,
-      "grossProfitPercentage": 5.356143576624807,
-      "netProfitPercentage": 4.759357262770781,
+      "profit": 4091.621615999976,
+      "profitPercentage": 4.092770538545557,
+      "grossProfit": 4688.639999999976,
+      "netProfit": 4091.621615999976,
+      "grossProfitPercentage": 4.689956564606793,
+      "netProfitPercentage": 4.092770538545557,
       "patterns": [
         "hammer",
         "hammer",
@@ -1311,7 +1377,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 6220.439999999946,
+      "maxFavorableExcursion": 5254.739999999991,
       "volumeInfo": {
         "breakoutCandleVolume": 98351,
         "confirmationCandleVolume": 100946,
@@ -1347,88 +1413,6 @@
       }
     },
     {
-      "date": "29/02/2024",
-      "type": "long",
-      "entry": {
-        "price": 748.625,
-        "time": "2024-02-29 14:55",
-        "fee": 299.599725
-      },
-      "exit": {
-        "price": 753,
-        "time": "2024-02-29 15:29",
-        "reason": "market close",
-        "fee": 301.3506
-      },
-      "target": 769.025,
-      "stopLoss": 737.15,
-      "shares": 667,
-      "leverage": 5,
-      "grossInvestedAmount": 499332.875,
-      "actualCapitalUsed": 99866.575,
-      "totalFees": 600.950325,
-      "riskPoints": 11.475000000000023,
-      "profit": 2317.174675,
-      "profitPercentage": 2.3202704959091673,
-      "grossProfit": 2918.125,
-      "netProfit": 2317.174675,
-      "grossProfitPercentage": 2.922023710135248,
-      "netProfitPercentage": 2.3202704959091673,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 3518.4249999999847,
-      "volumeInfo": {
-        "breakoutCandleVolume": 186885,
-        "confirmationCandleVolume": 81936,
-        "averageLookbackVolume": 40592.15
-      },
-      "breakout": {
-        "breakoutTime": "2024-02-29 14:45",
-        "breakoutPrice": 749.9,
-        "previousExtremeTime": "2024-02-29 09:58",
-        "timeSincePreviousExtreme": 287,
-        "previousExtremeType": "high",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 737.15,
-        "stopLossTime": "2024-02-29 10:56",
-        "swingLow": 737.15,
-        "swingHigh": 749.9,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "29/02/2024 02:44 PM",
-            "preBreakoutVolume": 81936,
-            "averageVolume": 40592.15,
-            "volumeThreshold": 40592.15,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 748.625,
-        "pullbackAmount": 1.2750000000000001,
-        "actualEntryTime": "2024-02-29 14:55",
-        "actualEntryPrice": 748.625,
-        "pullbackPercentage": 10
-      }
-    },
-    {
       "date": "05/03/2024",
       "type": "long",
       "entry": {
@@ -1437,10 +1421,10 @@
         "fee": 299.85792000000004
       },
       "exit": {
-        "price": 784.1,
-        "time": "2024-03-05 15:29",
-        "reason": "market close",
-        "fee": 301.0944
+        "price": 783.25,
+        "time": "2024-03-05 15:09",
+        "reason": "forced market exit",
+        "fee": 300.768
       },
       "target": 789.1999999999998,
       "stopLoss": 776.2,
@@ -1448,14 +1432,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499763.2,
       "actualCapitalUsed": 99952.64,
-      "totalFees": 600.9523200000001,
+      "totalFees": 600.62592,
       "riskPoints": 4.67999999999995,
-      "profit": 1459.8476800000174,
-      "profitPercentage": 1.4605393914558107,
-      "grossProfit": 2060.8000000000175,
-      "netProfit": 1459.8476800000174,
-      "grossProfitPercentage": 2.061776457330209,
-      "netProfitPercentage": 1.4605393914558107,
+      "profit": 916.174080000003,
+      "profitPercentage": 0.9166081856367205,
+      "grossProfit": 1516.800000000003,
+      "netProfit": 916.174080000003,
+      "grossProfitPercentage": 1.5175186968548333,
+      "netProfitPercentage": 0.9166081856367205,
       "patterns": [
         "hammer",
         "hammer"
@@ -1576,10 +1560,10 @@
         "fee": 299.591829
       },
       "exit": {
-        "price": 759,
-        "time": "2024-03-12 15:29",
-        "reason": "market close",
-        "fee": 297.3762
+        "price": 759.65,
+        "time": "2024-03-12 15:09",
+        "reason": "forced market exit",
+        "fee": 297.63087
       },
       "target": 741.3750000000001,
       "stopLoss": 777.75,
@@ -1587,14 +1571,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499319.7150000001,
       "actualCapitalUsed": 99863.94300000001,
-      "totalFees": 596.968029,
+      "totalFees": 597.222699,
       "riskPoints": 13.094999999999914,
-      "profit": 3095.7469710000564,
-      "profitPercentage": 3.0999646899582727,
-      "grossProfit": 3692.7150000000565,
-      "netProfit": 3095.7469710000564,
-      "grossProfitPercentage": 3.697746042332873,
-      "netProfitPercentage": 3.0999646899582727,
+      "profit": 2671.0423010000713,
+      "profitPercentage": 2.674681392261941,
+      "grossProfit": 3268.2650000000713,
+      "netProfit": 2671.0423010000713,
+      "grossProfitPercentage": 3.272717761604978,
+      "netProfitPercentage": 2.674681392261941,
       "patterns": [
         "hammer",
         "hammer",
@@ -1647,10 +1631,10 @@
         "fee": 299.810595
       },
       "exit": {
-        "price": 747.4,
-        "time": "2024-03-13 15:29",
-        "reason": "market close",
-        "fee": 298.2126
+        "price": 748.8,
+        "time": "2024-03-13 15:09",
+        "reason": "forced market exit",
+        "fee": 298.77119999999996
       },
       "target": 739.3249999999998,
       "stopLoss": 758.2,
@@ -1658,14 +1642,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499684.32499999995,
       "actualCapitalUsed": 99936.86499999999,
-      "totalFees": 598.023195,
+      "totalFees": 598.5817949999999,
       "riskPoints": 6.795000000000073,
-      "profit": 2065.3018049999973,
-      "profitPercentage": 2.066606557049791,
-      "grossProfit": 2663.324999999997,
-      "netProfit": 2065.3018049999973,
-      "grossProfitPercentage": 2.6650075525182797,
-      "netProfitPercentage": 2.066606557049791,
+      "profit": 1133.743205000012,
+      "profitPercentage": 1.134459445971226,
+      "grossProfit": 1732.325000000012,
+      "netProfit": 1133.743205000012,
+      "grossProfitPercentage": 1.7334193943346252,
+      "netProfitPercentage": 1.134459445971226,
       "patterns": [
         "hammer",
         "hammer",
@@ -1722,10 +1706,10 @@
         "fee": 299.71550399999995
       },
       "exit": {
-        "price": 722.55,
-        "time": "2024-03-19 15:29",
-        "reason": "market close",
-        "fee": 298.26864
+        "price": 724.65,
+        "time": "2024-03-19 15:09",
+        "reason": "forced market exit",
+        "fee": 299.13552
       },
       "target": 717.1750000000001,
       "stopLoss": 731.05,
@@ -1733,14 +1717,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499525.83999999997,
       "actualCapitalUsed": 99905.16799999999,
-      "totalFees": 597.984144,
+      "totalFees": 598.8510239999999,
       "riskPoints": 4.9950000000000045,
-      "profit": 1813.4558559999969,
-      "profitPercentage": 1.815177224865882,
-      "grossProfit": 2411.439999999997,
-      "netProfit": 1813.4558559999969,
-      "grossProfitPercentage": 2.413728987473398,
-      "netProfitPercentage": 1.815177224865882,
+      "profit": 367.7889759999813,
+      "profitPercentage": 0.36813808871226894,
+      "grossProfit": 966.6399999999812,
+      "netProfit": 367.7889759999813,
+      "grossProfitPercentage": 0.9675575541797611,
+      "netProfitPercentage": 0.36813808871226894,
       "patterns": [
         "hammer",
         "hammer",
@@ -1754,7 +1738,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 3374.6399999999812,
+      "maxFavorableExcursion": 2205.03999999995,
       "volumeInfo": {
         "breakoutCandleVolume": 71727,
         "confirmationCandleVolume": 30267,
@@ -1798,10 +1782,10 @@
         "fee": 299.874288
       },
       "exit": {
-        "price": 765.95,
-        "time": "2024-04-02 15:29",
-        "reason": "market close",
-        "fee": 302.39706
+        "price": 765.8,
+        "time": "2024-04-02 15:09",
+        "reason": "forced market exit",
+        "fee": 302.33783999999997
       },
       "target": 770.5999999999999,
       "stopLoss": 753.35,
@@ -1809,14 +1793,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499790.48,
       "actualCapitalUsed": 99958.09599999999,
-      "totalFees": 602.271348,
+      "totalFees": 602.2121279999999,
       "riskPoints": 6.209999999999923,
-      "profit": 3602.348652000066,
-      "profitPercentage": 3.603858812997065,
-      "grossProfit": 4204.620000000066,
-      "netProfit": 3602.348652000066,
-      "grossProfitPercentage": 4.206382642582614,
-      "netProfitPercentage": 3.603858812997065,
+      "profit": 3503.7078720000054,
+      "profitPercentage": 3.5051766812365113,
+      "grossProfit": 4105.9200000000055,
+      "netProfit": 3503.7078720000054,
+      "grossProfitPercentage": 4.10764126599611,
+      "netProfitPercentage": 3.5051766812365113,
       "patterns": [
         "hammer",
         "hammer",
@@ -1830,7 +1814,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 6047.020000000036,
+      "maxFavorableExcursion": 5191.620000000066,
       "volumeInfo": {
         "breakoutCandleVolume": 79122,
         "confirmationCandleVolume": 109247,
@@ -1874,10 +1858,10 @@
         "fee": 299.83670399999994
       },
       "exit": {
-        "price": 771,
-        "time": "2024-04-03 15:29",
-        "reason": "market close",
-        "fee": 302.07779999999997
+        "price": 771.45,
+        "time": "2024-04-03 15:09",
+        "reason": "forced market exit",
+        "fee": 302.25411
       },
       "target": 774.4000000000001,
       "stopLoss": 760.15,
@@ -1885,14 +1869,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499727.83999999997,
       "actualCapitalUsed": 99945.568,
-      "totalFees": 601.9145039999999,
+      "totalFees": 602.0908139999999,
       "riskPoints": 5.1299999999999955,
-      "profit": 3133.245496000018,
-      "profitPercentage": 3.1349519130253163,
-      "grossProfit": 3735.160000000018,
-      "netProfit": 3133.245496000018,
-      "grossProfitPercentage": 3.737194229563054,
-      "netProfitPercentage": 3.1349519130253163,
+      "profit": 3426.9191860000474,
+      "profitPercentage": 3.4287855425465663,
+      "grossProfit": 4029.0100000000475,
+      "netProfit": 3426.9191860000474,
+      "grossProfitPercentage": 4.03120426510563,
+      "netProfitPercentage": 3.4287855425465663,
       "patterns": [
         "hammer",
         "hammer",
@@ -1906,7 +1890,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 4779.960000000033,
+      "maxFavorableExcursion": 4616.710000000033,
       "volumeInfo": {
         "breakoutCandleVolume": 117714,
         "confirmationCandleVolume": 37381,
@@ -2025,10 +2009,10 @@
         "fee": 299.75994
       },
       "exit": {
-        "price": 746.65,
-        "time": "2024-04-18 15:29",
-        "reason": "market close",
-        "fee": 298.36134
+        "price": 744.05,
+        "time": "2024-04-18 15:09",
+        "reason": "forced market exit",
+        "fee": 297.32237999999995
       },
       "target": 738.15,
       "stopLoss": 756.9,
@@ -2036,19 +2020,19 @@
       "leverage": 5,
       "grossInvestedAmount": 499599.89999999997,
       "actualCapitalUsed": 99919.98,
-      "totalFees": 598.12128,
+      "totalFees": 597.08232,
       "riskPoints": 6.75,
-      "profit": 1732.8787200000002,
-      "profitPercentage": 1.7342664800373262,
-      "grossProfit": 2331,
-      "netProfit": 1732.8787200000002,
-      "grossProfitPercentage": 2.332866759981337,
-      "netProfitPercentage": 1.7342664800373262,
+      "profit": 3465.517680000015,
+      "profitPercentage": 3.4682930080650687,
+      "grossProfit": 4062.600000000015,
+      "netProfit": 3465.517680000015,
+      "grossProfitPercentage": 4.065853495967488,
+      "netProfitPercentage": 3.4682930080650687,
       "patterns": [
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 5427.899999999985,
+      "maxFavorableExcursion": 3929.399999999985,
       "volumeInfo": {
         "breakoutCandleVolume": 172669,
         "confirmationCandleVolume": 51679,
@@ -2092,10 +2076,10 @@
         "fee": 299.81556
       },
       "exit": {
-        "price": 768.95,
-        "time": "2024-04-22 15:29",
-        "reason": "target hit",
-        "fee": 304.5042
+        "price": 764.95,
+        "time": "2024-04-22 15:09",
+        "reason": "forced market exit",
+        "fee": 302.9202
       },
       "target": 768.95,
       "stopLoss": 750.45,
@@ -2103,14 +2087,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499692.60000000003,
       "actualCapitalUsed": 99938.52,
-      "totalFees": 604.3197600000001,
+      "totalFees": 602.73576,
       "riskPoints": 6.659999999999968,
-      "profit": 7210.080240000021,
-      "profitPercentage": 7.214515724267301,
-      "grossProfit": 7814.4000000000215,
-      "netProfit": 7210.080240000021,
-      "grossProfitPercentage": 7.819207248616471,
-      "netProfitPercentage": 7.214515724267301,
+      "profit": 4571.664240000022,
+      "profitPercentage": 4.574476628231058,
+      "grossProfit": 5174.4000000000215,
+      "netProfit": 4571.664240000022,
+      "grossProfitPercentage": 5.177583178137941,
+      "netProfitPercentage": 4.574476628231058,
       "patterns": [
         "hammer",
         "hammer",
@@ -2121,7 +2105,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 7847.3999999999905,
+      "maxFavorableExcursion": 5537.3999999999905,
       "volumeInfo": {
         "breakoutCandleVolume": 61813,
         "confirmationCandleVolume": 69106,
@@ -2157,6 +2141,84 @@
       }
     },
     {
+      "date": "26/04/2024",
+      "type": "short",
+      "entry": {
+        "price": 802.13,
+        "time": "2024-04-26 13:41",
+        "fee": 299.836194
+      },
+      "exit": {
+        "price": 800.75,
+        "time": "2024-04-26 15:09",
+        "reason": "forced market exit",
+        "fee": 299.32035
+      },
+      "target": 794.4499999999998,
+      "stopLoss": 806.45,
+      "shares": 623,
+      "leverage": 5,
+      "grossInvestedAmount": 499726.99,
+      "actualCapitalUsed": 99945.398,
+      "totalFees": 599.1565439999999,
+      "riskPoints": 4.32000000000005,
+      "profit": 260.5834559999972,
+      "profitPercentage": 0.26072581751087454,
+      "grossProfit": 859.7399999999972,
+      "netProfit": 260.5834559999972,
+      "grossProfitPercentage": 0.860209691695857,
+      "netProfitPercentage": 0.26072581751087454,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 1295.8400000000256,
+      "volumeInfo": {
+        "breakoutCandleVolume": 99510,
+        "confirmationCandleVolume": 36593,
+        "averageLookbackVolume": 19836.55
+      },
+      "breakout": {
+        "breakoutTime": "2024-04-26 13:31",
+        "breakoutPrice": 801.65,
+        "previousExtremeTime": "2024-04-26 11:15",
+        "timeSincePreviousExtreme": 136,
+        "previousExtremeType": "low",
+        "periodMinutesRequired": 70,
+        "stopLossValue": 806.45,
+        "stopLossTime": "2024-04-26 12:18",
+        "swingLow": 801.65,
+        "swingHigh": 806.45,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation passed",
+          "data": {
+            "preBreakoutCandleTime": "26/04/2024 01:30 PM",
+            "preBreakoutVolume": 36593,
+            "averageVolume": 19836.55,
+            "volumeThreshold": 19836.55,
+            "volumeMultiplier": 1
+          }
+        },
+        "pullbackEntryPrice": 802.13,
+        "pullbackAmount": 0.48000000000000687,
+        "actualEntryTime": "2024-04-26 13:41",
+        "actualEntryPrice": 802.13,
+        "pullbackPercentage": 10
+      }
+    },
+    {
       "date": "09/05/2024",
       "type": "long",
       "entry": {
@@ -2165,10 +2227,10 @@
         "fee": 299.921616
       },
       "exit": {
-        "price": 820,
-        "time": "2024-05-09 15:29",
-        "reason": "market close",
-        "fee": 301.104
+        "price": 817.8,
+        "time": "2024-05-09 15:09",
+        "reason": "forced market exit",
+        "fee": 300.29616
       },
       "target": 840.3000000000001,
       "stopLoss": 803.55,
@@ -2176,14 +2238,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499869.36,
       "actualCapitalUsed": 99973.872,
-      "totalFees": 601.0256159999999,
+      "totalFees": 600.217776,
       "riskPoints": 13.230000000000018,
-      "profit": 1369.6143840000168,
-      "profitPercentage": 1.3699723303704958,
-      "grossProfit": 1970.6400000000167,
-      "netProfit": 1369.6143840000168,
-      "grossProfitPercentage": 1.9711550233845263,
-      "netProfitPercentage": 1.3699723303704958,
+      "profit": 24.02222399998891,
+      "profitPercentage": 0.02402850216703511,
+      "grossProfit": 624.2399999999889,
+      "netProfit": 24.02222399998891,
+      "grossProfitPercentage": 0.6244031440534671,
+      "netProfitPercentage": 0.02402850216703511,
       "patterns": [
         "hammer",
         "hammer",
@@ -2234,134 +2296,34 @@
       }
     },
     {
-      "date": "24/05/2024",
-      "type": "short",
-      "entry": {
-        "price": 830.225,
-        "time": "2024-05-24 15:09",
-        "fee": 299.87727
-      },
-      "exit": {
-        "price": 828,
-        "time": "2024-05-24 15:29",
-        "reason": "market close",
-        "fee": 299.0736
-      },
-      "target": 810.625,
-      "stopLoss": 841.25,
-      "shares": 602,
-      "leverage": 5,
-      "grossInvestedAmount": 499795.45,
-      "actualCapitalUsed": 99959.09,
-      "totalFees": 598.95087,
-      "riskPoints": 11.024999999999977,
-      "profit": 740.4991300000137,
-      "profitPercentage": 0.7408021921768333,
-      "grossProfit": 1339.4500000000137,
-      "netProfit": 740.4991300000137,
-      "grossProfitPercentage": 1.3399981932608769,
-      "netProfitPercentage": 0.7408021921768333,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 1941.4500000000137,
-      "volumeInfo": {
-        "breakoutCandleVolume": 143218,
-        "confirmationCandleVolume": 69897,
-        "averageLookbackVolume": 33315.45
-      },
-      "breakout": {
-        "breakoutTime": "2024-05-24 15:01",
-        "breakoutPrice": 829,
-        "previousExtremeTime": "2024-05-24 09:15",
-        "timeSincePreviousExtreme": 346,
-        "previousExtremeType": "low",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 841.25,
-        "stopLossTime": "2024-05-24 09:31",
-        "swingLow": 829,
-        "swingHigh": 841.25,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "24/05/2024 03:00 PM",
-            "preBreakoutVolume": 69897,
-            "averageVolume": 33315.45,
-            "volumeThreshold": 33315.45,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 830.225,
-        "pullbackAmount": 1.225,
-        "actualEntryTime": "2024-05-24 15:09",
-        "actualEntryPrice": 830.225,
-        "pullbackPercentage": 10
-      }
-    },
-    {
-      "date": "27/05/2024",
+      "date": "14/05/2024",
       "type": "long",
       "entry": {
-        "price": 832,
-        "time": "2024-05-27 15:00",
-        "fee": 299.52
+        "price": 816.99,
+        "time": "2024-05-14 13:19",
+        "fee": 299.99872799999997
       },
       "exit": {
-        "price": 833.5,
-        "time": "2024-05-27 15:29",
-        "reason": "market close",
-        "fee": 300.06
+        "price": 819.15,
+        "time": "2024-05-14 15:09",
+        "reason": "forced market exit",
+        "fee": 300.79188
       },
-      "target": 848,
-      "stopLoss": 823,
-      "shares": 600,
+      "target": 833.1500000000001,
+      "stopLoss": 807.9,
+      "shares": 612,
       "leverage": 5,
-      "grossInvestedAmount": 499200,
-      "actualCapitalUsed": 99840,
-      "totalFees": 599.5799999999999,
-      "riskPoints": 9,
-      "profit": 300.4200000000001,
-      "profitPercentage": 0.3009014423076924,
-      "grossProfit": 900,
-      "netProfit": 300.4200000000001,
-      "grossProfitPercentage": 0.9014423076923076,
-      "netProfitPercentage": 0.3009014423076924,
+      "grossInvestedAmount": 499997.88,
+      "actualCapitalUsed": 99999.576,
+      "totalFees": 600.790608,
+      "riskPoints": 9.090000000000032,
+      "profit": 721.1293919999805,
+      "profitPercentage": 0.7211324496015667,
+      "grossProfit": 1321.9199999999805,
+      "netProfit": 721.1293919999805,
+      "grossProfitPercentage": 1.3219256049645456,
+      "netProfitPercentage": 0.7211324496015667,
       "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
         "hammer",
         "hammer",
         "hammer",
@@ -2374,38 +2336,38 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 3300,
+      "maxFavorableExcursion": 1842.1199999999944,
       "volumeInfo": {
-        "breakoutCandleVolume": 145438,
-        "confirmationCandleVolume": 31645,
-        "averageLookbackVolume": 29004.6
+        "breakoutCandleVolume": 87496,
+        "confirmationCandleVolume": 39814,
+        "averageLookbackVolume": 25396.4
       },
       "breakout": {
-        "breakoutTime": "2024-05-27 11:59",
-        "breakoutPrice": 833,
-        "previousExtremeTime": "2024-05-27 09:15",
-        "timeSincePreviousExtreme": 164,
+        "breakoutTime": "2024-05-14 12:49",
+        "breakoutPrice": 818,
+        "previousExtremeTime": "2024-05-14 09:18",
+        "timeSincePreviousExtreme": 211,
         "previousExtremeType": "high",
         "periodMinutesRequired": 70,
-        "stopLossValue": 823,
-        "stopLossTime": "2024-05-27 10:02",
-        "swingLow": 823,
-        "swingHigh": 833,
+        "stopLossValue": 807.9,
+        "stopLossTime": "2024-05-14 10:13",
+        "swingLow": 807.9,
+        "swingHigh": 818,
         "volumeConfirmation": {
           "passed": true,
           "reason": "Volume confirmation passed",
           "data": {
-            "preBreakoutCandleTime": "27/05/2024 11:58 AM",
-            "preBreakoutVolume": 31645,
-            "averageVolume": 29004.6,
-            "volumeThreshold": 29004.6,
+            "preBreakoutCandleTime": "14/05/2024 12:48 PM",
+            "preBreakoutVolume": 39814,
+            "averageVolume": 25396.4,
+            "volumeThreshold": 25396.4,
             "volumeMultiplier": 1
           }
         },
-        "pullbackEntryPrice": 832,
-        "pullbackAmount": 1,
-        "actualEntryTime": "2024-05-27 15:00",
-        "actualEntryPrice": 832,
+        "pullbackEntryPrice": 816.99,
+        "pullbackAmount": 1.0100000000000022,
+        "actualEntryTime": "2024-05-14 13:19",
+        "actualEntryPrice": 816.99,
         "pullbackPercentage": 10
       }
     },
@@ -2488,10 +2450,10 @@
         "fee": 299.77002
       },
       "exit": {
-        "price": 829.5,
-        "time": "2024-06-07 15:29",
-        "reason": "market close",
-        "fee": 301.6062
+        "price": 830.3,
+        "time": "2024-06-07 15:09",
+        "reason": "forced market exit",
+        "fee": 301.89707999999996
       },
       "target": 849.25,
       "stopLoss": 810.5,
@@ -2499,14 +2461,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499616.7,
       "actualCapitalUsed": 99923.34,
-      "totalFees": 601.37622,
+      "totalFees": 601.6670999999999,
       "riskPoints": 13.950000000000045,
-      "profit": 2458.9237799999723,
-      "profitPercentage": 2.4608102371277547,
-      "grossProfit": 3060.2999999999724,
-      "netProfit": 2458.9237799999723,
-      "grossProfitPercentage": 3.0626478258232486,
-      "netProfitPercentage": 2.4608102371277547,
+      "profit": 2943.432899999945,
+      "profitPercentage": 2.9456910667717326,
+      "grossProfit": 3545.099999999945,
+      "netProfit": 2943.432899999945,
+      "grossProfitPercentage": 3.5478197586269085,
+      "netProfitPercentage": 2.9456910667717326,
       "patterns": [
         "hammer",
         "hammer",
@@ -2560,83 +2522,6 @@
       }
     },
     {
-      "date": "10/06/2024",
-      "type": "short",
-      "entry": {
-        "price": 832.915,
-        "time": "2024-06-10 14:37",
-        "fee": 299.8494
-      },
-      "exit": {
-        "price": 830.6,
-        "time": "2024-06-10 15:29",
-        "reason": "market close",
-        "fee": 299.01599999999996
-      },
-      "target": 819.0749999999998,
-      "stopLoss": 840.7,
-      "shares": 600,
-      "leverage": 5,
-      "grossInvestedAmount": 499749,
-      "actualCapitalUsed": 99949.8,
-      "totalFees": 598.8653999999999,
-      "riskPoints": 7.785000000000082,
-      "profit": 790.1345999999646,
-      "profitPercentage": 0.7905314467862513,
-      "grossProfit": 1388.9999999999645,
-      "netProfit": 790.1345999999646,
-      "grossProfitPercentage": 1.3896976282093254,
-      "netProfitPercentage": 0.7905314467862513,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 2228.999999999951,
-      "volumeInfo": {
-        "breakoutCandleVolume": 103779,
-        "confirmationCandleVolume": 150370,
-        "averageLookbackVolume": 42229.75
-      },
-      "breakout": {
-        "breakoutTime": "2024-06-10 14:36",
-        "breakoutPrice": 832.05,
-        "previousExtremeTime": "2024-06-10 09:37",
-        "timeSincePreviousExtreme": 299,
-        "previousExtremeType": "low",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 840.7,
-        "stopLossTime": "2024-06-10 10:22",
-        "swingLow": 832.05,
-        "swingHigh": 840.7,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "10/06/2024 02:35 PM",
-            "preBreakoutVolume": 150370,
-            "averageVolume": 42229.75,
-            "volumeThreshold": 42229.75,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 832.915,
-        "pullbackAmount": 0.8650000000000091,
-        "actualEntryTime": "2024-06-10 14:37",
-        "actualEntryPrice": 832.915,
-        "pullbackPercentage": 10
-      }
-    },
-    {
       "date": "14/06/2024",
       "type": "short",
       "entry": {
@@ -2645,10 +2530,10 @@
         "fee": 299.59875
       },
       "exit": {
-        "price": 839.4,
-        "time": "2024-06-14 15:29",
-        "reason": "market close",
-        "fee": 299.16216
+        "price": 839.25,
+        "time": "2024-06-14 15:09",
+        "reason": "forced market exit",
+        "fee": 299.1087
       },
       "target": 831.425,
       "stopLoss": 845.8,
@@ -2656,14 +2541,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499331.25,
       "actualCapitalUsed": 99866.25,
-      "totalFees": 598.76091,
+      "totalFees": 598.70745,
       "riskPoints": 5.1749999999999545,
-      "profit": 128.88909000001354,
-      "profitPercentage": 0.12906171003718828,
-      "grossProfit": 727.6500000000135,
-      "netProfit": 128.88909000001354,
-      "grossProfitPercentage": 0.7286245353159987,
-      "netProfitPercentage": 0.12906171003718828,
+      "profit": 218.04255,
+      "profitPercentage": 0.21833457249070634,
+      "grossProfit": 816.75,
+      "netProfit": 218.04255,
+      "grossProfitPercentage": 0.8178438661710037,
+      "netProfitPercentage": 0.21833457249070634,
       "patterns": [
         "hammer",
         "hammer",
@@ -2683,7 +2568,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 3281.8499999999867,
+      "maxFavorableExcursion": 905.8499999999865,
       "volumeInfo": {
         "breakoutCandleVolume": 323330,
         "confirmationCandleVolume": 17828,
@@ -2796,8 +2681,8 @@
       },
       "exit": {
         "price": 623.65,
-        "time": "2023-12-14 15:29",
-        "reason": "market close",
+        "time": "2023-12-14 15:09",
+        "reason": "forced market exit",
         "fee": 300.10038
       },
       "target": 618.3249999999999,
@@ -2824,7 +2709,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 517.2899999999854,
+      "maxFavorableExcursion": 437.0899999999672,
       "volumeInfo": {
         "breakoutCandleVolume": 139270,
         "confirmationCandleVolume": 33461,
@@ -2935,10 +2820,10 @@
         "fee": 299.983383
       },
       "exit": {
-        "price": 643.6,
-        "time": "2024-01-04 15:29",
-        "reason": "market close",
-        "fee": 300.04632
+        "price": 641.75,
+        "time": "2024-01-04 15:09",
+        "reason": "forced market exit",
+        "fee": 299.18385
       },
       "target": 652.0250000000001,
       "stopLoss": 638.65,
@@ -2946,14 +2831,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499972.30500000005,
       "actualCapitalUsed": 99994.46100000001,
-      "totalFees": 600.0297029999999,
+      "totalFees": 599.167233,
       "riskPoints": 4.815000000000055,
-      "profit": -495.134703000007,
-      "profitPercentage": -0.49516213003038934,
-      "grossProfit": 104.89499999999293,
-      "netProfit": -495.134703000007,
-      "grossProfitPercentage": 0.10490081045588406,
-      "netProfitPercentage": -0.49516213003038934,
+      "profit": -1931.722233000025,
+      "profitPercentage": -1.9318292370214634,
+      "grossProfit": -1332.5550000000248,
+      "netProfit": -1931.722233000025,
+      "grossProfitPercentage": -1.3326288143100493,
+      "netProfitPercentage": -1.9318292370214634,
       "patterns": [
         "hammer",
         "hammer",
@@ -2995,72 +2880,6 @@
       }
     },
     {
-      "date": "11/01/2024",
-      "type": "short",
-      "entry": {
-        "price": 621.6800000000001,
-        "time": "2024-01-11 11:54",
-        "fee": 299.898432
-      },
-      "exit": {
-        "price": 621.25,
-        "time": "2024-01-11 15:29",
-        "reason": "market close",
-        "fee": 299.691
-      },
-      "target": 614.0000000000001,
-      "stopLoss": 626,
-      "shares": 804,
-      "leverage": 5,
-      "grossInvestedAmount": 499830.72000000003,
-      "actualCapitalUsed": 99966.144,
-      "totalFees": 599.589432,
-      "riskPoints": 4.319999999999936,
-      "profit": -253.8694319999488,
-      "profitPercentage": -0.2539554111439457,
-      "grossProfit": 345.7200000000512,
-      "netProfit": -253.8694319999488,
-      "grossProfitPercentage": 0.3458370866040919,
-      "netProfitPercentage": -0.2539554111439457,
-      "patterns": [
-        "hammer"
-      ],
-      "maxFavorableExcursion": 2556.720000000051,
-      "volumeInfo": {
-        "breakoutCandleVolume": 99306,
-        "confirmationCandleVolume": 40804,
-        "averageLookbackVolume": 38796.2
-      },
-      "breakout": {
-        "breakoutTime": "2024-01-11 11:51",
-        "breakoutPrice": 621.2,
-        "previousExtremeTime": "2024-01-11 10:11",
-        "timeSincePreviousExtreme": 100,
-        "previousExtremeType": "low",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 626,
-        "stopLossTime": "2024-01-11 10:30",
-        "swingLow": 621.2,
-        "swingHigh": 626,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "11/01/2024 11:50 AM",
-            "preBreakoutVolume": 40804,
-            "averageVolume": 38796.2,
-            "volumeThreshold": 38796.2,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 621.6800000000001,
-        "pullbackAmount": 0.4799999999999955,
-        "actualEntryTime": "2024-01-11 11:54",
-        "actualEntryPrice": 621.6800000000001,
-        "pullbackPercentage": 10
-      }
-    },
-    {
       "date": "15/01/2024",
       "type": "short",
       "entry": {
@@ -3069,10 +2888,10 @@
         "fee": 299.981136
       },
       "exit": {
-        "price": 640.8,
-        "time": "2024-01-15 15:29",
-        "reason": "market close",
-        "fee": 301.43231999999995
+        "price": 639.9,
+        "time": "2024-01-15 15:09",
+        "reason": "forced market exit",
+        "fee": 301.00895999999995
       },
       "target": 623.875,
       "stopLoss": 645.5,
@@ -3080,14 +2899,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499968.56,
       "actualCapitalUsed": 99993.712,
-      "totalFees": 601.413456,
+      "totalFees": 600.990096,
       "riskPoints": 7.784999999999968,
-      "profit": -3020.0534559999396,
-      "profitPercentage": -3.020243368902976,
-      "grossProfit": -2418.6399999999394,
-      "netProfit": -3020.0534559999396,
-      "grossProfitPercentage": -2.418792093646788,
-      "netProfitPercentage": -3.020243368902976,
+      "profit": -2314.030095999957,
+      "profitPercentage": -2.3141756113624,
+      "grossProfit": -1713.0399999999572,
+      "netProfit": -2314.030095999957,
+      "grossProfitPercentage": -1.7131477227287626,
+      "netProfitPercentage": -2.3141756113624,
       "patterns": [
         "hammer",
         "hammer",
@@ -3138,10 +2957,10 @@
         "fee": 299.871264
       },
       "exit": {
-        "price": 630.75,
-        "time": "2024-01-20 15:29",
-        "reason": "market close",
-        "fee": 299.35395
+        "price": 630.9,
+        "time": "2024-01-20 15:09",
+        "reason": "forced market exit",
+        "fee": 299.42513999999994
       },
       "target": 645.6000000000001,
       "stopLoss": 624.1,
@@ -3149,14 +2968,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499785.44,
       "actualCapitalUsed": 99957.088,
-      "totalFees": 599.225214,
+      "totalFees": 599.2964039999999,
       "riskPoints": 7.740000000000009,
-      "profit": -1461.4152140000251,
-      "profitPercentage": -1.462042605722993,
-      "grossProfit": -862.1900000000252,
-      "netProfit": -1461.4152140000251,
-      "grossProfitPercentage": -0.8625601418080778,
-      "netProfitPercentage": -1.462042605722993,
+      "profit": -1342.836404000043,
+      "profitPercentage": -1.3434128893391164,
+      "grossProfit": -743.5400000000432,
+      "netProfit": -1342.836404000043,
+      "grossProfitPercentage": -0.7438592048620335,
+      "netProfitPercentage": -1.3434128893391164,
       "patterns": [
         "hammer",
         "hammer",
@@ -3218,10 +3037,10 @@
         "fee": 299.7048
       },
       "exit": {
-        "price": 624.2,
-        "time": "2024-01-29 15:29",
-        "reason": "market close",
-        "fee": 299.61600000000004
+        "price": 623.1,
+        "time": "2024-01-29 15:09",
+        "reason": "forced market exit",
+        "fee": 299.08799999999997
       },
       "target": 633.4250000000002,
       "stopLoss": 619.3,
@@ -3229,14 +3048,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499508,
       "actualCapitalUsed": 99901.6,
-      "totalFees": 599.3208,
+      "totalFees": 598.7927999999999,
       "riskPoints": 5.085000000000036,
-      "profit": -747.3207999999563,
-      "profitPercentage": -0.7480568879777263,
-      "grossProfit": -147.99999999995634,
-      "netProfit": -747.3207999999563,
-      "grossProfitPercentage": -0.14814577544299223,
-      "netProfitPercentage": -0.7480568879777263,
+      "profit": -1626.7927999999745,
+      "profitPercentage": -1.6283951408185398,
+      "grossProfit": -1027.9999999999745,
+      "netProfit": -1626.7927999999745,
+      "grossProfitPercentage": -1.0290125483475485,
+      "netProfitPercentage": -1.6283951408185398,
       "patterns": [
         "hammer",
         "hammer",
@@ -3378,10 +3197,10 @@
         "fee": 299.80092600000006
       },
       "exit": {
-        "price": 759.65,
-        "time": "2024-02-19 15:29",
-        "reason": "market close",
-        "fee": 299.45403
+        "price": 758,
+        "time": "2024-02-19 15:09",
+        "reason": "forced market exit",
+        "fee": 298.8036
       },
       "target": 779.2500000000001,
       "stopLoss": 750,
@@ -3389,14 +3208,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499668.2100000001,
       "actualCapitalUsed": 99933.64200000002,
-      "totalFees": 599.254956,
+      "totalFees": 598.6045260000001,
       "riskPoints": 10.530000000000086,
-      "profit": -1177.4149560000717,
-      "profitPercentage": -1.1781967838218799,
-      "grossProfit": -578.1600000000717,
-      "netProfit": -1177.4149560000717,
-      "grossProfitPercentage": -0.5785439101679809,
-      "netProfitPercentage": -1.1781967838218799,
+      "profit": -2260.814526000057,
+      "profitPercentage": -2.262315753487756,
+      "grossProfit": -1662.2100000000569,
+      "netProfit": -2260.814526000057,
+      "grossProfitPercentage": -1.6633137417327957,
+      "netProfitPercentage": -2.262315753487756,
       "patterns": [
         "hammer",
         "hammer",
@@ -3448,10 +3267,10 @@
         "fee": 299.579742
       },
       "exit": {
-        "price": 758.4,
-        "time": "2024-02-26 15:29",
-        "reason": "market close",
-        "fee": 300.78144
+        "price": 759.55,
+        "time": "2024-02-26 15:09",
+        "reason": "forced market exit",
+        "fee": 301.23753
       },
       "target": 735.8499999999999,
       "stopLoss": 766.35,
@@ -3459,14 +3278,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499299.57,
       "actualCapitalUsed": 99859.914,
-      "totalFees": 600.361182,
+      "totalFees": 600.817272,
       "riskPoints": 10.980000000000018,
-      "profit": -2603.191181999982,
-      "profitPercentage": -2.6068430040906923,
-      "grossProfit": -2002.829999999982,
-      "netProfit": -2603.191181999982,
-      "grossProfitPercentage": -2.005639620318501,
-      "netProfitPercentage": -2.6068430040906923,
+      "profit": -3363.797271999967,
+      "profitPercentage": -3.368516091451838,
+      "grossProfit": -2762.979999999967,
+      "netProfit": -3363.797271999967,
+      "grossProfitPercentage": -2.7668559778651187,
+      "netProfitPercentage": -3.368516091451838,
       "patterns": [
         "hammer",
         "hammer",
@@ -3512,6 +3331,73 @@
       }
     },
     {
+      "date": "29/02/2024",
+      "type": "short",
+      "entry": {
+        "price": 741.26,
+        "time": "2024-02-29 11:13",
+        "fee": 299.765544
+      },
+      "exit": {
+        "price": 749.9,
+        "time": "2024-02-29 14:44",
+        "reason": "stop-loss hit",
+        "fee": 303.25955999999996
+      },
+      "target": 725.8999999999999,
+      "stopLoss": 749.9,
+      "shares": 674,
+      "leverage": 5,
+      "grossInvestedAmount": 499609.24,
+      "actualCapitalUsed": 99921.848,
+      "totalFees": 603.0251039999999,
+      "riskPoints": 8.639999999999986,
+      "profit": -6426.385103999991,
+      "profitPercentage": -6.431411380622174,
+      "grossProfit": -5823.359999999991,
+      "netProfit": -6426.385103999991,
+      "grossProfitPercentage": -5.827914631843069,
+      "netProfitPercentage": -6.431411380622174,
+      "patterns": [
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 1051.4399999999632,
+      "volumeInfo": {
+        "breakoutCandleVolume": 119992,
+        "confirmationCandleVolume": 84123,
+        "averageLookbackVolume": 30267.4
+      },
+      "breakout": {
+        "breakoutTime": "2024-02-29 10:52",
+        "breakoutPrice": 740.3,
+        "previousExtremeTime": "2024-02-29 09:15",
+        "timeSincePreviousExtreme": 97,
+        "previousExtremeType": "low",
+        "periodMinutesRequired": 70,
+        "stopLossValue": 749.9,
+        "stopLossTime": "2024-02-29 09:58",
+        "swingLow": 740.3,
+        "swingHigh": 749.9,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation passed",
+          "data": {
+            "preBreakoutCandleTime": "29/02/2024 10:51 AM",
+            "preBreakoutVolume": 84123,
+            "averageVolume": 30267.4,
+            "volumeThreshold": 30267.4,
+            "volumeMultiplier": 1
+          }
+        },
+        "pullbackEntryPrice": 741.26,
+        "pullbackAmount": 0.9600000000000023,
+        "actualEntryTime": "2024-02-29 11:13",
+        "actualEntryPrice": 741.26,
+        "pullbackPercentage": 10
+      }
+    },
+    {
       "date": "06/03/2024",
       "type": "long",
       "entry": {
@@ -3520,10 +3406,10 @@
         "fee": 299.805324
       },
       "exit": {
-        "price": 784,
-        "time": "2024-03-06 15:29",
-        "reason": "market close",
-        "fee": 299.6448
+        "price": 783.75,
+        "time": "2024-03-06 15:09",
+        "reason": "forced market exit",
+        "fee": 299.54925
       },
       "target": 804.9000000000001,
       "stopLoss": 772.9,
@@ -3531,14 +3417,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499675.54000000004,
       "actualCapitalUsed": 99935.10800000001,
-      "totalFees": 599.450124,
+      "totalFees": 599.354574,
       "riskPoints": 11.520000000000095,
-      "profit": -866.9901240000463,
-      "profitPercentage": -0.867553096555463,
-      "grossProfit": -267.54000000004635,
-      "netProfit": -866.9901240000463,
-      "grossProfitPercentage": -0.2677137247903373,
-      "netProfitPercentage": -0.867553096555463,
+      "profit": -1026.1445740000463,
+      "profitPercentage": -1.0268108921241634,
+      "grossProfit": -426.79000000004635,
+      "netProfit": -1026.1445740000463,
+      "grossProfitPercentage": -0.42706713240360566,
+      "netProfitPercentage": -1.0268108921241634,
       "patterns": [
         "hammer",
         "hammer",
@@ -3580,87 +3466,6 @@
       }
     },
     {
-      "date": "20/03/2024",
-      "type": "long",
-      "entry": {
-        "price": 737.135,
-        "time": "2024-03-20 15:18",
-        "fee": 299.866518
-      },
-      "exit": {
-        "price": 736.8,
-        "time": "2024-03-20 15:29",
-        "reason": "market close",
-        "fee": 299.73024
-      },
-      "target": 750.9749999999999,
-      "stopLoss": 729.35,
-      "shares": 678,
-      "leverage": 5,
-      "grossInvestedAmount": 499777.52999999997,
-      "actualCapitalUsed": 99955.506,
-      "totalFees": 599.5967579999999,
-      "riskPoints": 7.784999999999968,
-      "profit": -826.7267580000246,
-      "profitPercentage": -0.8270947655450063,
-      "grossProfit": -227.13000000002467,
-      "netProfit": -826.7267580000246,
-      "grossProfitPercentage": -0.22723110420753076,
-      "netProfitPercentage": -0.8270947655450063,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 1230.570000000037,
-      "volumeInfo": {
-        "breakoutCandleVolume": 215589,
-        "confirmationCandleVolume": 212150,
-        "averageLookbackVolume": 148678.2
-      },
-      "breakout": {
-        "breakoutTime": "2024-03-20 15:17",
-        "breakoutPrice": 738,
-        "previousExtremeTime": "2024-03-20 13:22",
-        "timeSincePreviousExtreme": 115,
-        "previousExtremeType": "high",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 729.35,
-        "stopLossTime": "2024-03-20 14:34",
-        "swingLow": 729.35,
-        "swingHigh": 738,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "20/03/2024 03:16 PM",
-            "preBreakoutVolume": 212150,
-            "averageVolume": 148678.2,
-            "volumeThreshold": 148678.2,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 737.135,
-        "pullbackAmount": 0.8649999999999978,
-        "actualEntryTime": "2024-03-20 15:18",
-        "actualEntryPrice": 737.135,
-        "pullbackPercentage": 10
-      }
-    },
-    {
       "date": "26/03/2024",
       "type": "short",
       "entry": {
@@ -3669,10 +3474,10 @@
         "fee": 299.904696
       },
       "exit": {
-        "price": 741.8,
-        "time": "2024-03-26 15:29",
-        "reason": "market close",
-        "fee": 300.87408
+        "price": 739.95,
+        "time": "2024-03-26 15:09",
+        "reason": "forced market exit",
+        "fee": 300.12372
       },
       "target": 730.45,
       "stopLoss": 744.45,
@@ -3680,14 +3485,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499841.16000000003,
       "actualCapitalUsed": 99968.232,
-      "totalFees": 600.778776,
+      "totalFees": 600.028416,
       "riskPoints": 5.039999999999964,
-      "profit": -2216.418775999914,
-      "profitPercentage": -2.217123111670029,
-      "grossProfit": -1615.639999999914,
-      "netProfit": -2216.418775999914,
-      "grossProfitPercentage": -1.6161534196182583,
-      "netProfitPercentage": -2.217123111670029,
+      "profit": -965.0684159999754,
+      "profitPercentage": -0.9653750963605872,
+      "grossProfit": -365.0399999999754,
+      "netProfit": -965.0684159999754,
+      "grossProfitPercentage": -0.3651560027589319,
+      "netProfitPercentage": -0.9653750963605872,
       "patterns": [
         "hammer",
         "hammer",
@@ -3823,80 +3628,6 @@
       }
     },
     {
-      "date": "08/04/2024",
-      "type": "long",
-      "entry": {
-        "price": 767.605,
-        "time": "2024-04-08 15:10",
-        "fee": 299.82651300000003
-      },
-      "exit": {
-        "price": 767.6,
-        "time": "2024-04-08 15:29",
-        "reason": "market close",
-        "fee": 299.82456
-      },
-      "target": 777.9250000000001,
-      "stopLoss": 761.8,
-      "shares": 651,
-      "leverage": 5,
-      "grossInvestedAmount": 499710.85500000004,
-      "actualCapitalUsed": 99942.171,
-      "totalFees": 599.651073,
-      "riskPoints": 5.805000000000064,
-      "profit": -602.906072999997,
-      "profitPercentage": -0.6032549292930579,
-      "grossProfit": -3.2549999999970396,
-      "netProfit": -602.906072999997,
-      "grossProfitPercentage": -0.0032568834231117907,
-      "netProfitPercentage": -0.6032549292930579,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 843.0449999999734,
-      "volumeInfo": {
-        "breakoutCandleVolume": 91952,
-        "confirmationCandleVolume": 47551,
-        "averageLookbackVolume": 16541.7
-      },
-      "breakout": {
-        "breakoutTime": "2024-04-08 14:19",
-        "breakoutPrice": 768.25,
-        "previousExtremeTime": "2024-04-08 09:18",
-        "timeSincePreviousExtreme": 301,
-        "previousExtremeType": "high",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 761.8,
-        "stopLossTime": "2024-04-08 12:05",
-        "swingLow": 761.8,
-        "swingHigh": 768.25,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "08/04/2024 02:18 PM",
-            "preBreakoutVolume": 47551,
-            "averageVolume": 16541.7,
-            "volumeThreshold": 16541.7,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 767.605,
-        "pullbackAmount": 0.6450000000000046,
-        "actualEntryTime": "2024-04-08 15:10",
-        "actualEntryPrice": 767.605,
-        "pullbackPercentage": 10
-      }
-    },
-    {
       "date": "16/04/2024",
       "type": "short",
       "entry": {
@@ -3979,10 +3710,10 @@
         "fee": 299.973912
       },
       "exit": {
-        "price": 771.2,
-        "time": "2024-04-23 15:26",
-        "reason": "stop-loss hit",
-        "fee": 297.99168000000003
+        "price": 772.5,
+        "time": "2024-04-23 15:09",
+        "reason": "forced market exit",
+        "fee": 298.49399999999997
       },
       "target": 785.4499999999998,
       "stopLoss": 771.2,
@@ -3990,14 +3721,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499956.51999999996,
       "actualCapitalUsed": 99991.30399999999,
-      "totalFees": 597.965592,
+      "totalFees": 598.467912,
       "riskPoints": 5.129999999999882,
-      "profit": -3901.685591999924,
-      "profitPercentage": -3.9020249120862793,
-      "grossProfit": -3303.719999999924,
-      "netProfit": -3901.685591999924,
-      "grossProfitPercentage": -3.304007316476165,
-      "netProfitPercentage": -3.9020249120862793,
+      "profit": -3064.987911999953,
+      "profitPercentage": -3.0652544665283625,
+      "grossProfit": -2466.519999999953,
+      "netProfit": -3064.987911999953,
+      "grossProfitPercentage": -2.4667345072327023,
+      "netProfitPercentage": -3.0652544665283625,
       "patterns": [
         "hammer",
         "hammer",
@@ -4057,10 +3788,10 @@
         "fee": 299.715633
       },
       "exit": {
-        "price": 772.5,
-        "time": "2024-04-24 15:29",
-        "reason": "market close",
-        "fee": 299.88449999999995
+        "price": 772.85,
+        "time": "2024-04-24 15:09",
+        "reason": "forced market exit",
+        "fee": 300.02037
       },
       "target": 766.2250000000001,
       "stopLoss": 775.35,
@@ -4068,14 +3799,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499526.05500000005,
       "actualCapitalUsed": 99905.21100000001,
-      "totalFees": 599.6001329999999,
+      "totalFees": 599.736003,
       "riskPoints": 3.284999999999968,
-      "profit": -881.0451329999646,
-      "profitPercentage": -0.8818810592372048,
-      "grossProfit": -281.4449999999647,
-      "netProfit": -881.0451329999646,
-      "grossProfitPercentage": -0.28171203201799416,
-      "netProfitPercentage": -0.8818810592372048,
+      "profit": -1107.6310029999795,
+      "profitPercentage": -1.1086819114970683,
+      "grossProfit": -507.8949999999794,
+      "netProfit": -1107.6310029999795,
+      "grossProfitPercentage": -0.5083768853658488,
+      "netProfitPercentage": -1.1086819114970683,
       "patterns": [
         "hammer",
         "hammer",
@@ -4120,84 +3851,6 @@
       }
     },
     {
-      "date": "26/04/2024",
-      "type": "short",
-      "entry": {
-        "price": 802.13,
-        "time": "2024-04-26 13:41",
-        "fee": 299.836194
-      },
-      "exit": {
-        "price": 803,
-        "time": "2024-04-26 15:29",
-        "reason": "market close",
-        "fee": 300.1614
-      },
-      "target": 794.4499999999998,
-      "stopLoss": 806.45,
-      "shares": 623,
-      "leverage": 5,
-      "grossInvestedAmount": 499726.99,
-      "actualCapitalUsed": 99945.398,
-      "totalFees": 599.9975939999999,
-      "riskPoints": 4.32000000000005,
-      "profit": -1142.0075940000029,
-      "profitPercentage": -1.1426314936481645,
-      "grossProfit": -542.0100000000028,
-      "netProfit": -1142.0075940000029,
-      "grossProfitPercentage": -0.5423061099821753,
-      "netProfitPercentage": -1.1426314936481645,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 2012.2900000000113,
-      "volumeInfo": {
-        "breakoutCandleVolume": 99510,
-        "confirmationCandleVolume": 36593,
-        "averageLookbackVolume": 19836.55
-      },
-      "breakout": {
-        "breakoutTime": "2024-04-26 13:31",
-        "breakoutPrice": 801.65,
-        "previousExtremeTime": "2024-04-26 11:15",
-        "timeSincePreviousExtreme": 136,
-        "previousExtremeType": "low",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 806.45,
-        "stopLossTime": "2024-04-26 12:18",
-        "swingLow": 801.65,
-        "swingHigh": 806.45,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "26/04/2024 01:30 PM",
-            "preBreakoutVolume": 36593,
-            "averageVolume": 19836.55,
-            "volumeThreshold": 19836.55,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 802.13,
-        "pullbackAmount": 0.48000000000000687,
-        "actualEntryTime": "2024-04-26 13:41",
-        "actualEntryPrice": 802.13,
-        "pullbackPercentage": 10
-      }
-    },
-    {
       "date": "30/04/2024",
       "type": "long",
       "entry": {
@@ -4206,10 +3859,10 @@
         "fee": 299.761371
       },
       "exit": {
-        "price": 821.7,
-        "time": "2024-04-30 15:23",
-        "reason": "stop-loss hit",
-        "fee": 296.30502
+        "price": 828.4,
+        "time": "2024-04-30 15:09",
+        "reason": "forced market exit",
+        "fee": 298.72103999999996
       },
       "target": 848.325,
       "stopLoss": 821.7,
@@ -4217,14 +3870,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499602.28500000003,
       "actualCapitalUsed": 99920.45700000001,
-      "totalFees": 596.0663910000001,
+      "totalFees": 598.482411,
       "riskPoints": 9.585000000000036,
-      "profit": -6356.651391000022,
-      "profitPercentage": -6.361711687327472,
-      "grossProfit": -5760.585000000022,
-      "netProfit": -6356.651391000022,
-      "grossProfitPercentage": -5.765170789801353,
-      "netProfitPercentage": -6.361711687327472,
+      "profit": -2332.367411000063,
+      "profitPercentage": -2.3342241228941365,
+      "grossProfit": -1733.885000000063,
+      "netProfit": -2332.367411000063,
+      "grossProfitPercentage": -1.7352652820633745,
+      "netProfitPercentage": -2.3342241228941365,
       "patterns": [
         "hammer",
         "hammer",
@@ -4281,82 +3934,6 @@
       }
     },
     {
-      "date": "14/05/2024",
-      "type": "long",
-      "entry": {
-        "price": 816.99,
-        "time": "2024-05-14 13:19",
-        "fee": 299.99872799999997
-      },
-      "exit": {
-        "price": 817.9,
-        "time": "2024-05-14 15:29",
-        "reason": "market close",
-        "fee": 300.33288
-      },
-      "target": 833.1500000000001,
-      "stopLoss": 807.9,
-      "shares": 612,
-      "leverage": 5,
-      "grossInvestedAmount": 499997.88,
-      "actualCapitalUsed": 99999.576,
-      "totalFees": 600.331608,
-      "riskPoints": 9.090000000000032,
-      "profit": -43.41160800001944,
-      "profitPercentage": -0.0434117920660178,
-      "grossProfit": 556.9199999999805,
-      "netProfit": -43.41160800001944,
-      "grossProfitPercentage": 0.5569223613507926,
-      "netProfitPercentage": -0.0434117920660178,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 1842.1199999999944,
-      "volumeInfo": {
-        "breakoutCandleVolume": 87496,
-        "confirmationCandleVolume": 39814,
-        "averageLookbackVolume": 25396.4
-      },
-      "breakout": {
-        "breakoutTime": "2024-05-14 12:49",
-        "breakoutPrice": 818,
-        "previousExtremeTime": "2024-05-14 09:18",
-        "timeSincePreviousExtreme": 211,
-        "previousExtremeType": "high",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 807.9,
-        "stopLossTime": "2024-05-14 10:13",
-        "swingLow": 807.9,
-        "swingHigh": 818,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "14/05/2024 12:48 PM",
-            "preBreakoutVolume": 39814,
-            "averageVolume": 25396.4,
-            "volumeThreshold": 25396.4,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 816.99,
-        "pullbackAmount": 1.0100000000000022,
-        "actualEntryTime": "2024-05-14 13:19",
-        "actualEntryPrice": 816.99,
-        "pullbackPercentage": 10
-      }
-    },
-    {
       "date": "22/05/2024",
       "type": "short",
       "entry": {
@@ -4365,10 +3942,10 @@
         "fee": 299.927124
       },
       "exit": {
-        "price": 818.75,
-        "time": "2024-05-22 15:29",
-        "reason": "market close",
-        "fee": 300.645
+        "price": 818.9,
+        "time": "2024-05-22 15:09",
+        "reason": "forced market exit",
+        "fee": 300.70007999999996
       },
       "target": 808.0749999999999,
       "stopLoss": 821.7,
@@ -4376,14 +3953,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499878.54,
       "actualCapitalUsed": 99975.708,
-      "totalFees": 600.572124,
+      "totalFees": 600.6272039999999,
       "riskPoints": 4.905000000000086,
-      "profit": -1797.032124000025,
-      "profitPercentage": -1.7974687651124464,
-      "grossProfit": -1196.460000000025,
-      "netProfit": -1797.032124000025,
-      "grossProfitPercentage": -1.196750714683636,
-      "netProfitPercentage": -1.7974687651124464,
+      "profit": -1888.887204000011,
+      "profitPercentage": -1.8893461639701625,
+      "grossProfit": -1288.2600000000111,
+      "netProfit": -1888.887204000011,
+      "grossProfitPercentage": -1.2885730201580679,
+      "netProfitPercentage": -1.8893461639701625,
       "patterns": [
         "hammer",
         "hammer",
@@ -4433,42 +4010,34 @@
       }
     },
     {
-      "date": "29/05/2024",
+      "date": "10/06/2024",
       "type": "short",
       "entry": {
-        "price": 822.33,
-        "time": "2024-05-29 15:08",
-        "fee": 299.985984
+        "price": 832.915,
+        "time": "2024-06-10 14:37",
+        "fee": 299.8494
       },
       "exit": {
-        "price": 825,
-        "time": "2024-05-29 15:29",
-        "reason": "market close",
-        "fee": 300.96
+        "price": 832.6,
+        "time": "2024-06-10 15:09",
+        "reason": "forced market exit",
+        "fee": 299.736
       },
-      "target": 812.2500000000001,
-      "stopLoss": 828,
-      "shares": 608,
+      "target": 819.0749999999998,
+      "stopLoss": 840.7,
+      "shares": 600,
       "leverage": 5,
-      "grossInvestedAmount": 499976.64,
-      "actualCapitalUsed": 99995.32800000001,
-      "totalFees": 600.945984,
-      "riskPoints": 5.669999999999959,
-      "profit": -2224.305983999975,
-      "profitPercentage": -2.224409908430897,
-      "grossProfit": -1623.3599999999751,
-      "netProfit": -2224.305983999975,
-      "grossProfitPercentage": -1.6234358469227432,
-      "netProfitPercentage": -2.224409908430897,
+      "grossInvestedAmount": 499749,
+      "actualCapitalUsed": 99949.8,
+      "totalFees": 599.5853999999999,
+      "riskPoints": 7.785000000000082,
+      "profit": -410.5854000000354,
+      "profitPercentage": -0.4107916173919661,
+      "grossProfit": 188.99999999996453,
+      "netProfit": -410.5854000000354,
+      "grossProfitPercentage": 0.18909492565264216,
+      "netProfitPercentage": -0.4107916173919661,
       "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
         "hammer",
         "hammer",
         "hammer",
@@ -4482,38 +4051,38 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 261.4400000000387,
+      "maxFavorableExcursion": 548.9999999999782,
       "volumeInfo": {
-        "breakoutCandleVolume": 282981,
-        "confirmationCandleVolume": 195223,
-        "averageLookbackVolume": 28788.1
+        "breakoutCandleVolume": 103779,
+        "confirmationCandleVolume": 150370,
+        "averageLookbackVolume": 42229.75
       },
       "breakout": {
-        "breakoutTime": "2024-05-29 14:54",
-        "breakoutPrice": 821.7,
-        "previousExtremeTime": "2024-05-29 10:33",
-        "timeSincePreviousExtreme": 261,
+        "breakoutTime": "2024-06-10 14:36",
+        "breakoutPrice": 832.05,
+        "previousExtremeTime": "2024-06-10 09:37",
+        "timeSincePreviousExtreme": 299,
         "previousExtremeType": "low",
         "periodMinutesRequired": 70,
-        "stopLossValue": 828,
-        "stopLossTime": "2024-05-29 13:50",
-        "swingLow": 821.7,
-        "swingHigh": 828,
+        "stopLossValue": 840.7,
+        "stopLossTime": "2024-06-10 10:22",
+        "swingLow": 832.05,
+        "swingHigh": 840.7,
         "volumeConfirmation": {
           "passed": true,
           "reason": "Volume confirmation passed",
           "data": {
-            "preBreakoutCandleTime": "29/05/2024 02:53 PM",
-            "preBreakoutVolume": 195223,
-            "averageVolume": 28788.1,
-            "volumeThreshold": 28788.1,
+            "preBreakoutCandleTime": "10/06/2024 02:35 PM",
+            "preBreakoutVolume": 150370,
+            "averageVolume": 42229.75,
+            "volumeThreshold": 42229.75,
             "volumeMultiplier": 1
           }
         },
-        "pullbackEntryPrice": 822.33,
-        "pullbackAmount": 0.6299999999999955,
-        "actualEntryTime": "2024-05-29 15:08",
-        "actualEntryPrice": 822.33,
+        "pullbackEntryPrice": 832.915,
+        "pullbackAmount": 0.8650000000000091,
+        "actualEntryTime": "2024-06-10 14:37",
+        "actualEntryPrice": 832.915,
         "pullbackPercentage": 10
       }
     },
@@ -4587,31 +4156,31 @@
       }
     }
   ],
-  "positiveDays": 36,
-  "negativeDays": 25,
+  "positiveDays": 35,
+  "negativeDays": 21,
   "statisticsByExitReason": {
-    "market close": {
-      "count": 46,
-      "totalProfit": 46926.87573600021,
-      "averageProfit": 1020.1494725217437
+    "forced market exit": {
+      "count": 44,
+      "totalProfit": 37765.43796500026,
+      "averageProfit": 858.3054082954604
     },
     "stop-loss hit": {
-      "count": 8,
-      "totalProfit": -31264.34126400006,
-      "averageProfit": -3908.0426580000076
+      "count": 7,
+      "totalProfit": -27432.389385000104,
+      "averageProfit": -3918.912769285729
     },
     "target hit": {
-      "count": 7,
-      "totalProfit": 59057.97511399991,
-      "averageProfit": 8436.853587714273
+      "count": 5,
+      "totalProfit": 46206.08692199987,
+      "averageProfit": 9241.217384399974
     }
   },
   "riskRewardAnalysis": {
-    "actualAverageRR": 0.18071352244432903,
+    "actualAverageRR": 0.14258630371967343,
     "plannedRR": 1,
-    "winRate": 0.5901639344262295
+    "winRate": 0.625
   },
-  "winRate": 59.01639344262295,
+  "winRate": 62.5,
   "breakoutsWithoutEntry": 10,
   "allTrades": [
     {
@@ -4629,10 +4198,10 @@
         "fee": 299.874852
       },
       "exit": {
-        "price": 595.8,
-        "time": "2023-12-04 15:29",
-        "reason": "market close",
-        "fee": 302.42807999999997
+        "price": 594,
+        "time": "2023-12-04 15:09",
+        "reason": "forced market exit",
+        "fee": 301.51439999999997
       },
       "target": 601.6500000000001,
       "stopLoss": 584.65,
@@ -4640,14 +4209,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499791.42,
       "actualCapitalUsed": 99958.284,
-      "totalFees": 602.3029319999999,
+      "totalFees": 601.3892519999999,
       "riskPoints": 6.1200000000000045,
-      "profit": 3653.0770679999773,
-      "profitPercentage": 3.6546016216124495,
-      "grossProfit": 4255.379999999977,
-      "netProfit": 3653.0770679999773,
-      "grossProfitPercentage": 4.257155915161547,
-      "netProfitPercentage": 3.6546016216124495,
+      "profit": 2131.1907480000154,
+      "profitPercentage": 2.1320801665622984,
+      "grossProfit": 2732.5800000000154,
+      "netProfit": 2131.1907480000154,
+      "grossProfitPercentage": 2.7337203988015797,
+      "netProfitPercentage": 2.1320801665622984,
       "patterns": [
         "hammer",
         "hammer",
@@ -4665,7 +4234,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 4424.580000000015,
+      "maxFavorableExcursion": 3578.5800000000154,
       "volumeInfo": {
         "breakoutCandleVolume": 73317,
         "confirmationCandleVolume": 160396,
@@ -4715,10 +4284,10 @@
         "fee": 299.84694
       },
       "exit": {
-        "price": 607.7,
-        "time": "2023-12-06 15:29",
-        "reason": "market close",
-        "fee": 298.9884
+        "price": 608.6,
+        "time": "2023-12-06 15:09",
+        "reason": "forced market exit",
+        "fee": 299.4312
       },
       "target": 602.3249999999999,
       "stopLoss": 613.45,
@@ -4726,14 +4295,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499744.9,
       "actualCapitalUsed": 99948.98000000001,
-      "totalFees": 598.8353400000001,
+      "totalFees": 599.27814,
       "riskPoints": 4.0049999999999955,
-      "profit": 832.0646600000036,
-      "profitPercentage": 0.8324893960898886,
-      "grossProfit": 1430.9000000000037,
-      "netProfit": 832.0646600000036,
-      "grossProfitPercentage": 1.4316304178391852,
-      "netProfitPercentage": 0.8324893960898886,
+      "profit": 93.62186000002237,
+      "profitPercentage": 0.09366965025558276,
+      "grossProfit": 692.9000000000224,
+      "netProfit": 93.62186000002237,
+      "grossProfitPercentage": 0.6932536980367607,
+      "netProfitPercentage": 0.09366965025558276,
       "patterns": [
         "hammer",
         "hammer",
@@ -4749,7 +4318,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 1963.9000000000783,
+      "maxFavorableExcursion": 1635.9000000000037,
       "volumeInfo": {
         "breakoutCandleVolume": 109403,
         "confirmationCandleVolume": 24571,
@@ -4793,10 +4362,10 @@
         "fee": 299.87399999999997
       },
       "exit": {
-        "price": 611.5,
-        "time": "2023-12-07 15:29",
-        "reason": "market close",
-        "fee": 300.858
+        "price": 611.15,
+        "time": "2023-12-07 15:09",
+        "reason": "forced market exit",
+        "fee": 300.6858
       },
       "target": 617.5,
       "stopLoss": 605,
@@ -4804,21 +4373,21 @@
       "leverage": 5,
       "grossInvestedAmount": 499790,
       "actualCapitalUsed": 99958,
-      "totalFees": 600.732,
+      "totalFees": 600.5598,
       "riskPoints": 4.5,
-      "profit": 1039.268,
-      "profitPercentage": 1.0397046759639048,
-      "grossProfit": 1640,
-      "netProfit": 1039.268,
-      "grossProfitPercentage": 1.6406890894175554,
-      "netProfitPercentage": 1.0397046759639048,
+      "profit": 752.4401999999814,
+      "profitPercentage": 0.7527563576702029,
+      "grossProfit": 1352.9999999999814,
+      "netProfit": 752.4401999999814,
+      "grossProfitPercentage": 1.3535684987694645,
+      "netProfitPercentage": 0.7527563576702029,
       "patterns": [
         "hammer",
         "hammer",
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 2460,
+      "maxFavorableExcursion": 2377.9999999999814,
       "volumeInfo": {
         "breakoutCandleVolume": 237157,
         "confirmationCandleVolume": 32168,
@@ -4940,10 +4509,10 @@
         "fee": 299.64018
       },
       "exit": {
-        "price": 619,
-        "time": "2023-12-13 15:29",
-        "reason": "market close",
-        "fee": 301.5768
+        "price": 620.1,
+        "time": "2023-12-13 15:09",
+        "reason": "forced market exit",
+        "fee": 302.11272
       },
       "target": 621.025,
       "stopLoss": 611.65,
@@ -4951,14 +4520,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499400.3,
       "actualCapitalUsed": 99880.06,
-      "totalFees": 601.2169799999999,
+      "totalFees": 601.7529,
       "riskPoints": 3.375,
-      "profit": 2626.4830200000188,
-      "profitPercentage": 2.629637006625766,
-      "grossProfit": 3227.7000000000185,
-      "netProfit": 2626.4830200000188,
-      "grossProfitPercentage": 3.2315759521970833,
-      "netProfitPercentage": 2.629637006625766,
+      "profit": 3519.147100000037,
+      "profitPercentage": 3.5233730336165565,
+      "grossProfit": 4120.900000000037,
+      "netProfit": 3519.147100000037,
+      "grossProfitPercentage": 4.125848542742202,
+      "netProfitPercentage": 3.5233730336165565,
       "patterns": [
         "hammer",
         "hammer",
@@ -5014,8 +4583,8 @@
       },
       "exit": {
         "price": 623.65,
-        "time": "2023-12-14 15:29",
-        "reason": "market close",
+        "time": "2023-12-14 15:09",
+        "reason": "forced market exit",
         "fee": 300.10038
       },
       "target": 618.3249999999999,
@@ -5042,7 +4611,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 517.2899999999854,
+      "maxFavorableExcursion": 437.0899999999672,
       "volumeInfo": {
         "breakoutCandleVolume": 139270,
         "confirmationCandleVolume": 33461,
@@ -5159,10 +4728,10 @@
         "fee": 299.68454099999997
       },
       "exit": {
-        "price": 656,
-        "time": "2023-12-19 15:29",
-        "reason": "market close",
-        "fee": 301.89119999999997
+        "price": 655.65,
+        "time": "2023-12-19 15:09",
+        "reason": "forced market exit",
+        "fee": 301.73013
       },
       "target": 670.3249999999998,
       "stopLoss": 640.45,
@@ -5170,14 +4739,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499474.2349999999,
       "actualCapitalUsed": 99894.84699999998,
-      "totalFees": 601.5757409999999,
+      "totalFees": 601.414671,
       "riskPoints": 10.754999999999882,
-      "profit": 3076.189259000056,
-      "profitPercentage": 3.0794273692616567,
-      "grossProfit": 3677.765000000056,
-      "netProfit": 3076.189259000056,
-      "grossProfitPercentage": 3.6816363510723,
-      "netProfitPercentage": 3.0794273692616567,
+      "profit": 2807.9003290000383,
+      "profitPercentage": 2.8108560284396242,
+      "grossProfit": 3409.3150000000383,
+      "netProfit": 2807.9003290000383,
+      "grossProfitPercentage": 3.412903770702045,
+      "netProfitPercentage": 2.8108560284396242,
       "patterns": [
         "hammer",
         "hammer",
@@ -5372,10 +4941,10 @@
         "fee": 299.855178
       },
       "exit": {
-        "price": 637.2,
-        "time": "2023-12-22 15:29",
-        "reason": "market close",
-        "fee": 297.06264
+        "price": 636.55,
+        "time": "2023-12-22 15:09",
+        "reason": "forced market exit",
+        "fee": 296.75960999999995
       },
       "target": 632.1500000000001,
       "stopLoss": 649.4,
@@ -5383,14 +4952,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499758.63000000006,
       "actualCapitalUsed": 99951.72600000001,
-      "totalFees": 596.917818,
+      "totalFees": 596.614788,
       "riskPoints": 6.209999999999923,
-      "profit": 4057.312182000007,
-      "profitPercentage": 4.059271754846941,
-      "grossProfit": 4654.230000000007,
-      "netProfit": 4057.312182000007,
-      "grossProfitPercentage": 4.656477868126065,
-      "netProfitPercentage": 4.059271754846941,
+      "profit": 4562.665212000078,
+      "profitPercentage": 4.564868856792005,
+      "grossProfit": 5159.280000000078,
+      "netProfit": 4562.665212000078,
+      "grossProfitPercentage": 5.1617717937157765,
+      "netProfitPercentage": 4.564868856792005,
       "patterns": [
         "hammer",
         "hammer",
@@ -5489,10 +5058,10 @@
         "fee": 299.983383
       },
       "exit": {
-        "price": 643.6,
-        "time": "2024-01-04 15:29",
-        "reason": "market close",
-        "fee": 300.04632
+        "price": 641.75,
+        "time": "2024-01-04 15:09",
+        "reason": "forced market exit",
+        "fee": 299.18385
       },
       "target": 652.0250000000001,
       "stopLoss": 638.65,
@@ -5500,14 +5069,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499972.30500000005,
       "actualCapitalUsed": 99994.46100000001,
-      "totalFees": 600.0297029999999,
+      "totalFees": 599.167233,
       "riskPoints": 4.815000000000055,
-      "profit": -495.134703000007,
-      "profitPercentage": -0.49516213003038934,
-      "grossProfit": 104.89499999999293,
-      "netProfit": -495.134703000007,
-      "grossProfitPercentage": 0.10490081045588406,
-      "netProfitPercentage": -0.49516213003038934,
+      "profit": -1931.722233000025,
+      "profitPercentage": -1.9318292370214634,
+      "grossProfit": -1332.5550000000248,
+      "netProfit": -1931.722233000025,
+      "grossProfitPercentage": -1.3326288143100493,
+      "netProfitPercentage": -1.9318292370214634,
       "patterns": [
         "hammer",
         "hammer",
@@ -5557,10 +5126,10 @@
         "fee": 299.85146999999995
       },
       "exit": {
-        "price": 641.45,
-        "time": "2024-01-05 15:29",
-        "reason": "market close",
-        "fee": 297.88938
+        "price": 642.25,
+        "time": "2024-01-05 15:09",
+        "reason": "forced market exit",
+        "fee": 298.2609
       },
       "target": 634.875,
       "stopLoss": 651.75,
@@ -5568,14 +5137,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499752.44999999995,
       "actualCapitalUsed": 99950.48999999999,
-      "totalFees": 597.7408499999999,
+      "totalFees": 598.1123699999999,
       "riskPoints": 6.0750000000000455,
-      "profit": 2672.4091499999295,
-      "profitPercentage": 2.6737329151662284,
-      "grossProfit": 3270.1499999999296,
-      "netProfit": 2672.4091499999295,
-      "grossProfitPercentage": 3.2717698532542765,
-      "netProfitPercentage": 2.6737329151662284,
+      "profit": 2052.837629999965,
+      "profitPercentage": 2.0538544933596277,
+      "grossProfit": 2650.949999999965,
+      "netProfit": 2052.837629999965,
+      "grossProfitPercentage": 2.6522631354783406,
+      "netProfitPercentage": 2.0538544933596277,
       "patterns": [
         "hammer",
         "hammer",
@@ -5655,10 +5224,10 @@
         "fee": 299.898432
       },
       "exit": {
-        "price": 621.25,
-        "time": "2024-01-11 15:29",
-        "reason": "market close",
-        "fee": 299.691
+        "price": 619.95,
+        "time": "2024-01-11 15:09",
+        "reason": "forced market exit",
+        "fee": 299.06388000000004
       },
       "target": 614.0000000000001,
       "stopLoss": 626,
@@ -5666,14 +5235,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499830.72000000003,
       "actualCapitalUsed": 99966.144,
-      "totalFees": 599.589432,
+      "totalFees": 598.9623120000001,
       "riskPoints": 4.319999999999936,
-      "profit": -253.8694319999488,
-      "profitPercentage": -0.2539554111439457,
-      "grossProfit": 345.7200000000512,
-      "netProfit": -253.8694319999488,
-      "grossProfitPercentage": 0.3458370866040919,
-      "netProfitPercentage": -0.2539554111439457,
+      "profit": 791.9576880000145,
+      "profitPercentage": 0.7922259040020734,
+      "grossProfit": 1390.9200000000146,
+      "netProfit": 791.9576880000145,
+      "grossProfitPercentage": 1.3913910693604572,
+      "netProfitPercentage": 0.7922259040020734,
       "patterns": [
         "hammer"
       ],
@@ -5721,10 +5290,10 @@
         "fee": 299.65568999999994
       },
       "exit": {
-        "price": 635.4,
-        "time": "2024-01-12 15:29",
-        "reason": "market close",
-        "fee": 301.1796
+        "price": 633.5,
+        "time": "2024-01-12 15:09",
+        "reason": "forced market exit",
+        "fee": 300.279
       },
       "target": 641.2249999999999,
       "stopLoss": 627.1,
@@ -5732,14 +5301,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499426.14999999997,
       "actualCapitalUsed": 99885.23,
-      "totalFees": 600.83529,
+      "totalFees": 599.9346899999999,
       "riskPoints": 5.084999999999923,
-      "profit": 1939.014710000025,
-      "profitPercentage": 1.941242674217224,
-      "grossProfit": 2539.850000000025,
-      "netProfit": 1939.014710000025,
-      "grossProfitPercentage": 2.5427683352183554,
-      "netProfitPercentage": 1.941242674217224,
+      "profit": 438.9153100000432,
+      "profitPercentage": 0.43941963191158817,
+      "grossProfit": 1038.850000000043,
+      "netProfit": 438.9153100000432,
+      "grossProfitPercentage": 1.0400436581064518,
+      "netProfitPercentage": 0.43941963191158817,
       "patterns": [
         "hammer",
         "hammer",
@@ -5797,10 +5366,10 @@
         "fee": 299.981136
       },
       "exit": {
-        "price": 640.8,
-        "time": "2024-01-15 15:29",
-        "reason": "market close",
-        "fee": 301.43231999999995
+        "price": 639.9,
+        "time": "2024-01-15 15:09",
+        "reason": "forced market exit",
+        "fee": 301.00895999999995
       },
       "target": 623.875,
       "stopLoss": 645.5,
@@ -5808,14 +5377,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499968.56,
       "actualCapitalUsed": 99993.712,
-      "totalFees": 601.413456,
+      "totalFees": 600.990096,
       "riskPoints": 7.784999999999968,
-      "profit": -3020.0534559999396,
-      "profitPercentage": -3.020243368902976,
-      "grossProfit": -2418.6399999999394,
-      "netProfit": -3020.0534559999396,
-      "grossProfitPercentage": -2.418792093646788,
-      "netProfitPercentage": -3.020243368902976,
+      "profit": -2314.030095999957,
+      "profitPercentage": -2.3141756113624,
+      "grossProfit": -1713.0399999999572,
+      "netProfit": -2314.030095999957,
+      "grossProfitPercentage": -1.7131477227287626,
+      "netProfitPercentage": -2.3141756113624,
       "patterns": [
         "hammer",
         "hammer",
@@ -5866,10 +5435,10 @@
         "fee": 299.754048
       },
       "exit": {
-        "price": 637.5,
-        "time": "2024-01-16 15:29",
-        "reason": "market close",
-        "fee": 298.7325
+        "price": 636.7,
+        "time": "2024-01-16 15:09",
+        "reason": "forced market exit",
+        "fee": 298.35762
       },
       "target": 630.4000000000001,
       "stopLoss": 644.9,
@@ -5877,14 +5446,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499590.0800000001,
       "actualCapitalUsed": 99918.01600000002,
-      "totalFees": 598.4865480000001,
+      "totalFees": 598.111668,
       "riskPoints": 5.219999999999914,
-      "profit": 1104.0934520000496,
-      "profitPercentage": 1.1049993746873932,
-      "grossProfit": 1702.5800000000497,
-      "netProfit": 1104.0934520000496,
-      "grossProfitPercentage": 1.7039769884942966,
-      "netProfitPercentage": 1.1049993746873932,
+      "profit": 1729.2683320000142,
+      "profitPercentage": 1.7306872186093187,
+      "grossProfit": 2327.380000000014,
+      "netProfit": 1729.2683320000142,
+      "grossProfitPercentage": 2.329289644822425,
+      "netProfitPercentage": 1.7306872186093187,
       "patterns": [
         "hammer",
         "hammer",
@@ -5962,10 +5531,10 @@
         "fee": 299.871264
       },
       "exit": {
-        "price": 630.75,
-        "time": "2024-01-20 15:29",
-        "reason": "market close",
-        "fee": 299.35395
+        "price": 630.9,
+        "time": "2024-01-20 15:09",
+        "reason": "forced market exit",
+        "fee": 299.42513999999994
       },
       "target": 645.6000000000001,
       "stopLoss": 624.1,
@@ -5973,14 +5542,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499785.44,
       "actualCapitalUsed": 99957.088,
-      "totalFees": 599.225214,
+      "totalFees": 599.2964039999999,
       "riskPoints": 7.740000000000009,
-      "profit": -1461.4152140000251,
-      "profitPercentage": -1.462042605722993,
-      "grossProfit": -862.1900000000252,
-      "netProfit": -1461.4152140000251,
-      "grossProfitPercentage": -0.8625601418080778,
-      "netProfitPercentage": -1.462042605722993,
+      "profit": -1342.836404000043,
+      "profitPercentage": -1.3434128893391164,
+      "grossProfit": -743.5400000000432,
+      "netProfit": -1342.836404000043,
+      "grossProfitPercentage": -0.7438592048620335,
+      "netProfitPercentage": -1.3434128893391164,
       "patterns": [
         "hammer",
         "hammer",
@@ -6060,10 +5629,10 @@
         "fee": 299.7048
       },
       "exit": {
-        "price": 624.2,
-        "time": "2024-01-29 15:29",
-        "reason": "market close",
-        "fee": 299.61600000000004
+        "price": 623.1,
+        "time": "2024-01-29 15:09",
+        "reason": "forced market exit",
+        "fee": 299.08799999999997
       },
       "target": 633.4250000000002,
       "stopLoss": 619.3,
@@ -6071,14 +5640,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499508,
       "actualCapitalUsed": 99901.6,
-      "totalFees": 599.3208,
+      "totalFees": 598.7927999999999,
       "riskPoints": 5.085000000000036,
-      "profit": -747.3207999999563,
-      "profitPercentage": -0.7480568879777263,
-      "grossProfit": -147.99999999995634,
-      "netProfit": -747.3207999999563,
-      "grossProfitPercentage": -0.14814577544299223,
-      "netProfitPercentage": -0.7480568879777263,
+      "profit": -1626.7927999999745,
+      "profitPercentage": -1.6283951408185398,
+      "grossProfit": -1027.9999999999745,
+      "netProfit": -1626.7927999999745,
+      "grossProfitPercentage": -1.0290125483475485,
+      "netProfitPercentage": -1.6283951408185398,
       "patterns": [
         "hammer",
         "hammer",
@@ -6143,10 +5712,10 @@
         "fee": 299.986299
       },
       "exit": {
-        "price": 641.55,
-        "time": "2024-01-31 15:29",
-        "reason": "market close",
-        "fee": 302.93991
+        "price": 639.25,
+        "time": "2024-01-31 15:09",
+        "reason": "forced market exit",
+        "fee": 301.85384999999997
       },
       "target": 643.3749999999999,
       "stopLoss": 630.75,
@@ -6154,14 +5723,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499977.165,
       "actualCapitalUsed": 99995.43299999999,
-      "totalFees": 602.926209,
+      "totalFees": 601.8401489999999,
       "riskPoints": 4.544999999999959,
-      "profit": 4319.758790999997,
-      "profitPercentage": 4.319956083394326,
-      "grossProfit": 4922.684999999997,
-      "netProfit": 4319.758790999997,
-      "grossProfitPercentage": 4.922909829291901,
-      "netProfitPercentage": 4.319956083394326,
+      "profit": 2510.744851000032,
+      "profitPercentage": 2.5108595219544,
+      "grossProfit": 3112.5850000000323,
+      "netProfit": 2510.744851000032,
+      "grossProfitPercentage": 3.11272715824935,
+      "netProfitPercentage": 2.5108595219544,
       "patterns": [
         "hammer",
         "hammer",
@@ -6175,7 +5744,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 6221.235000000068,
+      "maxFavorableExcursion": 6142.53500000005,
       "volumeInfo": {
         "breakoutCandleVolume": 83225,
         "confirmationCandleVolume": 127440,
@@ -6219,10 +5788,10 @@
         "fee": 299.94934200000006
       },
       "exit": {
-        "price": 648.5,
-        "time": "2024-02-01 15:29",
-        "reason": "market close",
-        "fee": 302.7198
+        "price": 647.7,
+        "time": "2024-02-01 15:09",
+        "reason": "forced market exit",
+        "fee": 302.34636
       },
       "target": 659.125,
       "stopLoss": 633.25,
@@ -6230,14 +5799,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499915.57000000007,
       "actualCapitalUsed": 99983.11400000002,
-      "totalFees": 602.6691420000001,
+      "totalFees": 602.2957020000001,
       "riskPoints": 9.315000000000055,
-      "profit": 4014.7608579999574,
-      "profitPercentage": 4.015438905013458,
-      "grossProfit": 4617.4299999999575,
-      "netProfit": 4014.7608579999574,
-      "grossProfitPercentage": 4.618209830912004,
-      "netProfitPercentage": 4.015438905013458,
+      "profit": 3392.734297999993,
+      "profitPercentage": 3.3933072918692977,
+      "grossProfit": 3995.029999999993,
+      "netProfit": 3392.734297999993,
+      "grossProfitPercentage": 3.9957047146981157,
+      "netProfitPercentage": 3.3933072918692977,
       "patterns": [
         "hammer",
         "hammer",
@@ -6318,10 +5887,10 @@
         "fee": 299.648685
       },
       "exit": {
-        "price": 677.5,
-        "time": "2024-02-07 15:29",
-        "reason": "market close",
-        "fee": 302.8425
+        "price": 673.55,
+        "time": "2024-02-07 15:09",
+        "reason": "forced market exit",
+        "fee": 301.0768499999999
       },
       "target": 680.6750000000001,
       "stopLoss": 664.55,
@@ -6329,14 +5898,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499414.47500000003,
       "actualCapitalUsed": 99882.895,
-      "totalFees": 602.491185,
+      "totalFees": 600.7255349999999,
       "riskPoints": 5.805000000000064,
-      "profit": 4720.533814999987,
-      "profitPercentage": 4.726068277256068,
-      "grossProfit": 5323.024999999987,
-      "netProfit": 4720.533814999987,
-      "grossProfitPercentage": 5.329265836758122,
-      "netProfitPercentage": 4.726068277256068,
+      "profit": 1779.5494649999523,
+      "profitPercentage": 1.7816358496616984,
+      "grossProfit": 2380.2749999999523,
+      "netProfit": 1779.5494649999523,
+      "grossProfitPercentage": 2.383065689075144,
+      "netProfitPercentage": 1.7816358496616984,
       "patterns": [
         "hammer",
         "hammer",
@@ -6345,7 +5914,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 5658.275000000021,
+      "maxFavorableExcursion": 3460.5249999999864,
       "volumeInfo": {
         "breakoutCandleVolume": 344167,
         "confirmationCandleVolume": 150478,
@@ -6395,10 +5964,10 @@
         "fee": 299.78248799999994
       },
       "exit": {
-        "price": 725.8,
-        "time": "2024-02-09 15:15",
-        "reason": "target hit",
-        "fee": 303.52956
+        "price": 724.15,
+        "time": "2024-02-09 15:09",
+        "reason": "forced market exit",
+        "fee": 302.83952999999997
       },
       "target": 725.8,
       "stopLoss": 711.8,
@@ -6406,14 +5975,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499637.4799999999,
       "actualCapitalUsed": 99927.49599999998,
-      "totalFees": 603.312048,
+      "totalFees": 602.6220179999999,
       "riskPoints": 5.039999999999964,
-      "profit": 5641.807952000026,
-      "profitPercentage": 5.645901456391969,
-      "grossProfit": 6245.120000000025,
-      "netProfit": 5641.807952000026,
-      "grossProfitPercentage": 6.249651247140253,
-      "netProfitPercentage": 5.645901456391969,
+      "profit": 4492.4479820000415,
+      "profitPercentage": 4.495707549801951,
+      "grossProfit": 5095.070000000042,
+      "netProfit": 4492.4479820000415,
+      "grossProfitPercentage": 5.098766809887883,
+      "netProfitPercentage": 4.495707549801951,
       "patterns": [
         "hammer",
         "hammer",
@@ -6426,7 +5995,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 6523.920000000089,
+      "maxFavorableExcursion": 5617.820000000042,
       "volumeInfo": {
         "breakoutCandleVolume": 184574,
         "confirmationCandleVolume": 73732,
@@ -6470,10 +6039,10 @@
         "fee": 299.93987100000004
       },
       "exit": {
-        "price": 707,
-        "time": "2024-02-12 15:29",
-        "reason": "market close",
-        "fee": 298.2126
+        "price": 709.55,
+        "time": "2024-02-12 15:09",
+        "reason": "forced market exit",
+        "fee": 299.28819
       },
       "target": 693.5749999999999,
       "stopLoss": 720.95,
@@ -6481,14 +6050,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499899.78500000003,
       "actualCapitalUsed": 99979.95700000001,
-      "totalFees": 598.1524710000001,
+      "totalFees": 599.228061,
       "riskPoints": 9.855000000000018,
-      "profit": 2280.6325290000186,
-      "profitPercentage": 2.281089727814164,
-      "grossProfit": 2878.785000000019,
-      "netProfit": 2280.6325290000186,
-      "grossProfitPercentage": 2.8793621105478358,
-      "netProfitPercentage": 2.281089727814164,
+      "profit": 486.9069390000511,
+      "profitPercentage": 0.48700454932187165,
+      "grossProfit": 1086.1350000000511,
+      "netProfit": 486.9069390000511,
+      "grossProfitPercentage": 1.086352737679264,
+      "netProfitPercentage": 0.48700454932187165,
       "patterns": [
         "hammer",
         "hammer",
@@ -6498,7 +6067,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 4636.285000000019,
+      "maxFavorableExcursion": 4249.635000000051,
       "volumeInfo": {
         "breakoutCandleVolume": 162683,
         "confirmationCandleVolume": 172218,
@@ -6648,10 +6217,10 @@
         "fee": 299.80092600000006
       },
       "exit": {
-        "price": 759.65,
-        "time": "2024-02-19 15:29",
-        "reason": "market close",
-        "fee": 299.45403
+        "price": 758,
+        "time": "2024-02-19 15:09",
+        "reason": "forced market exit",
+        "fee": 298.8036
       },
       "target": 779.2500000000001,
       "stopLoss": 750,
@@ -6659,14 +6228,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499668.2100000001,
       "actualCapitalUsed": 99933.64200000002,
-      "totalFees": 599.254956,
+      "totalFees": 598.6045260000001,
       "riskPoints": 10.530000000000086,
-      "profit": -1177.4149560000717,
-      "profitPercentage": -1.1781967838218799,
-      "grossProfit": -578.1600000000717,
-      "netProfit": -1177.4149560000717,
-      "grossProfitPercentage": -0.5785439101679809,
-      "netProfitPercentage": -1.1781967838218799,
+      "profit": -2260.814526000057,
+      "profitPercentage": -2.262315753487756,
+      "grossProfit": -1662.2100000000569,
+      "netProfit": -2260.814526000057,
+      "grossProfitPercentage": -1.6633137417327957,
+      "netProfitPercentage": -2.262315753487756,
       "patterns": [
         "hammer",
         "hammer",
@@ -6736,10 +6305,10 @@
         "fee": 299.625132
       },
       "exit": {
-        "price": 760.35,
-        "time": "2024-02-23 15:29",
-        "reason": "market close",
-        "fee": 297.90513
+        "price": 759.8,
+        "time": "2024-02-23 15:09",
+        "reason": "forced market exit",
+        "fee": 297.68963999999994
       },
       "target": 754.5,
       "stopLoss": 770.5,
@@ -6747,14 +6316,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499375.22000000003,
       "actualCapitalUsed": 99875.04400000001,
-      "totalFees": 597.530262,
+      "totalFees": 597.314772,
       "riskPoints": 5.759999999999991,
-      "profit": 2269.1397379999908,
-      "profitPercentage": 2.2719787117190062,
-      "grossProfit": 2866.669999999991,
-      "netProfit": 2269.1397379999908,
-      "grossProfitPercentage": 2.8702565577843355,
-      "netProfitPercentage": 2.2719787117190062,
+      "profit": 2628.5052280000355,
+      "profitPercentage": 2.631793812276103,
+      "grossProfit": 3225.8200000000356,
+      "netProfit": 2628.5052280000355,
+      "grossProfitPercentage": 3.2298558987368606,
+      "netProfitPercentage": 2.631793812276103,
       "patterns": [
         "hammer",
         "hammer",
@@ -6805,10 +6374,10 @@
         "fee": 299.579742
       },
       "exit": {
-        "price": 758.4,
-        "time": "2024-02-26 15:29",
-        "reason": "market close",
-        "fee": 300.78144
+        "price": 759.55,
+        "time": "2024-02-26 15:09",
+        "reason": "forced market exit",
+        "fee": 301.23753
       },
       "target": 735.8499999999999,
       "stopLoss": 766.35,
@@ -6816,14 +6385,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499299.57,
       "actualCapitalUsed": 99859.914,
-      "totalFees": 600.361182,
+      "totalFees": 600.817272,
       "riskPoints": 10.980000000000018,
-      "profit": -2603.191181999982,
-      "profitPercentage": -2.6068430040906923,
-      "grossProfit": -2002.829999999982,
-      "netProfit": -2603.191181999982,
-      "grossProfitPercentage": -2.005639620318501,
-      "netProfitPercentage": -2.6068430040906923,
+      "profit": -3363.797271999967,
+      "profitPercentage": -3.368516091451838,
+      "grossProfit": -2762.979999999967,
+      "netProfit": -3363.797271999967,
+      "grossProfitPercentage": -2.7668559778651187,
+      "netProfitPercentage": -3.368516091451838,
       "patterns": [
         "hammer",
         "hammer",
@@ -6883,10 +6452,10 @@
         "fee": 299.915784
       },
       "exit": {
-        "price": 742.5,
-        "time": "2024-02-28 15:29",
-        "reason": "market close",
-        "fee": 296.703
+        "price": 743.5,
+        "time": "2024-02-28 15:09",
+        "reason": "forced market exit",
+        "fee": 297.1026
       },
       "target": 739.5,
       "stopLoss": 756.75,
@@ -6894,14 +6463,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499859.63999999996,
       "actualCapitalUsed": 99971.92799999999,
-      "totalFees": 596.618784,
+      "totalFees": 597.018384,
       "riskPoints": 6.210000000000036,
-      "profit": 4758.0212159999755,
-      "profitPercentage": 4.759357262770781,
-      "grossProfit": 5354.639999999976,
-      "netProfit": 4758.0212159999755,
-      "grossProfitPercentage": 5.356143576624807,
-      "netProfitPercentage": 4.759357262770781,
+      "profit": 4091.621615999976,
+      "profitPercentage": 4.092770538545557,
+      "grossProfit": 4688.639999999976,
+      "netProfit": 4091.621615999976,
+      "grossProfitPercentage": 4.689956564606793,
+      "netProfitPercentage": 4.092770538545557,
       "patterns": [
         "hammer",
         "hammer",
@@ -6925,7 +6494,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 6220.439999999946,
+      "maxFavorableExcursion": 5254.739999999991,
       "volumeInfo": {
         "breakoutCandleVolume": 98351,
         "confirmationCandleVolume": 100946,
@@ -6962,83 +6531,68 @@
     },
     {
       "date": "29/02/2024",
-      "type": "long",
+      "type": "short",
       "entry": {
-        "price": 748.625,
-        "time": "2024-02-29 14:55",
-        "fee": 299.599725
+        "price": 741.26,
+        "time": "2024-02-29 11:13",
+        "fee": 299.765544
       },
       "exit": {
-        "price": 753,
-        "time": "2024-02-29 15:29",
-        "reason": "market close",
-        "fee": 301.3506
+        "price": 749.9,
+        "time": "2024-02-29 14:44",
+        "reason": "stop-loss hit",
+        "fee": 303.25955999999996
       },
-      "target": 769.025,
-      "stopLoss": 737.15,
-      "shares": 667,
+      "target": 725.8999999999999,
+      "stopLoss": 749.9,
+      "shares": 674,
       "leverage": 5,
-      "grossInvestedAmount": 499332.875,
-      "actualCapitalUsed": 99866.575,
-      "totalFees": 600.950325,
-      "riskPoints": 11.475000000000023,
-      "profit": 2317.174675,
-      "profitPercentage": 2.3202704959091673,
-      "grossProfit": 2918.125,
-      "netProfit": 2317.174675,
-      "grossProfitPercentage": 2.922023710135248,
-      "netProfitPercentage": 2.3202704959091673,
+      "grossInvestedAmount": 499609.24,
+      "actualCapitalUsed": 99921.848,
+      "totalFees": 603.0251039999999,
+      "riskPoints": 8.639999999999986,
+      "profit": -6426.385103999991,
+      "profitPercentage": -6.431411380622174,
+      "grossProfit": -5823.359999999991,
+      "netProfit": -6426.385103999991,
+      "grossProfitPercentage": -5.827914631843069,
+      "netProfitPercentage": -6.431411380622174,
       "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 3518.4249999999847,
+      "maxFavorableExcursion": 1051.4399999999632,
       "volumeInfo": {
-        "breakoutCandleVolume": 186885,
-        "confirmationCandleVolume": 81936,
-        "averageLookbackVolume": 40592.15
+        "breakoutCandleVolume": 119992,
+        "confirmationCandleVolume": 84123,
+        "averageLookbackVolume": 30267.4
       },
       "breakout": {
-        "breakoutTime": "2024-02-29 14:45",
-        "breakoutPrice": 749.9,
-        "previousExtremeTime": "2024-02-29 09:58",
-        "timeSincePreviousExtreme": 287,
-        "previousExtremeType": "high",
+        "breakoutTime": "2024-02-29 10:52",
+        "breakoutPrice": 740.3,
+        "previousExtremeTime": "2024-02-29 09:15",
+        "timeSincePreviousExtreme": 97,
+        "previousExtremeType": "low",
         "periodMinutesRequired": 70,
-        "stopLossValue": 737.15,
-        "stopLossTime": "2024-02-29 10:56",
-        "swingLow": 737.15,
+        "stopLossValue": 749.9,
+        "stopLossTime": "2024-02-29 09:58",
+        "swingLow": 740.3,
         "swingHigh": 749.9,
         "volumeConfirmation": {
           "passed": true,
           "reason": "Volume confirmation passed",
           "data": {
-            "preBreakoutCandleTime": "29/02/2024 02:44 PM",
-            "preBreakoutVolume": 81936,
-            "averageVolume": 40592.15,
-            "volumeThreshold": 40592.15,
+            "preBreakoutCandleTime": "29/02/2024 10:51 AM",
+            "preBreakoutVolume": 84123,
+            "averageVolume": 30267.4,
+            "volumeThreshold": 30267.4,
             "volumeMultiplier": 1
           }
         },
-        "pullbackEntryPrice": 748.625,
-        "pullbackAmount": 1.2750000000000001,
-        "actualEntryTime": "2024-02-29 14:55",
-        "actualEntryPrice": 748.625,
+        "pullbackEntryPrice": 741.26,
+        "pullbackAmount": 0.9600000000000023,
+        "actualEntryTime": "2024-02-29 11:13",
+        "actualEntryPrice": 741.26,
         "pullbackPercentage": 10
       }
     },
@@ -7069,10 +6623,10 @@
         "fee": 299.85792000000004
       },
       "exit": {
-        "price": 784.1,
-        "time": "2024-03-05 15:29",
-        "reason": "market close",
-        "fee": 301.0944
+        "price": 783.25,
+        "time": "2024-03-05 15:09",
+        "reason": "forced market exit",
+        "fee": 300.768
       },
       "target": 789.1999999999998,
       "stopLoss": 776.2,
@@ -7080,14 +6634,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499763.2,
       "actualCapitalUsed": 99952.64,
-      "totalFees": 600.9523200000001,
+      "totalFees": 600.62592,
       "riskPoints": 4.67999999999995,
-      "profit": 1459.8476800000174,
-      "profitPercentage": 1.4605393914558107,
-      "grossProfit": 2060.8000000000175,
-      "netProfit": 1459.8476800000174,
-      "grossProfitPercentage": 2.061776457330209,
-      "netProfitPercentage": 1.4605393914558107,
+      "profit": 916.174080000003,
+      "profitPercentage": 0.9166081856367205,
+      "grossProfit": 1516.800000000003,
+      "netProfit": 916.174080000003,
+      "grossProfitPercentage": 1.5175186968548333,
+      "netProfitPercentage": 0.9166081856367205,
       "patterns": [
         "hammer",
         "hammer"
@@ -7136,10 +6690,10 @@
         "fee": 299.805324
       },
       "exit": {
-        "price": 784,
-        "time": "2024-03-06 15:29",
-        "reason": "market close",
-        "fee": 299.6448
+        "price": 783.75,
+        "time": "2024-03-06 15:09",
+        "reason": "forced market exit",
+        "fee": 299.54925
       },
       "target": 804.9000000000001,
       "stopLoss": 772.9,
@@ -7147,14 +6701,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499675.54000000004,
       "actualCapitalUsed": 99935.10800000001,
-      "totalFees": 599.450124,
+      "totalFees": 599.354574,
       "riskPoints": 11.520000000000095,
-      "profit": -866.9901240000463,
-      "profitPercentage": -0.867553096555463,
-      "grossProfit": -267.54000000004635,
-      "netProfit": -866.9901240000463,
-      "grossProfitPercentage": -0.2677137247903373,
-      "netProfitPercentage": -0.867553096555463,
+      "profit": -1026.1445740000463,
+      "profitPercentage": -1.0268108921241634,
+      "grossProfit": -426.79000000004635,
+      "netProfit": -1026.1445740000463,
+      "grossProfitPercentage": -0.42706713240360566,
+      "netProfitPercentage": -1.0268108921241634,
       "patterns": [
         "hammer",
         "hammer",
@@ -7282,10 +6836,10 @@
         "fee": 299.591829
       },
       "exit": {
-        "price": 759,
-        "time": "2024-03-12 15:29",
-        "reason": "market close",
-        "fee": 297.3762
+        "price": 759.65,
+        "time": "2024-03-12 15:09",
+        "reason": "forced market exit",
+        "fee": 297.63087
       },
       "target": 741.3750000000001,
       "stopLoss": 777.75,
@@ -7293,14 +6847,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499319.7150000001,
       "actualCapitalUsed": 99863.94300000001,
-      "totalFees": 596.968029,
+      "totalFees": 597.222699,
       "riskPoints": 13.094999999999914,
-      "profit": 3095.7469710000564,
-      "profitPercentage": 3.0999646899582727,
-      "grossProfit": 3692.7150000000565,
-      "netProfit": 3095.7469710000564,
-      "grossProfitPercentage": 3.697746042332873,
-      "netProfitPercentage": 3.0999646899582727,
+      "profit": 2671.0423010000713,
+      "profitPercentage": 2.674681392261941,
+      "grossProfit": 3268.2650000000713,
+      "netProfit": 2671.0423010000713,
+      "grossProfitPercentage": 3.272717761604978,
+      "netProfitPercentage": 2.674681392261941,
       "patterns": [
         "hammer",
         "hammer",
@@ -7353,10 +6907,10 @@
         "fee": 299.810595
       },
       "exit": {
-        "price": 747.4,
-        "time": "2024-03-13 15:29",
-        "reason": "market close",
-        "fee": 298.2126
+        "price": 748.8,
+        "time": "2024-03-13 15:09",
+        "reason": "forced market exit",
+        "fee": 298.77119999999996
       },
       "target": 739.3249999999998,
       "stopLoss": 758.2,
@@ -7364,14 +6918,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499684.32499999995,
       "actualCapitalUsed": 99936.86499999999,
-      "totalFees": 598.023195,
+      "totalFees": 598.5817949999999,
       "riskPoints": 6.795000000000073,
-      "profit": 2065.3018049999973,
-      "profitPercentage": 2.066606557049791,
-      "grossProfit": 2663.324999999997,
-      "netProfit": 2065.3018049999973,
-      "grossProfitPercentage": 2.6650075525182797,
-      "netProfitPercentage": 2.066606557049791,
+      "profit": 1133.743205000012,
+      "profitPercentage": 1.134459445971226,
+      "grossProfit": 1732.325000000012,
+      "netProfit": 1133.743205000012,
+      "grossProfitPercentage": 1.7334193943346252,
+      "netProfitPercentage": 1.134459445971226,
       "patterns": [
         "hammer",
         "hammer",
@@ -7446,10 +7000,10 @@
         "fee": 299.71550399999995
       },
       "exit": {
-        "price": 722.55,
-        "time": "2024-03-19 15:29",
-        "reason": "market close",
-        "fee": 298.26864
+        "price": 724.65,
+        "time": "2024-03-19 15:09",
+        "reason": "forced market exit",
+        "fee": 299.13552
       },
       "target": 717.1750000000001,
       "stopLoss": 731.05,
@@ -7457,14 +7011,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499525.83999999997,
       "actualCapitalUsed": 99905.16799999999,
-      "totalFees": 597.984144,
+      "totalFees": 598.8510239999999,
       "riskPoints": 4.9950000000000045,
-      "profit": 1813.4558559999969,
-      "profitPercentage": 1.815177224865882,
-      "grossProfit": 2411.439999999997,
-      "netProfit": 1813.4558559999969,
-      "grossProfitPercentage": 2.413728987473398,
-      "netProfitPercentage": 1.815177224865882,
+      "profit": 367.7889759999813,
+      "profitPercentage": 0.36813808871226894,
+      "grossProfit": 966.6399999999812,
+      "netProfit": 367.7889759999813,
+      "grossProfitPercentage": 0.9675575541797611,
+      "netProfitPercentage": 0.36813808871226894,
       "patterns": [
         "hammer",
         "hammer",
@@ -7478,7 +7032,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 3374.6399999999812,
+      "maxFavorableExcursion": 2205.03999999995,
       "volumeInfo": {
         "breakoutCandleVolume": 71727,
         "confirmationCandleVolume": 30267,
@@ -7515,84 +7069,9 @@
     },
     {
       "date": "20/03/2024",
-      "type": "long",
-      "entry": {
-        "price": 737.135,
-        "time": "2024-03-20 15:18",
-        "fee": 299.866518
-      },
-      "exit": {
-        "price": 736.8,
-        "time": "2024-03-20 15:29",
-        "reason": "market close",
-        "fee": 299.73024
-      },
-      "target": 750.9749999999999,
-      "stopLoss": 729.35,
-      "shares": 678,
-      "leverage": 5,
-      "grossInvestedAmount": 499777.52999999997,
-      "actualCapitalUsed": 99955.506,
-      "totalFees": 599.5967579999999,
-      "riskPoints": 7.784999999999968,
-      "profit": -826.7267580000246,
-      "profitPercentage": -0.8270947655450063,
-      "grossProfit": -227.13000000002467,
-      "netProfit": -826.7267580000246,
-      "grossProfitPercentage": -0.22723110420753076,
-      "netProfitPercentage": -0.8270947655450063,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 1230.570000000037,
-      "volumeInfo": {
-        "breakoutCandleVolume": 215589,
-        "confirmationCandleVolume": 212150,
-        "averageLookbackVolume": 148678.2
-      },
-      "breakout": {
-        "breakoutTime": "2024-03-20 15:17",
-        "breakoutPrice": 738,
-        "previousExtremeTime": "2024-03-20 13:22",
-        "timeSincePreviousExtreme": 115,
-        "previousExtremeType": "high",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 729.35,
-        "stopLossTime": "2024-03-20 14:34",
-        "swingLow": 729.35,
-        "swingHigh": 738,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "20/03/2024 03:16 PM",
-            "preBreakoutVolume": 212150,
-            "averageVolume": 148678.2,
-            "volumeThreshold": 148678.2,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 737.135,
-        "pullbackAmount": 0.8649999999999978,
-        "actualEntryTime": "2024-03-20 15:18",
-        "actualEntryPrice": 737.135,
-        "pullbackPercentage": 10
-      }
+      "message": "No valid breakout detected",
+      "volumeRejection": false,
+      "volumeData": null
     },
     {
       "date": "21/03/2024",
@@ -7615,10 +7094,10 @@
         "fee": 299.904696
       },
       "exit": {
-        "price": 741.8,
-        "time": "2024-03-26 15:29",
-        "reason": "market close",
-        "fee": 300.87408
+        "price": 739.95,
+        "time": "2024-03-26 15:09",
+        "reason": "forced market exit",
+        "fee": 300.12372
       },
       "target": 730.45,
       "stopLoss": 744.45,
@@ -7626,14 +7105,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499841.16000000003,
       "actualCapitalUsed": 99968.232,
-      "totalFees": 600.778776,
+      "totalFees": 600.028416,
       "riskPoints": 5.039999999999964,
-      "profit": -2216.418775999914,
-      "profitPercentage": -2.217123111670029,
-      "grossProfit": -1615.639999999914,
-      "netProfit": -2216.418775999914,
-      "grossProfitPercentage": -1.6161534196182583,
-      "netProfitPercentage": -2.217123111670029,
+      "profit": -965.0684159999754,
+      "profitPercentage": -0.9653750963605872,
+      "grossProfit": -365.0399999999754,
+      "netProfit": -965.0684159999754,
+      "grossProfitPercentage": -0.3651560027589319,
+      "netProfitPercentage": -0.9653750963605872,
       "patterns": [
         "hammer",
         "hammer",
@@ -7789,10 +7268,10 @@
         "fee": 299.874288
       },
       "exit": {
-        "price": 765.95,
-        "time": "2024-04-02 15:29",
-        "reason": "market close",
-        "fee": 302.39706
+        "price": 765.8,
+        "time": "2024-04-02 15:09",
+        "reason": "forced market exit",
+        "fee": 302.33783999999997
       },
       "target": 770.5999999999999,
       "stopLoss": 753.35,
@@ -7800,14 +7279,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499790.48,
       "actualCapitalUsed": 99958.09599999999,
-      "totalFees": 602.271348,
+      "totalFees": 602.2121279999999,
       "riskPoints": 6.209999999999923,
-      "profit": 3602.348652000066,
-      "profitPercentage": 3.603858812997065,
-      "grossProfit": 4204.620000000066,
-      "netProfit": 3602.348652000066,
-      "grossProfitPercentage": 4.206382642582614,
-      "netProfitPercentage": 3.603858812997065,
+      "profit": 3503.7078720000054,
+      "profitPercentage": 3.5051766812365113,
+      "grossProfit": 4105.9200000000055,
+      "netProfit": 3503.7078720000054,
+      "grossProfitPercentage": 4.10764126599611,
+      "netProfitPercentage": 3.5051766812365113,
       "patterns": [
         "hammer",
         "hammer",
@@ -7821,7 +7300,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 6047.020000000036,
+      "maxFavorableExcursion": 5191.620000000066,
       "volumeInfo": {
         "breakoutCandleVolume": 79122,
         "confirmationCandleVolume": 109247,
@@ -7865,10 +7344,10 @@
         "fee": 299.83670399999994
       },
       "exit": {
-        "price": 771,
-        "time": "2024-04-03 15:29",
-        "reason": "market close",
-        "fee": 302.07779999999997
+        "price": 771.45,
+        "time": "2024-04-03 15:09",
+        "reason": "forced market exit",
+        "fee": 302.25411
       },
       "target": 774.4000000000001,
       "stopLoss": 760.15,
@@ -7876,14 +7355,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499727.83999999997,
       "actualCapitalUsed": 99945.568,
-      "totalFees": 601.9145039999999,
+      "totalFees": 602.0908139999999,
       "riskPoints": 5.1299999999999955,
-      "profit": 3133.245496000018,
-      "profitPercentage": 3.1349519130253163,
-      "grossProfit": 3735.160000000018,
-      "netProfit": 3133.245496000018,
-      "grossProfitPercentage": 3.737194229563054,
-      "netProfitPercentage": 3.1349519130253163,
+      "profit": 3426.9191860000474,
+      "profitPercentage": 3.4287855425465663,
+      "grossProfit": 4029.0100000000475,
+      "netProfit": 3426.9191860000474,
+      "grossProfitPercentage": 4.03120426510563,
+      "netProfitPercentage": 3.4287855425465663,
       "patterns": [
         "hammer",
         "hammer",
@@ -7897,7 +7376,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 4779.960000000033,
+      "maxFavorableExcursion": 4616.710000000033,
       "volumeInfo": {
         "breakoutCandleVolume": 117714,
         "confirmationCandleVolume": 37381,
@@ -7951,77 +7430,9 @@
     },
     {
       "date": "08/04/2024",
-      "type": "long",
-      "entry": {
-        "price": 767.605,
-        "time": "2024-04-08 15:10",
-        "fee": 299.82651300000003
-      },
-      "exit": {
-        "price": 767.6,
-        "time": "2024-04-08 15:29",
-        "reason": "market close",
-        "fee": 299.82456
-      },
-      "target": 777.9250000000001,
-      "stopLoss": 761.8,
-      "shares": 651,
-      "leverage": 5,
-      "grossInvestedAmount": 499710.85500000004,
-      "actualCapitalUsed": 99942.171,
-      "totalFees": 599.651073,
-      "riskPoints": 5.805000000000064,
-      "profit": -602.906072999997,
-      "profitPercentage": -0.6032549292930579,
-      "grossProfit": -3.2549999999970396,
-      "netProfit": -602.906072999997,
-      "grossProfitPercentage": -0.0032568834231117907,
-      "netProfitPercentage": -0.6032549292930579,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 843.0449999999734,
-      "volumeInfo": {
-        "breakoutCandleVolume": 91952,
-        "confirmationCandleVolume": 47551,
-        "averageLookbackVolume": 16541.7
-      },
-      "breakout": {
-        "breakoutTime": "2024-04-08 14:19",
-        "breakoutPrice": 768.25,
-        "previousExtremeTime": "2024-04-08 09:18",
-        "timeSincePreviousExtreme": 301,
-        "previousExtremeType": "high",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 761.8,
-        "stopLossTime": "2024-04-08 12:05",
-        "swingLow": 761.8,
-        "swingHigh": 768.25,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "08/04/2024 02:18 PM",
-            "preBreakoutVolume": 47551,
-            "averageVolume": 16541.7,
-            "volumeThreshold": 16541.7,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 767.605,
-        "pullbackAmount": 0.6450000000000046,
-        "actualEntryTime": "2024-04-08 15:10",
-        "actualEntryPrice": 767.605,
-        "pullbackPercentage": 10
-      }
+      "message": "No valid breakout detected",
+      "volumeRejection": false,
+      "volumeData": null
     },
     {
       "date": "09/04/2024",
@@ -8204,10 +7615,10 @@
         "fee": 299.75994
       },
       "exit": {
-        "price": 746.65,
-        "time": "2024-04-18 15:29",
-        "reason": "market close",
-        "fee": 298.36134
+        "price": 744.05,
+        "time": "2024-04-18 15:09",
+        "reason": "forced market exit",
+        "fee": 297.32237999999995
       },
       "target": 738.15,
       "stopLoss": 756.9,
@@ -8215,19 +7626,19 @@
       "leverage": 5,
       "grossInvestedAmount": 499599.89999999997,
       "actualCapitalUsed": 99919.98,
-      "totalFees": 598.12128,
+      "totalFees": 597.08232,
       "riskPoints": 6.75,
-      "profit": 1732.8787200000002,
-      "profitPercentage": 1.7342664800373262,
-      "grossProfit": 2331,
-      "netProfit": 1732.8787200000002,
-      "grossProfitPercentage": 2.332866759981337,
-      "netProfitPercentage": 1.7342664800373262,
+      "profit": 3465.517680000015,
+      "profitPercentage": 3.4682930080650687,
+      "grossProfit": 4062.600000000015,
+      "netProfit": 3465.517680000015,
+      "grossProfitPercentage": 4.065853495967488,
+      "netProfitPercentage": 3.4682930080650687,
       "patterns": [
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 5427.899999999985,
+      "maxFavorableExcursion": 3929.399999999985,
       "volumeInfo": {
         "breakoutCandleVolume": 172669,
         "confirmationCandleVolume": 51679,
@@ -8277,10 +7688,10 @@
         "fee": 299.81556
       },
       "exit": {
-        "price": 768.95,
-        "time": "2024-04-22 15:29",
-        "reason": "target hit",
-        "fee": 304.5042
+        "price": 764.95,
+        "time": "2024-04-22 15:09",
+        "reason": "forced market exit",
+        "fee": 302.9202
       },
       "target": 768.95,
       "stopLoss": 750.45,
@@ -8288,14 +7699,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499692.60000000003,
       "actualCapitalUsed": 99938.52,
-      "totalFees": 604.3197600000001,
+      "totalFees": 602.73576,
       "riskPoints": 6.659999999999968,
-      "profit": 7210.080240000021,
-      "profitPercentage": 7.214515724267301,
-      "grossProfit": 7814.4000000000215,
-      "netProfit": 7210.080240000021,
-      "grossProfitPercentage": 7.819207248616471,
-      "netProfitPercentage": 7.214515724267301,
+      "profit": 4571.664240000022,
+      "profitPercentage": 4.574476628231058,
+      "grossProfit": 5174.4000000000215,
+      "netProfit": 4571.664240000022,
+      "grossProfitPercentage": 5.177583178137941,
+      "netProfitPercentage": 4.574476628231058,
       "patterns": [
         "hammer",
         "hammer",
@@ -8306,7 +7717,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 7847.3999999999905,
+      "maxFavorableExcursion": 5537.3999999999905,
       "volumeInfo": {
         "breakoutCandleVolume": 61813,
         "confirmationCandleVolume": 69106,
@@ -8350,10 +7761,10 @@
         "fee": 299.973912
       },
       "exit": {
-        "price": 771.2,
-        "time": "2024-04-23 15:26",
-        "reason": "stop-loss hit",
-        "fee": 297.99168000000003
+        "price": 772.5,
+        "time": "2024-04-23 15:09",
+        "reason": "forced market exit",
+        "fee": 298.49399999999997
       },
       "target": 785.4499999999998,
       "stopLoss": 771.2,
@@ -8361,14 +7772,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499956.51999999996,
       "actualCapitalUsed": 99991.30399999999,
-      "totalFees": 597.965592,
+      "totalFees": 598.467912,
       "riskPoints": 5.129999999999882,
-      "profit": -3901.685591999924,
-      "profitPercentage": -3.9020249120862793,
-      "grossProfit": -3303.719999999924,
-      "netProfit": -3901.685591999924,
-      "grossProfitPercentage": -3.304007316476165,
-      "netProfitPercentage": -3.9020249120862793,
+      "profit": -3064.987911999953,
+      "profitPercentage": -3.0652544665283625,
+      "grossProfit": -2466.519999999953,
+      "netProfit": -3064.987911999953,
+      "grossProfitPercentage": -2.4667345072327023,
+      "netProfitPercentage": -3.0652544665283625,
       "patterns": [
         "hammer",
         "hammer",
@@ -8428,10 +7839,10 @@
         "fee": 299.715633
       },
       "exit": {
-        "price": 772.5,
-        "time": "2024-04-24 15:29",
-        "reason": "market close",
-        "fee": 299.88449999999995
+        "price": 772.85,
+        "time": "2024-04-24 15:09",
+        "reason": "forced market exit",
+        "fee": 300.02037
       },
       "target": 766.2250000000001,
       "stopLoss": 775.35,
@@ -8439,14 +7850,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499526.05500000005,
       "actualCapitalUsed": 99905.21100000001,
-      "totalFees": 599.6001329999999,
+      "totalFees": 599.736003,
       "riskPoints": 3.284999999999968,
-      "profit": -881.0451329999646,
-      "profitPercentage": -0.8818810592372048,
-      "grossProfit": -281.4449999999647,
-      "netProfit": -881.0451329999646,
-      "grossProfitPercentage": -0.28171203201799416,
-      "netProfitPercentage": -0.8818810592372048,
+      "profit": -1107.6310029999795,
+      "profitPercentage": -1.1086819114970683,
+      "grossProfit": -507.8949999999794,
+      "netProfit": -1107.6310029999795,
+      "grossProfitPercentage": -0.5083768853658488,
+      "netProfitPercentage": -1.1086819114970683,
       "patterns": [
         "hammer",
         "hammer",
@@ -8505,10 +7916,10 @@
         "fee": 299.836194
       },
       "exit": {
-        "price": 803,
-        "time": "2024-04-26 15:29",
-        "reason": "market close",
-        "fee": 300.1614
+        "price": 800.75,
+        "time": "2024-04-26 15:09",
+        "reason": "forced market exit",
+        "fee": 299.32035
       },
       "target": 794.4499999999998,
       "stopLoss": 806.45,
@@ -8516,14 +7927,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499726.99,
       "actualCapitalUsed": 99945.398,
-      "totalFees": 599.9975939999999,
+      "totalFees": 599.1565439999999,
       "riskPoints": 4.32000000000005,
-      "profit": -1142.0075940000029,
-      "profitPercentage": -1.1426314936481645,
-      "grossProfit": -542.0100000000028,
-      "netProfit": -1142.0075940000029,
-      "grossProfitPercentage": -0.5423061099821753,
-      "netProfitPercentage": -1.1426314936481645,
+      "profit": 260.5834559999972,
+      "profitPercentage": 0.26072581751087454,
+      "grossProfit": 859.7399999999972,
+      "netProfit": 260.5834559999972,
+      "grossProfitPercentage": 0.860209691695857,
+      "netProfitPercentage": 0.26072581751087454,
       "patterns": [
         "hammer",
         "hammer",
@@ -8539,7 +7950,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 2012.2900000000113,
+      "maxFavorableExcursion": 1295.8400000000256,
       "volumeInfo": {
         "breakoutCandleVolume": 99510,
         "confirmationCandleVolume": 36593,
@@ -8594,10 +8005,10 @@
         "fee": 299.761371
       },
       "exit": {
-        "price": 821.7,
-        "time": "2024-04-30 15:23",
-        "reason": "stop-loss hit",
-        "fee": 296.30502
+        "price": 828.4,
+        "time": "2024-04-30 15:09",
+        "reason": "forced market exit",
+        "fee": 298.72103999999996
       },
       "target": 848.325,
       "stopLoss": 821.7,
@@ -8605,14 +8016,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499602.28500000003,
       "actualCapitalUsed": 99920.45700000001,
-      "totalFees": 596.0663910000001,
+      "totalFees": 598.482411,
       "riskPoints": 9.585000000000036,
-      "profit": -6356.651391000022,
-      "profitPercentage": -6.361711687327472,
-      "grossProfit": -5760.585000000022,
-      "netProfit": -6356.651391000022,
-      "grossProfitPercentage": -5.765170789801353,
-      "netProfitPercentage": -6.361711687327472,
+      "profit": -2332.367411000063,
+      "profitPercentage": -2.3342241228941365,
+      "grossProfit": -1733.885000000063,
+      "netProfit": -2332.367411000063,
+      "grossProfitPercentage": -1.7352652820633745,
+      "netProfitPercentage": -2.3342241228941365,
       "patterns": [
         "hammer",
         "hammer",
@@ -8707,10 +8118,10 @@
         "fee": 299.921616
       },
       "exit": {
-        "price": 820,
-        "time": "2024-05-09 15:29",
-        "reason": "market close",
-        "fee": 301.104
+        "price": 817.8,
+        "time": "2024-05-09 15:09",
+        "reason": "forced market exit",
+        "fee": 300.29616
       },
       "target": 840.3000000000001,
       "stopLoss": 803.55,
@@ -8718,14 +8129,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499869.36,
       "actualCapitalUsed": 99973.872,
-      "totalFees": 601.0256159999999,
+      "totalFees": 600.217776,
       "riskPoints": 13.230000000000018,
-      "profit": 1369.6143840000168,
-      "profitPercentage": 1.3699723303704958,
-      "grossProfit": 1970.6400000000167,
-      "netProfit": 1369.6143840000168,
-      "grossProfitPercentage": 1.9711550233845263,
-      "netProfitPercentage": 1.3699723303704958,
+      "profit": 24.02222399998891,
+      "profitPercentage": 0.02402850216703511,
+      "grossProfit": 624.2399999999889,
+      "netProfit": 24.02222399998891,
+      "grossProfitPercentage": 0.6244031440534671,
+      "netProfitPercentage": 0.02402850216703511,
       "patterns": [
         "hammer",
         "hammer",
@@ -8801,10 +8212,10 @@
         "fee": 299.99872799999997
       },
       "exit": {
-        "price": 817.9,
-        "time": "2024-05-14 15:29",
-        "reason": "market close",
-        "fee": 300.33288
+        "price": 819.15,
+        "time": "2024-05-14 15:09",
+        "reason": "forced market exit",
+        "fee": 300.79188
       },
       "target": 833.1500000000001,
       "stopLoss": 807.9,
@@ -8812,14 +8223,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499997.88,
       "actualCapitalUsed": 99999.576,
-      "totalFees": 600.331608,
+      "totalFees": 600.790608,
       "riskPoints": 9.090000000000032,
-      "profit": -43.41160800001944,
-      "profitPercentage": -0.0434117920660178,
-      "grossProfit": 556.9199999999805,
-      "netProfit": -43.41160800001944,
-      "grossProfitPercentage": 0.5569223613507926,
-      "netProfitPercentage": -0.0434117920660178,
+      "profit": 721.1293919999805,
+      "profitPercentage": 0.7211324496015667,
+      "grossProfit": 1321.9199999999805,
+      "netProfit": 721.1293919999805,
+      "grossProfitPercentage": 1.3219256049645456,
+      "netProfitPercentage": 0.7211324496015667,
       "patterns": [
         "hammer",
         "hammer",
@@ -8907,10 +8318,10 @@
         "fee": 299.927124
       },
       "exit": {
-        "price": 818.75,
-        "time": "2024-05-22 15:29",
-        "reason": "market close",
-        "fee": 300.645
+        "price": 818.9,
+        "time": "2024-05-22 15:09",
+        "reason": "forced market exit",
+        "fee": 300.70007999999996
       },
       "target": 808.0749999999999,
       "stopLoss": 821.7,
@@ -8918,14 +8329,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499878.54,
       "actualCapitalUsed": 99975.708,
-      "totalFees": 600.572124,
+      "totalFees": 600.6272039999999,
       "riskPoints": 4.905000000000086,
-      "profit": -1797.032124000025,
-      "profitPercentage": -1.7974687651124464,
-      "grossProfit": -1196.460000000025,
-      "netProfit": -1797.032124000025,
-      "grossProfitPercentage": -1.196750714683636,
-      "netProfitPercentage": -1.7974687651124464,
+      "profit": -1888.887204000011,
+      "profitPercentage": -1.8893461639701625,
+      "grossProfit": -1288.2600000000111,
+      "netProfit": -1888.887204000011,
+      "grossProfitPercentage": -1.2885730201580679,
+      "netProfitPercentage": -1.8893461639701625,
       "patterns": [
         "hammer",
         "hammer",
@@ -8982,179 +8393,15 @@
     },
     {
       "date": "24/05/2024",
-      "type": "short",
-      "entry": {
-        "price": 830.225,
-        "time": "2024-05-24 15:09",
-        "fee": 299.87727
-      },
-      "exit": {
-        "price": 828,
-        "time": "2024-05-24 15:29",
-        "reason": "market close",
-        "fee": 299.0736
-      },
-      "target": 810.625,
-      "stopLoss": 841.25,
-      "shares": 602,
-      "leverage": 5,
-      "grossInvestedAmount": 499795.45,
-      "actualCapitalUsed": 99959.09,
-      "totalFees": 598.95087,
-      "riskPoints": 11.024999999999977,
-      "profit": 740.4991300000137,
-      "profitPercentage": 0.7408021921768333,
-      "grossProfit": 1339.4500000000137,
-      "netProfit": 740.4991300000137,
-      "grossProfitPercentage": 1.3399981932608769,
-      "netProfitPercentage": 0.7408021921768333,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 1941.4500000000137,
-      "volumeInfo": {
-        "breakoutCandleVolume": 143218,
-        "confirmationCandleVolume": 69897,
-        "averageLookbackVolume": 33315.45
-      },
-      "breakout": {
-        "breakoutTime": "2024-05-24 15:01",
-        "breakoutPrice": 829,
-        "previousExtremeTime": "2024-05-24 09:15",
-        "timeSincePreviousExtreme": 346,
-        "previousExtremeType": "low",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 841.25,
-        "stopLossTime": "2024-05-24 09:31",
-        "swingLow": 829,
-        "swingHigh": 841.25,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "24/05/2024 03:00 PM",
-            "preBreakoutVolume": 69897,
-            "averageVolume": 33315.45,
-            "volumeThreshold": 33315.45,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 830.225,
-        "pullbackAmount": 1.225,
-        "actualEntryTime": "2024-05-24 15:09",
-        "actualEntryPrice": 830.225,
-        "pullbackPercentage": 10
-      }
+      "message": "No valid breakout detected",
+      "volumeRejection": false,
+      "volumeData": null
     },
     {
       "date": "27/05/2024",
-      "type": "long",
-      "entry": {
-        "price": 832,
-        "time": "2024-05-27 15:00",
-        "fee": 299.52
-      },
-      "exit": {
-        "price": 833.5,
-        "time": "2024-05-27 15:29",
-        "reason": "market close",
-        "fee": 300.06
-      },
-      "target": 848,
-      "stopLoss": 823,
-      "shares": 600,
-      "leverage": 5,
-      "grossInvestedAmount": 499200,
-      "actualCapitalUsed": 99840,
-      "totalFees": 599.5799999999999,
-      "riskPoints": 9,
-      "profit": 300.4200000000001,
-      "profitPercentage": 0.3009014423076924,
-      "grossProfit": 900,
-      "netProfit": 300.4200000000001,
-      "grossProfitPercentage": 0.9014423076923076,
-      "netProfitPercentage": 0.3009014423076924,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 3300,
-      "volumeInfo": {
-        "breakoutCandleVolume": 145438,
-        "confirmationCandleVolume": 31645,
-        "averageLookbackVolume": 29004.6
-      },
-      "breakout": {
-        "breakoutTime": "2024-05-27 11:59",
-        "breakoutPrice": 833,
-        "previousExtremeTime": "2024-05-27 09:15",
-        "timeSincePreviousExtreme": 164,
-        "previousExtremeType": "high",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 823,
-        "stopLossTime": "2024-05-27 10:02",
-        "swingLow": 823,
-        "swingHigh": 833,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "27/05/2024 11:58 AM",
-            "preBreakoutVolume": 31645,
-            "averageVolume": 29004.6,
-            "volumeThreshold": 29004.6,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 832,
-        "pullbackAmount": 1,
-        "actualEntryTime": "2024-05-27 15:00",
-        "actualEntryPrice": 832,
-        "pullbackPercentage": 10
-      }
+      "message": "No valid breakout detected",
+      "volumeRejection": false,
+      "volumeData": null
     },
     {
       "date": "28/05/2024",
@@ -9164,88 +8411,9 @@
     },
     {
       "date": "29/05/2024",
-      "type": "short",
-      "entry": {
-        "price": 822.33,
-        "time": "2024-05-29 15:08",
-        "fee": 299.985984
-      },
-      "exit": {
-        "price": 825,
-        "time": "2024-05-29 15:29",
-        "reason": "market close",
-        "fee": 300.96
-      },
-      "target": 812.2500000000001,
-      "stopLoss": 828,
-      "shares": 608,
-      "leverage": 5,
-      "grossInvestedAmount": 499976.64,
-      "actualCapitalUsed": 99995.32800000001,
-      "totalFees": 600.945984,
-      "riskPoints": 5.669999999999959,
-      "profit": -2224.305983999975,
-      "profitPercentage": -2.224409908430897,
-      "grossProfit": -1623.3599999999751,
-      "netProfit": -2224.305983999975,
-      "grossProfitPercentage": -1.6234358469227432,
-      "netProfitPercentage": -2.224409908430897,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 261.4400000000387,
-      "volumeInfo": {
-        "breakoutCandleVolume": 282981,
-        "confirmationCandleVolume": 195223,
-        "averageLookbackVolume": 28788.1
-      },
-      "breakout": {
-        "breakoutTime": "2024-05-29 14:54",
-        "breakoutPrice": 821.7,
-        "previousExtremeTime": "2024-05-29 10:33",
-        "timeSincePreviousExtreme": 261,
-        "previousExtremeType": "low",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 828,
-        "stopLossTime": "2024-05-29 13:50",
-        "swingLow": 821.7,
-        "swingHigh": 828,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "29/05/2024 02:53 PM",
-            "preBreakoutVolume": 195223,
-            "averageVolume": 28788.1,
-            "volumeThreshold": 28788.1,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 822.33,
-        "pullbackAmount": 0.6299999999999955,
-        "actualEntryTime": "2024-05-29 15:08",
-        "actualEntryPrice": 822.33,
-        "pullbackPercentage": 10
-      }
+      "message": "No valid breakout detected",
+      "volumeRejection": false,
+      "volumeData": null
     },
     {
       "date": "30/05/2024",
@@ -9356,10 +8524,10 @@
         "fee": 299.77002
       },
       "exit": {
-        "price": 829.5,
-        "time": "2024-06-07 15:29",
-        "reason": "market close",
-        "fee": 301.6062
+        "price": 830.3,
+        "time": "2024-06-07 15:09",
+        "reason": "forced market exit",
+        "fee": 301.89707999999996
       },
       "target": 849.25,
       "stopLoss": 810.5,
@@ -9367,14 +8535,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499616.7,
       "actualCapitalUsed": 99923.34,
-      "totalFees": 601.37622,
+      "totalFees": 601.6670999999999,
       "riskPoints": 13.950000000000045,
-      "profit": 2458.9237799999723,
-      "profitPercentage": 2.4608102371277547,
-      "grossProfit": 3060.2999999999724,
-      "netProfit": 2458.9237799999723,
-      "grossProfitPercentage": 3.0626478258232486,
-      "netProfitPercentage": 2.4608102371277547,
+      "profit": 2943.432899999945,
+      "profitPercentage": 2.9456910667717326,
+      "grossProfit": 3545.099999999945,
+      "netProfit": 2943.432899999945,
+      "grossProfitPercentage": 3.5478197586269085,
+      "netProfitPercentage": 2.9456910667717326,
       "patterns": [
         "hammer",
         "hammer",
@@ -9436,10 +8604,10 @@
         "fee": 299.8494
       },
       "exit": {
-        "price": 830.6,
-        "time": "2024-06-10 15:29",
-        "reason": "market close",
-        "fee": 299.01599999999996
+        "price": 832.6,
+        "time": "2024-06-10 15:09",
+        "reason": "forced market exit",
+        "fee": 299.736
       },
       "target": 819.0749999999998,
       "stopLoss": 840.7,
@@ -9447,14 +8615,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499749,
       "actualCapitalUsed": 99949.8,
-      "totalFees": 598.8653999999999,
+      "totalFees": 599.5853999999999,
       "riskPoints": 7.785000000000082,
-      "profit": 790.1345999999646,
-      "profitPercentage": 0.7905314467862513,
-      "grossProfit": 1388.9999999999645,
-      "netProfit": 790.1345999999646,
-      "grossProfitPercentage": 1.3896976282093254,
-      "netProfitPercentage": 0.7905314467862513,
+      "profit": -410.5854000000354,
+      "profitPercentage": -0.4107916173919661,
+      "grossProfit": 188.99999999996453,
+      "netProfit": -410.5854000000354,
+      "grossProfitPercentage": 0.18909492565264216,
+      "netProfitPercentage": -0.4107916173919661,
       "patterns": [
         "hammer",
         "hammer",
@@ -9469,7 +8637,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 2228.999999999951,
+      "maxFavorableExcursion": 548.9999999999782,
       "volumeInfo": {
         "breakoutCandleVolume": 103779,
         "confirmationCandleVolume": 150370,
@@ -9594,10 +8762,10 @@
         "fee": 299.59875
       },
       "exit": {
-        "price": 839.4,
-        "time": "2024-06-14 15:29",
-        "reason": "market close",
-        "fee": 299.16216
+        "price": 839.25,
+        "time": "2024-06-14 15:09",
+        "reason": "forced market exit",
+        "fee": 299.1087
       },
       "target": 831.425,
       "stopLoss": 845.8,
@@ -9605,14 +8773,14 @@
       "leverage": 5,
       "grossInvestedAmount": 499331.25,
       "actualCapitalUsed": 99866.25,
-      "totalFees": 598.76091,
+      "totalFees": 598.70745,
       "riskPoints": 5.1749999999999545,
-      "profit": 128.88909000001354,
-      "profitPercentage": 0.12906171003718828,
-      "grossProfit": 727.6500000000135,
-      "netProfit": 128.88909000001354,
-      "grossProfitPercentage": 0.7286245353159987,
-      "netProfitPercentage": 0.12906171003718828,
+      "profit": 218.04255,
+      "profitPercentage": 0.21833457249070634,
+      "grossProfit": 816.75,
+      "netProfit": 218.04255,
+      "grossProfitPercentage": 0.8178438661710037,
+      "netProfitPercentage": 0.21833457249070634,
       "patterns": [
         "hammer",
         "hammer",
@@ -9632,7 +8800,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 3281.8499999999867,
+      "maxFavorableExcursion": 905.8499999999865,
       "volumeInfo": {
         "breakoutCandleVolume": 323330,
         "confirmationCandleVolume": 17828,
