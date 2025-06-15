@@ -34,6 +34,14 @@ const defaultConfig = {
     utilizationPercent: 100, // Use 100% of capital by default
     leverage: 5, // 5x leverage
     brokerageFeePercent: 0.06 // 0.06% brokerage fee
+  },
+  stopLossExitConfig: {
+    enabled: true, // Whether to use limit order based stop loss exit
+    initialTriggerPercent: 70, // Start limit order process when 70% of stop loss is hit
+    incrementPercent: 10, // Increment by 10% each time maxTriggerPercent: 120, // Continue until 120% of stop loss is hit
+    maxLossPercent: 150, // Force market exit if loss exceeds this % of stop loss
+    forceMarketOrderAfterMax: true, // Use market order as circuit breaker when maxLossPercent is hit
+    description: "Place limit orders starting at 70% of SL, increment by 10% until 120%, force market exit at 150%"
   }
 };
 
@@ -506,12 +514,12 @@ function analyzeTradingDay(date, dayData, config) {
 }
 
 /**
- * Simulate a trade execution based on entry conditions
+ * Simulate a trade execution with enhanced limit order-based stop loss
  * @param {string} date - The date of the trade
  * @param {Object} trade - The trade entry object
  * @param {Array} dayData - The candle data for the day
  * @param {Object} capital - Capital configuration with initial amount and utilization percent
- * @param {Object} config - Configuration object with time-based restrictions
+ * @param {Object} config - Configuration object with time-based restrictions and stop loss config
  * @returns {Object} - The trade result object
  */
 function simulateTrade(date, trade, dayData, capital, config) {
@@ -540,16 +548,38 @@ function simulateTrade(date, trade, dayData, capital, config) {
   // Calculate how many shares we can buy with the available capital
   const availableCapital = capital.initial * (capital.utilizationPercent / 100);
   // Apply leverage
-  const leveragedCapital = availableCapital * (capital.leverage || 1); // Default to 1 if not specified
+  const leveragedCapital = availableCapital * (capital.leverage || 1);
   // Only buy whole shares (no fractions)
   const maxShares = Math.floor(leveragedCapital / trade.entry.price);
   const investedAmount = maxShares * trade.entry.price;
   
-  // Calculate entry brokerage fee (if applicable)
-  const brokerageFeePercent = capital.brokerageFeePercent || 0; // Default to 0 if not specified
+  // Calculate entry brokerage fee
+  const brokerageFeePercent = capital.brokerageFeePercent || 0;
   const entryBrokerageFee = (investedAmount * brokerageFeePercent) / 100;
   
-  // Track max favorable excursion (maximum potential profit during the trade)
+  // Calculate risk in points
+  const riskPoints = trade.type === "long" ?
+    trade.entry.price - trade.stopLoss :
+    trade.stopLoss - trade.entry.price;
+  
+  // Initialize stop loss exit tracking
+  const stopLossConfig = config.stopLossExitConfig || { enabled: false };
+  let activeLimitOrder = null;
+  let stopLossExitDetails = {
+    enabled: stopLossConfig.enabled,
+    triggerLevels: [],
+    finalExitPrice: null,
+    finalExitReason: null,
+    initialTriggerPercent: stopLossConfig.initialTriggerPercent,
+    incrementPercent: stopLossConfig.incrementPercent,
+    maxTriggerPercent: stopLossConfig.maxTriggerPercent,
+    maxLossPercent: stopLossConfig.maxLossPercent,
+    forceMarketOrderAfterMax: stopLossConfig.forceMarketOrderAfterMax,
+    circuitBreakerTriggered: false,
+    orderFillDetails: null // Will be populated if a limit order gets filled
+  };
+  
+  // Track max favorable excursion
   let maxFavorableExcursion = 0;
   let exitPrice = null;
   let exitTime = null;
@@ -561,53 +591,218 @@ function simulateTrade(date, trade, dayData, capital, config) {
     
     // Check for forced market exit first
     if (shouldForceMarketExit(candle.timestamp_readable_IST, config)) {
-      exitPrice = candle.close; // Use closing price of the exit time candle
+      exitPrice = candle.close;
       exitTime = formatTimestamp(candle.timestamp_readable_IST);
       exitReason = "forced market exit";
+      stopLossExitDetails.finalExitPrice = exitPrice;
+      stopLossExitDetails.finalExitReason = exitReason;
       break;
     }
     
-    // Calculate current profit/loss based on trade type
+    // Calculate current profit/loss and update max favorable excursion
     let currentPnL = 0;
     if (trade.type === "long") {
-      // For long trades: (current price - entry price) * shares
-      currentPnL = (candle.high - trade.entry.price) * maxShares; // Best case within this candle
+      currentPnL = (candle.high - trade.entry.price) * maxShares;
       maxFavorableExcursion = Math.max(maxFavorableExcursion, currentPnL);
       
-      // Check if target was hit
+      // Check if target was hit (limit order)
       if (candle.high >= trade.target) {
         exitPrice = trade.target;
         exitTime = formatTimestamp(candle.timestamp_readable_IST);
         exitReason = "target hit";
+        stopLossExitDetails.finalExitPrice = exitPrice;
+        stopLossExitDetails.finalExitReason = exitReason;
         break;
       }
       
-      // Check if stop loss was hit
-      if (candle.low <= trade.stopLoss) {
-        exitPrice = trade.stopLoss;
-        exitTime = formatTimestamp(candle.timestamp_readable_IST);
-        exitReason = "stop-loss hit";
-        break;
+      // Enhanced stop loss logic with limit orders
+      if (stopLossConfig.enabled) {
+        const currentLoss = trade.entry.price - candle.low;
+        const lossPercentage = (currentLoss / riskPoints) * 100;
+        
+        // Circuit breaker: Force market exit if loss exceeds maximum threshold
+        if (stopLossConfig.forceMarketOrderAfterMax && 
+            stopLossConfig.maxLossPercent && 
+            lossPercentage >= stopLossConfig.maxLossPercent) {
+          exitPrice = candle.low; // Market exit at current adverse price
+          exitTime = formatTimestamp(candle.timestamp_readable_IST);
+          exitReason = `circuit breaker (${stopLossConfig.maxLossPercent}% max loss)`;
+          stopLossExitDetails.finalExitPrice = exitPrice;
+          stopLossExitDetails.finalExitReason = exitReason;
+          stopLossExitDetails.circuitBreakerTriggered = true;
+          break;
+        }
+        
+        // Check if we should place/update limit order
+        if (lossPercentage >= stopLossConfig.initialTriggerPercent) {
+          let triggerPercent = stopLossConfig.initialTriggerPercent;
+          
+          // Find the appropriate trigger level
+          while (triggerPercent <= stopLossConfig.maxTriggerPercent && 
+                 triggerPercent <= lossPercentage) {
+            triggerPercent += stopLossConfig.incrementPercent;
+          }
+          triggerPercent -= stopLossConfig.incrementPercent; // Go back to last valid level
+          
+          const triggerLoss = riskPoints * (triggerPercent / 100);
+          const limitOrderPrice = trade.entry.price - triggerLoss;
+          
+          // Check if this is a new limit order level
+          if (!activeLimitOrder || limitOrderPrice < activeLimitOrder.price) {
+            activeLimitOrder = {
+              price: limitOrderPrice,
+              triggerPercent: triggerPercent,
+              placedTime: formatTimestamp(candle.timestamp_readable_IST),
+              placedAtCandle: i // NEW: Track which candle index the order was placed
+            };
+            
+            stopLossExitDetails.triggerLevels.push({
+              triggerPercent: triggerPercent,
+              limitPrice: limitOrderPrice,
+              timeTriggered: formatTimestamp(candle.timestamp_readable_IST),
+              candleLow: candle.low,
+              lossAtTrigger: currentLoss
+            });
+          }
+        }
+        
+        // Check if active limit order was hit (price went back above limit price)
+        // IMPORTANT: Only check fills from the NEXT candle after order placement
+        if (activeLimitOrder && 
+            i > activeLimitOrder.placedAtCandle && // NEW: Only check subsequent candles
+            candle.high >= activeLimitOrder.price) {
+          exitPrice = activeLimitOrder.price;
+          exitTime = formatTimestamp(candle.timestamp_readable_IST);
+          exitReason = `limit order hit (${activeLimitOrder.triggerPercent}% SL)`;
+          stopLossExitDetails.finalExitPrice = exitPrice;
+          stopLossExitDetails.finalExitReason = exitReason;
+          
+          // Record the fill details for the active limit order
+          stopLossExitDetails.orderFillDetails = {
+            filledOrderTriggerPercent: activeLimitOrder.triggerPercent,
+            filledOrderPrice: activeLimitOrder.price,
+            fillTime: formatTimestamp(candle.timestamp_readable_IST),
+            fillCandleHigh: candle.high,
+            fillCandleLow: candle.low,
+            timeBetweenPlaceAndFill: calculateTimeDiffInMinutes(activeLimitOrder.placedTime, candle.timestamp_readable_IST),
+            placedAtCandleIndex: activeLimitOrder.placedAtCandle,
+            filledAtCandleIndex: i
+          };
+          
+          break;
+        }
+      } else {
+        // Original stop loss logic (for comparison)
+        if (candle.low <= trade.stopLoss) {
+          exitPrice = candle.low; // More realistic - exit at breach price
+          exitTime = formatTimestamp(candle.timestamp_readable_IST);
+          exitReason = "stop-loss hit";
+          stopLossExitDetails.finalExitPrice = exitPrice;
+          stopLossExitDetails.finalExitReason = exitReason;
+          break;
+        }
       }
-    } else {
-      // For short trades: (entry price - current price) * shares
-      currentPnL = (trade.entry.price - candle.low) * maxShares; // Best case within this candle
+      
+    } else { // Short position
+      currentPnL = (trade.entry.price - candle.low) * maxShares;
       maxFavorableExcursion = Math.max(maxFavorableExcursion, currentPnL);
       
-      // Check if target was hit
+      // Check if target was hit (limit order)
       if (candle.low <= trade.target) {
         exitPrice = trade.target;
         exitTime = formatTimestamp(candle.timestamp_readable_IST);
         exitReason = "target hit";
+        stopLossExitDetails.finalExitPrice = exitPrice;
+        stopLossExitDetails.finalExitReason = exitReason;
         break;
       }
       
-      // Check if stop loss was hit
-      if (candle.high >= trade.stopLoss) {
-        exitPrice = trade.stopLoss;
-        exitTime = formatTimestamp(candle.timestamp_readable_IST);
-        exitReason = "stop-loss hit";
-        break;
+      // Enhanced stop loss logic with limit orders for short positions
+      if (stopLossConfig.enabled) {
+        const currentLoss = candle.high - trade.entry.price;
+        const lossPercentage = (currentLoss / riskPoints) * 100;
+        
+        // Circuit breaker: Force market exit if loss exceeds maximum threshold
+        if (stopLossConfig.forceMarketOrderAfterMax && 
+            stopLossConfig.maxLossPercent && 
+            lossPercentage >= stopLossConfig.maxLossPercent) {
+          exitPrice = candle.high; // Market exit at current adverse price
+          exitTime = formatTimestamp(candle.timestamp_readable_IST);
+          exitReason = `circuit breaker (${stopLossConfig.maxLossPercent}% max loss)`;
+          stopLossExitDetails.finalExitPrice = exitPrice;
+          stopLossExitDetails.finalExitReason = exitReason;
+          stopLossExitDetails.circuitBreakerTriggered = true;
+          break;
+        }
+        
+        // Check if we should place/update limit order
+        if (lossPercentage >= stopLossConfig.initialTriggerPercent) {
+          let triggerPercent = stopLossConfig.initialTriggerPercent;
+          
+          // Find the appropriate trigger level
+          while (triggerPercent <= stopLossConfig.maxTriggerPercent && 
+                 triggerPercent <= lossPercentage) {
+            triggerPercent += stopLossConfig.incrementPercent;
+          }
+          triggerPercent -= stopLossConfig.incrementPercent;
+          
+          const triggerLoss = riskPoints * (triggerPercent / 100);
+          const limitOrderPrice = trade.entry.price + triggerLoss;
+          
+          // Check if this is a new limit order level
+          if (!activeLimitOrder || limitOrderPrice > activeLimitOrder.price) {
+            activeLimitOrder = {
+              price: limitOrderPrice,
+              triggerPercent: triggerPercent,
+              placedTime: formatTimestamp(candle.timestamp_readable_IST),
+              placedAtCandle: i // NEW: Track which candle index the order was placed
+            };
+            
+            stopLossExitDetails.triggerLevels.push({
+              triggerPercent: triggerPercent,
+              limitPrice: limitOrderPrice,
+              timeTriggered: formatTimestamp(candle.timestamp_readable_IST),
+              candleHigh: candle.high,
+              lossAtTrigger: currentLoss
+            });
+          }
+        }
+        
+        // Check if active limit order was hit (price went back below limit price)
+        // IMPORTANT: Only check fills from the NEXT candle after order placement
+        if (activeLimitOrder && 
+            i > activeLimitOrder.placedAtCandle && // NEW: Only check subsequent candles
+            candle.low <= activeLimitOrder.price) {
+          exitPrice = activeLimitOrder.price;
+          exitTime = formatTimestamp(candle.timestamp_readable_IST);
+          exitReason = `limit order hit (${activeLimitOrder.triggerPercent}% SL)`;
+          stopLossExitDetails.finalExitPrice = exitPrice;
+          stopLossExitDetails.finalExitReason = exitReason;
+          
+          // Record the fill details for the active limit order
+          stopLossExitDetails.orderFillDetails = {
+            filledOrderTriggerPercent: activeLimitOrder.triggerPercent,
+            filledOrderPrice: activeLimitOrder.price,
+            fillTime: formatTimestamp(candle.timestamp_readable_IST),
+            fillCandleHigh: candle.high,
+            fillCandleLow: candle.low,
+            timeBetweenPlaceAndFill: calculateTimeDiffInMinutes(activeLimitOrder.placedTime, candle.timestamp_readable_IST),
+            placedAtCandleIndex: activeLimitOrder.placedAtCandle,
+            filledAtCandleIndex: i
+          };
+          
+          break;
+        }
+      } else {
+        // Original stop loss logic
+        if (candle.high >= trade.stopLoss) {
+          exitPrice = candle.high; // More realistic - exit at breach price
+          exitTime = formatTimestamp(candle.timestamp_readable_IST);
+          exitReason = "stop-loss hit";
+          stopLossExitDetails.finalExitPrice = exitPrice;
+          stopLossExitDetails.finalExitReason = exitReason;
+          break;
+        }
       }
     }
   }
@@ -618,6 +813,8 @@ function simulateTrade(date, trade, dayData, capital, config) {
     exitPrice = lastCandle.close;
     exitTime = formatTimestamp(lastCandle.timestamp_readable_IST);
     exitReason = "market close";
+    stopLossExitDetails.finalExitPrice = exitPrice;
+    stopLossExitDetails.finalExitReason = exitReason;
   }
   
   // Calculate exit value and brokerage fee
@@ -636,11 +833,6 @@ function simulateTrade(date, trade, dayData, capital, config) {
   const actualCapitalUsed = investedAmount / (capital.leverage || 1);
   const netProfitPercentage = (netProfit / actualCapitalUsed) * 100;
   const grossProfitPercentage = (grossProfit / actualCapitalUsed) * 100;
-  
-  // Calculate risk in points
-  const riskPoints = trade.type === "long" ?
-    trade.entry.price - trade.stopLoss :
-    trade.stopLoss - trade.entry.price;
   
   // Create the trade result object
   return {
@@ -675,7 +867,8 @@ function simulateTrade(date, trade, dayData, capital, config) {
     patterns: trade.patterns,
     maxFavorableExcursion: maxFavorableExcursion,
     volumeInfo: trade.volumeInfo,
-    breakout: trade.breakoutDetails
+    breakout: trade.breakoutDetails,
+    stopLossExitDetails: stopLossExitDetails // New detailed stop loss information
   };
 }
 
@@ -703,11 +896,12 @@ function backtest(stockData, config = defaultConfig) {
   }
   
   // Calculate statistics
-  const stats = calculateStats(allTrades, config.capital);
+  const stats = calculateStats(allTrades, config.capital, config);
   
   return {
     ...stats,
-    allTrades
+    allTrades,
+    configUsed: config // Include the full configuration in results
   };
 }
 
@@ -715,9 +909,10 @@ function backtest(stockData, config = defaultConfig) {
  * Calculate statistics for the backtest results
  * @param {Array} trades - Array of trade objects
  * @param {Object} capital - Capital configuration
+ * @param {Object} config - Full configuration object
  * @returns {Object} - Statistics object
  */
-function calculateStats(trades, capital) {
+function calculateStats(trades, capital, config) {
   // Filter actual trades (those with profit field)
   const actualTrades = trades.filter(trade => trade.profit !== undefined || trade.netProfit !== undefined);
   
@@ -781,6 +976,36 @@ function calculateStats(trades, capital) {
     exitReasons[reason].averageProfit = exitReasons[reason].totalProfit / exitReasons[reason].count;
   }
   
+  // Analyze stop loss exit performance (if enabled)
+  let stopLossExitAnalysis = null;
+  if (config.stopLossExitConfig?.enabled) {
+    const stopLossExits = actualTrades.filter(trade => 
+      trade.stopLossExitDetails?.finalExitReason?.includes('limit order hit')
+    );
+    
+    const traditionalStopLossExits = actualTrades.filter(trade => 
+      trade.exit.reason === 'stop-loss hit'
+    );
+    
+    const circuitBreakerExits = actualTrades.filter(trade =>
+      trade.stopLossExitDetails?.circuitBreakerTriggered === true
+    );
+    
+    stopLossExitAnalysis = {
+      enabled: true,
+      totalExitsViaLimitOrders: stopLossExits.length,
+      totalTraditionalStopLossExits: traditionalStopLossExits.length,
+      totalCircuitBreakerExits: circuitBreakerExits.length,
+      averageProfitLimitOrderExits: stopLossExits.length > 0 ? 
+        stopLossExits.reduce((sum, trade) => sum + (trade.netProfit || 0), 0) / stopLossExits.length : 0,
+      averageProfitTraditionalExits: traditionalStopLossExits.length > 0 ?
+        traditionalStopLossExits.reduce((sum, trade) => sum + (trade.netProfit || 0), 0) / traditionalStopLossExits.length : 0,
+      averageProfitCircuitBreakerExits: circuitBreakerExits.length > 0 ?
+        circuitBreakerExits.reduce((sum, trade) => sum + (trade.netProfit || 0), 0) / circuitBreakerExits.length : 0,
+      config: config.stopLossExitConfig
+    };
+  }
+  
   // Calculate risk-reward metrics
   let actualAverageRR = 0;
   let plannedRR = 0;
@@ -792,7 +1017,7 @@ function calculateStats(trades, capital) {
     }, 0) / actualTrades.length;
     
     // Use the configured R:R as the planned R:R
-    plannedRR = 1; // Default risk-reward ratio
+    plannedRR = config.riskRewardRatio || 1;
   }
   
   // Calculate win rate
@@ -833,7 +1058,8 @@ function calculateStats(trades, capital) {
       winRate: winRate / 100 // Convert to decimal
     },
     winRate,
-    breakoutsWithoutEntry // New stat for breakouts that didn't result in trades
+    breakoutsWithoutEntry, // New stat for breakouts that didn't result in trades
+    stopLossExitAnalysis // New analysis for stop loss exit performance
   };
 }
 

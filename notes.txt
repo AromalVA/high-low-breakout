@@ -1,0 +1,2 @@
+All the prices must be a multiple of 0.05
+If the price hits the target before pulling back, to not trade on that any more. Give the dates when this scenario happaned in the ouput json file

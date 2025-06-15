@@ -2,22 +2,22 @@
   "initialCapital": 100000,
   "leverage": 5,
   "brokerageFeePercent": 0.06,
-  "finalBalance": 156539.13550200005,
-  "totalProfit": 56539.13550200004,
-  "totalGrossProfit": 90107.99000000005,
-  "totalNetProfit": 56539.13550200004,
-  "totalFees": 33568.85449799999,
-  "totalReturnPercentage": 56.539135502000036,
-  "totalGrossReturnPercentage": 90.10799000000004,
-  "totalNetReturnPercentage": 56.539135502000036,
-  "averageProfitPerTrade": 1009.6274196785722,
-  "averageGrossProfitPerTrade": 1609.0712500000009,
-  "averageNetProfitPerTrade": 1009.6274196785722,
-  "averageProfitPercentagePerTrade": 1.0104905240201076,
-  "averageGrossProfitPercentagePerTrade": 1.6103246206106039,
-  "averageNetProfitPercentagePerTrade": 1.0104905240201076,
-  "totalWinningDays": 35,
-  "totalLosingDays": 21,
+  "finalBalance": 147158.95642789977,
+  "totalProfit": 47158.95642789977,
+  "totalGrossProfit": 80738.13249999977,
+  "totalNetProfit": 47158.95642789977,
+  "totalFees": 33579.176072099996,
+  "totalReturnPercentage": 47.158956427899774,
+  "totalGrossReturnPercentage": 80.73813249999976,
+  "totalNetReturnPercentage": 47.158956427899774,
+  "averageProfitPerTrade": 842.1242219267816,
+  "averageGrossProfitPerTrade": 1441.7523660714246,
+  "averageNetProfitPerTrade": 842.1242219267816,
+  "averageProfitPercentagePerTrade": 0.8426442795404391,
+  "averageGrossProfitPercentagePerTrade": 1.4426628133836512,
+  "averageNetProfitPercentagePerTrade": 0.8426442795404391,
+  "totalWinningDays": 32,
+  "totalLosingDays": 24,
   "winningDays": [
     {
       "date": "04/12/2023",
@@ -33,7 +33,7 @@
         "reason": "forced market exit",
         "fee": 301.51439999999997
       },
-      "target": 601.6500000000001,
+      "target": 598.2500000000001,
       "stopLoss": 584.65,
       "shares": 846,
       "leverage": 5,
@@ -97,6 +97,19 @@
         "actualEntryTime": "2023-12-04 13:29",
         "actualEntryPrice": 590.77,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 594,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -113,7 +126,7 @@
         "reason": "forced market exit",
         "fee": 299.4312
       },
-      "target": 602.3249999999999,
+      "target": 604.55,
       "stopLoss": 613.45,
       "shares": 820,
       "leverage": 5,
@@ -175,6 +188,19 @@
         "actualEntryTime": "2023-12-06 14:04",
         "actualEntryPrice": 609.445,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 608.6,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -191,7 +217,7 @@
         "reason": "forced market exit",
         "fee": 300.6858
       },
-      "target": 617.5,
+      "target": 615,
       "stopLoss": 605,
       "shares": 820,
       "leverage": 5,
@@ -244,6 +270,19 @@
         "actualEntryTime": "2023-12-07 11:29",
         "actualEntryPrice": 609.5,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 611.15,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -255,25 +294,25 @@
         "fee": 299.64018
       },
       "exit": {
-        "price": 620.1,
-        "time": "2023-12-13 15:09",
-        "reason": "forced market exit",
-        "fee": 302.11272
+        "price": 619.15,
+        "time": "2023-12-13 14:09",
+        "reason": "target hit",
+        "fee": 301.64988
       },
-      "target": 621.025,
+      "target": 619.15,
       "stopLoss": 611.65,
       "shares": 812,
       "leverage": 5,
       "grossInvestedAmount": 499400.3,
       "actualCapitalUsed": 99880.06,
-      "totalFees": 601.7529,
+      "totalFees": 601.29006,
       "riskPoints": 3.375,
-      "profit": 3519.147100000037,
-      "profitPercentage": 3.5233730336165565,
-      "grossProfit": 4120.900000000037,
-      "netProfit": 3519.147100000037,
-      "grossProfitPercentage": 4.125848542742202,
-      "netProfitPercentage": 3.5233730336165565,
+      "profit": 2748.2099399999997,
+      "profitPercentage": 2.7515101012153975,
+      "grossProfit": 3349.5,
+      "netProfit": 2748.2099399999997,
+      "grossProfitPercentage": 3.3535222145441246,
+      "netProfitPercentage": 2.7515101012153975,
       "patterns": [
         "hammer",
         "hammer",
@@ -284,7 +323,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 4445.700000000019,
+      "maxFavorableExcursion": 3633.7000000000185,
       "volumeInfo": {
         "breakoutCandleVolume": 144878,
         "confirmationCandleVolume": 46536,
@@ -317,6 +356,19 @@
         "actualEntryTime": "2023-12-13 13:21",
         "actualEntryPrice": 615.025,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 619.15,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -333,7 +385,7 @@
         "reason": "forced market exit",
         "fee": 301.73013
       },
-      "target": 670.3249999999998,
+      "target": 664.3499999999999,
       "stopLoss": 640.45,
       "shares": 767,
       "leverage": 5,
@@ -388,6 +440,19 @@
         "actualEntryTime": "2023-12-19 11:56",
         "actualEntryPrice": 651.2049999999999,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 655.65,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -399,25 +464,25 @@
         "fee": 299.8246649999999
       },
       "exit": {
-        "price": 650.525,
+        "price": 651.9,
         "time": "2023-12-20 13:09",
         "reason": "target hit",
-        "fee": 297.810345
+        "fee": 298.43982
       },
-      "target": 650.525,
+      "target": 651.9,
       "stopLoss": 657.4,
       "shares": 763,
       "leverage": 5,
       "grossInvestedAmount": 499707.77499999997,
       "actualCapitalUsed": 99941.555,
-      "totalFees": 597.63501,
+      "totalFees": 598.2644849999999,
       "riskPoints": 2.4750000000000227,
-      "profit": 2759.5649899999826,
-      "profitPercentage": 2.7611787609268066,
-      "grossProfit": 3357.1999999999825,
-      "netProfit": 2759.5649899999826,
-      "grossProfitPercentage": 3.359163262969025,
-      "netProfitPercentage": 2.7611787609268066,
+      "profit": 1709.8105149999826,
+      "profitPercentage": 1.710810398137174,
+      "grossProfit": 2308.0749999999825,
+      "netProfit": 1709.8105149999826,
+      "grossProfitPercentage": 2.309424743291199,
+      "netProfitPercentage": 1.710810398137174,
       "patterns": [
         "hammer",
         "hammer",
@@ -459,6 +524,19 @@
         "actualEntryTime": "2023-12-20 12:04",
         "actualEntryPrice": 654.925,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 651.9,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -470,25 +548,25 @@
         "fee": 299.627526
       },
       "exit": {
-        "price": 648.8499999999999,
-        "time": "2023-12-21 14:51",
+        "price": 645.9,
+        "time": "2023-12-21 14:50",
         "reason": "target hit",
-        "fee": 304.05110999999994
+        "fee": 302.66873999999996
       },
-      "target": 648.8499999999999,
+      "target": 645.9,
       "stopLoss": 634.1,
       "shares": 781,
       "leverage": 5,
       "grossInvestedAmount": 499379.20999999996,
       "actualCapitalUsed": 99875.84199999999,
-      "totalFees": 603.6786359999999,
+      "totalFees": 602.296266,
       "riskPoints": 5.309999999999945,
-      "profit": 6768.961363999954,
-      "profitPercentage": 6.7773760185170255,
-      "grossProfit": 7372.639999999954,
-      "netProfit": 6768.961363999954,
-      "grossProfitPercentage": 7.381805101577972,
-      "netProfitPercentage": 6.7773760185170255,
+      "profit": 4466.393734000007,
+      "profitPercentage": 4.471946012730493,
+      "grossProfit": 5068.690000000007,
+      "netProfit": 4466.393734000007,
+      "grossProfitPercentage": 5.074991007334894,
+      "netProfitPercentage": 4.471946012730493,
       "patterns": [
         "hammer",
         "hammer",
@@ -497,7 +575,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 7450.740000000061,
+      "maxFavorableExcursion": 6474.490000000061,
       "volumeInfo": {
         "breakoutCandleVolume": 79662,
         "confirmationCandleVolume": 60238,
@@ -530,6 +608,19 @@
         "actualEntryTime": "2023-12-21 12:58",
         "actualEntryPrice": 639.41,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 645.9,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -541,25 +632,25 @@
         "fee": 299.855178
       },
       "exit": {
-        "price": 636.55,
-        "time": "2023-12-22 15:09",
-        "reason": "forced market exit",
-        "fee": 296.75960999999995
+        "price": 635.6,
+        "time": "2023-12-22 13:48",
+        "reason": "target hit",
+        "fee": 296.31672
       },
-      "target": 632.1500000000001,
+      "target": 635.6,
       "stopLoss": 649.4,
       "shares": 777,
       "leverage": 5,
       "grossInvestedAmount": 499758.63000000006,
       "actualCapitalUsed": 99951.72600000001,
-      "totalFees": 596.614788,
+      "totalFees": 596.171898,
       "riskPoints": 6.209999999999923,
-      "profit": 4562.665212000078,
-      "profitPercentage": 4.564868856792005,
-      "grossProfit": 5159.280000000078,
-      "netProfit": 4562.665212000078,
-      "grossProfitPercentage": 5.1617717937157765,
-      "netProfitPercentage": 4.564868856792005,
+      "profit": 5301.258102000025,
+      "profitPercentage": 5.303818467326942,
+      "grossProfit": 5897.430000000025,
+      "netProfit": 5301.258102000025,
+      "grossProfitPercentage": 5.900278300346733,
+      "netProfitPercentage": 5.303818467326942,
       "patterns": [
         "hammer",
         "hammer",
@@ -600,6 +691,19 @@
         "actualEntryTime": "2023-12-22 12:39",
         "actualEntryPrice": 643.19,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 635.6,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -611,25 +715,25 @@
         "fee": 299.85146999999995
       },
       "exit": {
-        "price": 642.25,
-        "time": "2024-01-05 15:09",
-        "reason": "forced market exit",
-        "fee": 298.2609
+        "price": 638.25,
+        "time": "2024-01-05 14:18",
+        "reason": "target hit",
+        "fee": 296.4033
       },
-      "target": 634.875,
+      "target": 638.25,
       "stopLoss": 651.75,
       "shares": 774,
       "leverage": 5,
       "grossInvestedAmount": 499752.44999999995,
       "actualCapitalUsed": 99950.48999999999,
-      "totalFees": 598.1123699999999,
+      "totalFees": 596.25477,
       "riskPoints": 6.0750000000000455,
-      "profit": 2052.837629999965,
-      "profitPercentage": 2.0538544933596277,
-      "grossProfit": 2650.949999999965,
-      "netProfit": 2052.837629999965,
-      "grossProfitPercentage": 2.6522631354783406,
-      "netProfitPercentage": 2.0538544933596277,
+      "profit": 5150.695229999965,
+      "profitPercentage": 5.1532466023928105,
+      "grossProfit": 5746.949999999964,
+      "netProfit": 5150.695229999965,
+      "grossProfitPercentage": 5.749796724358195,
+      "netProfitPercentage": 5.1532466023928105,
       "patterns": [
         "hammer",
         "hammer",
@@ -670,6 +774,19 @@
         "actualEntryTime": "2024-01-05 11:49",
         "actualEntryPrice": 645.675,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 638.25,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -686,7 +803,7 @@
         "reason": "forced market exit",
         "fee": 299.06388000000004
       },
-      "target": 614.0000000000001,
+      "target": 616.4000000000001,
       "stopLoss": 626,
       "shares": 804,
       "leverage": 5,
@@ -736,6 +853,19 @@
         "actualEntryTime": "2024-01-11 11:54",
         "actualEntryPrice": 621.6800000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 619.95,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -752,7 +882,7 @@
         "reason": "forced market exit",
         "fee": 300.279
       },
-      "target": 641.2249999999999,
+      "target": 638.4,
       "stopLoss": 627.1,
       "shares": 790,
       "leverage": 5,
@@ -812,6 +942,19 @@
         "actualEntryTime": "2024-01-12 14:02",
         "actualEntryPrice": 632.185,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 633.5,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -828,7 +971,7 @@
         "reason": "forced market exit",
         "fee": 298.35762
       },
-      "target": 630.4000000000001,
+      "target": 633.3000000000001,
       "stopLoss": 644.9,
       "shares": 781,
       "leverage": 5,
@@ -885,6 +1028,19 @@
         "actualEntryTime": "2024-01-16 12:56",
         "actualEntryPrice": 639.6800000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 636.7,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -896,25 +1052,25 @@
         "fee": 299.986299
       },
       "exit": {
-        "price": 639.25,
-        "time": "2024-01-31 15:09",
-        "reason": "forced market exit",
-        "fee": 301.85384999999997
+        "price": 640.8499999999999,
+        "time": "2024-01-31 14:38",
+        "reason": "target hit",
+        "fee": 302.60936999999996
       },
-      "target": 643.3749999999999,
+      "target": 640.8499999999999,
       "stopLoss": 630.75,
       "shares": 787,
       "leverage": 5,
       "grossInvestedAmount": 499977.165,
       "actualCapitalUsed": 99995.43299999999,
-      "totalFees": 601.8401489999999,
+      "totalFees": 602.5956689999999,
       "riskPoints": 4.544999999999959,
-      "profit": 2510.744851000032,
-      "profitPercentage": 2.5108595219544,
-      "grossProfit": 3112.5850000000323,
-      "netProfit": 2510.744851000032,
-      "grossProfitPercentage": 3.11272715824935,
-      "netProfitPercentage": 2.5108595219544,
+      "profit": 3769.189330999961,
+      "profitPercentage": 3.7693614777386495,
+      "grossProfit": 4371.784999999961,
+      "netProfit": 3769.189330999961,
+      "grossProfitPercentage": 4.371984668539773,
+      "netProfitPercentage": 3.7693614777386495,
       "patterns": [
         "hammer",
         "hammer",
@@ -928,7 +1084,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 6142.53500000005,
+      "maxFavorableExcursion": 6063.835000000032,
       "volumeInfo": {
         "breakoutCandleVolume": 83225,
         "confirmationCandleVolume": 127440,
@@ -961,6 +1117,19 @@
         "actualEntryTime": "2024-01-31 14:09",
         "actualEntryPrice": 635.295,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 640.8499999999999,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -977,7 +1146,7 @@
         "reason": "forced market exit",
         "fee": 302.34636
       },
-      "target": 659.125,
+      "target": 653.95,
       "stopLoss": 633.25,
       "shares": 778,
       "leverage": 5,
@@ -1037,6 +1206,19 @@
         "actualEntryTime": "2024-02-01 12:11",
         "actualEntryPrice": 642.565,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 647.7,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -1053,7 +1235,7 @@
         "reason": "forced market exit",
         "fee": 301.0768499999999
       },
-      "target": 680.6750000000001,
+      "target": 677.45,
       "stopLoss": 664.55,
       "shares": 745,
       "leverage": 5,
@@ -1108,6 +1290,19 @@
         "actualEntryTime": "2024-02-07 12:21",
         "actualEntryPrice": 670.355,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 673.55,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -1119,25 +1314,25 @@
         "fee": 299.78248799999994
       },
       "exit": {
-        "price": 724.15,
-        "time": "2024-02-09 15:09",
-        "reason": "forced market exit",
-        "fee": 302.83952999999997
+        "price": 723,
+        "time": "2024-02-09 14:41",
+        "reason": "target hit",
+        "fee": 302.3586
       },
-      "target": 725.8,
+      "target": 723,
       "stopLoss": 711.8,
       "shares": 697,
       "leverage": 5,
       "grossInvestedAmount": 499637.4799999999,
       "actualCapitalUsed": 99927.49599999998,
-      "totalFees": 602.6220179999999,
+      "totalFees": 602.141088,
       "riskPoints": 5.039999999999964,
-      "profit": 4492.4479820000415,
-      "profitPercentage": 4.495707549801951,
-      "grossProfit": 5095.070000000042,
-      "netProfit": 4492.4479820000415,
-      "grossProfitPercentage": 5.098766809887883,
-      "netProfitPercentage": 4.495707549801951,
+      "profit": 3691.378912000057,
+      "profitPercentage": 3.6940572512695184,
+      "grossProfit": 4293.520000000057,
+      "netProfit": 3691.378912000057,
+      "grossProfitPercentage": 4.296635232408963,
+      "netProfitPercentage": 3.6940572512695184,
       "patterns": [
         "hammer",
         "hammer",
@@ -1150,7 +1345,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 5617.820000000042,
+      "maxFavorableExcursion": 4642.020000000057,
       "volumeInfo": {
         "breakoutCandleVolume": 184574,
         "confirmationCandleVolume": 73732,
@@ -1183,6 +1378,19 @@
         "actualEntryTime": "2024-02-09 14:16",
         "actualEntryPrice": 716.8399999999999,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 723,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -1199,7 +1407,7 @@
         "reason": "forced market exit",
         "fee": 299.28819
       },
-      "target": 693.5749999999999,
+      "target": 699.05,
       "stopLoss": 720.95,
       "shares": 703,
       "leverage": 5,
@@ -1255,6 +1463,19 @@
         "actualEntryTime": "2024-02-12 13:10",
         "actualEntryPrice": 711.095,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 709.55,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -1266,25 +1487,25 @@
         "fee": 299.625132
       },
       "exit": {
-        "price": 759.8,
-        "time": "2024-02-23 15:09",
-        "reason": "forced market exit",
-        "fee": 297.68963999999994
+        "price": 757.7,
+        "time": "2024-02-23 10:52",
+        "reason": "target hit",
+        "fee": 296.86686000000003
       },
-      "target": 754.5,
+      "target": 757.7,
       "stopLoss": 770.5,
       "shares": 653,
       "leverage": 5,
       "grossInvestedAmount": 499375.22000000003,
       "actualCapitalUsed": 99875.04400000001,
-      "totalFees": 597.314772,
+      "totalFees": 596.491992,
       "riskPoints": 5.759999999999991,
-      "profit": 2628.5052280000355,
-      "profitPercentage": 2.631793812276103,
-      "grossProfit": 3225.8200000000356,
-      "netProfit": 2628.5052280000355,
-      "grossProfitPercentage": 3.2298558987368606,
-      "netProfitPercentage": 2.631793812276103,
+      "profit": 4000.628007999976,
+      "profitPercentage": 4.005633287130242,
+      "grossProfit": 4597.119999999976,
+      "netProfit": 4000.628007999976,
+      "grossProfitPercentage": 4.6028715641917275,
+      "netProfitPercentage": 4.005633287130242,
       "patterns": [
         "hammer",
         "hammer",
@@ -1324,6 +1545,19 @@
         "actualEntryTime": "2024-02-23 10:28",
         "actualEntryPrice": 764.74,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 757.7,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -1335,25 +1569,25 @@
         "fee": 299.915784
       },
       "exit": {
-        "price": 743.5,
-        "time": "2024-02-28 15:09",
-        "reason": "forced market exit",
-        "fee": 297.1026
+        "price": 742.95,
+        "time": "2024-02-28 14:57",
+        "reason": "target hit",
+        "fee": 296.88282
       },
-      "target": 739.5,
+      "target": 742.95,
       "stopLoss": 756.75,
       "shares": 666,
       "leverage": 5,
       "grossInvestedAmount": 499859.63999999996,
       "actualCapitalUsed": 99971.92799999999,
-      "totalFees": 597.018384,
+      "totalFees": 596.798604,
       "riskPoints": 6.210000000000036,
-      "profit": 4091.621615999976,
-      "profitPercentage": 4.092770538545557,
-      "grossProfit": 4688.639999999976,
-      "netProfit": 4091.621615999976,
-      "grossProfitPercentage": 4.689956564606793,
-      "netProfitPercentage": 4.092770538545557,
+      "profit": 4458.141395999946,
+      "profitPercentage": 4.459393236869401,
+      "grossProfit": 5054.939999999946,
+      "netProfit": 4458.141395999946,
+      "grossProfitPercentage": 5.05635942121667,
+      "netProfitPercentage": 4.459393236869401,
       "patterns": [
         "hammer",
         "hammer",
@@ -1410,73 +1644,19 @@
         "actualEntryTime": "2024-02-28 14:07",
         "actualEntryPrice": 750.54,
         "pullbackPercentage": 10
-      }
-    },
-    {
-      "date": "05/03/2024",
-      "type": "long",
-      "entry": {
-        "price": 780.88,
-        "time": "2024-03-05 11:14",
-        "fee": 299.85792000000004
       },
-      "exit": {
-        "price": 783.25,
-        "time": "2024-03-05 15:09",
-        "reason": "forced market exit",
-        "fee": 300.768
-      },
-      "target": 789.1999999999998,
-      "stopLoss": 776.2,
-      "shares": 640,
-      "leverage": 5,
-      "grossInvestedAmount": 499763.2,
-      "actualCapitalUsed": 99952.64,
-      "totalFees": 600.62592,
-      "riskPoints": 4.67999999999995,
-      "profit": 916.174080000003,
-      "profitPercentage": 0.9166081856367205,
-      "grossProfit": 1516.800000000003,
-      "netProfit": 916.174080000003,
-      "grossProfitPercentage": 1.5175186968548333,
-      "netProfitPercentage": 0.9166081856367205,
-      "patterns": [
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 3884.800000000032,
-      "volumeInfo": {
-        "breakoutCandleVolume": 220959,
-        "confirmationCandleVolume": 229628,
-        "averageLookbackVolume": 24487.35
-      },
-      "breakout": {
-        "breakoutTime": "2024-03-05 10:59",
-        "breakoutPrice": 781.4,
-        "previousExtremeTime": "2024-03-05 09:33",
-        "timeSincePreviousExtreme": 86,
-        "previousExtremeType": "high",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 776.2,
-        "stopLossTime": "2024-03-05 10:27",
-        "swingLow": 776.2,
-        "swingHigh": 781.4,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "05/03/2024 10:58 AM",
-            "preBreakoutVolume": 229628,
-            "averageVolume": 24487.35,
-            "volumeThreshold": 24487.35,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 780.88,
-        "pullbackAmount": 0.5199999999999932,
-        "actualEntryTime": "2024-03-05 11:14",
-        "actualEntryPrice": 780.88,
-        "pullbackPercentage": 10
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 742.95,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -1488,25 +1668,25 @@
         "fee": 299.973852
       },
       "exit": {
-        "price": 774.1750000000002,
-        "time": "2024-03-11 12:12",
+        "price": 777.9000000000001,
+        "time": "2024-03-11 12:00",
         "reason": "target hit",
-        "fee": 295.42518
+        "fee": 296.84664000000004
       },
-      "target": 774.1750000000002,
+      "target": 777.9000000000001,
       "stopLoss": 792.8,
       "shares": 636,
       "leverage": 5,
       "grossInvestedAmount": 499956.42000000004,
       "actualCapitalUsed": 99991.28400000001,
-      "totalFees": 595.399032,
+      "totalFees": 596.8204920000001,
       "riskPoints": 6.704999999999927,
-      "profit": 6985.720967999901,
-      "profitPercentage": 6.986329896513681,
-      "grossProfit": 7581.119999999902,
-      "netProfit": 6985.720967999901,
-      "grossProfitPercentage": 7.581780828016871,
-      "netProfitPercentage": 6.986329896513681,
+      "profit": 4615.19950799996,
+      "profitPercentage": 4.615601803853183,
+      "grossProfit": 5212.0199999999595,
+      "netProfit": 4615.19950799996,
+      "grossProfitPercentage": 5.212474319261625,
+      "netProfitPercentage": 4.615601803853183,
       "patterns": [
         "hammer",
         "hammer",
@@ -1516,7 +1696,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 7883.219999999988,
+      "maxFavorableExcursion": 5275.620000000046,
       "volumeInfo": {
         "breakoutCandleVolume": 44972,
         "confirmationCandleVolume": 54259,
@@ -1549,6 +1729,19 @@
         "actualEntryTime": "2024-03-11 10:52",
         "actualEntryPrice": 786.095,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 777.9000000000001,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -1565,7 +1758,7 @@
         "reason": "forced market exit",
         "fee": 297.63087
       },
-      "target": 741.3750000000001,
+      "target": 748.6500000000001,
       "stopLoss": 777.75,
       "shares": 653,
       "leverage": 5,
@@ -1620,6 +1813,19 @@
         "actualEntryTime": "2024-03-12 10:46",
         "actualEntryPrice": 764.6550000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 759.65,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -1631,25 +1837,25 @@
         "fee": 299.810595
       },
       "exit": {
-        "price": 748.8,
-        "time": "2024-03-13 15:09",
-        "reason": "forced market exit",
-        "fee": 298.77119999999996
+        "price": 743.0999999999999,
+        "time": "2024-03-13 14:46",
+        "reason": "target hit",
+        "fee": 296.4968999999999
       },
-      "target": 739.3249999999998,
+      "target": 743.0999999999999,
       "stopLoss": 758.2,
       "shares": 665,
       "leverage": 5,
       "grossInvestedAmount": 499684.32499999995,
       "actualCapitalUsed": 99936.86499999999,
-      "totalFees": 598.5817949999999,
+      "totalFees": 596.3074949999999,
       "riskPoints": 6.795000000000073,
-      "profit": 1133.743205000012,
-      "profitPercentage": 1.134459445971226,
-      "grossProfit": 1732.325000000012,
-      "netProfit": 1133.743205000012,
-      "grossProfitPercentage": 1.7334193943346252,
-      "netProfitPercentage": 1.134459445971226,
+      "profit": 4926.517505000043,
+      "profitPercentage": 4.929629826791188,
+      "grossProfit": 5522.825000000043,
+      "netProfit": 4926.517505000043,
+      "grossProfitPercentage": 5.526314038368167,
+      "netProfitPercentage": 4.929629826791188,
       "patterns": [
         "hammer",
         "hammer",
@@ -1695,82 +1901,19 @@
         "actualEntryTime": "2024-03-13 13:55",
         "actualEntryPrice": 751.405,
         "pullbackPercentage": 10
-      }
-    },
-    {
-      "date": "19/03/2024",
-      "type": "short",
-      "entry": {
-        "price": 726.055,
-        "time": "2024-03-19 11:51",
-        "fee": 299.71550399999995
       },
-      "exit": {
-        "price": 724.65,
-        "time": "2024-03-19 15:09",
-        "reason": "forced market exit",
-        "fee": 299.13552
-      },
-      "target": 717.1750000000001,
-      "stopLoss": 731.05,
-      "shares": 688,
-      "leverage": 5,
-      "grossInvestedAmount": 499525.83999999997,
-      "actualCapitalUsed": 99905.16799999999,
-      "totalFees": 598.8510239999999,
-      "riskPoints": 4.9950000000000045,
-      "profit": 367.7889759999813,
-      "profitPercentage": 0.36813808871226894,
-      "grossProfit": 966.6399999999812,
-      "netProfit": 367.7889759999813,
-      "grossProfitPercentage": 0.9675575541797611,
-      "netProfitPercentage": 0.36813808871226894,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 2205.03999999995,
-      "volumeInfo": {
-        "breakoutCandleVolume": 71727,
-        "confirmationCandleVolume": 30267,
-        "averageLookbackVolume": 25745.3
-      },
-      "breakout": {
-        "breakoutTime": "2024-03-19 11:37",
-        "breakoutPrice": 725.5,
-        "previousExtremeTime": "2024-03-19 10:09",
-        "timeSincePreviousExtreme": 88,
-        "previousExtremeType": "low",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 731.05,
-        "stopLossTime": "2024-03-19 10:34",
-        "swingLow": 725.5,
-        "swingHigh": 731.05,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "19/03/2024 11:36 AM",
-            "preBreakoutVolume": 30267,
-            "averageVolume": 25745.3,
-            "volumeThreshold": 25745.3,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 726.055,
-        "pullbackAmount": 0.5549999999999955,
-        "actualEntryTime": "2024-03-19 11:51",
-        "actualEntryPrice": 726.055,
-        "pullbackPercentage": 10
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 743.0999999999999,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -1782,25 +1925,25 @@
         "fee": 299.874288
       },
       "exit": {
-        "price": 765.8,
-        "time": "2024-04-02 15:09",
-        "reason": "forced market exit",
-        "fee": 302.33783999999997
+        "price": 767.15,
+        "time": "2024-04-02 14:32",
+        "reason": "target hit",
+        "fee": 302.87082
       },
-      "target": 770.5999999999999,
+      "target": 767.15,
       "stopLoss": 753.35,
       "shares": 658,
       "leverage": 5,
       "grossInvestedAmount": 499790.48,
       "actualCapitalUsed": 99958.09599999999,
-      "totalFees": 602.2121279999999,
+      "totalFees": 602.745108,
       "riskPoints": 6.209999999999923,
-      "profit": 3503.7078720000054,
-      "profitPercentage": 3.5051766812365113,
-      "grossProfit": 4105.9200000000055,
-      "netProfit": 3503.7078720000054,
-      "grossProfitPercentage": 4.10764126599611,
-      "netProfitPercentage": 3.5051766812365113,
+      "profit": 4391.474892000021,
+      "profitPercentage": 4.393315867080963,
+      "grossProfit": 4994.220000000021,
+      "netProfit": 4391.474892000021,
+      "grossProfitPercentage": 4.996313655274127,
+      "netProfitPercentage": 4.393315867080963,
       "patterns": [
         "hammer",
         "hammer",
@@ -1847,6 +1990,19 @@
         "actualEntryTime": "2024-04-02 11:38",
         "actualEntryPrice": 759.56,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 767.15,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -1858,25 +2014,25 @@
         "fee": 299.83670399999994
       },
       "exit": {
-        "price": 771.45,
-        "time": "2024-04-03 15:09",
-        "reason": "forced market exit",
-        "fee": 302.25411
+        "price": 771.5500000000001,
+        "time": "2024-04-03 14:23",
+        "reason": "target hit",
+        "fee": 302.29329
       },
-      "target": 774.4000000000001,
+      "target": 771.5500000000001,
       "stopLoss": 760.15,
       "shares": 653,
       "leverage": 5,
       "grossInvestedAmount": 499727.83999999997,
       "actualCapitalUsed": 99945.568,
-      "totalFees": 602.0908139999999,
+      "totalFees": 602.1299939999999,
       "riskPoints": 5.1299999999999955,
-      "profit": 3426.9191860000474,
-      "profitPercentage": 3.4287855425465663,
-      "grossProfit": 4029.0100000000475,
-      "netProfit": 3426.9191860000474,
-      "grossProfitPercentage": 4.03120426510563,
-      "netProfitPercentage": 3.4287855425465663,
+      "profit": 3492.1800060000623,
+      "profitPercentage": 3.4940819046624085,
+      "grossProfit": 4094.3100000000622,
+      "netProfit": 3492.1800060000623,
+      "grossProfitPercentage": 4.096539828559544,
+      "netProfitPercentage": 3.4940819046624085,
       "patterns": [
         "hammer",
         "hammer",
@@ -1890,7 +2046,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 4616.710000000033,
+      "maxFavorableExcursion": 4224.910000000018,
       "volumeInfo": {
         "breakoutCandleVolume": 117714,
         "confirmationCandleVolume": 37381,
@@ -1923,81 +2079,19 @@
         "actualEntryTime": "2024-04-03 12:50",
         "actualEntryPrice": 765.28,
         "pullbackPercentage": 10
-      }
-    },
-    {
-      "date": "12/04/2024",
-      "type": "short",
-      "entry": {
-        "price": 773.075,
-        "time": "2024-04-12 12:19",
-        "fee": 299.64387
       },
-      "exit": {
-        "price": 767.875,
-        "time": "2024-04-12 14:53",
-        "reason": "target hit",
-        "fee": 297.62835
-      },
-      "target": 767.875,
-      "stopLoss": 776,
-      "shares": 646,
-      "leverage": 5,
-      "grossInvestedAmount": 499406.45,
-      "actualCapitalUsed": 99881.29000000001,
-      "totalFees": 597.2722200000001,
-      "riskPoints": 2.9249999999999545,
-      "profit": 2761.927780000029,
-      "profitPercentage": 2.765210361219833,
-      "grossProfit": 3359.2000000000294,
-      "netProfit": 2761.927780000029,
-      "grossProfitPercentage": 3.363192445752382,
-      "netProfitPercentage": 2.765210361219833,
-      "patterns": [
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer",
-        "hammer"
-      ],
-      "maxFavorableExcursion": 3472.25,
-      "volumeInfo": {
-        "breakoutCandleVolume": 116234,
-        "confirmationCandleVolume": 153715,
-        "averageLookbackVolume": 13105.95
-      },
-      "breakout": {
-        "breakoutTime": "2024-04-12 12:18",
-        "breakoutPrice": 772.75,
-        "previousExtremeTime": "2024-04-12 10:49",
-        "timeSincePreviousExtreme": 89,
-        "previousExtremeType": "low",
-        "periodMinutesRequired": 70,
-        "stopLossValue": 776,
-        "stopLossTime": "2024-04-12 11:20",
-        "swingLow": 772.75,
-        "swingHigh": 776,
-        "volumeConfirmation": {
-          "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "12/04/2024 12:17 PM",
-            "preBreakoutVolume": 153715,
-            "averageVolume": 13105.95,
-            "volumeThreshold": 13105.95,
-            "volumeMultiplier": 1
-          }
-        },
-        "pullbackEntryPrice": 773.075,
-        "pullbackAmount": 0.325,
-        "actualEntryTime": "2024-04-12 12:19",
-        "actualEntryPrice": 773.075,
-        "pullbackPercentage": 10
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 771.5500000000001,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -2014,7 +2108,7 @@
         "reason": "forced market exit",
         "fee": 297.32237999999995
       },
-      "target": 738.15,
+      "target": 741.9,
       "stopLoss": 756.9,
       "shares": 666,
       "leverage": 5,
@@ -2065,6 +2159,19 @@
         "actualEntryTime": "2024-04-18 13:31",
         "actualEntryPrice": 750.15,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 744.05,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -2076,25 +2183,25 @@
         "fee": 299.81556
       },
       "exit": {
-        "price": 764.95,
-        "time": "2024-04-22 15:09",
-        "reason": "forced market exit",
-        "fee": 302.9202
+        "price": 765.25,
+        "time": "2024-04-22 15:01",
+        "reason": "target hit",
+        "fee": 303.039
       },
-      "target": 768.95,
+      "target": 765.25,
       "stopLoss": 750.45,
       "shares": 660,
       "leverage": 5,
       "grossInvestedAmount": 499692.60000000003,
       "actualCapitalUsed": 99938.52,
-      "totalFees": 602.73576,
+      "totalFees": 602.85456,
       "riskPoints": 6.659999999999968,
-      "profit": 4571.664240000022,
-      "profitPercentage": 4.574476628231058,
-      "grossProfit": 5174.4000000000215,
-      "netProfit": 4571.664240000022,
-      "grossProfitPercentage": 5.177583178137941,
-      "netProfitPercentage": 4.574476628231058,
+      "profit": 4769.545439999991,
+      "profitPercentage": 4.772479560433745,
+      "grossProfit": 5372.3999999999905,
+      "netProfit": 4769.545439999991,
+      "grossProfitPercentage": 5.375704983423799,
+      "netProfitPercentage": 4.772479560433745,
       "patterns": [
         "hammer",
         "hammer",
@@ -2105,7 +2212,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 5537.3999999999905,
+      "maxFavorableExcursion": 5504.4000000000215,
       "volumeInfo": {
         "breakoutCandleVolume": 61813,
         "confirmationCandleVolume": 69106,
@@ -2138,6 +2245,19 @@
         "actualEntryTime": "2024-04-22 12:25",
         "actualEntryPrice": 757.11,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 765.25,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -2154,7 +2274,7 @@
         "reason": "forced market exit",
         "fee": 299.32035
       },
-      "target": 794.4499999999998,
+      "target": 796.8499999999999,
       "stopLoss": 806.45,
       "shares": 623,
       "leverage": 5,
@@ -2216,6 +2336,19 @@
         "actualEntryTime": "2024-04-26 13:41",
         "actualEntryPrice": 802.13,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 800.75,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -2227,25 +2360,25 @@
         "fee": 299.921616
       },
       "exit": {
-        "price": 817.8,
-        "time": "2024-05-09 15:09",
-        "reason": "forced market exit",
-        "fee": 300.29616
+        "price": 832.95,
+        "time": "2024-05-09 14:09",
+        "reason": "target hit",
+        "fee": 305.85924
       },
-      "target": 840.3000000000001,
+      "target": 832.95,
       "stopLoss": 803.55,
       "shares": 612,
       "leverage": 5,
       "grossInvestedAmount": 499869.36,
       "actualCapitalUsed": 99973.872,
-      "totalFees": 600.217776,
+      "totalFees": 605.780856,
       "riskPoints": 13.230000000000018,
-      "profit": 24.02222399998891,
-      "profitPercentage": 0.02402850216703511,
-      "grossProfit": 624.2399999999889,
-      "netProfit": 24.02222399998891,
-      "grossProfitPercentage": 0.6244031440534671,
-      "netProfitPercentage": 0.02402850216703511,
+      "profit": 9290.259144000045,
+      "profitPercentage": 9.292687137295278,
+      "grossProfit": 9896.040000000045,
+      "netProfit": 9290.259144000045,
+      "grossProfitPercentage": 9.898626313083128,
+      "netProfitPercentage": 9.292687137295278,
       "patterns": [
         "hammer",
         "hammer",
@@ -2260,7 +2393,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 13996.440000000002,
+      "maxFavorableExcursion": 11732.040000000045,
       "volumeInfo": {
         "breakoutCandleVolume": 2050730,
         "confirmationCandleVolume": 186473,
@@ -2293,6 +2426,19 @@
         "actualEntryTime": "2024-05-09 13:57",
         "actualEntryPrice": 816.78,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 832.95,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -2309,7 +2455,7 @@
         "reason": "forced market exit",
         "fee": 300.79188
       },
-      "target": 833.1500000000001,
+      "target": 828.1,
       "stopLoss": 807.9,
       "shares": 612,
       "leverage": 5,
@@ -2369,6 +2515,19 @@
         "actualEntryTime": "2024-05-14 13:19",
         "actualEntryPrice": 816.99,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 819.15,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -2380,25 +2539,25 @@
         "fee": 299.69793
       },
       "exit": {
-        "price": 793.25,
+        "price": 807.7,
         "time": "2024-06-04 11:17",
         "reason": "target hit",
-        "fee": 283.19025
+        "fee": 288.3489
       },
-      "target": 793.25,
+      "target": 807.7,
       "stopLoss": 865.5,
       "shares": 595,
       "leverage": 5,
       "grossInvestedAmount": 499496.55,
       "actualCapitalUsed": 99899.31,
-      "totalFees": 582.8881799999999,
+      "totalFees": 588.04683,
       "riskPoints": 26.00999999999999,
-      "profit": 26929.91182000001,
-      "profitPercentage": 26.95705487855723,
-      "grossProfit": 27512.800000000007,
-      "netProfit": 26929.91182000001,
-      "grossProfitPercentage": 27.540530560221093,
-      "netProfitPercentage": 26.95705487855723,
+      "profit": 18327.003169999978,
+      "profitPercentage": 18.345475229008066,
+      "grossProfit": 18915.049999999977,
+      "netProfit": 18327.003169999978,
+      "grossProfitPercentage": 18.934114760151974,
+      "netProfitPercentage": 18.345475229008066,
       "patterns": [
         "hammer",
         "hammer",
@@ -2439,6 +2598,19 @@
         "actualEntryTime": "2024-06-04 10:48",
         "actualEntryPrice": 839.49,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 807.7,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -2455,7 +2627,7 @@
         "reason": "forced market exit",
         "fee": 301.89707999999996
       },
-      "target": 849.25,
+      "target": 841.5,
       "stopLoss": 810.5,
       "shares": 606,
       "leverage": 5,
@@ -2519,6 +2691,19 @@
         "actualEntryTime": "2024-06-07 12:54",
         "actualEntryPrice": 824.45,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 830.3,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -2535,7 +2720,7 @@
         "reason": "forced market exit",
         "fee": 299.1087
       },
-      "target": 831.425,
+      "target": 834.3,
       "stopLoss": 845.8,
       "shares": 594,
       "leverage": 5,
@@ -2601,6 +2786,19 @@
         "actualEntryTime": "2024-06-14 14:10",
         "actualEntryPrice": 840.625,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 839.25,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     }
   ],
@@ -2614,29 +2812,29 @@
         "fee": 299.772006
       },
       "exit": {
-        "price": 607.3,
-        "time": "2023-12-08 12:47",
-        "reason": "stop-loss hit",
-        "fee": 297.69845999999995
+        "price": 608.569,
+        "time": "2023-12-08 11:05",
+        "reason": "limit order hit (70% SL)",
+        "fee": 298.3205238
       },
-      "target": 619.0500000000001,
+      "target": 616.7,
       "stopLoss": 607.3,
       "shares": 817,
       "leverage": 5,
       "grossInvestedAmount": 499620.00999999995,
       "actualCapitalUsed": 99924.002,
-      "totalFees": 597.470466,
+      "totalFees": 598.0925298,
       "riskPoints": 4.230000000000018,
-      "profit": -4053.380466000015,
-      "profitPercentage": -4.056463296976451,
-      "grossProfit": -3455.910000000015,
-      "netProfit": -4053.380466000015,
-      "grossProfitPercentage": -3.4585384200284683,
-      "netProfitPercentage": -4.056463296976451,
+      "profit": -3017.229529800011,
+      "profitPercentage": -3.0195243078835166,
+      "grossProfit": -2419.1370000000106,
+      "netProfit": -3017.229529800011,
+      "grossProfitPercentage": -2.420976894019928,
+      "netProfitPercentage": -3.0195243078835166,
       "patterns": [
         "hammer"
       ],
-      "maxFavorableExcursion": 874.1900000000409,
+      "maxFavorableExcursion": 16.33999999998514,
       "volumeInfo": {
         "breakoutCandleVolume": 164561,
         "confirmationCandleVolume": 65683,
@@ -2669,6 +2867,36 @@
         "actualEntryTime": "2023-12-08 11:00",
         "actualEntryPrice": 611.53,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 608.569,
+            "timeTriggered": "2023-12-08 11:04",
+            "candleLow": 608.5,
+            "lossAtTrigger": 3.0299999999999727
+          }
+        ],
+        "finalExitPrice": 608.569,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 608.569,
+          "fillTime": "2023-12-08 11:05",
+          "fillCandleHigh": 609.5,
+          "fillCandleLow": 608.6,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 109,
+          "filledAtCandleIndex": 110
+        }
       }
     },
     {
@@ -2680,25 +2908,25 @@
         "fee": 299.80925399999995
       },
       "exit": {
-        "price": 623.65,
-        "time": "2023-12-14 15:09",
-        "reason": "forced market exit",
-        "fee": 300.10038
+        "price": 624.9035,
+        "time": "2023-12-14 15:06",
+        "reason": "limit order hit (70% SL)",
+        "fee": 300.7035642
       },
-      "target": 618.3249999999999,
+      "target": 619.8,
       "stopLoss": 625.7,
       "shares": 802,
       "leverage": 5,
       "grossInvestedAmount": 499682.08999999997,
       "actualCapitalUsed": 99936.41799999999,
-      "totalFees": 599.9096339999999,
+      "totalFees": 600.5128182,
       "riskPoints": 2.6550000000000864,
-      "profit": -1085.1196340000145,
-      "profitPercentage": -1.0858100137229398,
-      "grossProfit": -485.2100000000146,
-      "netProfit": -1085.1196340000145,
-      "grossProfitPercentage": -0.48551870250143914,
-      "netProfitPercentage": -1.0858100137229398,
+      "profit": -2091.0298182000392,
+      "profitPercentage": -2.092360182651373,
+      "grossProfit": -1490.5170000000394,
+      "netProfit": -2091.0298182000392,
+      "grossProfitPercentage": -1.4914653034692913,
+      "netProfitPercentage": -2.092360182651373,
       "patterns": [
         "hammer",
         "hammer",
@@ -2742,6 +2970,36 @@
         "actualEntryTime": "2023-12-14 13:59",
         "actualEntryPrice": 623.045,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 624.9035,
+            "timeTriggered": "2023-12-14 15:05",
+            "candleHigh": 625,
+            "lossAtTrigger": 1.955000000000041
+          }
+        ],
+        "finalExitPrice": 624.9035,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 624.9035,
+          "fillTime": "2023-12-14 15:06",
+          "fillCandleHigh": 624.8,
+          "fillCandleLow": 624.35,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 350,
+          "filledAtCandleIndex": 351
+        }
       }
     },
     {
@@ -2753,25 +3011,25 @@
         "fee": 299.753916
       },
       "exit": {
-        "price": 626.8,
-        "time": "2023-12-15 13:14",
-        "reason": "stop-loss hit",
-        "fee": 301.61616
+        "price": 625.6389999999999,
+        "time": "2023-12-15 12:34",
+        "reason": "limit order hit (70% SL)",
+        "fee": 301.0574868
       },
-      "target": 616.0500000000001,
+      "target": 618.2,
       "stopLoss": 626.8,
       "shares": 802,
       "leverage": 5,
       "grossInvestedAmount": 499589.86,
       "actualCapitalUsed": 99917.972,
-      "totalFees": 601.3700759999999,
+      "totalFees": 600.8114028,
       "riskPoints": 3.8700000000000045,
-      "profit": -3705.1100760000036,
-      "profitPercentage": -3.7081517987574886,
-      "grossProfit": -3103.7400000000034,
-      "netProfit": -3705.1100760000036,
-      "grossProfitPercentage": -3.1062880259419234,
-      "netProfitPercentage": -3.7081517987574886,
+      "profit": -2773.4294027999567,
+      "profitPercentage": -2.775706259130196,
+      "grossProfit": -2172.6179999999567,
+      "netProfit": -2773.4294027999567,
+      "grossProfitPercentage": -2.1744016181593007,
+      "netProfitPercentage": -2.775706259130196,
       "patterns": [
         "hammer",
         "hammer"
@@ -2809,6 +3067,36 @@
         "actualEntryTime": "2023-12-15 10:59",
         "actualEntryPrice": 622.93,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 625.6389999999999,
+            "timeTriggered": "2023-12-15 12:33",
+            "candleHigh": 625.8,
+            "lossAtTrigger": 2.8700000000000045
+          }
+        ],
+        "finalExitPrice": 625.6389999999999,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 625.6389999999999,
+          "fillTime": "2023-12-15 12:34",
+          "fillCandleHigh": 625.85,
+          "fillCandleLow": 625.4,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 198,
+          "filledAtCandleIndex": 199
+        }
       }
     },
     {
@@ -2825,7 +3113,7 @@
         "reason": "forced market exit",
         "fee": 299.18385
       },
-      "target": 652.0250000000001,
+      "target": 649.35,
       "stopLoss": 638.65,
       "shares": 777,
       "leverage": 5,
@@ -2877,6 +3165,19 @@
         "actualEntryTime": "2024-01-04 11:15",
         "actualEntryPrice": 643.465,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 641.75,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -2893,7 +3194,7 @@
         "reason": "forced market exit",
         "fee": 301.00895999999995
       },
-      "target": 623.875,
+      "target": 628.2,
       "stopLoss": 645.5,
       "shares": 784,
       "leverage": 5,
@@ -2946,6 +3247,19 @@
         "actualEntryTime": "2024-01-15 11:06",
         "actualEntryPrice": 637.715,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 639.9,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -2962,7 +3276,7 @@
         "reason": "forced market exit",
         "fee": 299.42513999999994
       },
-      "target": 645.6000000000001,
+      "target": 641.3000000000001,
       "stopLoss": 624.1,
       "shares": 791,
       "leverage": 5,
@@ -3026,6 +3340,19 @@
         "actualEntryTime": "2024-01-20 14:42",
         "actualEntryPrice": 631.84,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 630.9,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -3037,25 +3364,25 @@
         "fee": 299.7048
       },
       "exit": {
-        "price": 623.1,
-        "time": "2024-01-29 15:09",
-        "reason": "forced market exit",
-        "fee": 299.08799999999997
+        "price": 620.8254999999999,
+        "time": "2024-01-29 14:59",
+        "reason": "limit order hit (70% SL)",
+        "fee": 297.99623999999994
       },
-      "target": 633.4250000000002,
+      "target": 630.6000000000001,
       "stopLoss": 619.3,
       "shares": 800,
       "leverage": 5,
       "grossInvestedAmount": 499508,
       "actualCapitalUsed": 99901.6,
-      "totalFees": 598.7927999999999,
+      "totalFees": 597.7010399999999,
       "riskPoints": 5.085000000000036,
-      "profit": -1626.7927999999745,
-      "profitPercentage": -1.6283951408185398,
-      "grossProfit": -1027.9999999999745,
-      "netProfit": -1626.7927999999745,
-      "grossProfitPercentage": -1.0290125483475485,
-      "netProfitPercentage": -1.6283951408185398,
+      "profit": -3445.3010400000567,
+      "profitPercentage": -3.448694555442612,
+      "grossProfit": -2847.6000000000568,
+      "netProfit": -3445.3010400000567,
+      "grossProfitPercentage": -2.850404798321605,
+      "netProfitPercentage": -3.448694555442612,
       "patterns": [
         "hammer",
         "hammer",
@@ -3103,6 +3430,36 @@
         "actualEntryTime": "2024-01-29 14:32",
         "actualEntryPrice": 624.385,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 620.8254999999999,
+            "timeTriggered": "2024-01-29 14:58",
+            "candleLow": 620.6,
+            "lossAtTrigger": 3.784999999999968
+          }
+        ],
+        "finalExitPrice": 620.8254999999999,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 620.8254999999999,
+          "fillTime": "2024-01-29 14:59",
+          "fillCandleHigh": 621.5,
+          "fillCandleLow": 620.65,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 343,
+          "filledAtCandleIndex": 344
+        }
       }
     },
     {
@@ -3114,25 +3471,25 @@
         "fee": 299.840622
       },
       "exit": {
-        "price": 758,
-        "time": "2024-02-16 14:23",
-        "reason": "stop-loss hit",
-        "fee": 296.9844
+        "price": 759.458,
+        "time": "2024-02-16 14:14",
+        "reason": "limit order hit (80% SL)",
+        "fee": 297.5556444
       },
-      "target": 778.25,
+      "target": 774.2,
       "stopLoss": 758,
       "shares": 653,
       "leverage": 5,
       "grossInvestedAmount": 499734.37,
       "actualCapitalUsed": 99946.874,
-      "totalFees": 596.825022,
+      "totalFees": 597.3962664000001,
       "riskPoints": 7.289999999999964,
-      "profit": -5357.195021999976,
-      "profitPercentage": -5.360042598230712,
-      "grossProfit": -4760.369999999976,
-      "netProfit": -5357.195021999976,
-      "grossProfitPercentage": -4.762900338433773,
-      "netProfitPercentage": -5.360042598230712,
+      "profit": -4405.692266399996,
+      "profitPercentage": -4.408034078584585,
+      "grossProfit": -3808.2959999999957,
+      "netProfit": -4405.692266399996,
+      "grossProfitPercentage": -3.8103202707470327,
+      "netProfitPercentage": -4.408034078584585,
       "patterns": [
         "hammer",
         "hammer",
@@ -3186,6 +3543,36 @@
         "actualEntryTime": "2024-02-16 13:55",
         "actualEntryPrice": 765.29,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 80,
+            "limitPrice": 759.458,
+            "timeTriggered": "2024-02-16 14:13",
+            "candleLow": 759,
+            "lossAtTrigger": 6.289999999999964
+          }
+        ],
+        "finalExitPrice": 759.458,
+        "finalExitReason": "limit order hit (80% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 80,
+          "filledOrderPrice": 759.458,
+          "fillTime": "2024-02-16 14:14",
+          "fillCandleHigh": 761.2,
+          "fillCandleLow": 759.35,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 298,
+          "filledAtCandleIndex": 299
+        }
       }
     },
     {
@@ -3202,7 +3589,7 @@
         "reason": "forced market exit",
         "fee": 298.8036
       },
-      "target": 779.2500000000001,
+      "target": 773.4000000000001,
       "stopLoss": 750,
       "shares": 657,
       "leverage": 5,
@@ -3256,6 +3643,19 @@
         "actualEntryTime": "2024-02-19 11:21",
         "actualEntryPrice": 760.5300000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 758,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -3267,25 +3667,25 @@
         "fee": 299.579742
       },
       "exit": {
-        "price": 759.55,
-        "time": "2024-02-26 15:09",
-        "reason": "forced market exit",
-        "fee": 301.23753
+        "price": 763.056,
+        "time": "2024-02-26 13:13",
+        "reason": "limit order hit (70% SL)",
+        "fee": 302.6280096
       },
-      "target": 735.8499999999999,
+      "target": 741.9499999999999,
       "stopLoss": 766.35,
       "shares": 661,
       "leverage": 5,
       "grossInvestedAmount": 499299.57,
       "actualCapitalUsed": 99859.914,
-      "totalFees": 600.817272,
+      "totalFees": 602.2077515999999,
       "riskPoints": 10.980000000000018,
-      "profit": -3363.797271999967,
-      "profitPercentage": -3.368516091451838,
-      "grossProfit": -2762.979999999967,
-      "netProfit": -3363.797271999967,
-      "grossProfitPercentage": -2.7668559778651187,
-      "netProfitPercentage": -3.368516091451838,
+      "profit": -5682.6537516000235,
+      "profitPercentage": -5.690625521267746,
+      "grossProfit": -5080.446000000024,
+      "netProfit": -5682.6537516000235,
+      "grossProfitPercentage": -5.0875729774812575,
+      "netProfitPercentage": -5.690625521267746,
       "patterns": [
         "hammer",
         "hammer",
@@ -3328,6 +3728,36 @@
         "actualEntryTime": "2024-02-26 11:44",
         "actualEntryPrice": 755.37,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 763.056,
+            "timeTriggered": "2024-02-26 13:12",
+            "candleHigh": 763.4,
+            "lossAtTrigger": 8.029999999999973
+          }
+        ],
+        "finalExitPrice": 763.056,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 763.056,
+          "fillTime": "2024-02-26 13:13",
+          "fillCandleHigh": 763,
+          "fillCandleLow": 761.8,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 237,
+          "filledAtCandleIndex": 238
+        }
       }
     },
     {
@@ -3339,25 +3769,25 @@
         "fee": 299.765544
       },
       "exit": {
-        "price": 749.9,
-        "time": "2024-02-29 14:44",
-        "reason": "stop-loss hit",
-        "fee": 303.25955999999996
+        "price": 747.308,
+        "time": "2024-02-29 13:18",
+        "reason": "limit order hit (70% SL)",
+        "fee": 302.2113552
       },
-      "target": 725.8999999999999,
+      "target": 730.6999999999999,
       "stopLoss": 749.9,
       "shares": 674,
       "leverage": 5,
       "grossInvestedAmount": 499609.24,
       "actualCapitalUsed": 99921.848,
-      "totalFees": 603.0251039999999,
+      "totalFees": 601.9768991999999,
       "riskPoints": 8.639999999999986,
-      "profit": -6426.385103999991,
-      "profitPercentage": -6.431411380622174,
-      "grossProfit": -5823.359999999991,
-      "netProfit": -6426.385103999991,
-      "grossProfitPercentage": -5.827914631843069,
-      "netProfitPercentage": -6.431411380622174,
+      "profit": -4678.328899200002,
+      "profitPercentage": -4.68198796643553,
+      "grossProfit": -4076.352000000001,
+      "netProfit": -4678.328899200002,
+      "grossProfitPercentage": -4.0795402422901565,
+      "netProfitPercentage": -4.68198796643553,
       "patterns": [
         "hammer",
         "hammer"
@@ -3395,6 +3825,140 @@
         "actualEntryTime": "2024-02-29 11:13",
         "actualEntryPrice": 741.26,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 747.308,
+            "timeTriggered": "2024-02-29 13:17",
+            "candleHigh": 747.5,
+            "lossAtTrigger": 6.240000000000009
+          }
+        ],
+        "finalExitPrice": 747.308,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 747.308,
+          "fillTime": "2024-02-29 13:18",
+          "fillCandleHigh": 747.25,
+          "fillCandleLow": 746.6,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 242,
+          "filledAtCandleIndex": 243
+        }
+      }
+    },
+    {
+      "date": "05/03/2024",
+      "type": "long",
+      "entry": {
+        "price": 780.88,
+        "time": "2024-03-05 11:14",
+        "fee": 299.85792000000004
+      },
+      "exit": {
+        "price": 776.668,
+        "time": "2024-03-05 11:25",
+        "reason": "limit order hit (90% SL)",
+        "fee": 298.240512
+      },
+      "target": 786.5999999999999,
+      "stopLoss": 776.2,
+      "shares": 640,
+      "leverage": 5,
+      "grossInvestedAmount": 499763.2,
+      "actualCapitalUsed": 99952.64,
+      "totalFees": 598.098432,
+      "riskPoints": 4.67999999999995,
+      "profit": -3293.778431999993,
+      "profitPercentage": -3.2953391045999316,
+      "grossProfit": -2695.679999999993,
+      "netProfit": -3293.778431999993,
+      "grossProfitPercentage": -2.6969572789673117,
+      "netProfitPercentage": -3.2953391045999316,
+      "patterns": [
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 44.800000000032014,
+      "volumeInfo": {
+        "breakoutCandleVolume": 220959,
+        "confirmationCandleVolume": 229628,
+        "averageLookbackVolume": 24487.35
+      },
+      "breakout": {
+        "breakoutTime": "2024-03-05 10:59",
+        "breakoutPrice": 781.4,
+        "previousExtremeTime": "2024-03-05 09:33",
+        "timeSincePreviousExtreme": 86,
+        "previousExtremeType": "high",
+        "periodMinutesRequired": 70,
+        "stopLossValue": 776.2,
+        "stopLossTime": "2024-03-05 10:27",
+        "swingLow": 776.2,
+        "swingHigh": 781.4,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation passed",
+          "data": {
+            "preBreakoutCandleTime": "05/03/2024 10:58 AM",
+            "preBreakoutVolume": 229628,
+            "averageVolume": 24487.35,
+            "volumeThreshold": 24487.35,
+            "volumeMultiplier": 1
+          }
+        },
+        "pullbackEntryPrice": 780.88,
+        "pullbackAmount": 0.5199999999999932,
+        "actualEntryTime": "2024-03-05 11:14",
+        "actualEntryPrice": 780.88,
+        "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 80,
+            "limitPrice": 777.1360000000001,
+            "timeTriggered": "2024-03-05 11:23",
+            "candleLow": 777.1,
+            "lossAtTrigger": 3.7799999999999727
+          },
+          {
+            "triggerPercent": 90,
+            "limitPrice": 776.668,
+            "timeTriggered": "2024-03-05 11:24",
+            "candleLow": 776.65,
+            "lossAtTrigger": 4.230000000000018
+          }
+        ],
+        "finalExitPrice": 776.668,
+        "finalExitReason": "limit order hit (90% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 90,
+          "filledOrderPrice": 776.668,
+          "fillTime": "2024-03-05 11:25",
+          "fillCandleHigh": 778.35,
+          "fillCandleLow": 777.8,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 129,
+          "filledAtCandleIndex": 130
+        }
       }
     },
     {
@@ -3411,7 +3975,7 @@
         "reason": "forced market exit",
         "fee": 299.54925
       },
-      "target": 804.9000000000001,
+      "target": 798.5000000000001,
       "stopLoss": 772.9,
       "shares": 637,
       "leverage": 5,
@@ -3463,6 +4027,132 @@
         "actualEntryTime": "2024-03-06 11:22",
         "actualEntryPrice": 784.4200000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 783.75,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
+      }
+    },
+    {
+      "date": "19/03/2024",
+      "type": "short",
+      "entry": {
+        "price": 726.055,
+        "time": "2024-03-19 11:51",
+        "fee": 299.71550399999995
+      },
+      "exit": {
+        "price": 730.5504999999999,
+        "time": "2024-03-19 14:35",
+        "reason": "limit order hit (90% SL)",
+        "fee": 301.57124639999995
+      },
+      "target": 719.95,
+      "stopLoss": 731.05,
+      "shares": 688,
+      "leverage": 5,
+      "grossInvestedAmount": 499525.83999999997,
+      "actualCapitalUsed": 99905.16799999999,
+      "totalFees": 601.2867503999998,
+      "riskPoints": 4.9950000000000045,
+      "profit": -3694.1907503999946,
+      "profitPercentage": -3.6976973507516595,
+      "grossProfit": -3092.903999999995,
+      "netProfit": -3694.1907503999946,
+      "grossProfitPercentage": -3.0958398468435537,
+      "netProfitPercentage": -3.6976973507516595,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 622.6399999999812,
+      "volumeInfo": {
+        "breakoutCandleVolume": 71727,
+        "confirmationCandleVolume": 30267,
+        "averageLookbackVolume": 25745.3
+      },
+      "breakout": {
+        "breakoutTime": "2024-03-19 11:37",
+        "breakoutPrice": 725.5,
+        "previousExtremeTime": "2024-03-19 10:09",
+        "timeSincePreviousExtreme": 88,
+        "previousExtremeType": "low",
+        "periodMinutesRequired": 70,
+        "stopLossValue": 731.05,
+        "stopLossTime": "2024-03-19 10:34",
+        "swingLow": 725.5,
+        "swingHigh": 731.05,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation passed",
+          "data": {
+            "preBreakoutCandleTime": "19/03/2024 11:36 AM",
+            "preBreakoutVolume": 30267,
+            "averageVolume": 25745.3,
+            "volumeThreshold": 25745.3,
+            "volumeMultiplier": 1
+          }
+        },
+        "pullbackEntryPrice": 726.055,
+        "pullbackAmount": 0.5549999999999955,
+        "actualEntryTime": "2024-03-19 11:51",
+        "actualEntryPrice": 726.055,
+        "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 80,
+            "limitPrice": 730.0509999999999,
+            "timeTriggered": "2024-03-19 14:33",
+            "candleHigh": 730.25,
+            "lossAtTrigger": 4.19500000000005
+          },
+          {
+            "triggerPercent": 90,
+            "limitPrice": 730.5504999999999,
+            "timeTriggered": "2024-03-19 14:34",
+            "candleHigh": 731,
+            "lossAtTrigger": 4.94500000000005
+          }
+        ],
+        "finalExitPrice": 730.5504999999999,
+        "finalExitReason": "limit order hit (90% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 90,
+          "filledOrderPrice": 730.5504999999999,
+          "fillTime": "2024-03-19 14:35",
+          "fillCandleHigh": 730.25,
+          "fillCandleLow": 729.2,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 319,
+          "filledAtCandleIndex": 320
+        }
       }
     },
     {
@@ -3479,7 +4169,7 @@
         "reason": "forced market exit",
         "fee": 300.12372
       },
-      "target": 730.45,
+      "target": 733.25,
       "stopLoss": 744.45,
       "shares": 676,
       "leverage": 5,
@@ -3541,6 +4231,19 @@
         "actualEntryTime": "2024-03-26 14:38",
         "actualEntryPrice": 739.4100000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 739.95,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -3552,25 +4255,25 @@
         "fee": 299.824434
       },
       "exit": {
-        "price": 757.95,
-        "time": "2024-04-01 14:38",
-        "reason": "stop-loss hit",
-        "fee": 301.05774
+        "price": 758.2605000000001,
+        "time": "2024-04-01 14:39",
+        "reason": "limit order hit (110% SL)",
+        "fee": 301.1810706
       },
-      "target": 749.3249999999999,
+      "target": 751.05,
       "stopLoss": 757.95,
       "shares": 662,
       "leverage": 5,
       "grossInvestedAmount": 499707.39,
       "actualCapitalUsed": 99941.478,
-      "totalFees": 600.8821740000001,
+      "totalFees": 601.0055046,
       "riskPoints": 3.105000000000018,
-      "profit": -2656.3921740000123,
-      "profitPercentage": -2.657947658128502,
-      "grossProfit": -2055.510000000012,
-      "netProfit": -2656.3921740000123,
-      "grossProfitPercentage": -2.0567136299505315,
-      "netProfitPercentage": -2.657947658128502,
+      "profit": -2862.066504600043,
+      "profitPercentage": -2.8637424239413822,
+      "grossProfit": -2261.0610000000434,
+      "netProfit": -2862.066504600043,
+      "grossProfitPercentage": -2.262384992945615,
+      "netProfitPercentage": -2.8637424239413822,
       "patterns": [
         "hammer",
         "hammer",
@@ -3625,6 +4328,141 @@
         "actualEntryTime": "2024-04-01 13:35",
         "actualEntryPrice": 754.845,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 110,
+            "limitPrice": 758.2605000000001,
+            "timeTriggered": "2024-04-01 14:38",
+            "candleHigh": 758.3,
+            "lossAtTrigger": 3.4549999999999272
+          }
+        ],
+        "finalExitPrice": 758.2605000000001,
+        "finalExitReason": "limit order hit (110% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 110,
+          "filledOrderPrice": 758.2605000000001,
+          "fillTime": "2024-04-01 14:39",
+          "fillCandleHigh": 757.35,
+          "fillCandleLow": 756.75,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 323,
+          "filledAtCandleIndex": 324
+        }
+      }
+    },
+    {
+      "date": "12/04/2024",
+      "type": "short",
+      "entry": {
+        "price": 773.075,
+        "time": "2024-04-12 12:19",
+        "fee": 299.64387
+      },
+      "exit": {
+        "price": 775.1225000000001,
+        "time": "2024-04-12 12:37",
+        "reason": "limit order hit (70% SL)",
+        "fee": 300.437481
+      },
+      "target": 769.5,
+      "stopLoss": 776,
+      "shares": 646,
+      "leverage": 5,
+      "grossInvestedAmount": 499406.45,
+      "actualCapitalUsed": 99881.29000000001,
+      "totalFees": 600.081351,
+      "riskPoints": 2.9249999999999545,
+      "profit": -1922.7663510000089,
+      "profitPercentage": -1.9250515797303067,
+      "grossProfit": -1322.6850000000088,
+      "netProfit": -1922.7663510000089,
+      "grossProfitPercentage": -1.3242570255149977,
+      "netProfitPercentage": -1.9250515797303067,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 371.4500000000294,
+      "volumeInfo": {
+        "breakoutCandleVolume": 116234,
+        "confirmationCandleVolume": 153715,
+        "averageLookbackVolume": 13105.95
+      },
+      "breakout": {
+        "breakoutTime": "2024-04-12 12:18",
+        "breakoutPrice": 772.75,
+        "previousExtremeTime": "2024-04-12 10:49",
+        "timeSincePreviousExtreme": 89,
+        "previousExtremeType": "low",
+        "periodMinutesRequired": 70,
+        "stopLossValue": 776,
+        "stopLossTime": "2024-04-12 11:20",
+        "swingLow": 772.75,
+        "swingHigh": 776,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation passed",
+          "data": {
+            "preBreakoutCandleTime": "12/04/2024 12:17 PM",
+            "preBreakoutVolume": 153715,
+            "averageVolume": 13105.95,
+            "volumeThreshold": 13105.95,
+            "volumeMultiplier": 1
+          }
+        },
+        "pullbackEntryPrice": 773.075,
+        "pullbackAmount": 0.325,
+        "actualEntryTime": "2024-04-12 12:19",
+        "actualEntryPrice": 773.075,
+        "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 775.1225000000001,
+            "timeTriggered": "2024-04-12 12:36",
+            "candleHigh": 775.3,
+            "lossAtTrigger": 2.224999999999909
+          }
+        ],
+        "finalExitPrice": 775.1225000000001,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 775.1225000000001,
+          "fillTime": "2024-04-12 12:37",
+          "fillCandleHigh": 775.3,
+          "fillCandleLow": 775,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 201,
+          "filledAtCandleIndex": 202
+        }
       }
     },
     {
@@ -3636,25 +4474,25 @@
         "fee": 299.64208799999994
       },
       "exit": {
-        "price": 750.4,
-        "time": "2024-04-16 13:42",
-        "reason": "stop-loss hit",
-        "fee": 300.76032
+        "price": 749.842,
+        "time": "2024-04-16 13:41",
+        "reason": "limit order hit (80% SL)",
+        "fee": 300.5366736
       },
-      "target": 742.6499999999999,
+      "target": 744.1999999999999,
       "stopLoss": 750.4,
       "shares": 668,
       "leverage": 5,
       "grossInvestedAmount": 499403.4799999999,
       "actualCapitalUsed": 99880.69599999998,
-      "totalFees": 600.4024079999999,
+      "totalFees": 600.1787615999999,
       "riskPoints": 2.7900000000000773,
-      "profit": -2464.1224080000516,
-      "profitPercentage": -2.4670657160819665,
-      "grossProfit": -1863.7200000000516,
-      "netProfit": -2464.1224080000516,
-      "grossProfitPercentage": -1.865946148392931,
-      "netProfitPercentage": -2.4670657160819665,
+      "profit": -2091.154761600056,
+      "profitPercentage": -2.093652572865588,
+      "grossProfit": -1490.9760000000565,
+      "netProfit": -2091.154761600056,
+      "grossProfitPercentage": -1.4927569187143597,
+      "netProfitPercentage": -2.093652572865588,
       "patterns": [
         "hammer",
         "hammer",
@@ -3699,6 +4537,36 @@
         "actualEntryTime": "2024-04-16 11:47",
         "actualEntryPrice": 747.6099999999999,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 80,
+            "limitPrice": 749.842,
+            "timeTriggered": "2024-04-16 13:40",
+            "candleHigh": 749.95,
+            "lossAtTrigger": 2.3400000000001455
+          }
+        ],
+        "finalExitPrice": 749.842,
+        "finalExitReason": "limit order hit (80% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 80,
+          "filledOrderPrice": 749.842,
+          "fillTime": "2024-04-16 13:41",
+          "fillCandleHigh": 749.9,
+          "fillCandleLow": 749.5,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 265,
+          "filledAtCandleIndex": 266
+        }
       }
     },
     {
@@ -3710,25 +4578,25 @@
         "fee": 299.973912
       },
       "exit": {
-        "price": 772.5,
-        "time": "2024-04-23 15:09",
-        "reason": "forced market exit",
-        "fee": 298.49399999999997
+        "price": 772.739,
+        "time": "2024-04-23 13:20",
+        "reason": "limit order hit (70% SL)",
+        "fee": 298.5863496
       },
-      "target": 785.4499999999998,
+      "target": 782.5999999999999,
       "stopLoss": 771.2,
       "shares": 644,
       "leverage": 5,
       "grossInvestedAmount": 499956.51999999996,
       "actualCapitalUsed": 99991.30399999999,
-      "totalFees": 598.467912,
+      "totalFees": 598.5602616,
       "riskPoints": 5.129999999999882,
-      "profit": -3064.987911999953,
-      "profitPercentage": -3.0652544665283625,
-      "grossProfit": -2466.519999999953,
-      "netProfit": -3064.987911999953,
-      "grossProfitPercentage": -2.4667345072327023,
-      "netProfitPercentage": -3.0652544665283625,
+      "profit": -2911.164261599932,
+      "profitPercentage": -2.911417438460381,
+      "grossProfit": -2312.603999999932,
+      "netProfit": -2911.164261599932,
+      "grossProfitPercentage": -2.3128051215333008,
+      "netProfitPercentage": -2.911417438460381,
       "patterns": [
         "hammer",
         "hammer",
@@ -3777,6 +4645,36 @@
         "actualEntryTime": "2024-04-23 12:29",
         "actualEntryPrice": 776.3299999999999,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 772.739,
+            "timeTriggered": "2024-04-23 13:19",
+            "candleLow": 772.5,
+            "lossAtTrigger": 3.8299999999999272
+          }
+        ],
+        "finalExitPrice": 772.739,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 772.739,
+          "fillTime": "2024-04-23 13:20",
+          "fillCandleHigh": 773.9,
+          "fillCandleLow": 772.7,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 244,
+          "filledAtCandleIndex": 245
+        }
       }
     },
     {
@@ -3788,25 +4686,25 @@
         "fee": 299.715633
       },
       "exit": {
-        "price": 772.85,
-        "time": "2024-04-24 15:09",
-        "reason": "forced market exit",
-        "fee": 300.02037
+        "price": 774.3645,
+        "time": "2024-04-24 15:02",
+        "reason": "limit order hit (70% SL)",
+        "fee": 300.6082989
       },
-      "target": 766.2250000000001,
+      "target": 768.0500000000001,
       "stopLoss": 775.35,
       "shares": 647,
       "leverage": 5,
       "grossInvestedAmount": 499526.05500000005,
       "actualCapitalUsed": 99905.21100000001,
-      "totalFees": 599.736003,
+      "totalFees": 600.3239319,
       "riskPoints": 3.284999999999968,
-      "profit": -1107.6310029999795,
-      "profitPercentage": -1.1086819114970683,
-      "grossProfit": -507.8949999999794,
-      "netProfit": -1107.6310029999795,
-      "grossProfitPercentage": -0.5083768853658488,
-      "netProfitPercentage": -1.1086819114970683,
+      "profit": -2088.100431899978,
+      "profitPercentage": -2.090081599347183,
+      "grossProfit": -1487.7764999999781,
+      "netProfit": -2088.100431899978,
+      "grossProfitPercentage": -1.489188086495286,
+      "netProfitPercentage": -2.090081599347183,
       "patterns": [
         "hammer",
         "hammer",
@@ -3848,6 +4746,36 @@
         "actualEntryTime": "2024-04-24 12:00",
         "actualEntryPrice": 772.065,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 774.3645,
+            "timeTriggered": "2024-04-24 15:01",
+            "candleHigh": 774.5,
+            "lossAtTrigger": 2.4349999999999454
+          }
+        ],
+        "finalExitPrice": 774.3645,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 774.3645,
+          "fillTime": "2024-04-24 15:02",
+          "fillCandleHigh": 773.85,
+          "fillCandleLow": 773,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 346,
+          "filledAtCandleIndex": 347
+        }
       }
     },
     {
@@ -3864,7 +4792,7 @@
         "reason": "forced market exit",
         "fee": 298.72103999999996
       },
-      "target": 848.325,
+      "target": 843,
       "stopLoss": 821.7,
       "shares": 601,
       "leverage": 5,
@@ -3931,6 +4859,19 @@
         "actualEntryTime": "2024-04-30 14:39",
         "actualEntryPrice": 831.2850000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 828.4,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -3947,7 +4888,7 @@
         "reason": "forced market exit",
         "fee": 300.70007999999996
       },
-      "target": 808.0749999999999,
+      "target": 810.8,
       "stopLoss": 821.7,
       "shares": 612,
       "leverage": 5,
@@ -4007,6 +4948,19 @@
         "actualEntryTime": "2024-05-22 11:12",
         "actualEntryPrice": 816.795,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 818.9,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -4023,7 +4977,7 @@
         "reason": "forced market exit",
         "fee": 299.736
       },
-      "target": 819.0749999999998,
+      "target": 823.3999999999999,
       "stopLoss": 840.7,
       "shares": 600,
       "leverage": 5,
@@ -4084,6 +5038,19 @@
         "actualEntryTime": "2024-06-10 14:37",
         "actualEntryPrice": 832.915,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 832.6,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -4095,25 +5062,25 @@
         "fee": 299.86393499999997
       },
       "exit": {
-        "price": 843.6,
-        "time": "2024-06-13 11:57",
-        "reason": "stop-loss hit",
-        "fee": 301.1652
+        "price": 844.3290000000001,
+        "time": "2024-06-13 12:00",
+        "reason": "limit order hit (120% SL)",
+        "fee": 301.425453
       },
-      "target": 833.4749999999999,
+      "target": 835.4999999999999,
       "stopLoss": 843.6,
       "shares": 595,
       "leverage": 5,
       "grossInvestedAmount": 499773.225,
       "actualCapitalUsed": 99954.64499999999,
-      "totalFees": 601.029135,
+      "totalFees": 601.2893879999999,
       "riskPoints": 3.6450000000000955,
-      "profit": -2769.8041350000567,
-      "profitPercentage": -2.7710609496937906,
-      "grossProfit": -2168.775000000057,
-      "netProfit": -2769.8041350000567,
-      "grossProfitPercentage": -2.1697590942372487,
-      "netProfitPercentage": -2.7710609496937906,
+      "profit": -3203.8193880000817,
+      "profitPercentage": -3.2052731396325624,
+      "grossProfit": -2602.5300000000816,
+      "netProfit": -3203.8193880000817,
+      "grossProfitPercentage": -2.6037109130847114,
+      "netProfitPercentage": -3.2052731396325624,
       "patterns": [
         "hammer",
         "hammer",
@@ -4153,35 +5120,124 @@
         "actualEntryTime": "2024-06-13 11:28",
         "actualEntryPrice": 839.9549999999999,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 90,
+            "limitPrice": 843.2355,
+            "timeTriggered": "2024-06-13 11:56",
+            "candleHigh": 843.4,
+            "lossAtTrigger": 3.44500000000005
+          },
+          {
+            "triggerPercent": 100,
+            "limitPrice": 843.6,
+            "timeTriggered": "2024-06-13 11:57",
+            "candleHigh": 843.8,
+            "lossAtTrigger": 3.8450000000000273
+          },
+          {
+            "triggerPercent": 110,
+            "limitPrice": 843.9645,
+            "timeTriggered": "2024-06-13 11:58",
+            "candleHigh": 844,
+            "lossAtTrigger": 4.045000000000073
+          },
+          {
+            "triggerPercent": 120,
+            "limitPrice": 844.3290000000001,
+            "timeTriggered": "2024-06-13 11:59",
+            "candleHigh": 844.5,
+            "lossAtTrigger": 4.545000000000073
+          }
+        ],
+        "finalExitPrice": 844.3290000000001,
+        "finalExitReason": "limit order hit (120% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 120,
+          "filledOrderPrice": 844.3290000000001,
+          "fillTime": "2024-06-13 12:00",
+          "fillCandleHigh": 844.1,
+          "fillCandleLow": 842.85,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 164,
+          "filledAtCandleIndex": 165
+        }
       }
     }
   ],
-  "positiveDays": 35,
-  "negativeDays": 21,
+  "positiveDays": 32,
+  "negativeDays": 24,
   "statisticsByExitReason": {
     "forced market exit": {
-      "count": 44,
-      "totalProfit": 37765.43796500026,
-      "averageProfit": 858.3054082954604
+      "count": 25,
+      "totalProfit": 10211.77718399992,
+      "averageProfit": 408.47108735999683
     },
-    "stop-loss hit": {
-      "count": 7,
-      "totalProfit": -27432.389385000104,
-      "averageProfit": -3918.912769285729
+    "limit order hit (70% SL)": {
+      "count": 9,
+      "totalProfit": -28610.00348610001,
+      "averageProfit": -3178.8892762333344
     },
     "target hit": {
-      "count": 5,
-      "totalProfit": 46206.08692199987,
-      "averageProfit": 9241.217384399974
+      "count": 16,
+      "totalProfit": 85107.88483300002,
+      "averageProfit": 5319.242802062501
+    },
+    "limit order hit (80% SL)": {
+      "count": 2,
+      "totalProfit": -6496.847028000052,
+      "averageProfit": -3248.423514000026
+    },
+    "limit order hit (90% SL)": {
+      "count": 2,
+      "totalProfit": -6987.969182399987,
+      "averageProfit": -3493.9845911999937
+    },
+    "limit order hit (110% SL)": {
+      "count": 1,
+      "totalProfit": -2862.066504600043,
+      "averageProfit": -2862.066504600043
+    },
+    "limit order hit (120% SL)": {
+      "count": 1,
+      "totalProfit": -3203.8193880000817,
+      "averageProfit": -3203.8193880000817
     }
   },
   "riskRewardAnalysis": {
-    "actualAverageRR": 0.14258630371967343,
+    "actualAverageRR": 0.06097830843734003,
     "plannedRR": 1,
-    "winRate": 0.625
+    "winRate": 0.5714285714285714
   },
-  "winRate": 62.5,
+  "winRate": 57.14285714285714,
   "breakoutsWithoutEntry": 10,
+  "stopLossExitAnalysis": {
+    "enabled": true,
+    "totalExitsViaLimitOrders": 15,
+    "totalTraditionalStopLossExits": 0,
+    "totalCircuitBreakerExits": 0,
+    "averageProfitLimitOrderExits": -3210.713705940011,
+    "averageProfitTraditionalExits": 0,
+    "averageProfitCircuitBreakerExits": 0,
+    "config": {
+      "enabled": true,
+      "initialTriggerPercent": 70,
+      "incrementPercent": 10,
+      "maxTriggerPercent": 120,
+      "maxLossPercent": 150,
+      "forceMarketOrderAfterMax": true,
+      "description": "Place limit sell orders starting at 70% of SL loss, increment by 10% until 120%, circuit breaker at 150%"
+    }
+  },
   "allTrades": [
     {
       "date": "01/12/2023",
@@ -4203,7 +5259,7 @@
         "reason": "forced market exit",
         "fee": 301.51439999999997
       },
-      "target": 601.6500000000001,
+      "target": 598.2500000000001,
       "stopLoss": 584.65,
       "shares": 846,
       "leverage": 5,
@@ -4267,6 +5323,19 @@
         "actualEntryTime": "2023-12-04 13:29",
         "actualEntryPrice": 590.77,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 594,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -4289,7 +5358,7 @@
         "reason": "forced market exit",
         "fee": 299.4312
       },
-      "target": 602.3249999999999,
+      "target": 604.55,
       "stopLoss": 613.45,
       "shares": 820,
       "leverage": 5,
@@ -4351,6 +5420,19 @@
         "actualEntryTime": "2023-12-06 14:04",
         "actualEntryPrice": 609.445,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 608.6,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -4367,7 +5449,7 @@
         "reason": "forced market exit",
         "fee": 300.6858
       },
-      "target": 617.5,
+      "target": 615,
       "stopLoss": 605,
       "shares": 820,
       "leverage": 5,
@@ -4420,6 +5502,19 @@
         "actualEntryTime": "2023-12-07 11:29",
         "actualEntryPrice": 609.5,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 611.15,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -4431,29 +5526,29 @@
         "fee": 299.772006
       },
       "exit": {
-        "price": 607.3,
-        "time": "2023-12-08 12:47",
-        "reason": "stop-loss hit",
-        "fee": 297.69845999999995
+        "price": 608.569,
+        "time": "2023-12-08 11:05",
+        "reason": "limit order hit (70% SL)",
+        "fee": 298.3205238
       },
-      "target": 619.0500000000001,
+      "target": 616.7,
       "stopLoss": 607.3,
       "shares": 817,
       "leverage": 5,
       "grossInvestedAmount": 499620.00999999995,
       "actualCapitalUsed": 99924.002,
-      "totalFees": 597.470466,
+      "totalFees": 598.0925298,
       "riskPoints": 4.230000000000018,
-      "profit": -4053.380466000015,
-      "profitPercentage": -4.056463296976451,
-      "grossProfit": -3455.910000000015,
-      "netProfit": -4053.380466000015,
-      "grossProfitPercentage": -3.4585384200284683,
-      "netProfitPercentage": -4.056463296976451,
+      "profit": -3017.229529800011,
+      "profitPercentage": -3.0195243078835166,
+      "grossProfit": -2419.1370000000106,
+      "netProfit": -3017.229529800011,
+      "grossProfitPercentage": -2.420976894019928,
+      "netProfitPercentage": -3.0195243078835166,
       "patterns": [
         "hammer"
       ],
-      "maxFavorableExcursion": 874.1900000000409,
+      "maxFavorableExcursion": 16.33999999998514,
       "volumeInfo": {
         "breakoutCandleVolume": 164561,
         "confirmationCandleVolume": 65683,
@@ -4486,6 +5581,36 @@
         "actualEntryTime": "2023-12-08 11:00",
         "actualEntryPrice": 611.53,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 608.569,
+            "timeTriggered": "2023-12-08 11:04",
+            "candleLow": 608.5,
+            "lossAtTrigger": 3.0299999999999727
+          }
+        ],
+        "finalExitPrice": 608.569,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 608.569,
+          "fillTime": "2023-12-08 11:05",
+          "fillCandleHigh": 609.5,
+          "fillCandleLow": 608.6,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 109,
+          "filledAtCandleIndex": 110
+        }
       }
     },
     {
@@ -4509,25 +5634,25 @@
         "fee": 299.64018
       },
       "exit": {
-        "price": 620.1,
-        "time": "2023-12-13 15:09",
-        "reason": "forced market exit",
-        "fee": 302.11272
+        "price": 619.15,
+        "time": "2023-12-13 14:09",
+        "reason": "target hit",
+        "fee": 301.64988
       },
-      "target": 621.025,
+      "target": 619.15,
       "stopLoss": 611.65,
       "shares": 812,
       "leverage": 5,
       "grossInvestedAmount": 499400.3,
       "actualCapitalUsed": 99880.06,
-      "totalFees": 601.7529,
+      "totalFees": 601.29006,
       "riskPoints": 3.375,
-      "profit": 3519.147100000037,
-      "profitPercentage": 3.5233730336165565,
-      "grossProfit": 4120.900000000037,
-      "netProfit": 3519.147100000037,
-      "grossProfitPercentage": 4.125848542742202,
-      "netProfitPercentage": 3.5233730336165565,
+      "profit": 2748.2099399999997,
+      "profitPercentage": 2.7515101012153975,
+      "grossProfit": 3349.5,
+      "netProfit": 2748.2099399999997,
+      "grossProfitPercentage": 3.3535222145441246,
+      "netProfitPercentage": 2.7515101012153975,
       "patterns": [
         "hammer",
         "hammer",
@@ -4538,7 +5663,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 4445.700000000019,
+      "maxFavorableExcursion": 3633.7000000000185,
       "volumeInfo": {
         "breakoutCandleVolume": 144878,
         "confirmationCandleVolume": 46536,
@@ -4571,6 +5696,19 @@
         "actualEntryTime": "2023-12-13 13:21",
         "actualEntryPrice": 615.025,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 619.15,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -4582,25 +5720,25 @@
         "fee": 299.80925399999995
       },
       "exit": {
-        "price": 623.65,
-        "time": "2023-12-14 15:09",
-        "reason": "forced market exit",
-        "fee": 300.10038
+        "price": 624.9035,
+        "time": "2023-12-14 15:06",
+        "reason": "limit order hit (70% SL)",
+        "fee": 300.7035642
       },
-      "target": 618.3249999999999,
+      "target": 619.8,
       "stopLoss": 625.7,
       "shares": 802,
       "leverage": 5,
       "grossInvestedAmount": 499682.08999999997,
       "actualCapitalUsed": 99936.41799999999,
-      "totalFees": 599.9096339999999,
+      "totalFees": 600.5128182,
       "riskPoints": 2.6550000000000864,
-      "profit": -1085.1196340000145,
-      "profitPercentage": -1.0858100137229398,
-      "grossProfit": -485.2100000000146,
-      "netProfit": -1085.1196340000145,
-      "grossProfitPercentage": -0.48551870250143914,
-      "netProfitPercentage": -1.0858100137229398,
+      "profit": -2091.0298182000392,
+      "profitPercentage": -2.092360182651373,
+      "grossProfit": -1490.5170000000394,
+      "netProfit": -2091.0298182000392,
+      "grossProfitPercentage": -1.4914653034692913,
+      "netProfitPercentage": -2.092360182651373,
       "patterns": [
         "hammer",
         "hammer",
@@ -4644,6 +5782,36 @@
         "actualEntryTime": "2023-12-14 13:59",
         "actualEntryPrice": 623.045,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 624.9035,
+            "timeTriggered": "2023-12-14 15:05",
+            "candleHigh": 625,
+            "lossAtTrigger": 1.955000000000041
+          }
+        ],
+        "finalExitPrice": 624.9035,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 624.9035,
+          "fillTime": "2023-12-14 15:06",
+          "fillCandleHigh": 624.8,
+          "fillCandleLow": 624.35,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 350,
+          "filledAtCandleIndex": 351
+        }
       }
     },
     {
@@ -4655,25 +5823,25 @@
         "fee": 299.753916
       },
       "exit": {
-        "price": 626.8,
-        "time": "2023-12-15 13:14",
-        "reason": "stop-loss hit",
-        "fee": 301.61616
+        "price": 625.6389999999999,
+        "time": "2023-12-15 12:34",
+        "reason": "limit order hit (70% SL)",
+        "fee": 301.0574868
       },
-      "target": 616.0500000000001,
+      "target": 618.2,
       "stopLoss": 626.8,
       "shares": 802,
       "leverage": 5,
       "grossInvestedAmount": 499589.86,
       "actualCapitalUsed": 99917.972,
-      "totalFees": 601.3700759999999,
+      "totalFees": 600.8114028,
       "riskPoints": 3.8700000000000045,
-      "profit": -3705.1100760000036,
-      "profitPercentage": -3.7081517987574886,
-      "grossProfit": -3103.7400000000034,
-      "netProfit": -3705.1100760000036,
-      "grossProfitPercentage": -3.1062880259419234,
-      "netProfitPercentage": -3.7081517987574886,
+      "profit": -2773.4294027999567,
+      "profitPercentage": -2.775706259130196,
+      "grossProfit": -2172.6179999999567,
+      "netProfit": -2773.4294027999567,
+      "grossProfitPercentage": -2.1744016181593007,
+      "netProfitPercentage": -2.775706259130196,
       "patterns": [
         "hammer",
         "hammer"
@@ -4711,6 +5879,36 @@
         "actualEntryTime": "2023-12-15 10:59",
         "actualEntryPrice": 622.93,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 625.6389999999999,
+            "timeTriggered": "2023-12-15 12:33",
+            "candleHigh": 625.8,
+            "lossAtTrigger": 2.8700000000000045
+          }
+        ],
+        "finalExitPrice": 625.6389999999999,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 625.6389999999999,
+          "fillTime": "2023-12-15 12:34",
+          "fillCandleHigh": 625.85,
+          "fillCandleLow": 625.4,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 198,
+          "filledAtCandleIndex": 199
+        }
       }
     },
     {
@@ -4733,7 +5931,7 @@
         "reason": "forced market exit",
         "fee": 301.73013
       },
-      "target": 670.3249999999998,
+      "target": 664.3499999999999,
       "stopLoss": 640.45,
       "shares": 767,
       "leverage": 5,
@@ -4788,6 +5986,19 @@
         "actualEntryTime": "2023-12-19 11:56",
         "actualEntryPrice": 651.2049999999999,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 655.65,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -4799,25 +6010,25 @@
         "fee": 299.8246649999999
       },
       "exit": {
-        "price": 650.525,
+        "price": 651.9,
         "time": "2023-12-20 13:09",
         "reason": "target hit",
-        "fee": 297.810345
+        "fee": 298.43982
       },
-      "target": 650.525,
+      "target": 651.9,
       "stopLoss": 657.4,
       "shares": 763,
       "leverage": 5,
       "grossInvestedAmount": 499707.77499999997,
       "actualCapitalUsed": 99941.555,
-      "totalFees": 597.63501,
+      "totalFees": 598.2644849999999,
       "riskPoints": 2.4750000000000227,
-      "profit": 2759.5649899999826,
-      "profitPercentage": 2.7611787609268066,
-      "grossProfit": 3357.1999999999825,
-      "netProfit": 2759.5649899999826,
-      "grossProfitPercentage": 3.359163262969025,
-      "netProfitPercentage": 2.7611787609268066,
+      "profit": 1709.8105149999826,
+      "profitPercentage": 1.710810398137174,
+      "grossProfit": 2308.0749999999825,
+      "netProfit": 1709.8105149999826,
+      "grossProfitPercentage": 2.309424743291199,
+      "netProfitPercentage": 1.710810398137174,
       "patterns": [
         "hammer",
         "hammer",
@@ -4859,6 +6070,19 @@
         "actualEntryTime": "2023-12-20 12:04",
         "actualEntryPrice": 654.925,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 651.9,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -4870,25 +6094,25 @@
         "fee": 299.627526
       },
       "exit": {
-        "price": 648.8499999999999,
-        "time": "2023-12-21 14:51",
+        "price": 645.9,
+        "time": "2023-12-21 14:50",
         "reason": "target hit",
-        "fee": 304.05110999999994
+        "fee": 302.66873999999996
       },
-      "target": 648.8499999999999,
+      "target": 645.9,
       "stopLoss": 634.1,
       "shares": 781,
       "leverage": 5,
       "grossInvestedAmount": 499379.20999999996,
       "actualCapitalUsed": 99875.84199999999,
-      "totalFees": 603.6786359999999,
+      "totalFees": 602.296266,
       "riskPoints": 5.309999999999945,
-      "profit": 6768.961363999954,
-      "profitPercentage": 6.7773760185170255,
-      "grossProfit": 7372.639999999954,
-      "netProfit": 6768.961363999954,
-      "grossProfitPercentage": 7.381805101577972,
-      "netProfitPercentage": 6.7773760185170255,
+      "profit": 4466.393734000007,
+      "profitPercentage": 4.471946012730493,
+      "grossProfit": 5068.690000000007,
+      "netProfit": 4466.393734000007,
+      "grossProfitPercentage": 5.074991007334894,
+      "netProfitPercentage": 4.471946012730493,
       "patterns": [
         "hammer",
         "hammer",
@@ -4897,7 +6121,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 7450.740000000061,
+      "maxFavorableExcursion": 6474.490000000061,
       "volumeInfo": {
         "breakoutCandleVolume": 79662,
         "confirmationCandleVolume": 60238,
@@ -4930,6 +6154,19 @@
         "actualEntryTime": "2023-12-21 12:58",
         "actualEntryPrice": 639.41,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 645.9,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -4941,25 +6178,25 @@
         "fee": 299.855178
       },
       "exit": {
-        "price": 636.55,
-        "time": "2023-12-22 15:09",
-        "reason": "forced market exit",
-        "fee": 296.75960999999995
+        "price": 635.6,
+        "time": "2023-12-22 13:48",
+        "reason": "target hit",
+        "fee": 296.31672
       },
-      "target": 632.1500000000001,
+      "target": 635.6,
       "stopLoss": 649.4,
       "shares": 777,
       "leverage": 5,
       "grossInvestedAmount": 499758.63000000006,
       "actualCapitalUsed": 99951.72600000001,
-      "totalFees": 596.614788,
+      "totalFees": 596.171898,
       "riskPoints": 6.209999999999923,
-      "profit": 4562.665212000078,
-      "profitPercentage": 4.564868856792005,
-      "grossProfit": 5159.280000000078,
-      "netProfit": 4562.665212000078,
-      "grossProfitPercentage": 5.1617717937157765,
-      "netProfitPercentage": 4.564868856792005,
+      "profit": 5301.258102000025,
+      "profitPercentage": 5.303818467326942,
+      "grossProfit": 5897.430000000025,
+      "netProfit": 5301.258102000025,
+      "grossProfitPercentage": 5.900278300346733,
+      "netProfitPercentage": 5.303818467326942,
       "patterns": [
         "hammer",
         "hammer",
@@ -5000,6 +6237,19 @@
         "actualEntryTime": "2023-12-22 12:39",
         "actualEntryPrice": 643.19,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 635.6,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -5063,7 +6313,7 @@
         "reason": "forced market exit",
         "fee": 299.18385
       },
-      "target": 652.0250000000001,
+      "target": 649.35,
       "stopLoss": 638.65,
       "shares": 777,
       "leverage": 5,
@@ -5115,6 +6365,19 @@
         "actualEntryTime": "2024-01-04 11:15",
         "actualEntryPrice": 643.465,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 641.75,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -5126,25 +6389,25 @@
         "fee": 299.85146999999995
       },
       "exit": {
-        "price": 642.25,
-        "time": "2024-01-05 15:09",
-        "reason": "forced market exit",
-        "fee": 298.2609
+        "price": 638.25,
+        "time": "2024-01-05 14:18",
+        "reason": "target hit",
+        "fee": 296.4033
       },
-      "target": 634.875,
+      "target": 638.25,
       "stopLoss": 651.75,
       "shares": 774,
       "leverage": 5,
       "grossInvestedAmount": 499752.44999999995,
       "actualCapitalUsed": 99950.48999999999,
-      "totalFees": 598.1123699999999,
+      "totalFees": 596.25477,
       "riskPoints": 6.0750000000000455,
-      "profit": 2052.837629999965,
-      "profitPercentage": 2.0538544933596277,
-      "grossProfit": 2650.949999999965,
-      "netProfit": 2052.837629999965,
-      "grossProfitPercentage": 2.6522631354783406,
-      "netProfitPercentage": 2.0538544933596277,
+      "profit": 5150.695229999965,
+      "profitPercentage": 5.1532466023928105,
+      "grossProfit": 5746.949999999964,
+      "netProfit": 5150.695229999965,
+      "grossProfitPercentage": 5.749796724358195,
+      "netProfitPercentage": 5.1532466023928105,
       "patterns": [
         "hammer",
         "hammer",
@@ -5185,6 +6448,19 @@
         "actualEntryTime": "2024-01-05 11:49",
         "actualEntryPrice": 645.675,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 638.25,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -5229,7 +6505,7 @@
         "reason": "forced market exit",
         "fee": 299.06388000000004
       },
-      "target": 614.0000000000001,
+      "target": 616.4000000000001,
       "stopLoss": 626,
       "shares": 804,
       "leverage": 5,
@@ -5279,6 +6555,19 @@
         "actualEntryTime": "2024-01-11 11:54",
         "actualEntryPrice": 621.6800000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 619.95,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -5295,7 +6584,7 @@
         "reason": "forced market exit",
         "fee": 300.279
       },
-      "target": 641.2249999999999,
+      "target": 638.4,
       "stopLoss": 627.1,
       "shares": 790,
       "leverage": 5,
@@ -5355,6 +6644,19 @@
         "actualEntryTime": "2024-01-12 14:02",
         "actualEntryPrice": 632.185,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 633.5,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -5371,7 +6673,7 @@
         "reason": "forced market exit",
         "fee": 301.00895999999995
       },
-      "target": 623.875,
+      "target": 628.2,
       "stopLoss": 645.5,
       "shares": 784,
       "leverage": 5,
@@ -5424,6 +6726,19 @@
         "actualEntryTime": "2024-01-15 11:06",
         "actualEntryPrice": 637.715,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 639.9,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -5440,7 +6755,7 @@
         "reason": "forced market exit",
         "fee": 298.35762
       },
-      "target": 630.4000000000001,
+      "target": 633.3000000000001,
       "stopLoss": 644.9,
       "shares": 781,
       "leverage": 5,
@@ -5497,6 +6812,19 @@
         "actualEntryTime": "2024-01-16 12:56",
         "actualEntryPrice": 639.6800000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 636.7,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -5536,7 +6864,7 @@
         "reason": "forced market exit",
         "fee": 299.42513999999994
       },
-      "target": 645.6000000000001,
+      "target": 641.3000000000001,
       "stopLoss": 624.1,
       "shares": 791,
       "leverage": 5,
@@ -5600,6 +6928,19 @@
         "actualEntryTime": "2024-01-20 14:42",
         "actualEntryPrice": 631.84,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 630.9,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -5629,25 +6970,25 @@
         "fee": 299.7048
       },
       "exit": {
-        "price": 623.1,
-        "time": "2024-01-29 15:09",
-        "reason": "forced market exit",
-        "fee": 299.08799999999997
+        "price": 620.8254999999999,
+        "time": "2024-01-29 14:59",
+        "reason": "limit order hit (70% SL)",
+        "fee": 297.99623999999994
       },
-      "target": 633.4250000000002,
+      "target": 630.6000000000001,
       "stopLoss": 619.3,
       "shares": 800,
       "leverage": 5,
       "grossInvestedAmount": 499508,
       "actualCapitalUsed": 99901.6,
-      "totalFees": 598.7927999999999,
+      "totalFees": 597.7010399999999,
       "riskPoints": 5.085000000000036,
-      "profit": -1626.7927999999745,
-      "profitPercentage": -1.6283951408185398,
-      "grossProfit": -1027.9999999999745,
-      "netProfit": -1626.7927999999745,
-      "grossProfitPercentage": -1.0290125483475485,
-      "netProfitPercentage": -1.6283951408185398,
+      "profit": -3445.3010400000567,
+      "profitPercentage": -3.448694555442612,
+      "grossProfit": -2847.6000000000568,
+      "netProfit": -3445.3010400000567,
+      "grossProfitPercentage": -2.850404798321605,
+      "netProfitPercentage": -3.448694555442612,
       "patterns": [
         "hammer",
         "hammer",
@@ -5695,6 +7036,36 @@
         "actualEntryTime": "2024-01-29 14:32",
         "actualEntryPrice": 624.385,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 620.8254999999999,
+            "timeTriggered": "2024-01-29 14:58",
+            "candleLow": 620.6,
+            "lossAtTrigger": 3.784999999999968
+          }
+        ],
+        "finalExitPrice": 620.8254999999999,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 620.8254999999999,
+          "fillTime": "2024-01-29 14:59",
+          "fillCandleHigh": 621.5,
+          "fillCandleLow": 620.65,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 343,
+          "filledAtCandleIndex": 344
+        }
       }
     },
     {
@@ -5712,25 +7083,25 @@
         "fee": 299.986299
       },
       "exit": {
-        "price": 639.25,
-        "time": "2024-01-31 15:09",
-        "reason": "forced market exit",
-        "fee": 301.85384999999997
+        "price": 640.8499999999999,
+        "time": "2024-01-31 14:38",
+        "reason": "target hit",
+        "fee": 302.60936999999996
       },
-      "target": 643.3749999999999,
+      "target": 640.8499999999999,
       "stopLoss": 630.75,
       "shares": 787,
       "leverage": 5,
       "grossInvestedAmount": 499977.165,
       "actualCapitalUsed": 99995.43299999999,
-      "totalFees": 601.8401489999999,
+      "totalFees": 602.5956689999999,
       "riskPoints": 4.544999999999959,
-      "profit": 2510.744851000032,
-      "profitPercentage": 2.5108595219544,
-      "grossProfit": 3112.5850000000323,
-      "netProfit": 2510.744851000032,
-      "grossProfitPercentage": 3.11272715824935,
-      "netProfitPercentage": 2.5108595219544,
+      "profit": 3769.189330999961,
+      "profitPercentage": 3.7693614777386495,
+      "grossProfit": 4371.784999999961,
+      "netProfit": 3769.189330999961,
+      "grossProfitPercentage": 4.371984668539773,
+      "netProfitPercentage": 3.7693614777386495,
       "patterns": [
         "hammer",
         "hammer",
@@ -5744,7 +7115,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 6142.53500000005,
+      "maxFavorableExcursion": 6063.835000000032,
       "volumeInfo": {
         "breakoutCandleVolume": 83225,
         "confirmationCandleVolume": 127440,
@@ -5777,6 +7148,19 @@
         "actualEntryTime": "2024-01-31 14:09",
         "actualEntryPrice": 635.295,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 640.8499999999999,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -5793,7 +7177,7 @@
         "reason": "forced market exit",
         "fee": 302.34636
       },
-      "target": 659.125,
+      "target": 653.95,
       "stopLoss": 633.25,
       "shares": 778,
       "leverage": 5,
@@ -5853,6 +7237,19 @@
         "actualEntryTime": "2024-02-01 12:11",
         "actualEntryPrice": 642.565,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 647.7,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -5892,7 +7289,7 @@
         "reason": "forced market exit",
         "fee": 301.0768499999999
       },
-      "target": 680.6750000000001,
+      "target": 677.45,
       "stopLoss": 664.55,
       "shares": 745,
       "leverage": 5,
@@ -5947,6 +7344,19 @@
         "actualEntryTime": "2024-02-07 12:21",
         "actualEntryPrice": 670.355,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 673.55,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -5964,25 +7374,25 @@
         "fee": 299.78248799999994
       },
       "exit": {
-        "price": 724.15,
-        "time": "2024-02-09 15:09",
-        "reason": "forced market exit",
-        "fee": 302.83952999999997
+        "price": 723,
+        "time": "2024-02-09 14:41",
+        "reason": "target hit",
+        "fee": 302.3586
       },
-      "target": 725.8,
+      "target": 723,
       "stopLoss": 711.8,
       "shares": 697,
       "leverage": 5,
       "grossInvestedAmount": 499637.4799999999,
       "actualCapitalUsed": 99927.49599999998,
-      "totalFees": 602.6220179999999,
+      "totalFees": 602.141088,
       "riskPoints": 5.039999999999964,
-      "profit": 4492.4479820000415,
-      "profitPercentage": 4.495707549801951,
-      "grossProfit": 5095.070000000042,
-      "netProfit": 4492.4479820000415,
-      "grossProfitPercentage": 5.098766809887883,
-      "netProfitPercentage": 4.495707549801951,
+      "profit": 3691.378912000057,
+      "profitPercentage": 3.6940572512695184,
+      "grossProfit": 4293.520000000057,
+      "netProfit": 3691.378912000057,
+      "grossProfitPercentage": 4.296635232408963,
+      "netProfitPercentage": 3.6940572512695184,
       "patterns": [
         "hammer",
         "hammer",
@@ -5995,7 +7405,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 5617.820000000042,
+      "maxFavorableExcursion": 4642.020000000057,
       "volumeInfo": {
         "breakoutCandleVolume": 184574,
         "confirmationCandleVolume": 73732,
@@ -6028,6 +7438,19 @@
         "actualEntryTime": "2024-02-09 14:16",
         "actualEntryPrice": 716.8399999999999,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 723,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -6044,7 +7467,7 @@
         "reason": "forced market exit",
         "fee": 299.28819
       },
-      "target": 693.5749999999999,
+      "target": 699.05,
       "stopLoss": 720.95,
       "shares": 703,
       "leverage": 5,
@@ -6100,6 +7523,19 @@
         "actualEntryTime": "2024-02-12 13:10",
         "actualEntryPrice": 711.095,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 709.55,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -6134,25 +7570,25 @@
         "fee": 299.840622
       },
       "exit": {
-        "price": 758,
-        "time": "2024-02-16 14:23",
-        "reason": "stop-loss hit",
-        "fee": 296.9844
+        "price": 759.458,
+        "time": "2024-02-16 14:14",
+        "reason": "limit order hit (80% SL)",
+        "fee": 297.5556444
       },
-      "target": 778.25,
+      "target": 774.2,
       "stopLoss": 758,
       "shares": 653,
       "leverage": 5,
       "grossInvestedAmount": 499734.37,
       "actualCapitalUsed": 99946.874,
-      "totalFees": 596.825022,
+      "totalFees": 597.3962664000001,
       "riskPoints": 7.289999999999964,
-      "profit": -5357.195021999976,
-      "profitPercentage": -5.360042598230712,
-      "grossProfit": -4760.369999999976,
-      "netProfit": -5357.195021999976,
-      "grossProfitPercentage": -4.762900338433773,
-      "netProfitPercentage": -5.360042598230712,
+      "profit": -4405.692266399996,
+      "profitPercentage": -4.408034078584585,
+      "grossProfit": -3808.2959999999957,
+      "netProfit": -4405.692266399996,
+      "grossProfitPercentage": -3.8103202707470327,
+      "netProfitPercentage": -4.408034078584585,
       "patterns": [
         "hammer",
         "hammer",
@@ -6206,6 +7642,36 @@
         "actualEntryTime": "2024-02-16 13:55",
         "actualEntryPrice": 765.29,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 80,
+            "limitPrice": 759.458,
+            "timeTriggered": "2024-02-16 14:13",
+            "candleLow": 759,
+            "lossAtTrigger": 6.289999999999964
+          }
+        ],
+        "finalExitPrice": 759.458,
+        "finalExitReason": "limit order hit (80% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 80,
+          "filledOrderPrice": 759.458,
+          "fillTime": "2024-02-16 14:14",
+          "fillCandleHigh": 761.2,
+          "fillCandleLow": 759.35,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 298,
+          "filledAtCandleIndex": 299
+        }
       }
     },
     {
@@ -6222,7 +7688,7 @@
         "reason": "forced market exit",
         "fee": 298.8036
       },
-      "target": 779.2500000000001,
+      "target": 773.4000000000001,
       "stopLoss": 750,
       "shares": 657,
       "leverage": 5,
@@ -6276,6 +7742,19 @@
         "actualEntryTime": "2024-02-19 11:21",
         "actualEntryPrice": 760.5300000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 758,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -6305,25 +7784,25 @@
         "fee": 299.625132
       },
       "exit": {
-        "price": 759.8,
-        "time": "2024-02-23 15:09",
-        "reason": "forced market exit",
-        "fee": 297.68963999999994
+        "price": 757.7,
+        "time": "2024-02-23 10:52",
+        "reason": "target hit",
+        "fee": 296.86686000000003
       },
-      "target": 754.5,
+      "target": 757.7,
       "stopLoss": 770.5,
       "shares": 653,
       "leverage": 5,
       "grossInvestedAmount": 499375.22000000003,
       "actualCapitalUsed": 99875.04400000001,
-      "totalFees": 597.314772,
+      "totalFees": 596.491992,
       "riskPoints": 5.759999999999991,
-      "profit": 2628.5052280000355,
-      "profitPercentage": 2.631793812276103,
-      "grossProfit": 3225.8200000000356,
-      "netProfit": 2628.5052280000355,
-      "grossProfitPercentage": 3.2298558987368606,
-      "netProfitPercentage": 2.631793812276103,
+      "profit": 4000.628007999976,
+      "profitPercentage": 4.005633287130242,
+      "grossProfit": 4597.119999999976,
+      "netProfit": 4000.628007999976,
+      "grossProfitPercentage": 4.6028715641917275,
+      "netProfitPercentage": 4.005633287130242,
       "patterns": [
         "hammer",
         "hammer",
@@ -6363,6 +7842,19 @@
         "actualEntryTime": "2024-02-23 10:28",
         "actualEntryPrice": 764.74,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 757.7,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -6374,25 +7866,25 @@
         "fee": 299.579742
       },
       "exit": {
-        "price": 759.55,
-        "time": "2024-02-26 15:09",
-        "reason": "forced market exit",
-        "fee": 301.23753
+        "price": 763.056,
+        "time": "2024-02-26 13:13",
+        "reason": "limit order hit (70% SL)",
+        "fee": 302.6280096
       },
-      "target": 735.8499999999999,
+      "target": 741.9499999999999,
       "stopLoss": 766.35,
       "shares": 661,
       "leverage": 5,
       "grossInvestedAmount": 499299.57,
       "actualCapitalUsed": 99859.914,
-      "totalFees": 600.817272,
+      "totalFees": 602.2077515999999,
       "riskPoints": 10.980000000000018,
-      "profit": -3363.797271999967,
-      "profitPercentage": -3.368516091451838,
-      "grossProfit": -2762.979999999967,
-      "netProfit": -3363.797271999967,
-      "grossProfitPercentage": -2.7668559778651187,
-      "netProfitPercentage": -3.368516091451838,
+      "profit": -5682.6537516000235,
+      "profitPercentage": -5.690625521267746,
+      "grossProfit": -5080.446000000024,
+      "netProfit": -5682.6537516000235,
+      "grossProfitPercentage": -5.0875729774812575,
+      "netProfitPercentage": -5.690625521267746,
       "patterns": [
         "hammer",
         "hammer",
@@ -6435,6 +7927,36 @@
         "actualEntryTime": "2024-02-26 11:44",
         "actualEntryPrice": 755.37,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 763.056,
+            "timeTriggered": "2024-02-26 13:12",
+            "candleHigh": 763.4,
+            "lossAtTrigger": 8.029999999999973
+          }
+        ],
+        "finalExitPrice": 763.056,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 763.056,
+          "fillTime": "2024-02-26 13:13",
+          "fillCandleHigh": 763,
+          "fillCandleLow": 761.8,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 237,
+          "filledAtCandleIndex": 238
+        }
       }
     },
     {
@@ -6452,25 +7974,25 @@
         "fee": 299.915784
       },
       "exit": {
-        "price": 743.5,
-        "time": "2024-02-28 15:09",
-        "reason": "forced market exit",
-        "fee": 297.1026
+        "price": 742.95,
+        "time": "2024-02-28 14:57",
+        "reason": "target hit",
+        "fee": 296.88282
       },
-      "target": 739.5,
+      "target": 742.95,
       "stopLoss": 756.75,
       "shares": 666,
       "leverage": 5,
       "grossInvestedAmount": 499859.63999999996,
       "actualCapitalUsed": 99971.92799999999,
-      "totalFees": 597.018384,
+      "totalFees": 596.798604,
       "riskPoints": 6.210000000000036,
-      "profit": 4091.621615999976,
-      "profitPercentage": 4.092770538545557,
-      "grossProfit": 4688.639999999976,
-      "netProfit": 4091.621615999976,
-      "grossProfitPercentage": 4.689956564606793,
-      "netProfitPercentage": 4.092770538545557,
+      "profit": 4458.141395999946,
+      "profitPercentage": 4.459393236869401,
+      "grossProfit": 5054.939999999946,
+      "netProfit": 4458.141395999946,
+      "grossProfitPercentage": 5.05635942121667,
+      "netProfitPercentage": 4.459393236869401,
       "patterns": [
         "hammer",
         "hammer",
@@ -6527,6 +8049,19 @@
         "actualEntryTime": "2024-02-28 14:07",
         "actualEntryPrice": 750.54,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 742.95,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -6538,25 +8073,25 @@
         "fee": 299.765544
       },
       "exit": {
-        "price": 749.9,
-        "time": "2024-02-29 14:44",
-        "reason": "stop-loss hit",
-        "fee": 303.25955999999996
+        "price": 747.308,
+        "time": "2024-02-29 13:18",
+        "reason": "limit order hit (70% SL)",
+        "fee": 302.2113552
       },
-      "target": 725.8999999999999,
+      "target": 730.6999999999999,
       "stopLoss": 749.9,
       "shares": 674,
       "leverage": 5,
       "grossInvestedAmount": 499609.24,
       "actualCapitalUsed": 99921.848,
-      "totalFees": 603.0251039999999,
+      "totalFees": 601.9768991999999,
       "riskPoints": 8.639999999999986,
-      "profit": -6426.385103999991,
-      "profitPercentage": -6.431411380622174,
-      "grossProfit": -5823.359999999991,
-      "netProfit": -6426.385103999991,
-      "grossProfitPercentage": -5.827914631843069,
-      "netProfitPercentage": -6.431411380622174,
+      "profit": -4678.328899200002,
+      "profitPercentage": -4.68198796643553,
+      "grossProfit": -4076.352000000001,
+      "netProfit": -4678.328899200002,
+      "grossProfitPercentage": -4.0795402422901565,
+      "netProfitPercentage": -4.68198796643553,
       "patterns": [
         "hammer",
         "hammer"
@@ -6594,6 +8129,36 @@
         "actualEntryTime": "2024-02-29 11:13",
         "actualEntryPrice": 741.26,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 747.308,
+            "timeTriggered": "2024-02-29 13:17",
+            "candleHigh": 747.5,
+            "lossAtTrigger": 6.240000000000009
+          }
+        ],
+        "finalExitPrice": 747.308,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 747.308,
+          "fillTime": "2024-02-29 13:18",
+          "fillCandleHigh": 747.25,
+          "fillCandleLow": 746.6,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 242,
+          "filledAtCandleIndex": 243
+        }
       }
     },
     {
@@ -6623,30 +8188,30 @@
         "fee": 299.85792000000004
       },
       "exit": {
-        "price": 783.25,
-        "time": "2024-03-05 15:09",
-        "reason": "forced market exit",
-        "fee": 300.768
+        "price": 776.668,
+        "time": "2024-03-05 11:25",
+        "reason": "limit order hit (90% SL)",
+        "fee": 298.240512
       },
-      "target": 789.1999999999998,
+      "target": 786.5999999999999,
       "stopLoss": 776.2,
       "shares": 640,
       "leverage": 5,
       "grossInvestedAmount": 499763.2,
       "actualCapitalUsed": 99952.64,
-      "totalFees": 600.62592,
+      "totalFees": 598.098432,
       "riskPoints": 4.67999999999995,
-      "profit": 916.174080000003,
-      "profitPercentage": 0.9166081856367205,
-      "grossProfit": 1516.800000000003,
-      "netProfit": 916.174080000003,
-      "grossProfitPercentage": 1.5175186968548333,
-      "netProfitPercentage": 0.9166081856367205,
+      "profit": -3293.778431999993,
+      "profitPercentage": -3.2953391045999316,
+      "grossProfit": -2695.679999999993,
+      "netProfit": -3293.778431999993,
+      "grossProfitPercentage": -2.6969572789673117,
+      "netProfitPercentage": -3.2953391045999316,
       "patterns": [
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 3884.800000000032,
+      "maxFavorableExcursion": 44.800000000032014,
       "volumeInfo": {
         "breakoutCandleVolume": 220959,
         "confirmationCandleVolume": 229628,
@@ -6679,6 +8244,43 @@
         "actualEntryTime": "2024-03-05 11:14",
         "actualEntryPrice": 780.88,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 80,
+            "limitPrice": 777.1360000000001,
+            "timeTriggered": "2024-03-05 11:23",
+            "candleLow": 777.1,
+            "lossAtTrigger": 3.7799999999999727
+          },
+          {
+            "triggerPercent": 90,
+            "limitPrice": 776.668,
+            "timeTriggered": "2024-03-05 11:24",
+            "candleLow": 776.65,
+            "lossAtTrigger": 4.230000000000018
+          }
+        ],
+        "finalExitPrice": 776.668,
+        "finalExitReason": "limit order hit (90% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 90,
+          "filledOrderPrice": 776.668,
+          "fillTime": "2024-03-05 11:25",
+          "fillCandleHigh": 778.35,
+          "fillCandleLow": 777.8,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 129,
+          "filledAtCandleIndex": 130
+        }
       }
     },
     {
@@ -6695,7 +8297,7 @@
         "reason": "forced market exit",
         "fee": 299.54925
       },
-      "target": 804.9000000000001,
+      "target": 798.5000000000001,
       "stopLoss": 772.9,
       "shares": 637,
       "leverage": 5,
@@ -6747,6 +8349,19 @@
         "actualEntryTime": "2024-03-06 11:22",
         "actualEntryPrice": 784.4200000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 783.75,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -6764,25 +8379,25 @@
         "fee": 299.973852
       },
       "exit": {
-        "price": 774.1750000000002,
-        "time": "2024-03-11 12:12",
+        "price": 777.9000000000001,
+        "time": "2024-03-11 12:00",
         "reason": "target hit",
-        "fee": 295.42518
+        "fee": 296.84664000000004
       },
-      "target": 774.1750000000002,
+      "target": 777.9000000000001,
       "stopLoss": 792.8,
       "shares": 636,
       "leverage": 5,
       "grossInvestedAmount": 499956.42000000004,
       "actualCapitalUsed": 99991.28400000001,
-      "totalFees": 595.399032,
+      "totalFees": 596.8204920000001,
       "riskPoints": 6.704999999999927,
-      "profit": 6985.720967999901,
-      "profitPercentage": 6.986329896513681,
-      "grossProfit": 7581.119999999902,
-      "netProfit": 6985.720967999901,
-      "grossProfitPercentage": 7.581780828016871,
-      "netProfitPercentage": 6.986329896513681,
+      "profit": 4615.19950799996,
+      "profitPercentage": 4.615601803853183,
+      "grossProfit": 5212.0199999999595,
+      "netProfit": 4615.19950799996,
+      "grossProfitPercentage": 5.212474319261625,
+      "netProfitPercentage": 4.615601803853183,
       "patterns": [
         "hammer",
         "hammer",
@@ -6792,7 +8407,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 7883.219999999988,
+      "maxFavorableExcursion": 5275.620000000046,
       "volumeInfo": {
         "breakoutCandleVolume": 44972,
         "confirmationCandleVolume": 54259,
@@ -6825,6 +8440,19 @@
         "actualEntryTime": "2024-03-11 10:52",
         "actualEntryPrice": 786.095,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 777.9000000000001,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -6841,7 +8469,7 @@
         "reason": "forced market exit",
         "fee": 297.63087
       },
-      "target": 741.3750000000001,
+      "target": 748.6500000000001,
       "stopLoss": 777.75,
       "shares": 653,
       "leverage": 5,
@@ -6896,6 +8524,19 @@
         "actualEntryTime": "2024-03-12 10:46",
         "actualEntryPrice": 764.6550000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 759.65,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -6907,25 +8548,25 @@
         "fee": 299.810595
       },
       "exit": {
-        "price": 748.8,
-        "time": "2024-03-13 15:09",
-        "reason": "forced market exit",
-        "fee": 298.77119999999996
+        "price": 743.0999999999999,
+        "time": "2024-03-13 14:46",
+        "reason": "target hit",
+        "fee": 296.4968999999999
       },
-      "target": 739.3249999999998,
+      "target": 743.0999999999999,
       "stopLoss": 758.2,
       "shares": 665,
       "leverage": 5,
       "grossInvestedAmount": 499684.32499999995,
       "actualCapitalUsed": 99936.86499999999,
-      "totalFees": 598.5817949999999,
+      "totalFees": 596.3074949999999,
       "riskPoints": 6.795000000000073,
-      "profit": 1133.743205000012,
-      "profitPercentage": 1.134459445971226,
-      "grossProfit": 1732.325000000012,
-      "netProfit": 1133.743205000012,
-      "grossProfitPercentage": 1.7334193943346252,
-      "netProfitPercentage": 1.134459445971226,
+      "profit": 4926.517505000043,
+      "profitPercentage": 4.929629826791188,
+      "grossProfit": 5522.825000000043,
+      "netProfit": 4926.517505000043,
+      "grossProfitPercentage": 5.526314038368167,
+      "netProfitPercentage": 4.929629826791188,
       "patterns": [
         "hammer",
         "hammer",
@@ -6971,6 +8612,19 @@
         "actualEntryTime": "2024-03-13 13:55",
         "actualEntryPrice": 751.405,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 743.0999999999999,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -7000,25 +8654,25 @@
         "fee": 299.71550399999995
       },
       "exit": {
-        "price": 724.65,
-        "time": "2024-03-19 15:09",
-        "reason": "forced market exit",
-        "fee": 299.13552
+        "price": 730.5504999999999,
+        "time": "2024-03-19 14:35",
+        "reason": "limit order hit (90% SL)",
+        "fee": 301.57124639999995
       },
-      "target": 717.1750000000001,
+      "target": 719.95,
       "stopLoss": 731.05,
       "shares": 688,
       "leverage": 5,
       "grossInvestedAmount": 499525.83999999997,
       "actualCapitalUsed": 99905.16799999999,
-      "totalFees": 598.8510239999999,
+      "totalFees": 601.2867503999998,
       "riskPoints": 4.9950000000000045,
-      "profit": 367.7889759999813,
-      "profitPercentage": 0.36813808871226894,
-      "grossProfit": 966.6399999999812,
-      "netProfit": 367.7889759999813,
-      "grossProfitPercentage": 0.9675575541797611,
-      "netProfitPercentage": 0.36813808871226894,
+      "profit": -3694.1907503999946,
+      "profitPercentage": -3.6976973507516595,
+      "grossProfit": -3092.903999999995,
+      "netProfit": -3694.1907503999946,
+      "grossProfitPercentage": -3.0958398468435537,
+      "netProfitPercentage": -3.6976973507516595,
       "patterns": [
         "hammer",
         "hammer",
@@ -7032,7 +8686,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 2205.03999999995,
+      "maxFavorableExcursion": 622.6399999999812,
       "volumeInfo": {
         "breakoutCandleVolume": 71727,
         "confirmationCandleVolume": 30267,
@@ -7065,6 +8719,43 @@
         "actualEntryTime": "2024-03-19 11:51",
         "actualEntryPrice": 726.055,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 80,
+            "limitPrice": 730.0509999999999,
+            "timeTriggered": "2024-03-19 14:33",
+            "candleHigh": 730.25,
+            "lossAtTrigger": 4.19500000000005
+          },
+          {
+            "triggerPercent": 90,
+            "limitPrice": 730.5504999999999,
+            "timeTriggered": "2024-03-19 14:34",
+            "candleHigh": 731,
+            "lossAtTrigger": 4.94500000000005
+          }
+        ],
+        "finalExitPrice": 730.5504999999999,
+        "finalExitReason": "limit order hit (90% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 90,
+          "filledOrderPrice": 730.5504999999999,
+          "fillTime": "2024-03-19 14:35",
+          "fillCandleHigh": 730.25,
+          "fillCandleLow": 729.2,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 319,
+          "filledAtCandleIndex": 320
+        }
       }
     },
     {
@@ -7099,7 +8790,7 @@
         "reason": "forced market exit",
         "fee": 300.12372
       },
-      "target": 730.45,
+      "target": 733.25,
       "stopLoss": 744.45,
       "shares": 676,
       "leverage": 5,
@@ -7161,6 +8852,19 @@
         "actualEntryTime": "2024-03-26 14:38",
         "actualEntryPrice": 739.4100000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 739.95,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -7184,25 +8888,25 @@
         "fee": 299.824434
       },
       "exit": {
-        "price": 757.95,
-        "time": "2024-04-01 14:38",
-        "reason": "stop-loss hit",
-        "fee": 301.05774
+        "price": 758.2605000000001,
+        "time": "2024-04-01 14:39",
+        "reason": "limit order hit (110% SL)",
+        "fee": 301.1810706
       },
-      "target": 749.3249999999999,
+      "target": 751.05,
       "stopLoss": 757.95,
       "shares": 662,
       "leverage": 5,
       "grossInvestedAmount": 499707.39,
       "actualCapitalUsed": 99941.478,
-      "totalFees": 600.8821740000001,
+      "totalFees": 601.0055046,
       "riskPoints": 3.105000000000018,
-      "profit": -2656.3921740000123,
-      "profitPercentage": -2.657947658128502,
-      "grossProfit": -2055.510000000012,
-      "netProfit": -2656.3921740000123,
-      "grossProfitPercentage": -2.0567136299505315,
-      "netProfitPercentage": -2.657947658128502,
+      "profit": -2862.066504600043,
+      "profitPercentage": -2.8637424239413822,
+      "grossProfit": -2261.0610000000434,
+      "netProfit": -2862.066504600043,
+      "grossProfitPercentage": -2.262384992945615,
+      "netProfitPercentage": -2.8637424239413822,
       "patterns": [
         "hammer",
         "hammer",
@@ -7257,6 +8961,36 @@
         "actualEntryTime": "2024-04-01 13:35",
         "actualEntryPrice": 754.845,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 110,
+            "limitPrice": 758.2605000000001,
+            "timeTriggered": "2024-04-01 14:38",
+            "candleHigh": 758.3,
+            "lossAtTrigger": 3.4549999999999272
+          }
+        ],
+        "finalExitPrice": 758.2605000000001,
+        "finalExitReason": "limit order hit (110% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 110,
+          "filledOrderPrice": 758.2605000000001,
+          "fillTime": "2024-04-01 14:39",
+          "fillCandleHigh": 757.35,
+          "fillCandleLow": 756.75,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 323,
+          "filledAtCandleIndex": 324
+        }
       }
     },
     {
@@ -7268,25 +9002,25 @@
         "fee": 299.874288
       },
       "exit": {
-        "price": 765.8,
-        "time": "2024-04-02 15:09",
-        "reason": "forced market exit",
-        "fee": 302.33783999999997
+        "price": 767.15,
+        "time": "2024-04-02 14:32",
+        "reason": "target hit",
+        "fee": 302.87082
       },
-      "target": 770.5999999999999,
+      "target": 767.15,
       "stopLoss": 753.35,
       "shares": 658,
       "leverage": 5,
       "grossInvestedAmount": 499790.48,
       "actualCapitalUsed": 99958.09599999999,
-      "totalFees": 602.2121279999999,
+      "totalFees": 602.745108,
       "riskPoints": 6.209999999999923,
-      "profit": 3503.7078720000054,
-      "profitPercentage": 3.5051766812365113,
-      "grossProfit": 4105.9200000000055,
-      "netProfit": 3503.7078720000054,
-      "grossProfitPercentage": 4.10764126599611,
-      "netProfitPercentage": 3.5051766812365113,
+      "profit": 4391.474892000021,
+      "profitPercentage": 4.393315867080963,
+      "grossProfit": 4994.220000000021,
+      "netProfit": 4391.474892000021,
+      "grossProfitPercentage": 4.996313655274127,
+      "netProfitPercentage": 4.393315867080963,
       "patterns": [
         "hammer",
         "hammer",
@@ -7333,6 +9067,19 @@
         "actualEntryTime": "2024-04-02 11:38",
         "actualEntryPrice": 759.56,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 767.15,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -7344,25 +9091,25 @@
         "fee": 299.83670399999994
       },
       "exit": {
-        "price": 771.45,
-        "time": "2024-04-03 15:09",
-        "reason": "forced market exit",
-        "fee": 302.25411
+        "price": 771.5500000000001,
+        "time": "2024-04-03 14:23",
+        "reason": "target hit",
+        "fee": 302.29329
       },
-      "target": 774.4000000000001,
+      "target": 771.5500000000001,
       "stopLoss": 760.15,
       "shares": 653,
       "leverage": 5,
       "grossInvestedAmount": 499727.83999999997,
       "actualCapitalUsed": 99945.568,
-      "totalFees": 602.0908139999999,
+      "totalFees": 602.1299939999999,
       "riskPoints": 5.1299999999999955,
-      "profit": 3426.9191860000474,
-      "profitPercentage": 3.4287855425465663,
-      "grossProfit": 4029.0100000000475,
-      "netProfit": 3426.9191860000474,
-      "grossProfitPercentage": 4.03120426510563,
-      "netProfitPercentage": 3.4287855425465663,
+      "profit": 3492.1800060000623,
+      "profitPercentage": 3.4940819046624085,
+      "grossProfit": 4094.3100000000622,
+      "netProfit": 3492.1800060000623,
+      "grossProfitPercentage": 4.096539828559544,
+      "netProfitPercentage": 3.4940819046624085,
       "patterns": [
         "hammer",
         "hammer",
@@ -7376,7 +9123,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 4616.710000000033,
+      "maxFavorableExcursion": 4224.910000000018,
       "volumeInfo": {
         "breakoutCandleVolume": 117714,
         "confirmationCandleVolume": 37381,
@@ -7409,6 +9156,19 @@
         "actualEntryTime": "2024-04-03 12:50",
         "actualEntryPrice": 765.28,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 771.5500000000001,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -7460,25 +9220,25 @@
         "fee": 299.64387
       },
       "exit": {
-        "price": 767.875,
-        "time": "2024-04-12 14:53",
-        "reason": "target hit",
-        "fee": 297.62835
+        "price": 775.1225000000001,
+        "time": "2024-04-12 12:37",
+        "reason": "limit order hit (70% SL)",
+        "fee": 300.437481
       },
-      "target": 767.875,
+      "target": 769.5,
       "stopLoss": 776,
       "shares": 646,
       "leverage": 5,
       "grossInvestedAmount": 499406.45,
       "actualCapitalUsed": 99881.29000000001,
-      "totalFees": 597.2722200000001,
+      "totalFees": 600.081351,
       "riskPoints": 2.9249999999999545,
-      "profit": 2761.927780000029,
-      "profitPercentage": 2.765210361219833,
-      "grossProfit": 3359.2000000000294,
-      "netProfit": 2761.927780000029,
-      "grossProfitPercentage": 3.363192445752382,
-      "netProfitPercentage": 2.765210361219833,
+      "profit": -1922.7663510000089,
+      "profitPercentage": -1.9250515797303067,
+      "grossProfit": -1322.6850000000088,
+      "netProfit": -1922.7663510000089,
+      "grossProfitPercentage": -1.3242570255149977,
+      "netProfitPercentage": -1.9250515797303067,
       "patterns": [
         "hammer",
         "hammer",
@@ -7491,7 +9251,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 3472.25,
+      "maxFavorableExcursion": 371.4500000000294,
       "volumeInfo": {
         "breakoutCandleVolume": 116234,
         "confirmationCandleVolume": 153715,
@@ -7524,6 +9284,36 @@
         "actualEntryTime": "2024-04-12 12:19",
         "actualEntryPrice": 773.075,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 775.1225000000001,
+            "timeTriggered": "2024-04-12 12:36",
+            "candleHigh": 775.3,
+            "lossAtTrigger": 2.224999999999909
+          }
+        ],
+        "finalExitPrice": 775.1225000000001,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 775.1225000000001,
+          "fillTime": "2024-04-12 12:37",
+          "fillCandleHigh": 775.3,
+          "fillCandleLow": 775,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 201,
+          "filledAtCandleIndex": 202
+        }
       }
     },
     {
@@ -7541,25 +9331,25 @@
         "fee": 299.64208799999994
       },
       "exit": {
-        "price": 750.4,
-        "time": "2024-04-16 13:42",
-        "reason": "stop-loss hit",
-        "fee": 300.76032
+        "price": 749.842,
+        "time": "2024-04-16 13:41",
+        "reason": "limit order hit (80% SL)",
+        "fee": 300.5366736
       },
-      "target": 742.6499999999999,
+      "target": 744.1999999999999,
       "stopLoss": 750.4,
       "shares": 668,
       "leverage": 5,
       "grossInvestedAmount": 499403.4799999999,
       "actualCapitalUsed": 99880.69599999998,
-      "totalFees": 600.4024079999999,
+      "totalFees": 600.1787615999999,
       "riskPoints": 2.7900000000000773,
-      "profit": -2464.1224080000516,
-      "profitPercentage": -2.4670657160819665,
-      "grossProfit": -1863.7200000000516,
-      "netProfit": -2464.1224080000516,
-      "grossProfitPercentage": -1.865946148392931,
-      "netProfitPercentage": -2.4670657160819665,
+      "profit": -2091.154761600056,
+      "profitPercentage": -2.093652572865588,
+      "grossProfit": -1490.9760000000565,
+      "netProfit": -2091.154761600056,
+      "grossProfitPercentage": -1.4927569187143597,
+      "netProfitPercentage": -2.093652572865588,
       "patterns": [
         "hammer",
         "hammer",
@@ -7604,6 +9394,36 @@
         "actualEntryTime": "2024-04-16 11:47",
         "actualEntryPrice": 747.6099999999999,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 80,
+            "limitPrice": 749.842,
+            "timeTriggered": "2024-04-16 13:40",
+            "candleHigh": 749.95,
+            "lossAtTrigger": 2.3400000000001455
+          }
+        ],
+        "finalExitPrice": 749.842,
+        "finalExitReason": "limit order hit (80% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 80,
+          "filledOrderPrice": 749.842,
+          "fillTime": "2024-04-16 13:41",
+          "fillCandleHigh": 749.9,
+          "fillCandleLow": 749.5,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 265,
+          "filledAtCandleIndex": 266
+        }
       }
     },
     {
@@ -7620,7 +9440,7 @@
         "reason": "forced market exit",
         "fee": 297.32237999999995
       },
-      "target": 738.15,
+      "target": 741.9,
       "stopLoss": 756.9,
       "shares": 666,
       "leverage": 5,
@@ -7671,6 +9491,19 @@
         "actualEntryTime": "2024-04-18 13:31",
         "actualEntryPrice": 750.15,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 744.05,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -7688,25 +9521,25 @@
         "fee": 299.81556
       },
       "exit": {
-        "price": 764.95,
-        "time": "2024-04-22 15:09",
-        "reason": "forced market exit",
-        "fee": 302.9202
+        "price": 765.25,
+        "time": "2024-04-22 15:01",
+        "reason": "target hit",
+        "fee": 303.039
       },
-      "target": 768.95,
+      "target": 765.25,
       "stopLoss": 750.45,
       "shares": 660,
       "leverage": 5,
       "grossInvestedAmount": 499692.60000000003,
       "actualCapitalUsed": 99938.52,
-      "totalFees": 602.73576,
+      "totalFees": 602.85456,
       "riskPoints": 6.659999999999968,
-      "profit": 4571.664240000022,
-      "profitPercentage": 4.574476628231058,
-      "grossProfit": 5174.4000000000215,
-      "netProfit": 4571.664240000022,
-      "grossProfitPercentage": 5.177583178137941,
-      "netProfitPercentage": 4.574476628231058,
+      "profit": 4769.545439999991,
+      "profitPercentage": 4.772479560433745,
+      "grossProfit": 5372.3999999999905,
+      "netProfit": 4769.545439999991,
+      "grossProfitPercentage": 5.375704983423799,
+      "netProfitPercentage": 4.772479560433745,
       "patterns": [
         "hammer",
         "hammer",
@@ -7717,7 +9550,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 5537.3999999999905,
+      "maxFavorableExcursion": 5504.4000000000215,
       "volumeInfo": {
         "breakoutCandleVolume": 61813,
         "confirmationCandleVolume": 69106,
@@ -7750,6 +9583,19 @@
         "actualEntryTime": "2024-04-22 12:25",
         "actualEntryPrice": 757.11,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 765.25,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -7761,25 +9607,25 @@
         "fee": 299.973912
       },
       "exit": {
-        "price": 772.5,
-        "time": "2024-04-23 15:09",
-        "reason": "forced market exit",
-        "fee": 298.49399999999997
+        "price": 772.739,
+        "time": "2024-04-23 13:20",
+        "reason": "limit order hit (70% SL)",
+        "fee": 298.5863496
       },
-      "target": 785.4499999999998,
+      "target": 782.5999999999999,
       "stopLoss": 771.2,
       "shares": 644,
       "leverage": 5,
       "grossInvestedAmount": 499956.51999999996,
       "actualCapitalUsed": 99991.30399999999,
-      "totalFees": 598.467912,
+      "totalFees": 598.5602616,
       "riskPoints": 5.129999999999882,
-      "profit": -3064.987911999953,
-      "profitPercentage": -3.0652544665283625,
-      "grossProfit": -2466.519999999953,
-      "netProfit": -3064.987911999953,
-      "grossProfitPercentage": -2.4667345072327023,
-      "netProfitPercentage": -3.0652544665283625,
+      "profit": -2911.164261599932,
+      "profitPercentage": -2.911417438460381,
+      "grossProfit": -2312.603999999932,
+      "netProfit": -2911.164261599932,
+      "grossProfitPercentage": -2.3128051215333008,
+      "netProfitPercentage": -2.911417438460381,
       "patterns": [
         "hammer",
         "hammer",
@@ -7828,6 +9674,36 @@
         "actualEntryTime": "2024-04-23 12:29",
         "actualEntryPrice": 776.3299999999999,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 772.739,
+            "timeTriggered": "2024-04-23 13:19",
+            "candleLow": 772.5,
+            "lossAtTrigger": 3.8299999999999272
+          }
+        ],
+        "finalExitPrice": 772.739,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 772.739,
+          "fillTime": "2024-04-23 13:20",
+          "fillCandleHigh": 773.9,
+          "fillCandleLow": 772.7,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 244,
+          "filledAtCandleIndex": 245
+        }
       }
     },
     {
@@ -7839,25 +9715,25 @@
         "fee": 299.715633
       },
       "exit": {
-        "price": 772.85,
-        "time": "2024-04-24 15:09",
-        "reason": "forced market exit",
-        "fee": 300.02037
+        "price": 774.3645,
+        "time": "2024-04-24 15:02",
+        "reason": "limit order hit (70% SL)",
+        "fee": 300.6082989
       },
-      "target": 766.2250000000001,
+      "target": 768.0500000000001,
       "stopLoss": 775.35,
       "shares": 647,
       "leverage": 5,
       "grossInvestedAmount": 499526.05500000005,
       "actualCapitalUsed": 99905.21100000001,
-      "totalFees": 599.736003,
+      "totalFees": 600.3239319,
       "riskPoints": 3.284999999999968,
-      "profit": -1107.6310029999795,
-      "profitPercentage": -1.1086819114970683,
-      "grossProfit": -507.8949999999794,
-      "netProfit": -1107.6310029999795,
-      "grossProfitPercentage": -0.5083768853658488,
-      "netProfitPercentage": -1.1086819114970683,
+      "profit": -2088.100431899978,
+      "profitPercentage": -2.090081599347183,
+      "grossProfit": -1487.7764999999781,
+      "netProfit": -2088.100431899978,
+      "grossProfitPercentage": -1.489188086495286,
+      "netProfitPercentage": -2.090081599347183,
       "patterns": [
         "hammer",
         "hammer",
@@ -7899,6 +9775,36 @@
         "actualEntryTime": "2024-04-24 12:00",
         "actualEntryPrice": 772.065,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 70,
+            "limitPrice": 774.3645,
+            "timeTriggered": "2024-04-24 15:01",
+            "candleHigh": 774.5,
+            "lossAtTrigger": 2.4349999999999454
+          }
+        ],
+        "finalExitPrice": 774.3645,
+        "finalExitReason": "limit order hit (70% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 70,
+          "filledOrderPrice": 774.3645,
+          "fillTime": "2024-04-24 15:02",
+          "fillCandleHigh": 773.85,
+          "fillCandleLow": 773,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 346,
+          "filledAtCandleIndex": 347
+        }
       }
     },
     {
@@ -7921,7 +9827,7 @@
         "reason": "forced market exit",
         "fee": 299.32035
       },
-      "target": 794.4499999999998,
+      "target": 796.8499999999999,
       "stopLoss": 806.45,
       "shares": 623,
       "leverage": 5,
@@ -7983,6 +9889,19 @@
         "actualEntryTime": "2024-04-26 13:41",
         "actualEntryPrice": 802.13,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 800.75,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -8010,7 +9929,7 @@
         "reason": "forced market exit",
         "fee": 298.72103999999996
       },
-      "target": 848.325,
+      "target": 843,
       "stopLoss": 821.7,
       "shares": 601,
       "leverage": 5,
@@ -8077,6 +9996,19 @@
         "actualEntryTime": "2024-04-30 14:39",
         "actualEntryPrice": 831.2850000000001,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 828.4,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -8118,25 +10050,25 @@
         "fee": 299.921616
       },
       "exit": {
-        "price": 817.8,
-        "time": "2024-05-09 15:09",
-        "reason": "forced market exit",
-        "fee": 300.29616
+        "price": 832.95,
+        "time": "2024-05-09 14:09",
+        "reason": "target hit",
+        "fee": 305.85924
       },
-      "target": 840.3000000000001,
+      "target": 832.95,
       "stopLoss": 803.55,
       "shares": 612,
       "leverage": 5,
       "grossInvestedAmount": 499869.36,
       "actualCapitalUsed": 99973.872,
-      "totalFees": 600.217776,
+      "totalFees": 605.780856,
       "riskPoints": 13.230000000000018,
-      "profit": 24.02222399998891,
-      "profitPercentage": 0.02402850216703511,
-      "grossProfit": 624.2399999999889,
-      "netProfit": 24.02222399998891,
-      "grossProfitPercentage": 0.6244031440534671,
-      "netProfitPercentage": 0.02402850216703511,
+      "profit": 9290.259144000045,
+      "profitPercentage": 9.292687137295278,
+      "grossProfit": 9896.040000000045,
+      "netProfit": 9290.259144000045,
+      "grossProfitPercentage": 9.898626313083128,
+      "netProfitPercentage": 9.292687137295278,
       "patterns": [
         "hammer",
         "hammer",
@@ -8151,7 +10083,7 @@
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 13996.440000000002,
+      "maxFavorableExcursion": 11732.040000000045,
       "volumeInfo": {
         "breakoutCandleVolume": 2050730,
         "confirmationCandleVolume": 186473,
@@ -8184,6 +10116,19 @@
         "actualEntryTime": "2024-05-09 13:57",
         "actualEntryPrice": 816.78,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 832.95,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -8217,7 +10162,7 @@
         "reason": "forced market exit",
         "fee": 300.79188
       },
-      "target": 833.1500000000001,
+      "target": 828.1,
       "stopLoss": 807.9,
       "shares": 612,
       "leverage": 5,
@@ -8277,6 +10222,19 @@
         "actualEntryTime": "2024-05-14 13:19",
         "actualEntryPrice": 816.99,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 819.15,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -8323,7 +10281,7 @@
         "reason": "forced market exit",
         "fee": 300.70007999999996
       },
-      "target": 808.0749999999999,
+      "target": 810.8,
       "stopLoss": 821.7,
       "shares": 612,
       "leverage": 5,
@@ -8383,6 +10341,19 @@
         "actualEntryTime": "2024-05-22 11:12",
         "actualEntryPrice": 816.795,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 818.9,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -8442,25 +10413,25 @@
         "fee": 299.69793
       },
       "exit": {
-        "price": 793.25,
+        "price": 807.7,
         "time": "2024-06-04 11:17",
         "reason": "target hit",
-        "fee": 283.19025
+        "fee": 288.3489
       },
-      "target": 793.25,
+      "target": 807.7,
       "stopLoss": 865.5,
       "shares": 595,
       "leverage": 5,
       "grossInvestedAmount": 499496.55,
       "actualCapitalUsed": 99899.31,
-      "totalFees": 582.8881799999999,
+      "totalFees": 588.04683,
       "riskPoints": 26.00999999999999,
-      "profit": 26929.91182000001,
-      "profitPercentage": 26.95705487855723,
-      "grossProfit": 27512.800000000007,
-      "netProfit": 26929.91182000001,
-      "grossProfitPercentage": 27.540530560221093,
-      "netProfitPercentage": 26.95705487855723,
+      "profit": 18327.003169999978,
+      "profitPercentage": 18.345475229008066,
+      "grossProfit": 18915.049999999977,
+      "netProfit": 18327.003169999978,
+      "grossProfitPercentage": 18.934114760151974,
+      "netProfitPercentage": 18.345475229008066,
       "patterns": [
         "hammer",
         "hammer",
@@ -8501,6 +10472,19 @@
         "actualEntryTime": "2024-06-04 10:48",
         "actualEntryPrice": 839.49,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 807.7,
+        "finalExitReason": "target hit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -8529,7 +10513,7 @@
         "reason": "forced market exit",
         "fee": 301.89707999999996
       },
-      "target": 849.25,
+      "target": 841.5,
       "stopLoss": 810.5,
       "shares": 606,
       "leverage": 5,
@@ -8593,6 +10577,19 @@
         "actualEntryTime": "2024-06-07 12:54",
         "actualEntryPrice": 824.45,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 830.3,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -8609,7 +10606,7 @@
         "reason": "forced market exit",
         "fee": 299.736
       },
-      "target": 819.0749999999998,
+      "target": 823.3999999999999,
       "stopLoss": 840.7,
       "shares": 600,
       "leverage": 5,
@@ -8670,6 +10667,19 @@
         "actualEntryTime": "2024-06-10 14:37",
         "actualEntryPrice": 832.915,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 832.6,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     },
     {
@@ -8693,25 +10703,25 @@
         "fee": 299.86393499999997
       },
       "exit": {
-        "price": 843.6,
-        "time": "2024-06-13 11:57",
-        "reason": "stop-loss hit",
-        "fee": 301.1652
+        "price": 844.3290000000001,
+        "time": "2024-06-13 12:00",
+        "reason": "limit order hit (120% SL)",
+        "fee": 301.425453
       },
-      "target": 833.4749999999999,
+      "target": 835.4999999999999,
       "stopLoss": 843.6,
       "shares": 595,
       "leverage": 5,
       "grossInvestedAmount": 499773.225,
       "actualCapitalUsed": 99954.64499999999,
-      "totalFees": 601.029135,
+      "totalFees": 601.2893879999999,
       "riskPoints": 3.6450000000000955,
-      "profit": -2769.8041350000567,
-      "profitPercentage": -2.7710609496937906,
-      "grossProfit": -2168.775000000057,
-      "netProfit": -2769.8041350000567,
-      "grossProfitPercentage": -2.1697590942372487,
-      "netProfitPercentage": -2.7710609496937906,
+      "profit": -3203.8193880000817,
+      "profitPercentage": -3.2052731396325624,
+      "grossProfit": -2602.5300000000816,
+      "netProfit": -3203.8193880000817,
+      "grossProfitPercentage": -2.6037109130847114,
+      "netProfitPercentage": -3.2052731396325624,
       "patterns": [
         "hammer",
         "hammer",
@@ -8751,6 +10761,57 @@
         "actualEntryTime": "2024-06-13 11:28",
         "actualEntryPrice": 839.9549999999999,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [
+          {
+            "triggerPercent": 90,
+            "limitPrice": 843.2355,
+            "timeTriggered": "2024-06-13 11:56",
+            "candleHigh": 843.4,
+            "lossAtTrigger": 3.44500000000005
+          },
+          {
+            "triggerPercent": 100,
+            "limitPrice": 843.6,
+            "timeTriggered": "2024-06-13 11:57",
+            "candleHigh": 843.8,
+            "lossAtTrigger": 3.8450000000000273
+          },
+          {
+            "triggerPercent": 110,
+            "limitPrice": 843.9645,
+            "timeTriggered": "2024-06-13 11:58",
+            "candleHigh": 844,
+            "lossAtTrigger": 4.045000000000073
+          },
+          {
+            "triggerPercent": 120,
+            "limitPrice": 844.3290000000001,
+            "timeTriggered": "2024-06-13 11:59",
+            "candleHigh": 844.5,
+            "lossAtTrigger": 4.545000000000073
+          }
+        ],
+        "finalExitPrice": 844.3290000000001,
+        "finalExitReason": "limit order hit (120% SL)",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": {
+          "filledOrderTriggerPercent": 120,
+          "filledOrderPrice": 844.3290000000001,
+          "fillTime": "2024-06-13 12:00",
+          "fillCandleHigh": 844.1,
+          "fillCandleLow": 842.85,
+          "timeBetweenPlaceAndFill": 1,
+          "placedAtCandleIndex": 164,
+          "filledAtCandleIndex": 165
+        }
       }
     },
     {
@@ -8767,7 +10828,7 @@
         "reason": "forced market exit",
         "fee": 299.1087
       },
-      "target": 831.425,
+      "target": 834.3,
       "stopLoss": 845.8,
       "shares": 594,
       "leverage": 5,
@@ -8833,7 +10894,62 @@
         "actualEntryTime": "2024-06-14 14:10",
         "actualEntryPrice": 840.625,
         "pullbackPercentage": 10
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "triggerLevels": [],
+        "finalExitPrice": 839.25,
+        "finalExitReason": "forced market exit",
+        "initialTriggerPercent": 70,
+        "incrementPercent": 10,
+        "maxTriggerPercent": 120,
+        "maxLossPercent": 150,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null
       }
     }
-  ]
+  ],
+  "configUsed": {
+    "threshold": 70,
+    "riskRewardRatio": 1,
+    "pullbackPercentage": 10,
+    "entryTimeRange": {
+      "enabled": true,
+      "startTime": "9:15",
+      "endTime": "14:45"
+    },
+    "marketExitTime": {
+      "enabled": true,
+      "exitTime": "15:09"
+    },
+    "dateFilter": {
+      "enabled": false,
+      "specificDate": "01/12/2023",
+      "dateRange": {
+        "start": null,
+        "end": null
+      }
+    },
+    "volumeConfirmation": {
+      "enabled": true,
+      "volumeMultiplier": 1,
+      "lookbackPeriod": 20
+    },
+    "capital": {
+      "initial": 100000,
+      "utilizationPercent": 100,
+      "leverage": 5,
+      "brokerageFeePercent": 0.06
+    },
+    "stopLossExitConfig": {
+      "enabled": true,
+      "initialTriggerPercent": 70,
+      "incrementPercent": 10,
+      "maxTriggerPercent": 120,
+      "maxLossPercent": 150,
+      "forceMarketOrderAfterMax": true,
+      "description": "Place limit sell orders starting at 70% of SL loss, increment by 10% until 120%, circuit breaker at 150%"
+    }
+  }
 }

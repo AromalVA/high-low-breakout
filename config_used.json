@@ -1,10 +1,10 @@
 {
   "threshold": 70,
-  "riskRewardRatio": 1.5,
+  "riskRewardRatio": 1,
   "pullbackPercentage": 10,
   "entryTimeRange": {
     "enabled": true,
-    "startTime": "10:16",
+    "startTime": "9:15",
     "endTime": "14:45"
   },
   "marketExitTime": {
@@ -29,5 +29,14 @@
     "utilizationPercent": 100,
     "leverage": 5,
     "brokerageFeePercent": 0.06
+  },
+  "stopLossExitConfig": {
+    "enabled": true,
+    "initialTriggerPercent": 70,
+    "incrementPercent": 10,
+    "maxTriggerPercent": 120,
+    "maxLossPercent": 150,
+    "forceMarketOrderAfterMax": true,
+    "description": "Place limit sell orders starting at 70% of SL loss, increment by 10% until 120%, circuit breaker at 150%"
   }
 }
