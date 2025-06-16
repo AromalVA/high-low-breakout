@@ -1,5 +1,6 @@
 {
-  "threshold": 70,
+  "minThreshold": 70,
+  "maxThreshold": 300,
   "riskRewardRatio": 1,
   "pullbackPercentage": 10,
   "entryTimeRange": {

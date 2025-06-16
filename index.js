@@ -3,7 +3,8 @@ const fs = require('fs');
 
 // Configuration for the backtest
 const config = {
-  threshold: 70,  // Time threshold for breakout in minutes
+  minThreshold: 70,  // Minimum time threshold for breakout in minutes
+  maxThreshold: 300, // Maximum time threshold for breakout in minutes
   riskRewardRatio: 1,  // Risk to reward ratio
   pullbackPercentage: 10,  // Percentage of stop-loss points to wait for pullback
   entryTimeRange: {
@@ -53,6 +54,7 @@ console.log('=================== Backtest Results ===================');
 console.log(`Initial Capital: ₹${results.initialCapital.toFixed(2)}`);
 console.log(`Leverage: ${results.leverage}x`);
 console.log(`Brokerage Fee: ${results.brokerageFeePercent}%`);
+console.log(`Time Threshold Range: ${config.minThreshold} - ${config.maxThreshold} minutes`);
 console.log(`Pullback Percentage: ${config.pullbackPercentage}%`);
 console.log(`Entry Time Range: ${config.entryTimeRange.enabled ? `${config.entryTimeRange.startTime} to ${config.entryTimeRange.endTime}` : 'No restriction'}`);
 console.log(`Market Exit Time: ${config.marketExitTime.enabled ? config.marketExitTime.exitTime : 'No forced exit'}`);
@@ -83,6 +85,7 @@ console.log(`Total Trades: ${results.winningDays.length + results.losingDays.len
 console.log(`Winning Trades: ${results.totalWinningDays}`);
 console.log(`Losing Trades: ${results.totalLosingDays}`);
 console.log(`Breakouts Without Entry: ${results.breakoutsWithoutEntry || 0}`);
+console.log(`Breakouts Outside Time Range: ${results.breakoutsOutsideTimeRange || 0}`);
 console.log('======================================================');
 
 // Print enhanced stop loss analysis
@@ -113,6 +116,7 @@ if (actualTrades.length > 0) {
       console.log(`  Type: ${trade.type.toUpperCase()}`);
       console.log(`  Breakout Time: ${trade.breakout.breakoutTime}`);
       console.log(`  Breakout Price: ₹${trade.breakout.breakoutPrice?.toFixed(2) || 'N/A'}`);
+      console.log(`  Time Since Previous Extreme: ${trade.breakout.timeSincePreviousExtreme} mins`);
       console.log(`  Actual Entry Time: ${trade.breakout.actualEntryTime || 'N/A'}`);
       console.log(`  Actual Entry Price: ₹${trade.entry.price.toFixed(2)}`);
       console.log(`  Pullback Required: ₹${trade.breakout.pullbackEntryPrice?.toFixed(2) || 'N/A'}`);
@@ -164,6 +168,15 @@ if (breakoutsWithoutEntry.length > 0) {
   });
 }
 
+// Print breakdown of breakouts outside time range
+const breakoutsOutsideTimeRange = results.allTrades.filter(trade => trade.breakoutOutsideTimeRange);
+if (breakoutsOutsideTimeRange.length > 0) {
+  console.log(`\n${breakoutsOutsideTimeRange.length} breakouts detected but outside time threshold range:`);
+  breakoutsOutsideTimeRange.slice(0, 3).forEach((trade, index) => {
+    console.log(`  ${index + 1}. ${trade.date} - ${trade.breakoutType.toUpperCase()} breakout at ${trade.breakoutTime}, time gap: ${trade.timeGap} mins (outside ${config.minThreshold}-${config.maxThreshold} range)`);
+  });
+}
+
 // Print exit reason breakdown
 console.log('\n=============== Exit Reason Analysis ===============');
 if (results.statisticsByExitReason && Object.keys(results.statisticsByExitReason).length > 0) {
@@ -196,6 +209,15 @@ if (config.marketExitTime.enabled) {
   }
 }
 
+console.log('======================================================');
+
+// Detailed Threshold Configuration Summary
+console.log('\n=========== Threshold Configuration Summary ===========');
+console.log(`Time Threshold Range: ${config.minThreshold} - ${config.maxThreshold} minutes`);
+console.log(`Logic: Breakouts are only considered valid if the time since previous`);
+console.log(`       extreme (high/low) is between ${config.minThreshold} and ${config.maxThreshold} minutes`);
+console.log(`       This filters out breakouts that occur too quickly (noise) or`);
+console.log(`       too slowly (stale patterns)`);
 console.log('======================================================');
 
 // Detailed Stop Loss Configuration Summary

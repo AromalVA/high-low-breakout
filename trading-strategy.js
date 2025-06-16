@@ -4,7 +4,8 @@ const fs = require('fs');
  * Default configuration for the backtest
  */
 const defaultConfig = {
-  threshold: 120, // in minutes
+  minThreshold: 60, // Minimum time threshold for breakout in minutes
+  maxThreshold: 180, // Maximum time threshold for breakout in minutes
   riskRewardRatio: 1,
   pullbackPercentage: 10, // Percentage of stop-loss points to wait for pullback
   entryTimeRange: {
@@ -110,6 +111,16 @@ function shouldForceMarketExit(timestamp, config) {
   const exitTimeMinutes = parse24HourTimeToMinutes(config.marketExitTime.exitTime);
   
   return currentTimeMinutes >= exitTimeMinutes;
+}
+
+/**
+ * Check if time difference is within the allowed threshold range
+ * @param {number} timeDiff - Time difference in minutes
+ * @param {Object} config - Configuration with min/max threshold settings
+ * @returns {boolean} - Whether time difference is within allowed range
+ */
+function isTimeThresholdMet(timeDiff, config) {
+  return timeDiff >= config.minThreshold && timeDiff <= config.maxThreshold;
 }
 
 /**
@@ -277,6 +288,9 @@ function analyzeTradingDay(date, dayData, config) {
   let longEntry = null;
   let shortEntry = null;
   
+  // Track invalid breakouts encountered during the day
+  let invalidBreakouts = [];
+  
   // Initialize patterns array
   let patterns = [];
   
@@ -369,8 +383,8 @@ function analyzeTradingDay(date, dayData, config) {
     if (candle.high > previousHighPrice + 0.05) { // Using a small threshold to account for precision issues
       const timeDiff = calculateTimeDiffInMinutes(candle.timestamp_readable_IST, previousHighTime);
       
-      if (timeDiff >= config.threshold && !pendingLongBreakout && !longEntry) {
-        // We have a valid high breakout with sufficient time difference
+      if (isTimeThresholdMet(timeDiff, config) && !pendingLongBreakout && !longEntry) {
+        // We have a valid high breakout with time difference within the allowed range
         const volumeConfirmation = isVolumeConfirmationMet(dayData, i, config);
         
         if (volumeConfirmation.passed) {
@@ -403,7 +417,8 @@ function analyzeTradingDay(date, dayData, config) {
               previousExtremeTime: formatTimestamp(previousHighTime),
               timeSincePreviousExtreme: timeDiff,
               previousExtremeType: "high",
-              periodMinutesRequired: config.threshold,
+              minThresholdRequired: config.minThreshold,
+              maxThresholdRequired: config.maxThreshold,
               stopLossValue: stopLoss,
               stopLossTime: formatTimestamp(lowestSinceLastHighTime),
               swingLow: lowestSinceLastHigh,
@@ -414,6 +429,29 @@ function analyzeTradingDay(date, dayData, config) {
             }
           };
         }
+      }
+      // Note: Invalid breakouts are no longer returned immediately - we continue processing
+      
+      // Record invalid breakouts for reporting if no valid trades found
+      if (!isTimeThresholdMet(timeDiff, config)) {
+        invalidBreakouts.push({
+          type: "short",
+          breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
+          breakoutPrice: previousLowPrice,
+          timeGap: timeDiff,
+          requiredTimeRange: `${config.minThreshold}-${config.maxThreshold}`
+        });
+      }
+      
+      // Record invalid breakouts for reporting if no valid trades found
+      if (!isTimeThresholdMet(timeDiff, config)) {
+        invalidBreakouts.push({
+          type: "long",
+          breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
+          breakoutPrice: previousHighPrice,
+          timeGap: timeDiff,
+          requiredTimeRange: `${config.minThreshold}-${config.maxThreshold}`
+        });
       }
       
       // Update previous high and reset lowest since last high
@@ -427,8 +465,8 @@ function analyzeTradingDay(date, dayData, config) {
     if (candle.low < previousLowPrice - 0.05) { // Using a small threshold to account for precision issues
       const timeDiff = calculateTimeDiffInMinutes(candle.timestamp_readable_IST, previousLowTime);
       
-      if (timeDiff >= config.threshold && !pendingShortBreakout && !shortEntry) {
-        // We have a valid low breakout with sufficient time difference
+      if (isTimeThresholdMet(timeDiff, config) && !pendingShortBreakout && !shortEntry) {
+        // We have a valid low breakout with time difference within the allowed range
         const volumeConfirmation = isVolumeConfirmationMet(dayData, i, config);
         
         if (volumeConfirmation.passed) {
@@ -461,7 +499,8 @@ function analyzeTradingDay(date, dayData, config) {
               previousExtremeTime: formatTimestamp(previousLowTime),
               timeSincePreviousExtreme: timeDiff,
               previousExtremeType: "low",
-              periodMinutesRequired: config.threshold,
+              minThresholdRequired: config.minThreshold,
+              maxThresholdRequired: config.maxThreshold,
               stopLossValue: stopLoss,
               stopLossTime: formatTimestamp(highestSinceLastLowTime),
               swingLow: previousLowPrice,
@@ -473,6 +512,7 @@ function analyzeTradingDay(date, dayData, config) {
           };
         }
       }
+      // Note: Invalid breakouts are no longer returned immediately - we continue processing
       
       // Update previous low and reset highest since last low
       previousLowPrice = candle.low;
@@ -499,6 +539,23 @@ function analyzeTradingDay(date, dayData, config) {
       breakoutTime: pendingBreakout.breakoutDetails.breakoutTime,
       breakoutPrice: pendingBreakout.breakoutPrice,
       requiredPullbackPrice: pendingBreakout.pullbackEntryPrice,
+      volumeRejection: false,
+      volumeData: null
+    };
+  }
+  
+  // If we had invalid breakouts but no valid trades, report the first invalid breakout
+  if (invalidBreakouts.length > 0) {
+    const firstInvalidBreakout = invalidBreakouts[0];
+    return {
+      date,
+      message: `Breakout detected but outside time threshold range (${firstInvalidBreakout.timeGap} mins)`,
+      breakoutOutsideTimeRange: true,
+      breakoutType: firstInvalidBreakout.type,
+      breakoutTime: firstInvalidBreakout.breakoutTime,
+      breakoutPrice: firstInvalidBreakout.breakoutPrice,
+      timeGap: firstInvalidBreakout.timeGap,
+      requiredTimeRange: firstInvalidBreakout.requiredTimeRange,
       volumeRejection: false,
       volumeData: null
     };
@@ -1026,6 +1083,9 @@ function calculateStats(trades, capital, config) {
   // Count breakouts that didn't result in trades
   const breakoutsWithoutEntry = trades.filter(trade => trade.breakoutDetected).length;
   
+  // Count breakouts outside time range
+  const breakoutsOutsideTimeRange = trades.filter(trade => trade.breakoutOutsideTimeRange).length;
+  
   return {
     initialCapital: capital.initial,
     leverage: capital.leverage || 1,
@@ -1058,8 +1118,9 @@ function calculateStats(trades, capital, config) {
       winRate: winRate / 100 // Convert to decimal
     },
     winRate,
-    breakoutsWithoutEntry, // New stat for breakouts that didn't result in trades
-    stopLossExitAnalysis // New analysis for stop loss exit performance
+    breakoutsWithoutEntry, // Breakouts that didn't result in trades due to no pullback
+    breakoutsOutsideTimeRange, // New stat for breakouts outside the time threshold range
+    stopLossExitAnalysis // Analysis for stop loss exit performance
   };
 }
 
