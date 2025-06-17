@@ -44,8 +44,36 @@ const defaultConfig = {
     maxLossPercent: 200, // Force market exit if loss exceeds this % of stop loss (circuit breaker)
     forceMarketOrderAfterMax: true, // Use market order as circuit breaker when maxLossPercent is hit
     description: "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
+  },
+  priceRounding: {
+    enabled: true, // Enable price rounding to nearest 0.05
+    tickSize: 0.05 // Round to nearest 0.05 rupees
   }
 };
+
+/**
+ * Round price to the nearest tick size (0.05 by default for Indian markets)
+ * @param {number} price - The price to round
+ * @param {number} tickSize - The tick size (default 0.05)
+ * @returns {number} - Rounded price
+ */
+function roundToTickSize(price, tickSize = 0.05) {
+  if (!price || isNaN(price)) return price;
+  return Math.round(price / tickSize) * tickSize;
+}
+
+/**
+ * Apply price rounding based on configuration
+ * @param {number} price - The price to round
+ * @param {Object} config - Configuration object
+ * @returns {number} - Rounded price if enabled, original price otherwise
+ */
+function applyPriceRounding(price, config) {
+  if (config.priceRounding?.enabled) {
+    return roundToTickSize(price, config.priceRounding.tickSize);
+  }
+  return price;
+}
 
 /**
  * Parse time from timestamp into minutes for time difference calculation
@@ -408,15 +436,15 @@ function analyzeTradingDay(date, dayData, config) {
         const volumeConfirmation = isVolumeConfirmationMet(dayData, i, config);
         
         if (volumeConfirmation.passed) {
-          // Calculate target and stop loss for long entry
-          const breakoutPrice = previousHighPrice;
-          const stopLoss = lowestSinceLastHigh;
+          // Calculate target and stop loss for long entry with price rounding
+          const breakoutPrice = applyPriceRounding(previousHighPrice, config);
+          const stopLoss = applyPriceRounding(lowestSinceLastHigh, config);
           const risk = breakoutPrice - stopLoss;
-          const target = breakoutPrice + (risk * config.riskRewardRatio);
+          const target = applyPriceRounding(breakoutPrice + (risk * config.riskRewardRatio), config);
           
-          // Calculate pullback entry price
+          // Calculate pullback entry price with rounding
           const pullbackAmount = risk * (config.pullbackPercentage / 100);
-          const pullbackEntryPrice = breakoutPrice - pullbackAmount;
+          const pullbackEntryPrice = applyPriceRounding(breakoutPrice - pullbackAmount, config);
           
           pendingLongBreakout = {
             type: "long",
@@ -456,7 +484,7 @@ function analyzeTradingDay(date, dayData, config) {
         invalidBreakouts.push({
           type: "long",
           breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
-          breakoutPrice: previousHighPrice,
+          breakoutPrice: applyPriceRounding(previousHighPrice, config),
           timeGap: timeDiff,
           requiredTimeRange: `${config.minThreshold}-${config.maxThreshold}`
         });
@@ -478,15 +506,15 @@ function analyzeTradingDay(date, dayData, config) {
         const volumeConfirmation = isVolumeConfirmationMet(dayData, i, config);
         
         if (volumeConfirmation.passed) {
-          // Calculate target and stop loss for short entry
-          const breakoutPrice = previousLowPrice;
-          const stopLoss = highestSinceLastLow;
+          // Calculate target and stop loss for short entry with price rounding
+          const breakoutPrice = applyPriceRounding(previousLowPrice, config);
+          const stopLoss = applyPriceRounding(highestSinceLastLow, config);
           const risk = stopLoss - breakoutPrice;
-          const target = breakoutPrice - (risk * config.riskRewardRatio);
+          const target = applyPriceRounding(breakoutPrice - (risk * config.riskRewardRatio), config);
           
-          // Calculate pullback entry price
+          // Calculate pullback entry price with rounding
           const pullbackAmount = risk * (config.pullbackPercentage / 100);
-          const pullbackEntryPrice = breakoutPrice + pullbackAmount;
+          const pullbackEntryPrice = applyPriceRounding(breakoutPrice + pullbackAmount, config);
           
           pendingShortBreakout = {
             type: "short",
@@ -526,7 +554,7 @@ function analyzeTradingDay(date, dayData, config) {
         invalidBreakouts.push({
           type: "short",
           breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
-          breakoutPrice: previousLowPrice,
+          breakoutPrice: applyPriceRounding(previousLowPrice, config),
           timeGap: timeDiff,
           requiredTimeRange: `${config.minThreshold}-${config.maxThreshold}`
         });
@@ -696,10 +724,11 @@ function simulateTrade(date, trade, dayData, capital, config) {
     if (config.marketExitTime?.enabled && !preMarketExitOrder && 
         shouldPlacePreMarketExitOrder(candle.timestamp_readable_IST, config)) {
       
-      // Place initial limit order at the closing price of this candle
+      // Place initial limit order at the rounded closing price of this candle
+      const roundedClosePrice = applyPriceRounding(candle.close, config);
       preMarketExitOrder = {
-        price: candle.close,
-        originalPrice: candle.close,
+        price: roundedClosePrice,
+        originalPrice: roundedClosePrice,
         placedTime: formatTimestamp(candle.timestamp_readable_IST),
         placedAtCandle: i,
         type: trade.type === "long" ? "sell" : "buy",
@@ -708,9 +737,9 @@ function simulateTrade(date, trade, dayData, capital, config) {
       
       preMarketExitDetails.orderPlaced = true;
       preMarketExitDetails.orderPlacementTime = formatTimestamp(candle.timestamp_readable_IST);
-      preMarketExitDetails.orderPlacementPrice = candle.close;
+      preMarketExitDetails.orderPlacementPrice = roundedClosePrice;
       preMarketExitDetails.orderPlacementCandleIndex = i;
-      preMarketExitDetails.originalLimitPrice = candle.close;
+      preMarketExitDetails.originalLimitPrice = roundedClosePrice;
     }
     
     // Check if pre-market exit limit order should be updated or filled
@@ -750,11 +779,11 @@ function simulateTrade(date, trade, dayData, capital, config) {
         
         break;
       } else if (preMarketExitDetails.dynamicPriceAdjustment) {
-        // Order not filled - UPDATE the limit order price to current candle's close
+        // Order not filled - UPDATE the limit order price to current candle's rounded close
         const oldPrice = preMarketExitOrder.price;
-        const newPrice = candle.close;
+        const newPrice = applyPriceRounding(candle.close, config);
         
-        if (Math.abs(newPrice - oldPrice) > 0.01) {
+        if (Math.abs(newPrice - oldPrice) >= 0.05) { // Only update if change is meaningful (at least one tick)
           const priceUpdate = {
             candleIndex: i,
             time: formatTimestamp(candle.timestamp_readable_IST),
@@ -776,7 +805,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
     
     // Check for forced market exit (fallback if pre-market exit order wasn't filled)
     if (shouldForceMarketExit(candle.timestamp_readable_IST, config)) {
-      exitPrice = candle.close;
+      exitPrice = applyPriceRounding(candle.close, config);
       exitTime = formatTimestamp(candle.timestamp_readable_IST);
       exitReason = "forced market exit";
       stopLossExitDetails.finalExitPrice = exitPrice;
@@ -788,8 +817,8 @@ function simulateTrade(date, trade, dayData, capital, config) {
           preMarketExitOrder.price - preMarketExitDetails.originalLimitPrice :
           preMarketExitDetails.originalLimitPrice - preMarketExitOrder.price;
         preMarketExitDetails.priceImprovementVsForcedExit = trade.type === "long" ? 
-          preMarketExitOrder.price - candle.close :
-          candle.close - preMarketExitOrder.price;
+          preMarketExitOrder.price - exitPrice :
+          exitPrice - preMarketExitOrder.price;
       }
       
       break;
@@ -823,19 +852,20 @@ function simulateTrade(date, trade, dayData, capital, config) {
           
           // Check if closing price is below stop loss
           if (candle.close <= trade.stopLoss) {
-            // Place limit order at closing price
+            // Place limit order at rounded closing price
+            const roundedClosePrice = applyPriceRounding(candle.close, config);
             activeStopLossOrder = {
-              price: candle.close,
-              originalPrice: candle.close,
+              price: roundedClosePrice,
+              originalPrice: roundedClosePrice,
               placedTime: formatTimestamp(candle.timestamp_readable_IST),
               placedAtCandle: i,
               priceUpdates: []
             };
             
-            stopLossExitDetails.originalLimitPrice = candle.close;
+            stopLossExitDetails.originalLimitPrice = roundedClosePrice;
             stopLossExitDetails.limitOrderHistory.push({
               action: "placed",
-              price: candle.close,
+              price: roundedClosePrice,
               time: formatTimestamp(candle.timestamp_readable_IST),
               candleIndex: i,
               reason: "stop_loss_breach"
@@ -866,12 +896,12 @@ function simulateTrade(date, trade, dayData, capital, config) {
             
             break;
           } else if (stopLossConfig.dynamicStopLossAdjustment) {
-            // Price didn't recover, update limit order to current close if worse
+            // Price didn't recover, update limit order to current rounded close if worse
             const oldPrice = activeStopLossOrder.price;
-            const newPrice = candle.close;
+            const newPrice = applyPriceRounding(candle.close, config);
             
             // Only update if price is worse (lower for long positions) and meaningful change
-            if (newPrice < oldPrice && Math.abs(newPrice - oldPrice) > 0.01) {
+            if (newPrice < oldPrice && Math.abs(newPrice - oldPrice) >= 0.05) {
               const priceUpdate = {
                 candleIndex: i,
                 time: formatTimestamp(candle.timestamp_readable_IST),
@@ -903,7 +933,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           const lossPercentage = (currentLoss / riskPoints) * 100;
           
           if (lossPercentage >= stopLossConfig.maxLossPercent) {
-            exitPrice = candle.low;
+            exitPrice = applyPriceRounding(candle.low, config);
             exitTime = formatTimestamp(candle.timestamp_readable_IST);
             exitReason = `circuit breaker (${stopLossConfig.maxLossPercent}% max loss)`;
             stopLossExitDetails.finalExitPrice = exitPrice;
@@ -913,9 +943,9 @@ function simulateTrade(date, trade, dayData, capital, config) {
           }
         }
       } else {
-        // Traditional stop loss logic
+        // Traditional stop loss logic with price rounding
         if (candle.low <= trade.stopLoss) {
-          exitPrice = candle.low;
+          exitPrice = applyPriceRounding(candle.low, config);
           exitTime = formatTimestamp(candle.timestamp_readable_IST);
           exitReason = "stop-loss hit";
           stopLossExitDetails.finalExitPrice = exitPrice;
@@ -950,19 +980,20 @@ function simulateTrade(date, trade, dayData, capital, config) {
           
           // Check if closing price is above stop loss
           if (candle.close >= trade.stopLoss) {
-            // Place limit order at closing price
+            // Place limit order at rounded closing price
+            const roundedClosePrice = applyPriceRounding(candle.close, config);
             activeStopLossOrder = {
-              price: candle.close,
-              originalPrice: candle.close,
+              price: roundedClosePrice,
+              originalPrice: roundedClosePrice,
               placedTime: formatTimestamp(candle.timestamp_readable_IST),
               placedAtCandle: i,
               priceUpdates: []
             };
             
-            stopLossExitDetails.originalLimitPrice = candle.close;
+            stopLossExitDetails.originalLimitPrice = roundedClosePrice;
             stopLossExitDetails.limitOrderHistory.push({
               action: "placed",
-              price: candle.close,
+              price: roundedClosePrice,
               time: formatTimestamp(candle.timestamp_readable_IST),
               candleIndex: i,
               reason: "stop_loss_breach"
@@ -993,12 +1024,12 @@ function simulateTrade(date, trade, dayData, capital, config) {
             
             break;
           } else if (stopLossConfig.dynamicStopLossAdjustment) {
-            // Price didn't recover, update limit order to current close if worse
+            // Price didn't recover, update limit order to current rounded close if worse
             const oldPrice = activeStopLossOrder.price;
-            const newPrice = candle.close;
+            const newPrice = applyPriceRounding(candle.close, config);
             
             // Only update if price is worse (higher for short positions) and meaningful change
-            if (newPrice > oldPrice && Math.abs(newPrice - oldPrice) > 0.01) {
+            if (newPrice > oldPrice && Math.abs(newPrice - oldPrice) >= 0.05) {
               const priceUpdate = {
                 candleIndex: i,
                 time: formatTimestamp(candle.timestamp_readable_IST),
@@ -1030,7 +1061,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           const lossPercentage = (currentLoss / riskPoints) * 100;
           
           if (lossPercentage >= stopLossConfig.maxLossPercent) {
-            exitPrice = candle.high;
+            exitPrice = applyPriceRounding(candle.high, config);
             exitTime = formatTimestamp(candle.timestamp_readable_IST);
             exitReason = `circuit breaker (${stopLossConfig.maxLossPercent}% max loss)`;
             stopLossExitDetails.finalExitPrice = exitPrice;
@@ -1040,9 +1071,9 @@ function simulateTrade(date, trade, dayData, capital, config) {
           }
         }
       } else {
-        // Traditional stop loss logic
+        // Traditional stop loss logic with price rounding
         if (candle.high >= trade.stopLoss) {
-          exitPrice = candle.high;
+          exitPrice = applyPriceRounding(candle.high, config);
           exitTime = formatTimestamp(candle.timestamp_readable_IST);
           exitReason = "stop-loss hit";
           stopLossExitDetails.finalExitPrice = exitPrice;
@@ -1053,10 +1084,10 @@ function simulateTrade(date, trade, dayData, capital, config) {
     }
   }
   
-  // If we didn't exit during the day, use market close price
+  // If we didn't exit during the day, use market close price with rounding
   if (!exitPrice) {
     const lastCandle = dayData[dayData.length - 1];
-    exitPrice = lastCandle.close;
+    exitPrice = applyPriceRounding(lastCandle.close, config);
     exitTime = formatTimestamp(lastCandle.timestamp_readable_IST);
     exitReason = "market close";
     stopLossExitDetails.finalExitPrice = exitPrice;
@@ -1377,7 +1408,8 @@ function calculateStats(trades, capital, config) {
     breakoutsWithoutEntry,
     breakoutsOutsideTimeRange,
     stopLossExitAnalysis, // Enhanced analysis for dynamic stop loss performance
-    preMarketExitAnalysis // Enhanced analysis for pre-market exit performance with dynamic pricing
+    preMarketExitAnalysis, // Enhanced analysis for pre-market exit performance with dynamic pricing
+    priceRoundingConfig: config.priceRounding // Include price rounding configuration in results
   };
 }
 
@@ -1408,5 +1440,7 @@ module.exports = {
   analyzeTradingDay,
   simulateTrade,
   calculateStats,
-  defaultConfig
+  defaultConfig,
+  roundToTickSize,
+  applyPriceRounding
 };
