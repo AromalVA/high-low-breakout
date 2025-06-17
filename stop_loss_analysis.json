@@ -10,10 +10,10 @@
   },
   "analysis": {
     "enabled": true,
-    "totalExitsViaLimitOrders": 15,
+    "totalExitsViaLimitOrders": 13,
     "totalTraditionalStopLossExits": 0,
     "totalCircuitBreakerExits": 0,
-    "averageProfitLimitOrderExits": -3210.713705940011,
+    "averageProfitLimitOrderExits": -3383.1981030000106,
     "averageProfitTraditionalExits": 0,
     "averageProfitCircuitBreakerExits": 0,
     "config": {
@@ -56,36 +56,6 @@
       "circuitBreakerTriggered": false,
       "grossProfit": -2419.1370000000106,
       "netProfit": -3017.229529800011
-    },
-    {
-      "date": "14/12/2023",
-      "type": "short",
-      "entryPrice": 623.045,
-      "exitPrice": 624.9035,
-      "exitReason": "limit order hit (70% SL)",
-      "riskPoints": 2.6550000000000864,
-      "triggerLevels": [
-        {
-          "triggerPercent": 70,
-          "limitPrice": 624.9035,
-          "timeTriggered": "2023-12-14 15:05",
-          "candleHigh": 625,
-          "lossAtTrigger": 1.955000000000041
-        }
-      ],
-      "orderFillDetails": {
-        "filledOrderTriggerPercent": 70,
-        "filledOrderPrice": 624.9035,
-        "fillTime": "2023-12-14 15:06",
-        "fillCandleHigh": 624.8,
-        "fillCandleLow": 624.35,
-        "timeBetweenPlaceAndFill": 1,
-        "placedAtCandleIndex": 350,
-        "filledAtCandleIndex": 351
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -1490.5170000000394,
-      "netProfit": -2091.0298182000392
     },
     {
       "date": "15/12/2023",
@@ -430,36 +400,6 @@
       "circuitBreakerTriggered": false,
       "grossProfit": -2312.603999999932,
       "netProfit": -2911.164261599932
-    },
-    {
-      "date": "24/04/2024",
-      "type": "short",
-      "entryPrice": 772.065,
-      "exitPrice": 774.3645,
-      "exitReason": "limit order hit (70% SL)",
-      "riskPoints": 3.284999999999968,
-      "triggerLevels": [
-        {
-          "triggerPercent": 70,
-          "limitPrice": 774.3645,
-          "timeTriggered": "2024-04-24 15:01",
-          "candleHigh": 774.5,
-          "lossAtTrigger": 2.4349999999999454
-        }
-      ],
-      "orderFillDetails": {
-        "filledOrderTriggerPercent": 70,
-        "filledOrderPrice": 774.3645,
-        "fillTime": "2024-04-24 15:02",
-        "fillCandleHigh": 773.85,
-        "fillCandleLow": 773,
-        "timeBetweenPlaceAndFill": 1,
-        "placedAtCandleIndex": 346,
-        "filledAtCandleIndex": 347
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -1487.7764999999781,
-      "netProfit": -2088.100431899978
     },
     {
       "date": "13/06/2024",

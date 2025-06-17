@@ -10,7 +10,9 @@
   },
   "marketExitTime": {
     "enabled": true,
-    "exitTime": "15:09"
+    "exitTime": "15:09",
+    "preExitLimitOrderMinutes": 10,
+    "dynamicPriceAdjustment": true
   },
   "dateFilter": {
     "enabled": false,
@@ -33,11 +35,9 @@
   },
   "stopLossExitConfig": {
     "enabled": true,
-    "initialTriggerPercent": 70,
-    "incrementPercent": 10,
-    "maxTriggerPercent": 120,
-    "maxLossPercent": 150,
+    "dynamicStopLossAdjustment": true,
+    "maxLossPercent": 200,
     "forceMarketOrderAfterMax": true,
-    "description": "Place limit sell orders starting at 70% of SL loss, increment by 10% until 120%, circuit breaker at 150%"
+    "description": "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
   }
 }

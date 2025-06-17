@@ -1,7 +1,7 @@
 const { runBacktest } = require('./trading-strategy');
 const fs = require('fs');
 
-// Configuration for the backtest
+// Configuration for the backtest with DYNAMIC STOP LOSS AND PRE-MARKET EXIT ORDERS
 const config = {
   minThreshold: 70,  // Minimum time threshold for breakout in minutes
   maxThreshold: 300, // Maximum time threshold for breakout in minutes
@@ -14,7 +14,9 @@ const config = {
   },
   marketExitTime: {
     enabled: true, // Whether to force exit at specific time
-    exitTime: "15:09" // Force exit at this time (24-hour format HH:MM)
+    exitTime: "15:09", // Force exit at this time (24-hour format HH:MM)
+    preExitLimitOrderMinutes: 10, // Place limit order X minutes before market exit time
+    dynamicPriceAdjustment: true // Enable dynamic price adjustment for pre-market exit orders
   },
   dateFilter: {
     enabled: false,  // Whether to filter by date
@@ -36,13 +38,11 @@ const config = {
     brokerageFeePercent: 0.06  // 0.06% brokerage fee
   },
   stopLossExitConfig: {
-    enabled: true,  // Enable limit order based stop loss exit
-    initialTriggerPercent: 70,  // Start placing limit orders when 70% of SL is hit
-    incrementPercent: 10,  // Increment by 10% each step (70%, 80%, 90%, etc.)
-    maxTriggerPercent: 120,  // Continue until 120% of stop loss is hit
-    maxLossPercent: 150,  // Force market exit if loss exceeds 150% of stop loss
+    enabled: true,  // Enable dynamic stop loss exit system
+    dynamicStopLossAdjustment: true,  // Enable dynamic price adjustment for stop loss orders
+    maxLossPercent: 200,  // Force market exit if loss exceeds 200% of stop loss (circuit breaker)
     forceMarketOrderAfterMax: true,  // Use market order as circuit breaker
-    description: "Place limit sell orders starting at 70% of SL loss, increment by 10% until 120%, circuit breaker at 150%"
+    description: "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
   }
 };
 
@@ -59,15 +59,21 @@ console.log(`Pullback Percentage: ${config.pullbackPercentage}%`);
 console.log(`Entry Time Range: ${config.entryTimeRange.enabled ? `${config.entryTimeRange.startTime} to ${config.entryTimeRange.endTime}` : 'No restriction'}`);
 console.log(`Market Exit Time: ${config.marketExitTime.enabled ? config.marketExitTime.exitTime : 'No forced exit'}`);
 
-// Display stop loss configuration
+// Display pre-market exit configuration
+if (config.marketExitTime?.enabled) {
+  console.log(`Pre-Market Exit Order: ${config.marketExitTime.preExitLimitOrderMinutes} minutes before market exit`);
+  console.log(`Pre-Market Dynamic Pricing: ${config.marketExitTime.dynamicPriceAdjustment ? 'ENABLED' : 'DISABLED'}`);
+}
+
+// Display NEW dynamic stop loss configuration
 if (config.stopLossExitConfig?.enabled) {
-  console.log(`Stop Loss Exit Method: Limit Orders (${config.stopLossExitConfig.initialTriggerPercent}% → ${config.stopLossExitConfig.maxTriggerPercent}%)`);
-  console.log(`Stop Loss Increment: ${config.stopLossExitConfig.incrementPercent}%`);
+  console.log(`Stop Loss Method: Dynamic Limit Orders`);
+  console.log(`Stop Loss Dynamic Pricing: ${config.stopLossExitConfig.dynamicStopLossAdjustment ? 'ENABLED' : 'DISABLED'}`);
   if (config.stopLossExitConfig.forceMarketOrderAfterMax) {
     console.log(`Circuit Breaker: Market exit at ${config.stopLossExitConfig.maxLossPercent}% loss`);
   }
 } else {
-  console.log(`Stop Loss Exit Method: Traditional Market Orders`);
+  console.log(`Stop Loss Method: Traditional Market Orders`);
 }
 
 console.log(`Final Balance: ₹${results.finalBalance.toFixed(2)}`);
@@ -88,28 +94,64 @@ console.log(`Breakouts Without Entry: ${results.breakoutsWithoutEntry || 0}`);
 console.log(`Breakouts Outside Time Range: ${results.breakoutsOutsideTimeRange || 0}`);
 console.log('======================================================');
 
-// Print enhanced stop loss analysis
+// Enhanced dynamic stop loss analysis
 if (results.stopLossExitAnalysis?.enabled) {
-  console.log('\n============= Stop Loss Exit Analysis ===============');
-  console.log(`Limit Order Exits: ${results.stopLossExitAnalysis.totalExitsViaLimitOrders}`);
+  console.log('\n============= Dynamic Stop Loss Analysis =============');
+  console.log(`Dynamic Stop Loss Adjustment: ${results.stopLossExitAnalysis.dynamicStopLossAdjustment ? 'ENABLED' : 'DISABLED'}`);
+  console.log(`Dynamic Stop Loss Exits: ${results.stopLossExitAnalysis.totalDynamicStopLossExits}`);
   console.log(`Traditional SL Exits: ${results.stopLossExitAnalysis.totalTraditionalStopLossExits}`);
   console.log(`Circuit Breaker Exits: ${results.stopLossExitAnalysis.totalCircuitBreakerExits}`);
-  console.log(`Avg Profit (Limit Orders): ₹${results.stopLossExitAnalysis.averageProfitLimitOrderExits.toFixed(2)}`);
-  console.log(`Avg Profit (Traditional): ₹${results.stopLossExitAnalysis.averageProfitTraditionalExits.toFixed(2)}`);
+  console.log(`Total Trades with SL Breach: ${results.stopLossExitAnalysis.totalTradesWithStopLossBreach}`);
+  console.log(`Trades with Dynamic Adjustment: ${results.stopLossExitAnalysis.totalTradesWithDynamicAdjustment}`);
+  console.log(`Avg Profit (Dynamic SL Exits): ₹${results.stopLossExitAnalysis.averageProfitDynamicStopLossExits.toFixed(2)}`);
+  console.log(`Avg Profit (Traditional SL): ₹${results.stopLossExitAnalysis.averageProfitTraditionalExits.toFixed(2)}`);
   console.log(`Avg Profit (Circuit Breaker): ₹${results.stopLossExitAnalysis.averageProfitCircuitBreakerExits.toFixed(2)}`);
   
-  const improvementAmount = results.stopLossExitAnalysis.averageProfitLimitOrderExits - results.stopLossExitAnalysis.averageProfitTraditionalExits;
-  if (results.stopLossExitAnalysis.totalExitsViaLimitOrders > 0 && results.stopLossExitAnalysis.totalTraditionalStopLossExits > 0) {
-    console.log(`Performance Difference: ₹${improvementAmount.toFixed(2)} per trade`);
+  if (results.stopLossExitAnalysis.dynamicStopLossAdjustment) {
+    console.log(`Average SL Price Updates per Trade: ${results.stopLossExitAnalysis.averageStopLossPriceUpdates.toFixed(1)}`);
+  }
+  
+  const slImprovementAmount = results.stopLossExitAnalysis.averageProfitDynamicStopLossExits - results.stopLossExitAnalysis.averageProfitTraditionalExits;
+  if (results.stopLossExitAnalysis.totalDynamicStopLossExits > 0 && results.stopLossExitAnalysis.totalTraditionalStopLossExits > 0) {
+    console.log(`Performance Difference: ₹${slImprovementAmount.toFixed(2)} per trade`);
   }
   console.log('======================================================');
 }
 
-// Print detailed breakdown of trades with breakout and entry times
+// Enhanced pre-market exit analysis with dynamic pricing
+if (results.preMarketExitAnalysis?.enabled) {
+  console.log('\n=========== Pre-Market Exit Analysis ================');
+  console.log(`Dynamic Price Adjustment: ${results.preMarketExitAnalysis.dynamicPriceAdjustment ? 'ENABLED' : 'DISABLED'}`);
+  console.log(`Pre-Market Limit Order Exits: ${results.preMarketExitAnalysis.totalPreMarketExits}`);
+  console.log(`Forced Market Exits: ${results.preMarketExitAnalysis.totalForcedMarketExits}`);
+  console.log(`Total Trades with Pre-Market Orders: ${results.preMarketExitAnalysis.totalTradesWithPreMarketOrders}`);
+  console.log(`Pre-Market Order Fill Rate: ${results.preMarketExitAnalysis.preMarketOrderFillRate.toFixed(1)}%`);
+  console.log(`Avg Profit (Pre-Market Exits): ₹${results.preMarketExitAnalysis.averageProfitPreMarketExits.toFixed(2)}`);
+  console.log(`Avg Profit (Forced Exits): ₹${results.preMarketExitAnalysis.averageProfitForcedExits.toFixed(2)}`);
+  
+  const preMarketImprovement = results.preMarketExitAnalysis.averageProfitPreMarketExits - results.preMarketExitAnalysis.averageProfitForcedExits;
+  if (results.preMarketExitAnalysis.totalPreMarketExits > 0 && results.preMarketExitAnalysis.totalForcedMarketExits > 0) {
+    console.log(`Performance Difference: ₹${preMarketImprovement.toFixed(2)} per trade`);
+  }
+  console.log(`Pre-Exit Order Timing: ${results.preMarketExitAnalysis.preExitLimitOrderMinutes} minutes before market close`);
+  
+  // Dynamic pricing statistics
+  if (results.preMarketExitAnalysis.dynamicPriceAdjustment) {
+    console.log('\n--- Pre-Market Dynamic Pricing Statistics ---');
+    console.log(`Trades with Dynamic Pricing: ${results.preMarketExitAnalysis.totalTradesWithDynamicPricing}`);
+    console.log(`Average Price Updates per Trade: ${results.preMarketExitAnalysis.averagePriceUpdatesPerTrade.toFixed(1)}`);
+    console.log(`Average Price Improvement vs Original: ₹${results.preMarketExitAnalysis.averagePriceImprovement.toFixed(2)}`);
+    console.log(`Average Price Improvement vs Forced Exit: ₹${results.preMarketExitAnalysis.averagePriceImprovementVsForcedExit.toFixed(2)}`);
+    console.log(`Dynamic Pricing Fill Rate: ${results.preMarketExitAnalysis.dynamicPricingFillRate.toFixed(1)}%`);
+  }
+  console.log('======================================================');
+}
+
+// Print detailed breakdown of trades with enhanced exit details
 console.log('\n=============== Trade Details Summary ===============');
 const actualTrades = results.allTrades.filter(trade => trade.profit !== undefined || trade.netProfit !== undefined);
 if (actualTrades.length > 0) {
-  console.log('Sample trades with timing and stop loss details:');
+  console.log('Sample trades with timing and exit details:');
   actualTrades.slice(0, 5).forEach((trade, index) => {
     if (trade.breakout) {
       console.log(`\nTrade ${index + 1} (${trade.date}):`);
@@ -124,31 +166,71 @@ if (actualTrades.length > 0) {
       console.log(`  Stop Loss: ₹${trade.stopLoss.toFixed(2)}`);
       console.log(`  Risk Points: ₹${trade.riskPoints.toFixed(2)}`);
       
-      // Display stop loss exit details
-      if (trade.stopLossExitDetails?.enabled && trade.stopLossExitDetails.triggerLevels.length > 0) {
-        console.log(`  Stop Loss Method: Limit Orders`);
-        console.log(`  Limit Orders Placed: ${trade.stopLossExitDetails.triggerLevels.length}`);
-        trade.stopLossExitDetails.triggerLevels.forEach((level, i) => {
-          console.log(`    ${i + 1}. ${level.triggerPercent}% SL @ ₹${level.limitPrice.toFixed(2)} (${level.timeTriggered})`);
-        });
-        
-        // Show which order was actually filled
-        if (trade.stopLossExitDetails.orderFillDetails) {
-          const fill = trade.stopLossExitDetails.orderFillDetails;
-          console.log(`  ✅ Order Filled: ${fill.filledOrderTriggerPercent}% SL @ ₹${fill.filledOrderPrice.toFixed(2)}`);
-          console.log(`    Fill Time: ${fill.fillTime} (${fill.timeBetweenPlaceAndFill} mins after placement)`);
-          console.log(`    Fill Candle: High ₹${fill.fillCandleHigh.toFixed(2)}, Low ₹${fill.fillCandleLow.toFixed(2)}`);
-          if (fill.placedAtCandleIndex !== undefined && fill.filledAtCandleIndex !== undefined) {
-            const candleGap = fill.filledAtCandleIndex - fill.placedAtCandleIndex;
-            console.log(`    Candle Gap: Placed at index ${fill.placedAtCandleIndex}, filled at index ${fill.filledAtCandleIndex} (${candleGap} candles later)`);
+      // Enhanced dynamic stop loss exit details
+      if (trade.stopLossExitDetails?.enabled) {
+        if (trade.stopLossExitDetails.stopLossBreached) {
+          console.log(`  Stop Loss Method: Dynamic Limit Orders`);
+          console.log(`  SL Breach: ${trade.stopLossExitDetails.breachCandleTime} @ ₹${trade.stopLossExitDetails.breachCandleClose.toFixed(2)}`);
+          
+          if (trade.stopLossExitDetails.limitOrderHistory.length > 0) {
+            console.log(`  Limit Order History:`);
+            trade.stopLossExitDetails.limitOrderHistory.forEach((order, i) => {
+              console.log(`    ${i + 1}. ${order.action.toUpperCase()}: ₹${order.price.toFixed(2)} at ${order.time} (${order.reason})`);
+            });
           }
-        }
-        
-        if (trade.stopLossExitDetails.circuitBreakerTriggered) {
-          console.log(`  🚨 Circuit Breaker Triggered: ${trade.stopLossExitDetails.maxLossPercent}% max loss exceeded`);
+          
+          if (trade.stopLossExitDetails.dynamicStopLossAdjustment && trade.stopLossExitDetails.totalPriceUpdates > 0) {
+            console.log(`  🔄 Dynamic SL Updates: ${trade.stopLossExitDetails.totalPriceUpdates} price adjustments`);
+          }
+          
+          if (trade.stopLossExitDetails.orderFillDetails) {
+            const fill = trade.stopLossExitDetails.orderFillDetails;
+            console.log(`  ✅ Order Filled: ₹${fill.filledOrderPrice.toFixed(2)} at ${fill.fillTime}`);
+            console.log(`    Fill Time: ${fill.timeBetweenPlaceAndFill} mins after placement`);
+            console.log(`    Fill Candle: High ₹${fill.fillCandleHigh.toFixed(2)}, Low ₹${fill.fillCandleLow.toFixed(2)}`);
+          }
+          
+          if (trade.stopLossExitDetails.circuitBreakerTriggered) {
+            console.log(`  🚨 Circuit Breaker: ${trade.stopLossExitDetails.maxLossPercent}% max loss exceeded`);
+          }
+        } else {
+          console.log(`  Stop Loss Method: No breach occurred`);
         }
       } else {
         console.log(`  Stop Loss Method: Traditional`);
+      }
+      
+      // Enhanced pre-market exit details with dynamic pricing
+      if (trade.preMarketExitDetails?.enabled) {
+        console.log(`  Pre-Market Exit Configuration:`);
+        if (trade.preMarketExitDetails.orderPlaced) {
+          console.log(`    📋 Order Placed: ${trade.preMarketExitDetails.orderPlacementTime} @ ₹${trade.preMarketExitDetails.orderPlacementPrice.toFixed(2)}`);
+          
+          // Show dynamic price updates
+          if (trade.preMarketExitDetails.dynamicPriceAdjustment && trade.preMarketExitDetails.priceUpdateHistory.length > 0) {
+            console.log(`    🔄 Dynamic Price Updates (${trade.preMarketExitDetails.totalPriceUpdates}):`);
+            trade.preMarketExitDetails.priceUpdateHistory.forEach((update, i) => {
+              console.log(`      ${i + 1}. ${update.time}: ₹${update.oldPrice.toFixed(2)} → ₹${update.newPrice.toFixed(2)}`);
+            });
+          }
+          
+          if (trade.preMarketExitDetails.orderFilled) {
+            console.log(`    ✅ Order Filled: ${trade.preMarketExitDetails.orderFillTime} @ ₹${trade.preMarketExitDetails.orderFillPrice.toFixed(2)}`);
+            const candleGap = trade.preMarketExitDetails.orderFillCandleIndex - trade.preMarketExitDetails.orderPlacementCandleIndex;
+            console.log(`    Candle Gap: ${candleGap} candles between placement and fill`);
+            
+            if (trade.preMarketExitDetails.priceImprovement !== 0) {
+              console.log(`    💰 Price Improvement vs Original: ₹${trade.preMarketExitDetails.priceImprovement.toFixed(2)}`);
+            }
+          } else {
+            console.log(`    ❌ Order Not Filled (fell back to forced market exit)`);
+            if (trade.preMarketExitDetails.priceImprovementVsForcedExit !== 0) {
+              console.log(`    💸 Missed Opportunity vs Forced Exit: ₹${trade.preMarketExitDetails.priceImprovementVsForcedExit.toFixed(2)}`);
+            }
+          }
+        } else {
+          console.log(`    ❌ No Pre-Market Order Placed`);
+        }
       }
       
       console.log(`  Exit: ${trade.exit.reason} at ₹${trade.exit.price.toFixed(2)} (${trade.exit.time})`);
@@ -202,7 +284,16 @@ if (config.entryTimeRange.enabled) {
 
 if (config.marketExitTime.enabled) {
   const forcedExits = actualTrades.filter(trade => trade.exit.reason === 'forced market exit');
+  const preMarketExits = actualTrades.filter(trade => trade.exit.reason === 'pre-market exit limit order filled');
+  
+  console.log(`Pre-market exit limit orders filled: ${preMarketExits.length}`);
   console.log(`Forced market exits at ${config.marketExitTime.exitTime}: ${forcedExits.length}`);
+  
+  if (preMarketExits.length > 0) {
+    const avgPreMarketExitProfit = preMarketExits.reduce((sum, trade) => sum + (trade.netProfit || trade.profit || 0), 0) / preMarketExits.length;
+    console.log(`Average profit from pre-market exits: ₹${avgPreMarketExitProfit.toFixed(2)}`);
+  }
+  
   if (forcedExits.length > 0) {
     const avgForcedExitProfit = forcedExits.reduce((sum, trade) => sum + (trade.netProfit || trade.profit || 0), 0) / forcedExits.length;
     console.log(`Average profit from forced exits: ₹${avgForcedExitProfit.toFixed(2)}`);
@@ -220,24 +311,52 @@ console.log(`       This filters out breakouts that occur too quickly (noise) or
 console.log(`       too slowly (stale patterns)`);
 console.log('======================================================');
 
-// Detailed Stop Loss Configuration Summary
-console.log('\n=========== Stop Loss Configuration Summary ===========');
+// Enhanced Dynamic Stop Loss Configuration Summary
+console.log('\n========== Dynamic Stop Loss Configuration ===========');
 if (config.stopLossExitConfig?.enabled) {
   console.log(`Configuration: ${config.stopLossExitConfig.description}`);
-  console.log(`Initial Trigger: ${config.stopLossExitConfig.initialTriggerPercent}% of stop loss hit`);
-  console.log(`Increment Steps: ${config.stopLossExitConfig.incrementPercent}%`);
-  console.log(`Maximum Trigger: ${config.stopLossExitConfig.maxTriggerPercent}% of stop loss`);
-  if (config.stopLossExitConfig.forceMarketOrderAfterMax) {
-    console.log(`Circuit Breaker: ${config.stopLossExitConfig.maxLossPercent}% maximum loss (force market exit)`);
+  console.log(`Dynamic Price Adjustment: ${config.stopLossExitConfig.dynamicStopLossAdjustment ? 'ENABLED' : 'DISABLED'}`);
+  
+  if (config.stopLossExitConfig.dynamicStopLossAdjustment) {
+    console.log(`Dynamic Logic: 1. Wait for actual stop loss breach`);
+    console.log(`              2. If breach candle closes below SL, place limit order at close price`);
+    console.log(`              3. If price recovers above limit order, fill the order`);
+    console.log(`              4. If not filled, update limit order to new candle close (if worse)`);
+    console.log(`              5. Continue until filled or circuit breaker triggered`);
+  } else {
+    console.log(`Static Logic: Place limit order at breach candle close and wait for recovery`);
   }
-  console.log(`Logic: When loss reaches trigger %, place limit order at current adverse price`);
-  console.log(`       If price recovers above limit order, exit at limit price`);
-  console.log(`       If price continues adverse, place new limit order at next trigger level`);
+  
   if (config.stopLossExitConfig.forceMarketOrderAfterMax) {
-    console.log(`       If loss exceeds ${config.stopLossExitConfig.maxLossPercent}%, force immediate market exit`);
+    console.log(`Circuit Breaker: ${config.stopLossExitConfig.maxLossPercent}% maximum loss triggers immediate market exit`);
   }
 } else {
   console.log(`Traditional stop loss: Exit immediately when stop loss price is breached`);
+}
+console.log('======================================================');
+
+// Enhanced Pre-Market Exit Configuration Summary
+console.log('\n========= Pre-Market Exit Configuration Summary =======');
+if (config.marketExitTime?.enabled) {
+  console.log(`Market Exit Time: ${config.marketExitTime.exitTime}`);
+  console.log(`Pre-Exit Order Timing: ${config.marketExitTime.preExitLimitOrderMinutes || 10} minutes before market exit`);
+  console.log(`Dynamic Price Adjustment: ${config.marketExitTime.dynamicPriceAdjustment ? 'ENABLED' : 'DISABLED'}`);
+  
+  if (config.marketExitTime.dynamicPriceAdjustment) {
+    console.log(`Dynamic Logic: Update limit order price to current candle close if previous order not filled`);
+    console.log(`Benefits: - Adapts to real-time market movements`);
+    console.log(`         - Higher fill rates vs static pricing`);
+    console.log(`         - More realistic exit execution`);
+    console.log(`         - Captures favorable price movements in final minutes`);
+  } else {
+    console.log(`Static Logic: Place limit order at closing price of trigger candle and wait`);
+    console.log(`             Order price remains unchanged until filled or market close`);
+  }
+  
+  console.log(`Fallback: If limit order not filled, force market exit at configured time`);
+} else {
+  console.log(`Pre-market exit orders: Disabled`);
+  console.log(`Market will close positions at end of day using closing prices`);
 }
 console.log('======================================================');
 
@@ -249,28 +368,70 @@ console.log('Detailed results written to backtest_results.json');
 fs.writeFileSync('config_used.json', JSON.stringify(config, null, 2));
 console.log('Configuration used written to config_used.json');
 
-// Write stop loss analysis to separate file for detailed review
+// Enhanced stop loss analysis with dynamic pricing details
 if (results.stopLossExitAnalysis || config.stopLossExitConfig?.enabled) {
   const stopLossData = {
     configuration: config.stopLossExitConfig,
     analysis: results.stopLossExitAnalysis,
-    tradesWithStopLossDetails: actualTrades
-      .filter(trade => trade.stopLossExitDetails?.triggerLevels?.length > 0)
+    tradesWithDynamicStopLossDetails: actualTrades
+      .filter(trade => trade.stopLossExitDetails?.stopLossBreached)
       .map(trade => ({
         date: trade.date,
         type: trade.type,
         entryPrice: trade.entry.price,
         exitPrice: trade.exit.price,
         exitReason: trade.exit.reason,
-        riskPoints: trade.riskPoints,
-        triggerLevels: trade.stopLossExitDetails.triggerLevels,
-        orderFillDetails: trade.stopLossExitDetails.orderFillDetails, // NEW: Include fill details with candle indices
+        stopLossBreached: trade.stopLossExitDetails.stopLossBreached,
+        breachCandleTime: trade.stopLossExitDetails.breachCandleTime,
+        breachCandleClose: trade.stopLossExitDetails.breachCandleClose,
+        limitOrderHistory: trade.stopLossExitDetails.limitOrderHistory,
+        totalPriceUpdates: trade.stopLossExitDetails.totalPriceUpdates,
+        originalLimitPrice: trade.stopLossExitDetails.originalLimitPrice,
+        finalLimitPrice: trade.stopLossExitDetails.finalLimitPrice,
+        orderFillDetails: trade.stopLossExitDetails.orderFillDetails,
         circuitBreakerTriggered: trade.stopLossExitDetails.circuitBreakerTriggered,
         grossProfit: trade.grossProfit,
         netProfit: trade.netProfit
       }))
   };
   
-  fs.writeFileSync('stop_loss_analysis.json', JSON.stringify(stopLossData, null, 2));
-  console.log('Stop loss analysis written to stop_loss_analysis.json');
+  fs.writeFileSync('dynamic_stop_loss_analysis.json', JSON.stringify(stopLossData, null, 2));
+  console.log('Dynamic stop loss analysis written to dynamic_stop_loss_analysis.json');
+}
+
+// Enhanced pre-market exit analysis with dynamic pricing details
+if (results.preMarketExitAnalysis || config.marketExitTime?.enabled) {
+  const preMarketExitData = {
+    configuration: config.marketExitTime,
+    analysis: results.preMarketExitAnalysis,
+    tradesWithPreMarketExitDetails: actualTrades
+      .filter(trade => trade.preMarketExitDetails?.orderPlaced)
+      .map(trade => ({
+        date: trade.date,
+        type: trade.type,
+        entryPrice: trade.entry.price,
+        exitPrice: trade.exit.price,
+        exitReason: trade.exit.reason,
+        preMarketOrderPlacementTime: trade.preMarketExitDetails.orderPlacementTime,
+        preMarketOrderPlacementPrice: trade.preMarketExitDetails.orderPlacementPrice,
+        preMarketOrderFilled: trade.preMarketExitDetails.orderFilled,
+        preMarketOrderFillTime: trade.preMarketExitDetails.orderFillTime,
+        preMarketOrderFillPrice: trade.preMarketExitDetails.orderFillPrice,
+        candleGapBetweenPlaceAndFill: trade.preMarketExitDetails.orderFilled ? 
+          trade.preMarketExitDetails.orderFillCandleIndex - trade.preMarketExitDetails.orderPlacementCandleIndex : null,
+        // Dynamic pricing details
+        dynamicPriceAdjustment: trade.preMarketExitDetails.dynamicPriceAdjustment,
+        totalPriceUpdates: trade.preMarketExitDetails.totalPriceUpdates,
+        priceUpdateHistory: trade.preMarketExitDetails.priceUpdateHistory,
+        originalLimitPrice: trade.preMarketExitDetails.originalLimitPrice,
+        finalLimitPrice: trade.preMarketExitDetails.finalLimitPrice,
+        priceImprovement: trade.preMarketExitDetails.priceImprovement,
+        priceImprovementVsForcedExit: trade.preMarketExitDetails.priceImprovementVsForcedExit,
+        grossProfit: trade.grossProfit,
+        netProfit: trade.netProfit
+      }))
+  };
+  
+  fs.writeFileSync('dynamic_pre_market_exit_analysis.json', JSON.stringify(preMarketExitData, null, 2));
+  console.log('Dynamic pre-market exit analysis written to dynamic_pre_market_exit_analysis.json');
 }

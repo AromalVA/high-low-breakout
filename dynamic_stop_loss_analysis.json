@@ -1,0 +1,189 @@
+{
+  "configuration": {
+    "enabled": true,
+    "dynamicStopLossAdjustment": true,
+    "maxLossPercent": 200,
+    "forceMarketOrderAfterMax": true,
+    "description": "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
+  },
+  "analysis": {
+    "enabled": true,
+    "dynamicStopLossAdjustment": true,
+    "totalDynamicStopLossExits": 2,
+    "totalTraditionalStopLossExits": 0,
+    "totalCircuitBreakerExits": 0,
+    "totalTradesWithStopLossBreach": 7,
+    "totalTradesWithDynamicAdjustment": 0,
+    "averageProfitDynamicStopLossExits": -3084.6162420000273,
+    "averageProfitTraditionalExits": 0,
+    "averageProfitCircuitBreakerExits": 0,
+    "averageStopLossPriceUpdates": 0,
+    "config": {
+      "enabled": true,
+      "dynamicStopLossAdjustment": true,
+      "maxLossPercent": 200,
+      "forceMarketOrderAfterMax": true,
+      "description": "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
+    }
+  },
+  "tradesWithDynamicStopLossDetails": [
+    {
+      "date": "08/12/2023",
+      "type": "long",
+      "entryPrice": 611.53,
+      "exitPrice": 612.2,
+      "exitReason": "pre-market exit limit order filled",
+      "stopLossBreached": true,
+      "breachCandleTime": "2023-12-08 12:47",
+      "breachCandleClose": 607.5,
+      "limitOrderHistory": [],
+      "totalPriceUpdates": 0,
+      "originalLimitPrice": null,
+      "finalLimitPrice": null,
+      "orderFillDetails": null,
+      "circuitBreakerTriggered": false,
+      "grossProfit": 547.3900000000594,
+      "netProfit": -52.48244599994052
+    },
+    {
+      "date": "15/12/2023",
+      "type": "short",
+      "entryPrice": 622.93,
+      "exitPrice": 626.8,
+      "exitReason": "dynamic stop loss limit order filled",
+      "stopLossBreached": true,
+      "breachCandleTime": "2023-12-15 13:14",
+      "breachCandleClose": 626.8,
+      "limitOrderHistory": [
+        {
+          "action": "placed",
+          "price": 626.8,
+          "time": "2023-12-15 13:14",
+          "candleIndex": 239,
+          "reason": "stop_loss_breach"
+        }
+      ],
+      "totalPriceUpdates": 0,
+      "originalLimitPrice": 626.8,
+      "finalLimitPrice": 626.8,
+      "orderFillDetails": {
+        "filledOrderPrice": 626.8,
+        "fillTime": "2023-12-15 13:15",
+        "fillCandleHigh": 626.85,
+        "fillCandleLow": 626.35,
+        "timeBetweenPlaceAndFill": 1,
+        "placedAtCandleIndex": 239,
+        "filledAtCandleIndex": 240
+      },
+      "circuitBreakerTriggered": false,
+      "grossProfit": -3103.7400000000034,
+      "netProfit": -3705.1100760000036
+    },
+    {
+      "date": "16/02/2024",
+      "type": "long",
+      "entryPrice": 765.29,
+      "exitPrice": 755.3,
+      "exitReason": "pre-market exit limit order filled",
+      "stopLossBreached": true,
+      "breachCandleTime": "2024-02-16 14:23",
+      "breachCandleClose": 758.4,
+      "limitOrderHistory": [],
+      "totalPriceUpdates": 0,
+      "originalLimitPrice": null,
+      "finalLimitPrice": null,
+      "orderFillDetails": null,
+      "circuitBreakerTriggered": false,
+      "grossProfit": -6523.470000000006,
+      "netProfit": -7119.237162000006
+    },
+    {
+      "date": "29/02/2024",
+      "type": "short",
+      "entryPrice": 741.26,
+      "exitPrice": 746.4,
+      "exitReason": "pre-market exit limit order filled",
+      "stopLossBreached": true,
+      "breachCandleTime": "2024-02-29 14:44",
+      "breachCandleClose": 749.85,
+      "limitOrderHistory": [],
+      "totalPriceUpdates": 0,
+      "originalLimitPrice": null,
+      "finalLimitPrice": null,
+      "orderFillDetails": null,
+      "circuitBreakerTriggered": false,
+      "grossProfit": -3464.3599999999906,
+      "netProfit": -4065.9697039999905
+    },
+    {
+      "date": "01/04/2024",
+      "type": "short",
+      "entryPrice": 754.845,
+      "exitPrice": 757.85,
+      "exitReason": "pre-market exit limit order filled",
+      "stopLossBreached": true,
+      "breachCandleTime": "2024-04-01 14:38",
+      "breachCandleClose": 756.95,
+      "limitOrderHistory": [],
+      "totalPriceUpdates": 0,
+      "originalLimitPrice": null,
+      "finalLimitPrice": null,
+      "orderFillDetails": null,
+      "circuitBreakerTriggered": false,
+      "grossProfit": -1989.309999999997,
+      "netProfit": -2590.152453999997
+    },
+    {
+      "date": "16/04/2024",
+      "type": "short",
+      "entryPrice": 747.6099999999999,
+      "exitPrice": 750.4,
+      "exitReason": "dynamic stop loss limit order filled",
+      "stopLossBreached": true,
+      "breachCandleTime": "2024-04-16 13:42",
+      "breachCandleClose": 750.4,
+      "limitOrderHistory": [
+        {
+          "action": "placed",
+          "price": 750.4,
+          "time": "2024-04-16 13:42",
+          "candleIndex": 267,
+          "reason": "stop_loss_breach"
+        }
+      ],
+      "totalPriceUpdates": 0,
+      "originalLimitPrice": 750.4,
+      "finalLimitPrice": 750.4,
+      "orderFillDetails": {
+        "filledOrderPrice": 750.4,
+        "fillTime": "2024-04-16 13:43",
+        "fillCandleHigh": 750.8,
+        "fillCandleLow": 750.1,
+        "timeBetweenPlaceAndFill": 1,
+        "placedAtCandleIndex": 267,
+        "filledAtCandleIndex": 268
+      },
+      "circuitBreakerTriggered": false,
+      "grossProfit": -1863.7200000000516,
+      "netProfit": -2464.1224080000516
+    },
+    {
+      "date": "13/06/2024",
+      "type": "short",
+      "entryPrice": 839.9549999999999,
+      "exitPrice": 840.9,
+      "exitReason": "pre-market exit limit order filled",
+      "stopLossBreached": true,
+      "breachCandleTime": "2024-06-13 11:57",
+      "breachCandleClose": 842.9,
+      "limitOrderHistory": [],
+      "totalPriceUpdates": 0,
+      "originalLimitPrice": null,
+      "finalLimitPrice": null,
+      "orderFillDetails": null,
+      "circuitBreakerTriggered": false,
+      "grossProfit": -562.2750000000298,
+      "netProfit": -1162.3402350000297
+    }
+  ]
+}
