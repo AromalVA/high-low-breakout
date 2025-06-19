@@ -2,7 +2,7 @@
   "minThreshold": 70,
   "maxThreshold": 300,
   "riskRewardRatio": 1,
-  "pullbackPercentage": 10,
+  "pullbackPercentage": 5,
   "entryTimeRange": {
     "enabled": true,
     "startTime": "9:15",

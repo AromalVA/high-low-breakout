@@ -6,7 +6,7 @@ const config = {
   minThreshold: 70,  // Minimum time threshold for breakout in minutes
   maxThreshold: 300, // Maximum time threshold for breakout in minutes
   riskRewardRatio: 1,  // Risk to reward ratio
-  pullbackPercentage: 10,  // Percentage of stop-loss points to wait for pullback
+  pullbackPercentage: 5,  // Percentage of stop-loss points to wait for pullback
   entryTimeRange: {
     enabled: true,  // Whether to restrict entry times
     startTime: "9:15", // Entry allowed from this time (24-hour format HH:MM)
