@@ -1,0 +1,66 @@
+{
+  "configuration": {
+    "enabled": true,
+    "dynamicStopLossAdjustment": true,
+    "maxLossPercent": 200,
+    "forceMarketOrderAfterMax": true,
+    "description": "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
+  },
+  "analysis": {
+    "enabled": true,
+    "skipOneCandleLogic": true,
+    "dynamicStopLossAdjustment": true,
+    "totalDynamicStopLossExits": 1,
+    "totalTraditionalStopLossExits": 0,
+    "totalCircuitBreakerExits": 0,
+    "totalTradesWithStopLossBreach": 1,
+    "totalTradesWithDynamicAdjustment": 0,
+    "averageProfitDynamicStopLossExits": -5486.30616,
+    "averageProfitTraditionalExits": 0,
+    "averageProfitCircuitBreakerExits": 0,
+    "averageStopLossPriceUpdates": 0,
+    "config": {
+      "enabled": true,
+      "dynamicStopLossAdjustment": true,
+      "maxLossPercent": 200,
+      "forceMarketOrderAfterMax": true,
+      "description": "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
+    }
+  },
+  "tradesWithDynamicStopLossDetails": [
+    {
+      "date": "16/02/2024",
+      "type": "long",
+      "entryPrice": 765.9000000000001,
+      "exitPrice": 758.4000000000001,
+      "exitReason": "stop loss limit order filled",
+      "stopLossBreached": true,
+      "breachCandleTime": "2024-02-16 14:23",
+      "breachCandleClose": 758.4,
+      "limitOrderHistory": [
+        {
+          "action": "placed",
+          "price": 758.4000000000001,
+          "time": "2024-02-16 14:23",
+          "candleIndex": 308,
+          "reason": "stop_loss_breach"
+        }
+      ],
+      "totalPriceUpdates": 0,
+      "originalLimitPrice": 758.4000000000001,
+      "finalLimitPrice": 758.4000000000001,
+      "orderFillDetails": {
+        "filledOrderPrice": 758.4000000000001,
+        "fillTime": "2024-02-16 14:25",
+        "fillCandleHigh": 759,
+        "fillCandleLow": 756.75,
+        "timeBetweenPlaceAndFill": 2,
+        "placedAtCandleIndex": 308,
+        "filledAtCandleIndex": 310
+      },
+      "circuitBreakerTriggered": false,
+      "grossProfit": -4890,
+      "netProfit": -5486.30616
+    }
+  ]
+}

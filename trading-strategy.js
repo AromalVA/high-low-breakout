@@ -8,6 +8,7 @@ const defaultConfig = {
   maxThreshold: 180, // Maximum time threshold for breakout in minutes
   riskRewardRatio: 1,
   pullbackPercentage: 10, // Percentage of stop-loss points to wait for pullback
+  minimumStopLossPercent: 0.5, // Minimum stop loss as percentage of current price
   entryTimeRange: {
     enabled: false, // Whether to restrict entry times
     startTime: "10:15", // Entry allowed from this time (24-hour format HH:MM)
@@ -62,6 +63,24 @@ const defaultConfig = {
 };
 
 /**
+ * Get the body high of a candle (avoiding upper wick)
+ * @param {Object} candle - Candle object with open, high, low, close
+ * @returns {number} - The highest price of the candle body
+ */
+function getCandleBodyHigh(candle) {
+  return Math.max(candle.open, candle.close);
+}
+
+/**
+ * Get the body low of a candle (avoiding lower wick)
+ * @param {Object} candle - Candle object with open, high, low, close
+ * @returns {number} - The lowest price of the candle body
+ */
+function getCandleBodyLow(candle) {
+  return Math.min(candle.open, candle.close);
+}
+
+/**
  * Round price to the nearest tick size (0.05 by default for Indian markets)
  * @param {number} price - The price to round
  * @param {number} tickSize - The tick size (default 0.05)
@@ -83,6 +102,39 @@ function applyPriceRounding(price, config) {
     return roundToTickSize(price, config.priceRounding.tickSize);
   }
   return price;
+}
+
+/**
+ * Check if stop loss percentage meets minimum requirements
+ * @param {number} currentPrice - Current breakout price
+ * @param {number} stopLossPrice - Calculated stop loss price
+ * @param {Object} config - Configuration object
+ * @returns {Object} - Validation result with passed status, reason, and data
+ */
+function isMinimumStopLossPercentMet(currentPrice, stopLossPrice, config) {
+  if (!config.minimumStopLossPercent || config.minimumStopLossPercent <= 0) {
+    return { passed: true, reason: "Minimum stop loss percentage validation disabled", data: null };
+  }
+
+  const actualStopLossPoints = Math.abs(currentPrice - stopLossPrice);
+  const actualStopLossPercent = (actualStopLossPoints / currentPrice) * 100;
+  const minimumRequiredPercent = config.minimumStopLossPercent;
+  const minimumRequiredPoints = (currentPrice * minimumRequiredPercent) / 100;
+
+  return {
+    passed: actualStopLossPercent >= minimumRequiredPercent,
+    reason: actualStopLossPercent >= minimumRequiredPercent ? 
+      "Minimum stop loss percentage requirement met" : "Stop loss too tight - below minimum percentage requirement",
+    data: {
+      currentPrice: currentPrice,
+      stopLossPrice: stopLossPrice,
+      actualStopLossPoints: actualStopLossPoints,
+      actualStopLossPercent: actualStopLossPercent,
+      minimumRequiredPercent: minimumRequiredPercent,
+      minimumRequiredPoints: minimumRequiredPoints,
+      difference: actualStopLossPercent - minimumRequiredPercent
+    }
+  };
 }
 
 /**
@@ -311,7 +363,7 @@ function isVolumeConfirmationMet(data, currentIndex, config) {
 }
 
 /**
- * Analyze a trading day with the given strategy (with pullback entry)
+ * Analyze a trading day with the given strategy (with pullback entry and minimum stop loss validation)
  * @param {string} date - Date string in DD/MM/YYYY format
  * @param {Array} dayData - Candle data for the day
  * @param {Object} config - Configuration object
@@ -323,20 +375,22 @@ function analyzeTradingDay(date, dayData, config) {
       date,
       message: "No data available for this date",
       volumeRejection: false,
-      volumeData: null
+      volumeData: null,
+      minimumStopLossRejection: false,
+      minimumStopLossData: null
     };
   }
 
-  // Initialize tracking variables
+  // Initialize tracking variables - NOW USING BODY PRICES (AVOIDING WICKS)
   let previousHighTime = dayData[0].timestamp_readable_IST;
-  let previousHighPrice = dayData[0].high;
+  let previousHighPrice = getCandleBodyHigh(dayData[0]); // Use body high instead of high
   let previousLowTime = dayData[0].timestamp_readable_IST;
-  let previousLowPrice = dayData[0].low;
+  let previousLowPrice = getCandleBodyLow(dayData[0]); // Use body low instead of low
   
-  // Track the lowest point since the last high and highest point since the last low
-  let lowestSinceLastHigh = dayData[0].low;
+  // Track the lowest point since the last high and highest point since the last low - USING BODY PRICES
+  let lowestSinceLastHigh = getCandleBodyLow(dayData[0]);
   let lowestSinceLastHighTime = dayData[0].timestamp_readable_IST;
-  let highestSinceLastLow = dayData[0].high;
+  let highestSinceLastLow = getCandleBodyHigh(dayData[0]);
   let highestSinceLastLowTime = dayData[0].timestamp_readable_IST;
   
   // Track pending breakouts waiting for pullback
@@ -359,14 +413,17 @@ function analyzeTradingDay(date, dayData, config) {
   for (let i = 1; i < dayData.length; i++) {
     const candle = dayData[i];
     
-    // Update lowest since last high and highest since last low
-    if (candle.low < lowestSinceLastHigh) {
-      lowestSinceLastHigh = candle.low;
+    // Update lowest since last high and highest since last low - USING BODY PRICES
+    const currentBodyLow = getCandleBodyLow(candle);
+    const currentBodyHigh = getCandleBodyHigh(candle);
+    
+    if (currentBodyLow < lowestSinceLastHigh) {
+      lowestSinceLastHigh = currentBodyLow;
       lowestSinceLastHighTime = candle.timestamp_readable_IST;
     }
     
-    if (candle.high > highestSinceLastLow) {
-      highestSinceLastLow = candle.high;
+    if (currentBodyHigh > highestSinceLastLow) {
+      highestSinceLastLow = currentBodyHigh;
       highestSinceLastLowTime = candle.timestamp_readable_IST;
     }
     
@@ -557,8 +614,8 @@ function analyzeTradingDay(date, dayData, config) {
       }
     }
     
-    // Check for new high (must be STRICTLY higher than previous high)
-    if (candle.high > previousHighPrice + 0.05) { // Using a small threshold to account for precision issues
+    // Check for new high (must be STRICTLY higher than previous high) - USING BODY HIGH
+    if (currentBodyHigh > previousHighPrice + 0.05) { // Using a small threshold to account for precision issues
       const timeDiff = calculateTimeDiffInMinutes(candle.timestamp_readable_IST, previousHighTime);
       
       if (isTimeThresholdMet(timeDiff, config) && !pendingLongBreakout && !longEntry) {
@@ -569,43 +626,66 @@ function analyzeTradingDay(date, dayData, config) {
           // Calculate target and stop loss for long entry with price rounding
           const breakoutPrice = applyPriceRounding(previousHighPrice, config);
           const stopLoss = applyPriceRounding(lowestSinceLastHigh, config);
-          const risk = breakoutPrice - stopLoss;
-          const target = applyPriceRounding(breakoutPrice + (risk * config.riskRewardRatio), config);
           
-          // Calculate pullback entry price with rounding
-          const pullbackAmount = risk * (config.pullbackPercentage / 100);
-          const pullbackEntryPrice = applyPriceRounding(breakoutPrice - pullbackAmount, config);
+          // NEW: Check minimum stop loss percentage requirement
+          const minimumStopLossValidation = isMinimumStopLossPercentMet(breakoutPrice, stopLoss, config);
           
-          pendingLongBreakout = {
-            type: "long",
-            breakoutPrice: breakoutPrice,
-            pullbackEntryPrice: pullbackEntryPrice,
-            target: target,
-            stopLoss: stopLoss,
-            patterns: [...patterns],
-            volumeInfo: {
-              breakoutCandleVolume: candle.volume,
-              confirmationCandleVolume: dayData[i-1].volume,
-              averageLookbackVolume: volumeConfirmation.data.averageVolume,
-              lookbackVolumes: volumeConfirmation.data.lookbackVolumes
-            },
-            breakoutDetails: {
+          if (minimumStopLossValidation.passed) {
+            const risk = breakoutPrice - stopLoss;
+            const target = applyPriceRounding(breakoutPrice + (risk * config.riskRewardRatio), config);
+            
+            // Calculate pullback entry price with rounding
+            const pullbackAmount = risk * (config.pullbackPercentage / 100);
+            const pullbackEntryPrice = applyPriceRounding(breakoutPrice - pullbackAmount, config);
+            
+            pendingLongBreakout = {
+              type: "long",
+              breakoutPrice: breakoutPrice,
+              pullbackEntryPrice: pullbackEntryPrice,
+              target: target,
+              stopLoss: stopLoss,
+              patterns: [...patterns],
+              volumeInfo: {
+                breakoutCandleVolume: candle.volume,
+                confirmationCandleVolume: dayData[i-1].volume,
+                averageLookbackVolume: volumeConfirmation.data.averageVolume,
+                lookbackVolumes: volumeConfirmation.data.lookbackVolumes
+              },
+              breakoutDetails: {
+                breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
+                breakoutPrice: breakoutPrice,
+                previousExtremeTime: formatTimestamp(previousHighTime),
+                timeSincePreviousExtreme: timeDiff,
+                previousExtremeType: "high",
+                minThresholdRequired: config.minThreshold,
+                maxThresholdRequired: config.maxThreshold,
+                stopLossValue: stopLoss,
+                stopLossTime: formatTimestamp(lowestSinceLastHighTime),
+                swingLow: lowestSinceLastHigh,
+                swingHigh: previousHighPrice,
+                volumeConfirmation: volumeConfirmation,
+                minimumStopLossValidation: minimumStopLossValidation,
+                pullbackEntryPrice: pullbackEntryPrice,
+                pullbackAmount: pullbackAmount,
+                useBodyPricesOnly: true // Indicate that we're avoiding wicks
+              }
+            };
+          } else {
+            // Stop loss too tight - record this rejection
+            return {
+              date,
+              message: `Breakout detected but stop loss too tight (${minimumStopLossValidation.data.actualStopLossPercent.toFixed(2)}% < ${config.minimumStopLossPercent}%)`,
+              breakoutDetected: true,
+              breakoutType: "long",
               breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
               breakoutPrice: breakoutPrice,
-              previousExtremeTime: formatTimestamp(previousHighTime),
-              timeSincePreviousExtreme: timeDiff,
-              previousExtremeType: "high",
-              minThresholdRequired: config.minThreshold,
-              maxThresholdRequired: config.maxThreshold,
-              stopLossValue: stopLoss,
-              stopLossTime: formatTimestamp(lowestSinceLastHighTime),
-              swingLow: lowestSinceLastHigh,
-              swingHigh: previousHighPrice,
-              volumeConfirmation: volumeConfirmation,
-              pullbackEntryPrice: pullbackEntryPrice,
-              pullbackAmount: pullbackAmount
-            }
-          };
+              volumeRejection: false,
+              volumeData: null,
+              minimumStopLossRejection: true,
+              minimumStopLossData: minimumStopLossValidation.data,
+              useBodyPricesOnly: true
+            };
+          }
         }
       }
       
@@ -620,15 +700,15 @@ function analyzeTradingDay(date, dayData, config) {
         });
       }
       
-      // Update previous high and reset lowest since last high
-      previousHighPrice = candle.high;
+      // Update previous high and reset lowest since last high - USING BODY PRICES
+      previousHighPrice = currentBodyHigh;
       previousHighTime = candle.timestamp_readable_IST;
-      lowestSinceLastHigh = candle.low;
+      lowestSinceLastHigh = currentBodyLow;
       lowestSinceLastHighTime = candle.timestamp_readable_IST;
     }
     
-    // Check for new low (must be STRICTLY lower than previous low)
-    if (candle.low < previousLowPrice - 0.05) { // Using a small threshold to account for precision issues
+    // Check for new low (must be STRICTLY lower than previous low) - USING BODY LOW
+    if (currentBodyLow < previousLowPrice - 0.05) { // Using a small threshold to account for precision issues
       const timeDiff = calculateTimeDiffInMinutes(candle.timestamp_readable_IST, previousLowTime);
       
       if (isTimeThresholdMet(timeDiff, config) && !pendingShortBreakout && !shortEntry) {
@@ -639,43 +719,66 @@ function analyzeTradingDay(date, dayData, config) {
           // Calculate target and stop loss for short entry with price rounding
           const breakoutPrice = applyPriceRounding(previousLowPrice, config);
           const stopLoss = applyPriceRounding(highestSinceLastLow, config);
-          const risk = stopLoss - breakoutPrice;
-          const target = applyPriceRounding(breakoutPrice - (risk * config.riskRewardRatio), config);
           
-          // Calculate pullback entry price with rounding
-          const pullbackAmount = risk * (config.pullbackPercentage / 100);
-          const pullbackEntryPrice = applyPriceRounding(breakoutPrice + pullbackAmount, config);
+          // NEW: Check minimum stop loss percentage requirement
+          const minimumStopLossValidation = isMinimumStopLossPercentMet(breakoutPrice, stopLoss, config);
           
-          pendingShortBreakout = {
-            type: "short",
-            breakoutPrice: breakoutPrice,
-            pullbackEntryPrice: pullbackEntryPrice,
-            target: target,
-            stopLoss: stopLoss,
-            patterns: [...patterns],
-            volumeInfo: {
-              breakoutCandleVolume: candle.volume,
-              confirmationCandleVolume: dayData[i-1].volume,
-              averageLookbackVolume: volumeConfirmation.data.averageVolume,
-              lookbackVolumes: volumeConfirmation.data.lookbackVolumes
-            },
-            breakoutDetails: {
+          if (minimumStopLossValidation.passed) {
+            const risk = stopLoss - breakoutPrice;
+            const target = applyPriceRounding(breakoutPrice - (risk * config.riskRewardRatio), config);
+            
+            // Calculate pullback entry price with rounding
+            const pullbackAmount = risk * (config.pullbackPercentage / 100);
+            const pullbackEntryPrice = applyPriceRounding(breakoutPrice + pullbackAmount, config);
+            
+            pendingShortBreakout = {
+              type: "short",
+              breakoutPrice: breakoutPrice,
+              pullbackEntryPrice: pullbackEntryPrice,
+              target: target,
+              stopLoss: stopLoss,
+              patterns: [...patterns],
+              volumeInfo: {
+                breakoutCandleVolume: candle.volume,
+                confirmationCandleVolume: dayData[i-1].volume,
+                averageLookbackVolume: volumeConfirmation.data.averageVolume,
+                lookbackVolumes: volumeConfirmation.data.lookbackVolumes
+              },
+              breakoutDetails: {
+                breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
+                breakoutPrice: breakoutPrice,
+                previousExtremeTime: formatTimestamp(previousLowTime),
+                timeSincePreviousExtreme: timeDiff,
+                previousExtremeType: "low",
+                minThresholdRequired: config.minThreshold,
+                maxThresholdRequired: config.maxThreshold,
+                stopLossValue: stopLoss,
+                stopLossTime: formatTimestamp(highestSinceLastLowTime),
+                swingLow: previousLowPrice,
+                swingHigh: highestSinceLastLow,
+                volumeConfirmation: volumeConfirmation,
+                minimumStopLossValidation: minimumStopLossValidation,
+                pullbackEntryPrice: pullbackEntryPrice,
+                pullbackAmount: pullbackAmount,
+                useBodyPricesOnly: true // Indicate that we're avoiding wicks
+              }
+            };
+          } else {
+            // Stop loss too tight - record this rejection
+            return {
+              date,
+              message: `Breakout detected but stop loss too tight (${minimumStopLossValidation.data.actualStopLossPercent.toFixed(2)}% < ${config.minimumStopLossPercent}%)`,
+              breakoutDetected: true,
+              breakoutType: "short",
               breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
               breakoutPrice: breakoutPrice,
-              previousExtremeTime: formatTimestamp(previousLowTime),
-              timeSincePreviousExtreme: timeDiff,
-              previousExtremeType: "low",
-              minThresholdRequired: config.minThreshold,
-              maxThresholdRequired: config.maxThreshold,
-              stopLossValue: stopLoss,
-              stopLossTime: formatTimestamp(highestSinceLastLowTime),
-              swingLow: previousLowPrice,
-              swingHigh: highestSinceLastLow,
-              volumeConfirmation: volumeConfirmation,
-              pullbackEntryPrice: pullbackEntryPrice,
-              pullbackAmount: pullbackAmount
-            }
-          };
+              volumeRejection: false,
+              volumeData: null,
+              minimumStopLossRejection: true,
+              minimumStopLossData: minimumStopLossValidation.data,
+              useBodyPricesOnly: true
+            };
+          }
         }
       }
       
@@ -690,10 +793,10 @@ function analyzeTradingDay(date, dayData, config) {
         });
       }
       
-      // Update previous low and reset highest since last low
-      previousLowPrice = candle.low;
+      // Update previous low and reset highest since last low - USING BODY PRICES
+      previousLowPrice = currentBodyLow;
       previousLowTime = candle.timestamp_readable_IST;
-      highestSinceLastLow = candle.high;
+      highestSinceLastLow = currentBodyHigh;
       highestSinceLastLowTime = candle.timestamp_readable_IST;
     }
   }
@@ -716,7 +819,10 @@ function analyzeTradingDay(date, dayData, config) {
       breakoutPrice: pendingBreakout.breakoutPrice,
       requiredPullbackPrice: pendingBreakout.pullbackEntryPrice,
       volumeRejection: false,
-      volumeData: null
+      volumeData: null,
+      minimumStopLossRejection: false,
+      minimumStopLossData: null,
+      useBodyPricesOnly: true // Indicate that we're avoiding wicks
     };
   }
   
@@ -737,7 +843,10 @@ function analyzeTradingDay(date, dayData, config) {
       entryOrderOriginalPrice: pendingEntryOrder.originalPrice,
       entryOrderPriceUpdates: pendingEntryOrder.priceUpdates.length,
       volumeRejection: false,
-      volumeData: null
+      volumeData: null,
+      minimumStopLossRejection: false,
+      minimumStopLossData: null,
+      useBodyPricesOnly: true // Indicate that we're avoiding wicks
     };
   }
   
@@ -754,7 +863,10 @@ function analyzeTradingDay(date, dayData, config) {
       timeGap: firstInvalidBreakout.timeGap,
       requiredTimeRange: firstInvalidBreakout.requiredTimeRange,
       volumeRejection: false,
-      volumeData: null
+      volumeData: null,
+      minimumStopLossRejection: false,
+      minimumStopLossData: null,
+      useBodyPricesOnly: true // Indicate that we're avoiding wicks
     };
   }
   
@@ -763,7 +875,10 @@ function analyzeTradingDay(date, dayData, config) {
     date,
     message: "No valid breakout detected",
     volumeRejection: false,
-    volumeData: null
+    volumeData: null,
+    minimumStopLossRejection: false,
+    minimumStopLossData: null,
+    useBodyPricesOnly: true // Indicate that we're avoiding wicks
   };
 }
 
@@ -1760,6 +1875,9 @@ function calculateStats(trades, capital, config) {
   // Count breakouts outside time range
   const breakoutsOutsideTimeRange = trades.filter(trade => trade.breakoutOutsideTimeRange).length;
   
+  // NEW: Count breakouts rejected due to minimum stop loss percentage
+  const minimumStopLossRejections = trades.filter(trade => trade.minimumStopLossRejection).length;
+  
   return {
     initialCapital: capital.initial,
     leverage: capital.leverage || 1,
@@ -1793,10 +1911,17 @@ function calculateStats(trades, capital, config) {
     winRate,
     breakoutsWithoutEntry,
     breakoutsOutsideTimeRange,
+    minimumStopLossRejections, // NEW: Track rejections due to tight stop loss
     stopLossExitAnalysis, // Enhanced with skip-one-candle logic
     targetExitAnalysis, // NEW: Target exit analysis with skip-one-candle logic  
     preMarketExitAnalysis, // Enhanced with skip-one-candle logic
-    priceRoundingConfig: config.priceRounding // Include price rounding configuration in results
+    entryOrderAnalysis, // NEW: Entry order analysis with skip-one-candle logic
+    priceRoundingConfig: config.priceRounding, // Include price rounding configuration in results
+    minimumStopLossConfig: {
+      enabled: config.minimumStopLossPercent > 0,
+      minimumStopLossPercent: config.minimumStopLossPercent,
+      totalRejections: minimumStopLossRejections
+    } // NEW: Include minimum stop loss configuration and stats
   };
 }
 
@@ -1829,5 +1954,6 @@ module.exports = {
   calculateStats,
   defaultConfig,
   roundToTickSize,
-  applyPriceRounding
+  applyPriceRounding,
+  isMinimumStopLossPercentMet
 };

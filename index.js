@@ -1,12 +1,13 @@
 const { runBacktest } = require('./trading-strategy');
 const fs = require('fs');
 
-// Configuration for the backtest with DYNAMIC STOP LOSS AND PRE-MARKET EXIT ORDERS
+// Configuration for the backtest with DYNAMIC STOP LOSS, PRE-MARKET EXIT ORDERS, AND MINIMUM STOP LOSS %
 const config = {
   minThreshold: 70,  // Minimum time threshold for breakout in minutes
   maxThreshold: 300, // Maximum time threshold for breakout in minutes
   riskRewardRatio: 1,  // Risk to reward ratio
-  pullbackPercentage: 5,  // Percentage of stop-loss points to wait for pullback
+  pullbackPercentage: 0,  // Percentage of stop-loss points to wait for pullback
+  minimumStopLossPercent: 0.7, // NEW: Minimum stop loss as percentage of current price (0.5% = 0.5)
   entryTimeRange: {
     enabled: true,  // Whether to restrict entry times
     startTime: "9:15", // Entry allowed from this time (24-hour format HH:MM)
@@ -43,6 +44,20 @@ const config = {
     maxLossPercent: 200,  // Force market exit if loss exceeds 200% of stop loss (circuit breaker)
     forceMarketOrderAfterMax: true,  // Use market order as circuit breaker
     description: "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
+  },
+  targetExitConfig: {
+    enabled: true,  // Enable dynamic target exit with limit orders
+    dynamicTargetAdjustment: true,  // Enable dynamic target price adjustment
+    description: "Place limit order when target hit, skip one candle, then check for fill"
+  },
+  entryOrderConfig: {
+    enabled: true,  // Enable dynamic entry with limit orders
+    dynamicEntryAdjustment: true,  // Enable dynamic entry price adjustment
+    description: "Place limit order when pullback hit, skip one candle, then check for fill"
+  },
+  priceRounding: {
+    enabled: true,  // Enable price rounding to nearest 0.05
+    tickSize: 0.05  // Round to nearest 0.05 rupees
   }
 };
 
@@ -56,6 +71,7 @@ console.log(`Leverage: ${results.leverage}x`);
 console.log(`Brokerage Fee: ${results.brokerageFeePercent}%`);
 console.log(`Time Threshold Range: ${config.minThreshold} - ${config.maxThreshold} minutes`);
 console.log(`Pullback Percentage: ${config.pullbackPercentage}%`);
+console.log(`Minimum Stop Loss %: ${config.minimumStopLossPercent}%`); // NEW
 console.log(`Entry Time Range: ${config.entryTimeRange.enabled ? `${config.entryTimeRange.startTime} to ${config.entryTimeRange.endTime}` : 'No restriction'}`);
 console.log(`Market Exit Time: ${config.marketExitTime.enabled ? config.marketExitTime.exitTime : 'No forced exit'}`);
 
@@ -92,7 +108,31 @@ console.log(`Winning Trades: ${results.totalWinningDays}`);
 console.log(`Losing Trades: ${results.totalLosingDays}`);
 console.log(`Breakouts Without Entry: ${results.breakoutsWithoutEntry || 0}`);
 console.log(`Breakouts Outside Time Range: ${results.breakoutsOutsideTimeRange || 0}`);
+console.log(`Breakouts Rejected (Stop Loss Too Tight): ${results.minimumStopLossRejections || 0}`); // NEW
 console.log('======================================================');
+
+// NEW: Minimum Stop Loss Analysis
+if (config.minimumStopLossPercent > 0) {
+  console.log('\n=========== Minimum Stop Loss Analysis ===============');
+  console.log(`Minimum Stop Loss Requirement: ${config.minimumStopLossPercent}% of breakout price`);
+  console.log(`Total Breakouts Rejected (Stop Loss Too Tight): ${results.minimumStopLossRejections || 0}`);
+  
+  // Calculate impact on total opportunities
+  const totalBreakoutOpportunities = (results.winningDays.length + results.losingDays.length) + 
+                                     (results.breakoutsWithoutEntry || 0) + 
+                                     (results.breakoutsOutsideTimeRange || 0) + 
+                                     (results.minimumStopLossRejections || 0);
+  
+  if (totalBreakoutOpportunities > 0) {
+    const rejectionRate = ((results.minimumStopLossRejections || 0) / totalBreakoutOpportunities) * 100;
+    console.log(`Rejection Rate: ${rejectionRate.toFixed(1)}% of all breakout opportunities`);
+  }
+  
+  console.log(`Logic: Only enter trades where stop loss is at least ${config.minimumStopLossPercent}% of the breakout price`);
+  console.log(`       This filters out trades with stop losses that are too tight relative to price`);
+  console.log(`       Example: If breakout price is ₹100, stop loss must be ≥ ₹${100 * (config.minimumStopLossPercent / 100)} away`);
+  console.log('======================================================');
+}
 
 // Enhanced dynamic stop loss analysis
 if (results.stopLossExitAnalysis?.enabled) {
@@ -114,6 +154,22 @@ if (results.stopLossExitAnalysis?.enabled) {
   const slImprovementAmount = results.stopLossExitAnalysis.averageProfitDynamicStopLossExits - results.stopLossExitAnalysis.averageProfitTraditionalExits;
   if (results.stopLossExitAnalysis.totalDynamicStopLossExits > 0 && results.stopLossExitAnalysis.totalTraditionalStopLossExits > 0) {
     console.log(`Performance Difference: ₹${slImprovementAmount.toFixed(2)} per trade`);
+  }
+  console.log('======================================================');
+}
+
+// NEW: Target exit analysis
+if (results.targetExitAnalysis?.enabled) {
+  console.log('\n============== Target Exit Analysis ==================');
+  console.log(`Dynamic Target Adjustment: ${results.targetExitAnalysis.dynamicTargetAdjustment ? 'ENABLED' : 'DISABLED'}`);
+  console.log(`Target Limit Order Exits: ${results.targetExitAnalysis.totalTargetLimitOrderExits}`);
+  console.log(`Total Trades with Target Hit: ${results.targetExitAnalysis.totalTradesWithTargetHit}`);
+  console.log(`Target Limit Order Fill Rate: ${results.targetExitAnalysis.targetLimitOrderFillRate.toFixed(1)}%`);
+  console.log(`Avg Profit (Target Limit Order Exits): ₹${results.targetExitAnalysis.averageProfitTargetLimitOrderExits.toFixed(2)}`);
+  
+  if (results.targetExitAnalysis.dynamicTargetAdjustment) {
+    console.log(`Trades with Dynamic Target Adjustment: ${results.targetExitAnalysis.totalTradesWithDynamicAdjustment}`);
+    console.log(`Average Target Price Updates per Trade: ${results.targetExitAnalysis.averageTargetPriceUpdates.toFixed(1)}`);
   }
   console.log('======================================================');
 }
@@ -147,6 +203,22 @@ if (results.preMarketExitAnalysis?.enabled) {
   console.log('======================================================');
 }
 
+// NEW: Entry order analysis
+if (results.entryOrderAnalysis?.enabled) {
+  console.log('\n============== Entry Order Analysis ==================');
+  console.log(`Dynamic Entry Adjustment: ${results.entryOrderAnalysis.dynamicEntryAdjustment ? 'ENABLED' : 'DISABLED'}`);
+  console.log(`Total Trades with Entry Orders: ${results.entryOrderAnalysis.totalTradesWithEntryOrders}`);
+  console.log(`Entry Order Fill Rate: ${results.entryOrderAnalysis.entryOrderFillRate.toFixed(1)}%`);
+  console.log(`Average Entry Price Improvement: ₹${results.entryOrderAnalysis.averageEntryPriceImprovement.toFixed(2)}`);
+  
+  if (results.entryOrderAnalysis.dynamicEntryAdjustment) {
+    console.log(`Trades with Dynamic Entry Price Updates: ${results.entryOrderAnalysis.totalTradesWithEntryPriceUpdates}`);
+    console.log(`Average Entry Price Updates per Trade: ${results.entryOrderAnalysis.averageEntryPriceUpdates.toFixed(1)}`);
+    console.log(`Dynamic Entry Pricing Success Rate: ${results.entryOrderAnalysis.dynamicEntryPricingFillRate.toFixed(1)}%`);
+  }
+  console.log('======================================================');
+}
+
 // Print detailed breakdown of trades with enhanced exit details
 console.log('\n=============== Trade Details Summary ===============');
 const actualTrades = results.allTrades.filter(trade => trade.profit !== undefined || trade.netProfit !== undefined);
@@ -165,6 +237,18 @@ if (actualTrades.length > 0) {
       console.log(`  Target: ₹${trade.target.toFixed(2)}`);
       console.log(`  Stop Loss: ₹${trade.stopLoss.toFixed(2)}`);
       console.log(`  Risk Points: ₹${trade.riskPoints.toFixed(2)}`);
+      
+      // NEW: Show minimum stop loss validation details
+      if (trade.breakout.minimumStopLossValidation) {
+        const validation = trade.breakout.minimumStopLossValidation;
+        console.log(`  Stop Loss Validation: ${validation.passed ? '✅ PASSED' : '❌ FAILED'}`);
+        console.log(`    Required: ${validation.data.minimumRequiredPercent}% (₹${validation.data.minimumRequiredPoints.toFixed(2)})`);
+        console.log(`    Actual: ${validation.data.actualStopLossPercent.toFixed(2)}% (₹${validation.data.actualStopLossPoints.toFixed(2)})`);
+        
+        if (!validation.passed) {
+          console.log(`    Difference: ${validation.data.difference.toFixed(2)}% short of minimum requirement`);
+        }
+      }
       
       // Enhanced dynamic stop loss exit details
       if (trade.stopLossExitDetails?.enabled) {
@@ -198,6 +282,22 @@ if (actualTrades.length > 0) {
         }
       } else {
         console.log(`  Stop Loss Method: Traditional`);
+      }
+      
+      // Enhanced target exit details
+      if (trade.targetExitDetails?.enabled && trade.targetExitDetails.targetHit) {
+        console.log(`  Target Exit Method: Dynamic Limit Orders`);
+        console.log(`  Target Hit: ${trade.targetExitDetails.hitCandleTime} @ ₹${trade.targetExitDetails.hitCandleClose.toFixed(2)}`);
+        
+        if (trade.targetExitDetails.dynamicTargetAdjustment && trade.targetExitDetails.totalPriceUpdates > 0) {
+          console.log(`  🔄 Dynamic Target Updates: ${trade.targetExitDetails.totalPriceUpdates} price adjustments`);
+        }
+        
+        if (trade.targetExitDetails.orderFillDetails) {
+          const fill = trade.targetExitDetails.orderFillDetails;
+          console.log(`  ✅ Target Order Filled: ₹${fill.filledOrderPrice.toFixed(2)} at ${fill.fillTime}`);
+          console.log(`    Fill Time: ${fill.timeBetweenPlaceAndFill} mins after placement`);
+        }
       }
       
       // Enhanced pre-market exit details with dynamic pricing
@@ -259,6 +359,20 @@ if (breakoutsOutsideTimeRange.length > 0) {
   });
 }
 
+// NEW: Print breakdown of minimum stop loss rejections
+const minimumStopLossRejections = results.allTrades.filter(trade => trade.minimumStopLossRejection);
+if (minimumStopLossRejections.length > 0) {
+  console.log(`\n${minimumStopLossRejections.length} breakouts rejected due to tight stop loss (< ${config.minimumStopLossPercent}%):`);
+  minimumStopLossRejections.slice(0, 3).forEach((trade, index) => {
+    if (trade.minimumStopLossData) {
+      const data = trade.minimumStopLossData;
+      console.log(`  ${index + 1}. ${trade.date} - ${trade.breakoutType.toUpperCase()} breakout at ${trade.breakoutTime}`);
+      console.log(`     Stop Loss: ${data.actualStopLossPercent.toFixed(2)}% (required: ${data.minimumRequiredPercent}%)`);
+      console.log(`     Price: ₹${data.currentPrice.toFixed(2)}, SL: ₹${data.stopLossPrice.toFixed(2)}, Risk: ₹${data.actualStopLossPoints.toFixed(2)}`);
+    }
+  });
+}
+
 // Print exit reason breakdown
 console.log('\n=============== Exit Reason Analysis ===============');
 if (results.statisticsByExitReason && Object.keys(results.statisticsByExitReason).length > 0) {
@@ -309,6 +423,23 @@ console.log(`Logic: Breakouts are only considered valid if the time since previo
 console.log(`       extreme (high/low) is between ${config.minThreshold} and ${config.maxThreshold} minutes`);
 console.log(`       This filters out breakouts that occur too quickly (noise) or`);
 console.log(`       too slowly (stale patterns)`);
+console.log('======================================================');
+
+// NEW: Minimum Stop Loss Configuration Summary
+console.log('\n========= Minimum Stop Loss Configuration Summary ======');
+if (config.minimumStopLossPercent > 0) {
+  console.log(`Minimum Stop Loss Requirement: ${config.minimumStopLossPercent}% of breakout price`);
+  console.log(`Logic: Only enter trades where the stop loss distance is at least`);
+  console.log(`       ${config.minimumStopLossPercent}% of the current breakout price`);
+  console.log(`       This prevents entering trades with stop losses that are too tight`);
+  console.log(`       relative to the price, which could lead to premature exits`);
+  console.log(`Example: Breakout price ₹100, minimum stop loss distance = ₹${(100 * config.minimumStopLossPercent / 100).toFixed(2)}`);
+  console.log(`         For long: stop loss must be ≤ ₹${(100 - 100 * config.minimumStopLossPercent / 100).toFixed(2)}`);
+  console.log(`         For short: stop loss must be ≥ ₹${(100 + 100 * config.minimumStopLossPercent / 100).toFixed(2)}`);
+} else {
+  console.log(`Minimum stop loss validation: DISABLED`);
+  console.log(`All breakouts with valid time thresholds and volume will be considered`);
+}
 console.log('======================================================');
 
 // Enhanced Dynamic Stop Loss Configuration Summary
@@ -434,4 +565,28 @@ if (results.preMarketExitAnalysis || config.marketExitTime?.enabled) {
   
   fs.writeFileSync('dynamic_pre_market_exit_analysis.json', JSON.stringify(preMarketExitData, null, 2));
   console.log('Dynamic pre-market exit analysis written to dynamic_pre_market_exit_analysis.json');
+}
+
+// NEW: Minimum stop loss rejection analysis
+if (config.minimumStopLossPercent > 0) {
+  const minimumStopLossData = {
+    configuration: {
+      enabled: true,
+      minimumStopLossPercent: config.minimumStopLossPercent
+    },
+    analysis: results.minimumStopLossConfig,
+    rejectedBreakouts: results.allTrades
+      .filter(trade => trade.minimumStopLossRejection)
+      .map(trade => ({
+        date: trade.date,
+        breakoutType: trade.breakoutType,
+        breakoutTime: trade.breakoutTime,
+        breakoutPrice: trade.breakoutPrice,
+        minimumStopLossData: trade.minimumStopLossData,
+        message: trade.message
+      }))
+  };
+  
+  fs.writeFileSync('minimum_stop_loss_rejections.json', JSON.stringify(minimumStopLossData, null, 2));
+  console.log('Minimum stop loss rejection analysis written to minimum_stop_loss_rejections.json');
 }

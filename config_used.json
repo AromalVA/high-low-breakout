@@ -2,7 +2,8 @@
   "minThreshold": 70,
   "maxThreshold": 300,
   "riskRewardRatio": 1,
-  "pullbackPercentage": 5,
+  "pullbackPercentage": 0,
+  "minimumStopLossPercent": 0.7,
   "entryTimeRange": {
     "enabled": true,
     "startTime": "9:15",
@@ -39,5 +40,19 @@
     "maxLossPercent": 200,
     "forceMarketOrderAfterMax": true,
     "description": "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
+  },
+  "targetExitConfig": {
+    "enabled": true,
+    "dynamicTargetAdjustment": true,
+    "description": "Place limit order when target hit, skip one candle, then check for fill"
+  },
+  "entryOrderConfig": {
+    "enabled": true,
+    "dynamicEntryAdjustment": true,
+    "description": "Place limit order when pullback hit, skip one candle, then check for fill"
+  },
+  "priceRounding": {
+    "enabled": true,
+    "tickSize": 0.05
   }
 }
