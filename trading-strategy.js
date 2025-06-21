@@ -123,7 +123,7 @@ function isMinimumStopLossPercentMet(currentPrice, stopLossPrice, config) {
 
   return {
     passed: actualStopLossPercent >= minimumRequiredPercent,
-    reason: actualStopLossPercent >= minimumRequiredPercent ? 
+    reason: actualStopLossPercent >= minimumRequiredPercent ?
       "Minimum stop loss percentage requirement met" : "Stop loss too tight - below minimum percentage requirement",
     data: {
       currentPrice: currentPrice,
@@ -146,16 +146,16 @@ function parseTimeToMinutes(timestamp) {
   const parts = timestamp.split(' ');
   const timePart = parts[1];
   const meridiem = parts[2];
-  
+
   let [hours, minutes] = timePart.split(':').map(part => parseInt(part, 10));
-  
+
   // Convert to 24-hour format
   if (meridiem === 'PM' && hours < 12) {
     hours += 12;
   } else if (meridiem === 'AM' && hours === 12) {
     hours = 0;
   }
-  
+
   return hours * 60 + minutes;
 }
 
@@ -179,11 +179,11 @@ function isEntryTimeAllowed(timestamp, config) {
   if (!config.entryTimeRange.enabled) {
     return true;
   }
-  
+
   const currentTimeMinutes = parseTimeToMinutes(timestamp);
   const startTimeMinutes = parse24HourTimeToMinutes(config.entryTimeRange.startTime);
   const endTimeMinutes = parse24HourTimeToMinutes(config.entryTimeRange.endTime);
-  
+
   return currentTimeMinutes >= startTimeMinutes && currentTimeMinutes <= endTimeMinutes;
 }
 
@@ -197,12 +197,12 @@ function shouldPlacePreMarketExitOrder(timestamp, config) {
   if (!config.marketExitTime.enabled) {
     return false;
   }
-  
+
   const currentTimeMinutes = parseTimeToMinutes(timestamp);
   const exitTimeMinutes = parse24HourTimeToMinutes(config.marketExitTime.exitTime);
   const preExitMinutes = config.marketExitTime.preExitLimitOrderMinutes || 10;
   const preExitTimeMinutes = exitTimeMinutes - preExitMinutes;
-  
+
   return currentTimeMinutes >= preExitTimeMinutes;
 }
 
@@ -216,10 +216,10 @@ function shouldForceMarketExit(timestamp, config) {
   if (!config.marketExitTime.enabled) {
     return false;
   }
-  
+
   const currentTimeMinutes = parseTimeToMinutes(timestamp);
   const exitTimeMinutes = parse24HourTimeToMinutes(config.marketExitTime.exitTime);
-  
+
   return currentTimeMinutes >= exitTimeMinutes;
 }
 
@@ -242,7 +242,7 @@ function isTimeThresholdMet(timeDiff, config) {
 function calculateTimeDiffInMinutes(timestamp1, timestamp2) {
   const minutes1 = parseTimeToMinutes(timestamp1);
   const minutes2 = parseTimeToMinutes(timestamp2);
-  
+
   return Math.abs(minutes2 - minutes1);
 }
 
@@ -266,24 +266,24 @@ function formatTimestamp(timestamp) {
   const datePart = parts[0];
   const timePart = parts[1];
   const meridiem = parts[2];
-  
+
   // Parse date
   const [day, month, year] = datePart.split('/').map(part => parseInt(part, 10));
-  
+
   // Parse time
   let [hours, minutes] = timePart.split(':').map(part => parseInt(part, 10));
-  
+
   // Convert to 24-hour format
   if (meridiem === 'PM' && hours < 12) {
     hours += 12;
   } else if (meridiem === 'AM' && hours === 12) {
     hours = 0;
   }
-  
+
   // Format to YYYY-MM-DD HH:MM
   const formattedDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
   const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
-  
+
   return `${formattedDate} ${formattedTime}`;
 }
 
@@ -299,18 +299,18 @@ function shouldIncludeDate(dateStr, config) {
   }
 
   const date = parseDate(dateStr);
-  
+
   if (config.dateFilter.specificDate) {
     const specificDate = parseDate(config.dateFilter.specificDate);
     return date.getTime() === specificDate.getTime();
   }
-  
+
   if (config.dateFilter.dateRange.start && config.dateFilter.dateRange.end) {
     const startDate = parseDate(config.dateFilter.dateRange.start);
     const endDate = parseDate(config.dateFilter.dateRange.end);
     return date >= startDate && date <= endDate;
   }
-  
+
   return true;
 }
 
@@ -328,29 +328,29 @@ function isVolumeConfirmationMet(data, currentIndex, config) {
 
   // Get the pre-breakout candle (the candle right before the current one)
   const preBreakoutCandleIndex = currentIndex - 1;
-  
+
   if (preBreakoutCandleIndex < 0 || preBreakoutCandleIndex >= data.length) {
     return { passed: true, reason: "Pre-breakout candle not available", data: null };
   }
-  
+
   const preBreakoutCandle = data[preBreakoutCandleIndex];
-  
+
   // Calculate the average volume of the lookback period
   let totalVolume = 0;
   let count = 0;
-  
+
   // Start from the candle before the pre-breakout candle
   for (let i = preBreakoutCandleIndex - 1; i >= Math.max(0, preBreakoutCandleIndex - config.volumeConfirmation.lookbackPeriod); i--) {
     totalVolume += data[i].volume;
     count++;
   }
-  
+
   const averageVolume = count > 0 ? totalVolume / count : 0;
   const volumeThreshold = averageVolume * config.volumeConfirmation.volumeMultiplier;
-  
+
   return {
     passed: preBreakoutCandle.volume >= volumeThreshold,
-    reason: preBreakoutCandle.volume >= volumeThreshold ? 
+    reason: preBreakoutCandle.volume >= volumeThreshold ?
       "Volume confirmation passed" : "Volume confirmation failed",
     data: {
       preBreakoutCandleTime: preBreakoutCandle.timestamp_readable_IST,
@@ -386,63 +386,63 @@ function analyzeTradingDay(date, dayData, config) {
   let previousHighPrice = getCandleBodyHigh(dayData[0]); // Use body high instead of high
   let previousLowTime = dayData[0].timestamp_readable_IST;
   let previousLowPrice = getCandleBodyLow(dayData[0]); // Use body low instead of low
-  
+
   // Track the lowest point since the last high and highest point since the last low - USING BODY PRICES
   let lowestSinceLastHigh = getCandleBodyLow(dayData[0]);
   let lowestSinceLastHighTime = dayData[0].timestamp_readable_IST;
   let highestSinceLastLow = getCandleBodyHigh(dayData[0]);
   let highestSinceLastLowTime = dayData[0].timestamp_readable_IST;
-  
+
   // Track pending breakouts waiting for pullback
   let pendingLongBreakout = null;
   let pendingShortBreakout = null;
-  
+
   // Track pending entry orders with skip-one-candle logic
   let pendingLongEntryOrder = null;
   let pendingShortEntryOrder = null;
-  
+
   let longEntry = null;
   let shortEntry = null;
-  
+
   // Track invalid breakouts encountered during the day
   let invalidBreakouts = [];
-  
+
   // Initialize patterns array
   let patterns = [];
-  
+
   for (let i = 1; i < dayData.length; i++) {
     const candle = dayData[i];
-    
+
     // Update lowest since last high and highest since last low - USING BODY PRICES
     const currentBodyLow = getCandleBodyLow(candle);
     const currentBodyHigh = getCandleBodyHigh(candle);
-    
+
     if (currentBodyLow < lowestSinceLastHigh) {
       lowestSinceLastHigh = currentBodyLow;
       lowestSinceLastHighTime = candle.timestamp_readable_IST;
     }
-    
+
     if (currentBodyHigh > highestSinceLastLow) {
       highestSinceLastLow = currentBodyHigh;
       highestSinceLastLowTime = candle.timestamp_readable_IST;
     }
-    
+
     // Check for candlestick patterns
-    const prevCandle = i > 0 ? dayData[i-1] : null;
+    const prevCandle = i > 0 ? dayData[i - 1] : null;
     if (prevCandle) {
       // Check for hammer pattern (potential reversal)
       if (candle.close > candle.open && // Bullish candle
-          (candle.high - candle.close) < (candle.open - candle.low) * 0.5 && // Small upper shadow
-          (candle.open - candle.low) > (candle.close - candle.open) * 2) { // Long lower shadow
+        (candle.high - candle.close) < (candle.open - candle.low) * 0.5 && // Small upper shadow
+        (candle.open - candle.low) > (candle.close - candle.open) * 2) { // Long lower shadow
         patterns.push("hammer");
       }
     }
-    
+
     // Check if we have a pending long breakout and look for pullback entry
     if (pendingLongBreakout && !longEntry && !pendingLongEntryOrder) {
       // Check if price has pulled back to our entry level AND closing price is below pullback target
-      if (candle.low <= pendingLongBreakout.pullbackEntryPrice && 
-          candle.close < pendingLongBreakout.pullbackEntryPrice) {
+      if (candle.low <= pendingLongBreakout.pullbackEntryPrice &&
+        candle.close < pendingLongBreakout.pullbackEntryPrice) {
         if (isEntryTimeAllowed(candle.timestamp_readable_IST, config)) {
           // Place limit buy order at rounded closing price
           const roundedClosePrice = applyPriceRounding(candle.close, config);
@@ -460,12 +460,12 @@ function analyzeTradingDay(date, dayData, config) {
         }
       }
     }
-    
+
     // Check if we have a pending short breakout and look for pullback entry
     if (pendingShortBreakout && !shortEntry && !pendingShortEntryOrder) {
       // Check if price has pulled back to our entry level AND closing price is above pullback target
-      if (candle.high >= pendingShortBreakout.pullbackEntryPrice && 
-          candle.close > pendingShortBreakout.pullbackEntryPrice) {
+      if (candle.high >= pendingShortBreakout.pullbackEntryPrice &&
+        candle.close > pendingShortBreakout.pullbackEntryPrice) {
         if (isEntryTimeAllowed(candle.timestamp_readable_IST, config)) {
           // Place limit sell order at rounded closing price
           const roundedClosePrice = applyPriceRounding(candle.close, config);
@@ -483,7 +483,7 @@ function analyzeTradingDay(date, dayData, config) {
         }
       }
     }
-    
+
     // Check if pending long entry order should be filled or updated (skip one candle)
     if (pendingLongEntryOrder && !longEntry && i > pendingLongEntryOrder.placedAtCandle + 1) {
       // Check if entry time is still allowed
@@ -527,10 +527,10 @@ function analyzeTradingDay(date, dayData, config) {
           // Order not filled - update limit order to current rounded close if better (lower for long)
           const oldPrice = pendingLongEntryOrder.price;
           const newPrice = applyPriceRounding(candle.close, config);
-          
+
           // Only update if dynamic adjustment enabled, price is better (lower for long positions) and meaningful change
-          if (config.entryOrderConfig?.dynamicEntryAdjustment && 
-              newPrice < oldPrice && Math.abs(newPrice - oldPrice) >= 0.05) {
+          if (config.entryOrderConfig?.dynamicEntryAdjustment &&
+            newPrice < oldPrice && Math.abs(newPrice - oldPrice) >= 0.05) {
             const priceUpdate = {
               candleIndex: i,
               time: formatTimestamp(candle.timestamp_readable_IST),
@@ -541,14 +541,14 @@ function analyzeTradingDay(date, dayData, config) {
               candleClose: candle.close,
               reason: "dynamic_entry_adjustment"
             };
-            
+
             pendingLongEntryOrder.price = newPrice;
             pendingLongEntryOrder.priceUpdates.push(priceUpdate);
           }
         }
       }
     }
-    
+
     // Check if pending short entry order should be filled or updated (skip one candle)
     if (pendingShortEntryOrder && !shortEntry && i > pendingShortEntryOrder.placedAtCandle + 1) {
       // Check if entry time is still allowed
@@ -592,10 +592,10 @@ function analyzeTradingDay(date, dayData, config) {
           // Order not filled - update limit order to current rounded close if better (higher for short)
           const oldPrice = pendingShortEntryOrder.price;
           const newPrice = applyPriceRounding(candle.close, config);
-          
+
           // Only update if dynamic adjustment enabled, price is better (higher for short positions) and meaningful change
-          if (config.entryOrderConfig?.dynamicEntryAdjustment && 
-              newPrice > oldPrice && Math.abs(newPrice - oldPrice) >= 0.05) {
+          if (config.entryOrderConfig?.dynamicEntryAdjustment &&
+            newPrice > oldPrice && Math.abs(newPrice - oldPrice) >= 0.05) {
             const priceUpdate = {
               candleIndex: i,
               time: formatTimestamp(candle.timestamp_readable_IST),
@@ -606,38 +606,38 @@ function analyzeTradingDay(date, dayData, config) {
               candleClose: candle.close,
               reason: "dynamic_entry_adjustment"
             };
-            
+
             pendingShortEntryOrder.price = newPrice;
             pendingShortEntryOrder.priceUpdates.push(priceUpdate);
           }
         }
       }
     }
-    
+
     // Check for new high (must be STRICTLY higher than previous high) - USING BODY HIGH
     if (currentBodyHigh > previousHighPrice + 0.05) { // Using a small threshold to account for precision issues
       const timeDiff = calculateTimeDiffInMinutes(candle.timestamp_readable_IST, previousHighTime);
-      
+
       if (isTimeThresholdMet(timeDiff, config) && !pendingLongBreakout && !longEntry) {
         // We have a valid high breakout with time difference within the allowed range
         const volumeConfirmation = isVolumeConfirmationMet(dayData, i, config);
-        
+
         if (volumeConfirmation.passed) {
           // Calculate target and stop loss for long entry with price rounding
           const breakoutPrice = applyPriceRounding(previousHighPrice, config);
           const stopLoss = applyPriceRounding(lowestSinceLastHigh, config);
-          
+
           // NEW: Check minimum stop loss percentage requirement
           const minimumStopLossValidation = isMinimumStopLossPercentMet(breakoutPrice, stopLoss, config);
-          
+
           if (minimumStopLossValidation.passed) {
             const risk = breakoutPrice - stopLoss;
             const target = applyPriceRounding(breakoutPrice + (risk * config.riskRewardRatio), config);
-            
+
             // Calculate pullback entry price with rounding
             const pullbackAmount = risk * (config.pullbackPercentage / 100);
             const pullbackEntryPrice = applyPriceRounding(breakoutPrice - pullbackAmount, config);
-            
+
             pendingLongBreakout = {
               type: "long",
               breakoutPrice: breakoutPrice,
@@ -647,9 +647,11 @@ function analyzeTradingDay(date, dayData, config) {
               patterns: [...patterns],
               volumeInfo: {
                 breakoutCandleVolume: candle.volume,
-                confirmationCandleVolume: dayData[i-1].volume,
-                averageLookbackVolume: volumeConfirmation.data.averageVolume,
-                lookbackVolumes: volumeConfirmation.data.lookbackVolumes
+                confirmationCandleVolume: dayData[i - 1].volume,
+                averageLookbackVolume: volumeConfirmation.data ? volumeConfirmation.data.averageVolume : null,
+                volumeConfirmationEnabled: config.volumeConfirmation.enabled,
+                volumeConfirmationPassed: volumeConfirmation.passed,
+                volumeConfirmationReason: volumeConfirmation.reason
               },
               breakoutDetails: {
                 breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
@@ -688,7 +690,7 @@ function analyzeTradingDay(date, dayData, config) {
           }
         }
       }
-      
+
       // Record invalid breakouts for reporting if no valid trades found
       if (!isTimeThresholdMet(timeDiff, config)) {
         invalidBreakouts.push({
@@ -699,38 +701,38 @@ function analyzeTradingDay(date, dayData, config) {
           requiredTimeRange: `${config.minThreshold}-${config.maxThreshold}`
         });
       }
-      
+
       // Update previous high and reset lowest since last high - USING BODY PRICES
       previousHighPrice = currentBodyHigh;
       previousHighTime = candle.timestamp_readable_IST;
       lowestSinceLastHigh = currentBodyLow;
       lowestSinceLastHighTime = candle.timestamp_readable_IST;
     }
-    
+
     // Check for new low (must be STRICTLY lower than previous low) - USING BODY LOW
     if (currentBodyLow < previousLowPrice - 0.05) { // Using a small threshold to account for precision issues
       const timeDiff = calculateTimeDiffInMinutes(candle.timestamp_readable_IST, previousLowTime);
-      
+
       if (isTimeThresholdMet(timeDiff, config) && !pendingShortBreakout && !shortEntry) {
         // We have a valid low breakout with time difference within the allowed range
         const volumeConfirmation = isVolumeConfirmationMet(dayData, i, config);
-        
+
         if (volumeConfirmation.passed) {
           // Calculate target and stop loss for short entry with price rounding
           const breakoutPrice = applyPriceRounding(previousLowPrice, config);
           const stopLoss = applyPriceRounding(highestSinceLastLow, config);
-          
+
           // NEW: Check minimum stop loss percentage requirement
           const minimumStopLossValidation = isMinimumStopLossPercentMet(breakoutPrice, stopLoss, config);
-          
+
           if (minimumStopLossValidation.passed) {
             const risk = stopLoss - breakoutPrice;
             const target = applyPriceRounding(breakoutPrice - (risk * config.riskRewardRatio), config);
-            
+
             // Calculate pullback entry price with rounding
             const pullbackAmount = risk * (config.pullbackPercentage / 100);
             const pullbackEntryPrice = applyPriceRounding(breakoutPrice + pullbackAmount, config);
-            
+
             pendingShortBreakout = {
               type: "short",
               breakoutPrice: breakoutPrice,
@@ -740,9 +742,11 @@ function analyzeTradingDay(date, dayData, config) {
               patterns: [...patterns],
               volumeInfo: {
                 breakoutCandleVolume: candle.volume,
-                confirmationCandleVolume: dayData[i-1].volume,
-                averageLookbackVolume: volumeConfirmation.data.averageVolume,
-                lookbackVolumes: volumeConfirmation.data.lookbackVolumes
+                confirmationCandleVolume: dayData[i - 1].volume,
+                averageLookbackVolume: volumeConfirmation.data ? volumeConfirmation.data.averageVolume : null,
+                volumeConfirmationEnabled: config.volumeConfirmation.enabled,
+                volumeConfirmationPassed: volumeConfirmation.passed,
+                volumeConfirmationReason: volumeConfirmation.reason
               },
               breakoutDetails: {
                 breakoutTime: formatTimestamp(candle.timestamp_readable_IST),
@@ -781,7 +785,7 @@ function analyzeTradingDay(date, dayData, config) {
           }
         }
       }
-      
+
       // Record invalid breakouts for reporting if no valid trades found
       if (!isTimeThresholdMet(timeDiff, config)) {
         invalidBreakouts.push({
@@ -792,7 +796,7 @@ function analyzeTradingDay(date, dayData, config) {
           requiredTimeRange: `${config.minThreshold}-${config.maxThreshold}`
         });
       }
-      
+
       // Update previous low and reset highest since last low - USING BODY PRICES
       previousLowPrice = currentBodyLow;
       previousLowTime = candle.timestamp_readable_IST;
@@ -800,13 +804,13 @@ function analyzeTradingDay(date, dayData, config) {
       highestSinceLastLowTime = candle.timestamp_readable_IST;
     }
   }
-  
+
   // If we have a long or short entry, simulate the trade and return results
   if (longEntry || shortEntry) {
     const entry = longEntry || shortEntry;
     return simulateTrade(date, entry, dayData, config.capital, config);
   }
-  
+
   // Check if we have a breakout but no pullback entry
   if (pendingLongBreakout || pendingShortBreakout) {
     const pendingBreakout = pendingLongBreakout || pendingShortBreakout;
@@ -825,7 +829,7 @@ function analyzeTradingDay(date, dayData, config) {
       useBodyPricesOnly: true // Indicate that we're avoiding wicks
     };
   }
-  
+
   // Check if we have pending entry orders but no actual entry
   if (pendingLongEntryOrder || pendingShortEntryOrder) {
     const pendingEntryOrder = pendingLongEntryOrder || pendingShortEntryOrder;
@@ -849,7 +853,7 @@ function analyzeTradingDay(date, dayData, config) {
       useBodyPricesOnly: true // Indicate that we're avoiding wicks
     };
   }
-  
+
   // If we had invalid breakouts but no valid trades, report the first invalid breakout
   if (invalidBreakouts.length > 0) {
     const firstInvalidBreakout = invalidBreakouts[0];
@@ -869,7 +873,7 @@ function analyzeTradingDay(date, dayData, config) {
       useBodyPricesOnly: true // Indicate that we're avoiding wicks
     };
   }
-  
+
   // No valid trades for this day
   return {
     date,
@@ -895,7 +899,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
   // Find the starting index (entry time)
   const entryTimeStr = trade.entry.time;
   let entryIndex = dayData.findIndex(candle => formatTimestamp(candle.timestamp_readable_IST) === entryTimeStr);
-  
+
   if (entryIndex === -1) {
     // If exact match not found, find the closest time
     entryIndex = dayData.findIndex(candle => {
@@ -904,7 +908,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
       return candleTime >= entryTime;
     });
   }
-  
+
   if (entryIndex === -1) {
     return {
       date,
@@ -913,7 +917,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
       volumeData: null
     };
   }
-  
+
   // Calculate how many shares we can buy with the available capital
   const availableCapital = capital.initial * (capital.utilizationPercent / 100);
   // Apply leverage
@@ -921,16 +925,16 @@ function simulateTrade(date, trade, dayData, capital, config) {
   // Only buy whole shares (no fractions)
   const maxShares = Math.floor(leveragedCapital / trade.entry.price);
   const investedAmount = maxShares * trade.entry.price;
-  
+
   // Calculate entry brokerage fee
   const brokerageFeePercent = capital.brokerageFeePercent || 0;
   const entryBrokerageFee = (investedAmount * brokerageFeePercent) / 100;
-  
+
   // Calculate risk in points
   const riskPoints = trade.type === "long" ?
     trade.entry.price - trade.stopLoss :
     trade.stopLoss - trade.entry.price;
-  
+
   // Initialize stop loss exit tracking with skip-one-candle logic
   const stopLossConfig = config.stopLossExitConfig || { enabled: false };
   let stopLossBreach = false;
@@ -954,7 +958,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
     orderFillDetails: null,
     skipOneCandleLogic: true
   };
-  
+
   // Initialize target exit tracking with skip-one-candle logic
   const targetConfig = config.targetExitConfig || { enabled: true };
   let targetHit = false;
@@ -975,7 +979,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
     orderFillDetails: null,
     skipOneCandleLogic: true
   };
-  
+
   // Initialize dynamic pre-market exit order tracking with skip-one-candle logic
   let preMarketExitOrder = null;
   let preMarketExitDetails = {
@@ -998,21 +1002,21 @@ function simulateTrade(date, trade, dayData, capital, config) {
     priceImprovementVsForcedExit: 0,
     skipOneCandleLogic: true
   };
-  
+
   // Track max favorable excursion
   let maxFavorableExcursion = 0;
   let exitPrice = null;
   let exitTime = null;
   let exitReason = null;
-  
+
   // Start simulating from the next candle after entry
   for (let i = entryIndex + 1; i < dayData.length; i++) {
     const candle = dayData[i];
-    
+
     // Check if we should place pre-market exit limit order
-    if (config.marketExitTime?.enabled && !preMarketExitOrder && 
-        shouldPlacePreMarketExitOrder(candle.timestamp_readable_IST, config)) {
-      
+    if (config.marketExitTime?.enabled && !preMarketExitOrder &&
+      shouldPlacePreMarketExitOrder(candle.timestamp_readable_IST, config)) {
+
       // Place initial limit order at the rounded closing price of this candle
       const roundedClosePrice = applyPriceRounding(candle.close, config);
       preMarketExitOrder = {
@@ -1023,20 +1027,20 @@ function simulateTrade(date, trade, dayData, capital, config) {
         type: trade.type === "long" ? "sell" : "buy",
         priceUpdates: []
       };
-      
+
       preMarketExitDetails.orderPlaced = true;
       preMarketExitDetails.orderPlacementTime = formatTimestamp(candle.timestamp_readable_IST);
       preMarketExitDetails.orderPlacementPrice = roundedClosePrice;
       preMarketExitDetails.orderPlacementCandleIndex = i;
       preMarketExitDetails.originalLimitPrice = roundedClosePrice;
     }
-    
+
     // Check if pre-market exit limit order should be updated or filled (with skip-one-candle logic)
-    if (preMarketExitOrder && !preMarketExitDetails.orderFilled && 
-        i > preMarketExitOrder.placedAtCandle + 1) { // Skip one candle before checking
-      
+    if (preMarketExitOrder && !preMarketExitDetails.orderFilled &&
+      i > preMarketExitOrder.placedAtCandle + 1) { // Skip one candle before checking
+
       let orderFilled = false;
-      
+
       // Check if current candle fills the existing limit order
       if (trade.type === "long") {
         if (candle.high >= preMarketExitOrder.price) {
@@ -1047,7 +1051,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           orderFilled = true;
         }
       }
-      
+
       if (orderFilled) {
         // Order filled at current limit price
         exitPrice = preMarketExitOrder.price;
@@ -1057,23 +1061,23 @@ function simulateTrade(date, trade, dayData, capital, config) {
         stopLossExitDetails.finalExitReason = exitReason;
         targetExitDetails.finalExitPrice = exitPrice;
         targetExitDetails.finalExitReason = exitReason;
-        
+
         preMarketExitDetails.orderFilled = true;
         preMarketExitDetails.orderFillTime = formatTimestamp(candle.timestamp_readable_IST);
         preMarketExitDetails.orderFillPrice = preMarketExitOrder.price;
         preMarketExitDetails.orderFillCandleIndex = i;
         preMarketExitDetails.finalLimitPrice = preMarketExitOrder.price;
-        
-        preMarketExitDetails.priceImprovement = trade.type === "long" ? 
+
+        preMarketExitDetails.priceImprovement = trade.type === "long" ?
           preMarketExitOrder.price - preMarketExitDetails.originalLimitPrice :
           preMarketExitDetails.originalLimitPrice - preMarketExitOrder.price;
-        
+
         break;
       } else if (preMarketExitDetails.dynamicPriceAdjustment) {
         // Order not filled - UPDATE the limit order price to current candle's rounded close
         const oldPrice = preMarketExitOrder.price;
         const newPrice = applyPriceRounding(candle.close, config);
-        
+
         if (Math.abs(newPrice - oldPrice) >= 0.05) { // Only update if change is meaningful (at least one tick)
           const priceUpdate = {
             candleIndex: i,
@@ -1085,7 +1089,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
             candleClose: candle.close,
             reason: "dynamic_price_adjustment"
           };
-          
+
           preMarketExitOrder.price = newPrice;
           preMarketExitOrder.priceUpdates.push(priceUpdate);
           preMarketExitDetails.priceUpdateHistory.push(priceUpdate);
@@ -1093,7 +1097,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
         }
       }
     }
-    
+
     // Check for forced market exit (fallback if pre-market exit order wasn't filled)
     if (shouldForceMarketExit(candle.timestamp_readable_IST, config)) {
       exitPrice = applyPriceRounding(candle.close, config);
@@ -1103,26 +1107,26 @@ function simulateTrade(date, trade, dayData, capital, config) {
       stopLossExitDetails.finalExitReason = exitReason;
       targetExitDetails.finalExitPrice = exitPrice;
       targetExitDetails.finalExitReason = exitReason;
-      
+
       if (preMarketExitOrder && !preMarketExitDetails.orderFilled) {
         preMarketExitDetails.finalLimitPrice = preMarketExitOrder.price;
-        preMarketExitDetails.priceImprovement = trade.type === "long" ? 
+        preMarketExitDetails.priceImprovement = trade.type === "long" ?
           preMarketExitOrder.price - preMarketExitDetails.originalLimitPrice :
           preMarketExitDetails.originalLimitPrice - preMarketExitOrder.price;
-        preMarketExitDetails.priceImprovementVsForcedExit = trade.type === "long" ? 
+        preMarketExitDetails.priceImprovementVsForcedExit = trade.type === "long" ?
           preMarketExitOrder.price - exitPrice :
           exitPrice - preMarketExitOrder.price;
       }
-      
+
       break;
     }
-    
+
     // Calculate current profit/loss and update max favorable excursion
     let currentPnL = 0;
     if (trade.type === "long") {
       currentPnL = (candle.high - trade.entry.price) * maxShares;
       maxFavorableExcursion = Math.max(maxFavorableExcursion, currentPnL);
-      
+
       // NEW: Check if target was hit with skip-one-candle limit order logic
       if (targetConfig.enabled && !targetHit && !activeTargetOrder && candle.high >= trade.target) {
         targetHit = true;
@@ -1130,7 +1134,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
         targetExitDetails.hitCandleTime = formatTimestamp(candle.timestamp_readable_IST);
         targetExitDetails.hitCandleClose = candle.close;
         targetExitDetails.hitCandleIndex = i;
-        
+
         // Place limit sell order at rounded closing price
         const roundedClosePrice = applyPriceRounding(candle.close, config);
         activeTargetOrder = {
@@ -1140,7 +1144,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           placedAtCandle: i,
           priceUpdates: []
         };
-        
+
         targetExitDetails.originalLimitPrice = roundedClosePrice;
         targetExitDetails.limitOrderHistory.push({
           action: "placed",
@@ -1150,7 +1154,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           reason: "target_hit"
         });
       }
-      
+
       // Check if target limit order should be filled or updated (skip one candle)
       if (activeTargetOrder && i > activeTargetOrder.placedAtCandle + 1) {
         // Check if price moved above our limit order
@@ -1163,7 +1167,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           targetExitDetails.finalExitPrice = exitPrice;
           targetExitDetails.finalExitReason = exitReason;
           targetExitDetails.finalLimitPrice = activeTargetOrder.price;
-          
+
           targetExitDetails.orderFillDetails = {
             filledOrderPrice: activeTargetOrder.price,
             fillTime: formatTimestamp(candle.timestamp_readable_IST),
@@ -1173,13 +1177,13 @@ function simulateTrade(date, trade, dayData, capital, config) {
             placedAtCandleIndex: activeTargetOrder.placedAtCandle,
             filledAtCandleIndex: i
           };
-          
+
           break;
         } else if (targetExitDetails.dynamicTargetAdjustment) {
           // Price didn't reach target order, update limit order to current rounded close if better
           const oldPrice = activeTargetOrder.price;
           const newPrice = applyPriceRounding(candle.close, config);
-          
+
           // Only update if price is better (higher for long positions) and meaningful change
           if (newPrice > oldPrice && Math.abs(newPrice - oldPrice) >= 0.05) {
             const priceUpdate = {
@@ -1192,7 +1196,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
               candleClose: candle.close,
               reason: "dynamic_target_adjustment"
             };
-            
+
             activeTargetOrder.price = newPrice;
             activeTargetOrder.priceUpdates.push(priceUpdate);
             targetExitDetails.totalPriceUpdates++;
@@ -1206,7 +1210,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           }
         }
       }
-      
+
       // Stop loss logic with skip-one-candle logic
       if (stopLossConfig.enabled && !activeTargetOrder) { // Only check stop loss if target order not active
         // First, check if stop loss has been breached
@@ -1216,7 +1220,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           stopLossExitDetails.breachCandleTime = formatTimestamp(candle.timestamp_readable_IST);
           stopLossExitDetails.breachCandleClose = candle.close;
           stopLossExitDetails.breachCandleIndex = i;
-          
+
           // Place limit order at rounded closing price
           const roundedClosePrice = applyPriceRounding(candle.close, config);
           activeStopLossOrder = {
@@ -1226,7 +1230,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
             placedAtCandle: i,
             priceUpdates: []
           };
-          
+
           stopLossExitDetails.originalLimitPrice = roundedClosePrice;
           stopLossExitDetails.limitOrderHistory.push({
             action: "placed",
@@ -1236,7 +1240,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
             reason: "stop_loss_breach"
           });
         }
-        
+
         // If we have an active stop loss order, check if it should be filled or updated (skip one candle)
         if (activeStopLossOrder && i > activeStopLossOrder.placedAtCandle + 1) {
           // Check if price moved above our limit order (recovery)
@@ -1249,7 +1253,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
             stopLossExitDetails.finalLimitPrice = activeStopLossOrder.price;
             targetExitDetails.finalExitPrice = exitPrice;
             targetExitDetails.finalExitReason = exitReason;
-            
+
             stopLossExitDetails.orderFillDetails = {
               filledOrderPrice: activeStopLossOrder.price,
               fillTime: formatTimestamp(candle.timestamp_readable_IST),
@@ -1259,13 +1263,13 @@ function simulateTrade(date, trade, dayData, capital, config) {
               placedAtCandleIndex: activeStopLossOrder.placedAtCandle,
               filledAtCandleIndex: i
             };
-            
+
             break;
           } else if (stopLossConfig.dynamicStopLossAdjustment) {
             // Price didn't recover, update limit order to current rounded close if worse
             const oldPrice = activeStopLossOrder.price;
             const newPrice = applyPriceRounding(candle.close, config);
-            
+
             // Only update if price is worse (lower for long positions) and meaningful change
             if (newPrice < oldPrice && Math.abs(newPrice - oldPrice) >= 0.05) {
               const priceUpdate = {
@@ -1278,7 +1282,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
                 candleClose: candle.close,
                 reason: "dynamic_stop_loss_adjustment"
               };
-              
+
               activeStopLossOrder.price = newPrice;
               activeStopLossOrder.priceUpdates.push(priceUpdate);
               stopLossExitDetails.totalPriceUpdates++;
@@ -1292,12 +1296,12 @@ function simulateTrade(date, trade, dayData, capital, config) {
             }
           }
         }
-        
+
         // Circuit breaker: Force market exit if loss exceeds maximum threshold
         if (stopLossConfig.forceMarketOrderAfterMax && stopLossConfig.maxLossPercent) {
           const currentLoss = trade.entry.price - candle.low;
           const lossPercentage = (currentLoss / riskPoints) * 100;
-          
+
           if (lossPercentage >= stopLossConfig.maxLossPercent) {
             exitPrice = applyPriceRounding(candle.low, config);
             exitTime = formatTimestamp(candle.timestamp_readable_IST);
@@ -1311,11 +1315,11 @@ function simulateTrade(date, trade, dayData, capital, config) {
           }
         }
       }
-      
+
     } else { // Short position
       currentPnL = (trade.entry.price - candle.low) * maxShares;
       maxFavorableExcursion = Math.max(maxFavorableExcursion, currentPnL);
-      
+
       // NEW: Check if target was hit with skip-one-candle limit order logic
       if (targetConfig.enabled && !targetHit && !activeTargetOrder && candle.low <= trade.target) {
         targetHit = true;
@@ -1323,7 +1327,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
         targetExitDetails.hitCandleTime = formatTimestamp(candle.timestamp_readable_IST);
         targetExitDetails.hitCandleClose = candle.close;
         targetExitDetails.hitCandleIndex = i;
-        
+
         // Place limit buy order at rounded closing price
         const roundedClosePrice = applyPriceRounding(candle.close, config);
         activeTargetOrder = {
@@ -1333,7 +1337,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           placedAtCandle: i,
           priceUpdates: []
         };
-        
+
         targetExitDetails.originalLimitPrice = roundedClosePrice;
         targetExitDetails.limitOrderHistory.push({
           action: "placed",
@@ -1343,7 +1347,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           reason: "target_hit"
         });
       }
-      
+
       // Check if target limit order should be filled or updated (skip one candle)
       if (activeTargetOrder && i > activeTargetOrder.placedAtCandle + 1) {
         // Check if price moved below our limit order
@@ -1356,7 +1360,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           targetExitDetails.finalExitPrice = exitPrice;
           targetExitDetails.finalExitReason = exitReason;
           targetExitDetails.finalLimitPrice = activeTargetOrder.price;
-          
+
           targetExitDetails.orderFillDetails = {
             filledOrderPrice: activeTargetOrder.price,
             fillTime: formatTimestamp(candle.timestamp_readable_IST),
@@ -1366,13 +1370,13 @@ function simulateTrade(date, trade, dayData, capital, config) {
             placedAtCandleIndex: activeTargetOrder.placedAtCandle,
             filledAtCandleIndex: i
           };
-          
+
           break;
         } else if (targetExitDetails.dynamicTargetAdjustment) {
           // Price didn't reach target order, update limit order to current rounded close if better
           const oldPrice = activeTargetOrder.price;
           const newPrice = applyPriceRounding(candle.close, config);
-          
+
           // Only update if price is better (lower for short positions) and meaningful change
           if (newPrice < oldPrice && Math.abs(newPrice - oldPrice) >= 0.05) {
             const priceUpdate = {
@@ -1385,7 +1389,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
               candleClose: candle.close,
               reason: "dynamic_target_adjustment"
             };
-            
+
             activeTargetOrder.price = newPrice;
             activeTargetOrder.priceUpdates.push(priceUpdate);
             targetExitDetails.totalPriceUpdates++;
@@ -1399,7 +1403,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           }
         }
       }
-      
+
       // Stop loss logic with skip-one-candle logic for short positions
       if (stopLossConfig.enabled && !activeTargetOrder) { // Only check stop loss if target order not active
         // First, check if stop loss has been breached
@@ -1409,7 +1413,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
           stopLossExitDetails.breachCandleTime = formatTimestamp(candle.timestamp_readable_IST);
           stopLossExitDetails.breachCandleClose = candle.close;
           stopLossExitDetails.breachCandleIndex = i;
-          
+
           // Place limit order at rounded closing price
           const roundedClosePrice = applyPriceRounding(candle.close, config);
           activeStopLossOrder = {
@@ -1419,7 +1423,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
             placedAtCandle: i,
             priceUpdates: []
           };
-          
+
           stopLossExitDetails.originalLimitPrice = roundedClosePrice;
           stopLossExitDetails.limitOrderHistory.push({
             action: "placed",
@@ -1429,7 +1433,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
             reason: "stop_loss_breach"
           });
         }
-        
+
         // If we have an active stop loss order, check if it should be filled or updated (skip one candle)
         if (activeStopLossOrder && i > activeStopLossOrder.placedAtCandle + 1) {
           // Check if price moved below our limit order (recovery)
@@ -1442,7 +1446,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
             stopLossExitDetails.finalLimitPrice = activeStopLossOrder.price;
             targetExitDetails.finalExitPrice = exitPrice;
             targetExitDetails.finalExitReason = exitReason;
-            
+
             stopLossExitDetails.orderFillDetails = {
               filledOrderPrice: activeStopLossOrder.price,
               fillTime: formatTimestamp(candle.timestamp_readable_IST),
@@ -1452,13 +1456,13 @@ function simulateTrade(date, trade, dayData, capital, config) {
               placedAtCandleIndex: activeStopLossOrder.placedAtCandle,
               filledAtCandleIndex: i
             };
-            
+
             break;
           } else if (stopLossConfig.dynamicStopLossAdjustment) {
             // Price didn't recover, update limit order to current rounded close if worse
             const oldPrice = activeStopLossOrder.price;
             const newPrice = applyPriceRounding(candle.close, config);
-            
+
             // Only update if price is worse (higher for short positions) and meaningful change
             if (newPrice > oldPrice && Math.abs(newPrice - oldPrice) >= 0.05) {
               const priceUpdate = {
@@ -1471,7 +1475,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
                 candleClose: candle.close,
                 reason: "dynamic_stop_loss_adjustment"
               };
-              
+
               activeStopLossOrder.price = newPrice;
               activeStopLossOrder.priceUpdates.push(priceUpdate);
               stopLossExitDetails.totalPriceUpdates++;
@@ -1485,12 +1489,12 @@ function simulateTrade(date, trade, dayData, capital, config) {
             }
           }
         }
-        
+
         // Circuit breaker: Force market exit if loss exceeds maximum threshold
         if (stopLossConfig.forceMarketOrderAfterMax && stopLossConfig.maxLossPercent) {
           const currentLoss = candle.high - trade.entry.price;
           const lossPercentage = (currentLoss / riskPoints) * 100;
-          
+
           if (lossPercentage >= stopLossConfig.maxLossPercent) {
             exitPrice = applyPriceRounding(candle.high, config);
             exitTime = formatTimestamp(candle.timestamp_readable_IST);
@@ -1506,7 +1510,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
       }
     }
   }
-  
+
   // If we didn't exit during the day, use market close price with rounding
   if (!exitPrice) {
     const lastCandle = dayData[dayData.length - 1];
@@ -1518,7 +1522,7 @@ function simulateTrade(date, trade, dayData, capital, config) {
     targetExitDetails.finalExitPrice = exitPrice;
     targetExitDetails.finalExitReason = exitReason;
   }
-  
+
   // Finalize order details
   if (activeStopLossOrder) {
     stopLossExitDetails.finalLimitPrice = activeStopLossOrder.price;
@@ -1526,24 +1530,24 @@ function simulateTrade(date, trade, dayData, capital, config) {
   if (activeTargetOrder) {
     targetExitDetails.finalLimitPrice = activeTargetOrder.price;
   }
-  
+
   // Calculate exit value and brokerage fee
   const exitValue = maxShares * exitPrice;
   const exitBrokerageFee = (exitValue * brokerageFeePercent) / 100;
-  
+
   // Calculate profit without brokerage fees (gross profit)
-  const grossProfit = trade.type === "long" ? 
-    (exitPrice - trade.entry.price) * maxShares : 
+  const grossProfit = trade.type === "long" ?
+    (exitPrice - trade.entry.price) * maxShares :
     (trade.entry.price - exitPrice) * maxShares;
-    
+
   // Calculate final profit/loss with shares and brokerage fees (net profit)
   const netProfit = grossProfit - (entryBrokerageFee + exitBrokerageFee);
-  
+
   // Calculate profit percentage (based on actual capital used, not leveraged amount)
   const actualCapitalUsed = investedAmount / (capital.leverage || 1);
   const netProfitPercentage = (netProfit / actualCapitalUsed) * 100;
   const grossProfitPercentage = (grossProfit / actualCapitalUsed) * 100;
-  
+
   // Create the trade result object
   return {
     date,
@@ -1592,23 +1596,23 @@ function simulateTrade(date, trade, dayData, capital, config) {
 function backtest(stockData, config = defaultConfig) {
   // Merge with default config
   config = { ...defaultConfig, ...config };
-  
+
   // Extract dates from the data
   const dates = Object.keys(stockData.data).filter(date => shouldIncludeDate(date, config));
-  
+
   // Array to store all trades
   const allTrades = [];
-  
+
   // Process each trading day
   for (const date of dates) {
     const dayData = stockData.data[date];
     const dayTradeResult = analyzeTradingDay(date, dayData, config);
     allTrades.push(dayTradeResult);
   }
-  
+
   // Calculate statistics
   const stats = calculateStats(allTrades, config.capital, config);
-  
+
   return {
     ...stats,
     allTrades,
@@ -1626,47 +1630,47 @@ function backtest(stockData, config = defaultConfig) {
 function calculateStats(trades, capital, config) {
   // Filter actual trades (those with profit field)
   const actualTrades = trades.filter(trade => trade.profit !== undefined || trade.netProfit !== undefined);
-  
+
   // Calculate total gross profit (without brokerage fees)
   const totalGrossProfit = actualTrades.reduce((sum, trade) => sum + (trade.grossProfit || trade.profit || 0), 0);
-  
+
   // Calculate total net profit (with brokerage fees)
   const totalNetProfit = actualTrades.reduce((sum, trade) => sum + (trade.netProfit || trade.profit || 0), 0);
-  
+
   // For backward compatibility
   const totalProfit = totalNetProfit;
-  
+
   // Calculate average profit per trade
   const averageGrossProfitPerTrade = actualTrades.length > 0 ? totalGrossProfit / actualTrades.length : 0;
   const averageNetProfitPerTrade = actualTrades.length > 0 ? totalNetProfit / actualTrades.length : 0;
   const averageProfitPerTrade = averageNetProfitPerTrade;
-  
+
   // Calculate total fees
   const totalFees = actualTrades.reduce((sum, trade) => sum + (trade.totalFees || 0), 0);
-  
+
   // Calculate the total return percentage
   const totalGrossReturnPercentage = (totalGrossProfit / capital.initial) * 100;
   const totalNetReturnPercentage = (totalNetProfit / capital.initial) * 100;
   const totalReturnPercentage = totalNetReturnPercentage;
-  
+
   // Calculate average profit percentage per trade
-  const averageGrossProfitPercentagePerTrade = actualTrades.length > 0 ? 
+  const averageGrossProfitPercentagePerTrade = actualTrades.length > 0 ?
     actualTrades.reduce((sum, trade) => sum + (trade.grossProfitPercentage || trade.profitPercentage || 0), 0) / actualTrades.length : 0;
-  const averageNetProfitPercentagePerTrade = actualTrades.length > 0 ? 
+  const averageNetProfitPercentagePerTrade = actualTrades.length > 0 ?
     actualTrades.reduce((sum, trade) => sum + (trade.netProfitPercentage || trade.profitPercentage || 0), 0) / actualTrades.length : 0;
   const averageProfitPercentagePerTrade = averageNetProfitPercentagePerTrade;
-  
+
   // Calculate final balance
   const finalBalance = capital.initial + totalNetProfit;
-  
+
   // Count winning and losing days
   const winningDays = actualTrades.filter(trade => (trade.netProfit || trade.profit || 0) > 0);
   const losingDays = actualTrades.filter(trade => (trade.netProfit || trade.profit || 0) <= 0);
-  
+
   // Count positive and negative days
   const positiveDays = winningDays.length;
   const negativeDays = losingDays.length;
-  
+
   // Group by exit reason
   const exitReasons = {};
   for (const trade of actualTrades) {
@@ -1681,34 +1685,34 @@ function calculateStats(trades, capital, config) {
     exitReasons[reason].count++;
     exitReasons[reason].totalProfit += (trade.netProfit || trade.profit || 0);
   }
-  
+
   // Calculate average profit by exit reason
   for (const reason in exitReasons) {
     exitReasons[reason].averageProfit = exitReasons[reason].totalProfit / exitReasons[reason].count;
   }
-  
+
   // Enhanced stop loss exit analysis with skip-one-candle logic
   let stopLossExitAnalysis = null;
   if (config.stopLossExitConfig?.enabled) {
-    const stopLossLimitOrderExits = actualTrades.filter(trade => 
+    const stopLossLimitOrderExits = actualTrades.filter(trade =>
       trade.exit.reason === 'stop loss limit order filled'
     );
-    
+
     const circuitBreakerExits = actualTrades.filter(trade =>
       trade.stopLossExitDetails?.circuitBreakerTriggered === true
     );
-    
+
     const tradesWithStopLossBreach = actualTrades.filter(trade =>
       trade.stopLossExitDetails?.stopLossBreached === true
     );
-    
+
     const tradesWithDynamicStopLossAdjustment = actualTrades.filter(trade =>
       trade.stopLossExitDetails?.totalPriceUpdates > 0
     );
-    
+
     const averageStopLossPriceUpdates = tradesWithDynamicStopLossAdjustment.length > 0 ?
       tradesWithDynamicStopLossAdjustment.reduce((sum, trade) => sum + trade.stopLossExitDetails.totalPriceUpdates, 0) / tradesWithDynamicStopLossAdjustment.length : 0;
-    
+
     stopLossExitAnalysis = {
       enabled: true,
       skipOneCandleLogic: true,
@@ -1718,7 +1722,7 @@ function calculateStats(trades, capital, config) {
       totalCircuitBreakerExits: circuitBreakerExits.length,
       totalTradesWithStopLossBreach: tradesWithStopLossBreach.length,
       totalTradesWithDynamicAdjustment: tradesWithDynamicStopLossAdjustment.length,
-      averageProfitDynamicStopLossExits: stopLossLimitOrderExits.length > 0 ? 
+      averageProfitDynamicStopLossExits: stopLossLimitOrderExits.length > 0 ?
         stopLossLimitOrderExits.reduce((sum, trade) => sum + (trade.netProfit || 0), 0) / stopLossLimitOrderExits.length : 0,
       averageProfitTraditionalExits: 0, // No traditional exits in new system
       averageProfitCircuitBreakerExits: circuitBreakerExits.length > 0 ?
@@ -1727,25 +1731,25 @@ function calculateStats(trades, capital, config) {
       config: config.stopLossExitConfig
     };
   }
-  
+
   // NEW: Target exit analysis with skip-one-candle logic
   let targetExitAnalysis = null;
   if (config.targetExitConfig?.enabled) {
-    const targetLimitOrderExits = actualTrades.filter(trade => 
+    const targetLimitOrderExits = actualTrades.filter(trade =>
       trade.exit.reason === 'target limit order filled'
     );
-    
-    const tradesWithTargetHit = actualTrades.filter(trade => 
+
+    const tradesWithTargetHit = actualTrades.filter(trade =>
       trade.targetExitDetails?.targetHit === true
     );
-    
-    const tradesWithDynamicTargetAdjustment = actualTrades.filter(trade => 
+
+    const tradesWithDynamicTargetAdjustment = actualTrades.filter(trade =>
       trade.targetExitDetails?.totalPriceUpdates > 0
     );
-    
+
     const averageTargetPriceUpdates = tradesWithDynamicTargetAdjustment.length > 0 ?
       tradesWithDynamicTargetAdjustment.reduce((sum, trade) => sum + trade.targetExitDetails.totalPriceUpdates, 0) / tradesWithDynamicTargetAdjustment.length : 0;
-    
+
     targetExitAnalysis = {
       enabled: true,
       skipOneCandleLogic: true,
@@ -1753,43 +1757,43 @@ function calculateStats(trades, capital, config) {
       totalTargetLimitOrderExits: targetLimitOrderExits.length,
       totalTradesWithTargetHit: tradesWithTargetHit.length,
       totalTradesWithDynamicAdjustment: tradesWithDynamicTargetAdjustment.length,
-      targetLimitOrderFillRate: tradesWithTargetHit.length > 0 ? 
+      targetLimitOrderFillRate: tradesWithTargetHit.length > 0 ?
         (targetLimitOrderExits.length / tradesWithTargetHit.length) * 100 : 0,
-      averageProfitTargetLimitOrderExits: targetLimitOrderExits.length > 0 ? 
+      averageProfitTargetLimitOrderExits: targetLimitOrderExits.length > 0 ?
         targetLimitOrderExits.reduce((sum, trade) => sum + (trade.netProfit || 0), 0) / targetLimitOrderExits.length : 0,
       averageTargetPriceUpdates: averageTargetPriceUpdates,
       config: config.targetExitConfig
     };
   }
-  
+
   // Enhanced pre-market exit analysis with skip-one-candle logic
   let preMarketExitAnalysis = null;
   if (config.marketExitTime?.enabled) {
-    const preMarketExits = actualTrades.filter(trade => 
+    const preMarketExits = actualTrades.filter(trade =>
       trade.exit.reason === 'pre-market exit limit order filled'
     );
-    
-    const forcedMarketExits = actualTrades.filter(trade => 
+
+    const forcedMarketExits = actualTrades.filter(trade =>
       trade.exit.reason === 'forced market exit'
     );
-    
-    const tradesWithPreMarketOrders = actualTrades.filter(trade => 
+
+    const tradesWithPreMarketOrders = actualTrades.filter(trade =>
       trade.preMarketExitDetails?.orderPlaced
     );
-    
-    const tradesWithDynamicPricing = actualTrades.filter(trade => 
+
+    const tradesWithDynamicPricing = actualTrades.filter(trade =>
       trade.preMarketExitDetails?.dynamicPriceAdjustment && trade.preMarketExitDetails?.totalPriceUpdates > 0
     );
-    
+
     const averagePriceUpdatesPerTrade = tradesWithDynamicPricing.length > 0 ?
       tradesWithDynamicPricing.reduce((sum, trade) => sum + trade.preMarketExitDetails.totalPriceUpdates, 0) / tradesWithDynamicPricing.length : 0;
-    
+
     const averagePriceImprovement = tradesWithPreMarketOrders.length > 0 ?
       tradesWithPreMarketOrders.reduce((sum, trade) => sum + (trade.preMarketExitDetails.priceImprovement || 0), 0) / tradesWithPreMarketOrders.length : 0;
-    
+
     const averagePriceImprovementVsForcedExit = tradesWithPreMarketOrders.length > 0 ?
       tradesWithPreMarketOrders.reduce((sum, trade) => sum + (trade.preMarketExitDetails.priceImprovementVsForcedExit || 0), 0) / tradesWithPreMarketOrders.length : 0;
-    
+
     preMarketExitAnalysis = {
       enabled: true,
       skipOneCandleLogic: true,
@@ -1798,9 +1802,9 @@ function calculateStats(trades, capital, config) {
       totalForcedMarketExits: forcedMarketExits.length,
       totalTradesWithPreMarketOrders: tradesWithPreMarketOrders.length,
       totalTradesWithDynamicPricing: tradesWithDynamicPricing.length,
-      preMarketOrderFillRate: tradesWithPreMarketOrders.length > 0 ? 
+      preMarketOrderFillRate: tradesWithPreMarketOrders.length > 0 ?
         (preMarketExits.length / tradesWithPreMarketOrders.length) * 100 : 0,
-      averageProfitPreMarketExits: preMarketExits.length > 0 ? 
+      averageProfitPreMarketExits: preMarketExits.length > 0 ?
         preMarketExits.reduce((sum, trade) => sum + (trade.netProfit || 0), 0) / preMarketExits.length : 0,
       averageProfitForcedExits: forcedMarketExits.length > 0 ?
         forcedMarketExits.reduce((sum, trade) => sum + (trade.netProfit || 0), 0) / forcedMarketExits.length : 0,
@@ -1812,51 +1816,51 @@ function calculateStats(trades, capital, config) {
         (tradesWithDynamicPricing.filter(trade => trade.preMarketExitDetails.orderFilled).length / tradesWithDynamicPricing.length) * 100 : 0
     };
   }
-  
+
   // Calculate risk-reward metrics
   let actualAverageRR = 0;
   let plannedRR = 0;
-  
+
   if (actualTrades.length > 0) {
     actualAverageRR = actualTrades.reduce((sum, trade) => {
       return sum + ((trade.netProfit || trade.profit || 0) / (trade.riskPoints * trade.shares));
     }, 0) / actualTrades.length;
-    
+
     plannedRR = config.riskRewardRatio || 1;
   }
-  
+
   // Calculate win rate
   const winRate = actualTrades.length > 0 ? positiveDays / actualTrades.length * 100 : 0;
-  
+
   // NEW: Entry order analysis with skip-one-candle logic
   let entryOrderAnalysis = null;
-  const tradesWithEntryOrders = actualTrades.filter(trade => 
+  const tradesWithEntryOrders = actualTrades.filter(trade =>
     trade.breakout?.entryOrderDetails
   );
-  
+
   if (tradesWithEntryOrders.length > 0) {
-    const tradesWithEntryPriceUpdates = tradesWithEntryOrders.filter(trade => 
+    const tradesWithEntryPriceUpdates = tradesWithEntryOrders.filter(trade =>
       trade.breakout.entryOrderDetails.priceUpdates.length > 0
     );
-    
+
     const averageEntryPriceUpdates = tradesWithEntryPriceUpdates.length > 0 ?
       tradesWithEntryPriceUpdates.reduce((sum, trade) => sum + trade.breakout.entryOrderDetails.priceUpdates.length, 0) / tradesWithEntryPriceUpdates.length : 0;
-    
+
     const averageEntryPriceImprovement = tradesWithEntryOrders.length > 0 ?
       tradesWithEntryOrders.reduce((sum, trade) => {
-        const improvement = trade.type === "long" ? 
+        const improvement = trade.type === "long" ?
           trade.breakout.entryOrderDetails.originalOrderPrice - trade.breakout.entryOrderDetails.finalOrderPrice :
           trade.breakout.entryOrderDetails.finalOrderPrice - trade.breakout.entryOrderDetails.originalOrderPrice;
         return sum + improvement;
       }, 0) / tradesWithEntryOrders.length : 0;
-    
+
     entryOrderAnalysis = {
       enabled: true,
       skipOneCandleLogic: true,
       dynamicEntryAdjustment: config.entryOrderConfig?.dynamicEntryAdjustment || false,
       totalTradesWithEntryOrders: tradesWithEntryOrders.length,
       totalTradesWithEntryPriceUpdates: tradesWithEntryPriceUpdates.length,
-      entryOrderFillRate: actualTrades.length > 0 ? 
+      entryOrderFillRate: actualTrades.length > 0 ?
         (tradesWithEntryOrders.length / actualTrades.length) * 100 : 0,
       averageEntryPriceUpdates: averageEntryPriceUpdates,
       averageEntryPriceImprovement: averageEntryPriceImprovement,
@@ -1865,19 +1869,19 @@ function calculateStats(trades, capital, config) {
       config: config.entryOrderConfig
     };
   }
-  
+
   // Count entry orders that didn't result in trades
   const entryOrdersWithoutTrade = trades.filter(trade => trade.entryOrderPlaced).length;
-  
+
   // Count breakouts that didn't result in trades (including entry orders that didn't fill)
   const breakoutsWithoutEntry = trades.filter(trade => trade.breakoutDetected && !trade.profit && !trade.netProfit).length;
-  
+
   // Count breakouts outside time range
   const breakoutsOutsideTimeRange = trades.filter(trade => trade.breakoutOutsideTimeRange).length;
-  
+
   // NEW: Count breakouts rejected due to minimum stop loss percentage
   const minimumStopLossRejections = trades.filter(trade => trade.minimumStopLossRejection).length;
-  
+
   return {
     initialCapital: capital.initial,
     leverage: capital.leverage || 1,
@@ -1936,7 +1940,7 @@ function runBacktest(filePath, config = defaultConfig) {
     // Read the stock data
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const stockData = JSON.parse(fileContent);
-    
+
     // Run the backtest
     return backtest(stockData, config);
   } catch (error) {

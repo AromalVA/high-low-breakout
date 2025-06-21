@@ -2,22 +2,22 @@
   "initialCapital": 100000,
   "leverage": 5,
   "brokerageFeePercent": 0.06,
-  "finalBalance": 167676.17309000005,
-  "totalProfit": 67676.17309000007,
-  "totalGrossProfit": 83254.45000000006,
-  "totalNetProfit": 67676.17309000007,
-  "totalFees": 15578.276910000002,
-  "totalReturnPercentage": 67.67617309000006,
-  "totalGrossReturnPercentage": 83.25445000000006,
-  "totalNetReturnPercentage": 67.67617309000006,
-  "averageProfitPerTrade": 2602.929734230772,
-  "averageGrossProfitPerTrade": 3202.094230769233,
-  "averageNetProfitPerTrade": 2602.929734230772,
-  "averageProfitPercentagePerTrade": 2.6061334030833936,
-  "averageGrossProfitPercentagePerTrade": 3.205786773520448,
-  "averageNetProfitPercentagePerTrade": 2.6061334030833936,
-  "totalWinningDays": 17,
-  "totalLosingDays": 9,
+  "finalBalance": 163541.40790000008,
+  "totalProfit": 63541.40790000008,
+  "totalGrossProfit": 83914.50000000007,
+  "totalNetProfit": 63541.40790000008,
+  "totalFees": 20373.0921,
+  "totalReturnPercentage": 63.54140790000008,
+  "totalGrossReturnPercentage": 83.91450000000007,
+  "totalNetReturnPercentage": 63.54140790000008,
+  "averageProfitPerTrade": 1868.8649382352964,
+  "averageGrossProfitPerTrade": 2468.0735294117667,
+  "averageNetProfitPerTrade": 1868.8649382352964,
+  "averageProfitPercentagePerTrade": 1.8712366288465503,
+  "averageGrossProfitPercentagePerTrade": 2.4709590796374763,
+  "averageNetProfitPercentagePerTrade": 1.8712366288465503,
+  "totalWinningDays": 20,
+  "totalLosingDays": 14,
   "winningDays": [
     {
       "date": "07/12/2023",
@@ -57,7 +57,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 237157,
         "confirmationCandleVolume": 32168,
-        "averageLookbackVolume": 21819.85
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2023-12-07 11:04",
@@ -73,14 +76,8 @@
         "swingHigh": 610,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "07/12/2023 11:03 AM",
-            "preBreakoutVolume": 32168,
-            "averageVolume": 21819.85,
-            "volumeThreshold": 21819.85,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -205,7 +202,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 241804,
         "confirmationCandleVolume": 127016,
-        "averageLookbackVolume": 38660.75
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2023-12-19 11:49",
@@ -221,14 +221,8 @@
         "swingHigh": 652.35,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "19/12/2023 11:48 AM",
-            "preBreakoutVolume": 127016,
-            "averageVolume": 38660.75,
-            "volumeThreshold": 38660.75,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -353,7 +347,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 91888,
         "confirmationCandleVolume": 55520,
-        "averageLookbackVolume": 24169.35
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2023-12-22 12:33",
@@ -369,14 +366,8 @@
         "swingHigh": 649.3,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "22/12/2023 12:32 PM",
-            "preBreakoutVolume": 55520,
-            "averageVolume": 24169.35,
-            "volumeThreshold": 24169.35,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -514,7 +505,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 99306,
         "confirmationCandleVolume": 40804,
-        "averageLookbackVolume": 38796.2
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-01-11 11:51",
@@ -530,14 +524,8 @@
         "swingHigh": 625.75,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "11/01/2024 11:50 AM",
-            "preBreakoutVolume": 40804,
-            "averageVolume": 38796.2,
-            "volumeThreshold": 38796.2,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -668,7 +656,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 159489,
         "confirmationCandleVolume": 55998,
-        "averageLookbackVolume": 23360.65
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-01-12 13:36",
@@ -684,14 +675,8 @@
         "swingHigh": 632.6,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "12/01/2024 01:35 PM",
-            "preBreakoutVolume": 55998,
-            "averageVolume": 23360.65,
-            "volumeThreshold": 23360.65,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -822,7 +807,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 219207,
         "confirmationCandleVolume": 83225,
-        "averageLookbackVolume": 36327.6
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-01-31 14:00",
@@ -838,14 +826,8 @@
         "swingHigh": 635.6,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "31/01/2024 01:59 PM",
-            "preBreakoutVolume": 83225,
-            "averageVolume": 36327.6,
-            "volumeThreshold": 36327.6,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -988,7 +970,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 72479,
         "confirmationCandleVolume": 258746,
-        "averageLookbackVolume": 26196.65
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-02-15 11:39",
@@ -1004,14 +989,8 @@
         "swingHigh": 751.95,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "15/02/2024 11:38 AM",
-            "preBreakoutVolume": 258746,
-            "averageVolume": 26196.65,
-            "volumeThreshold": 26196.65,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -1114,6 +1093,152 @@
       }
     },
     {
+      "date": "19/02/2024",
+      "type": "long",
+      "entry": {
+        "price": 760.5,
+        "time": "2024-02-19 11:25",
+        "fee": 299.7891
+      },
+      "exit": {
+        "price": 761.45,
+        "time": "2024-02-19 15:02",
+        "reason": "pre-market exit limit order filled",
+        "fee": 300.16359
+      },
+      "target": 770.7,
+      "stopLoss": 751.2,
+      "shares": 657,
+      "leverage": 5,
+      "grossInvestedAmount": 499648.5,
+      "actualCapitalUsed": 99929.7,
+      "totalFees": 599.9526900000001,
+      "riskPoints": 9.299999999999955,
+      "profit": 24.197310000029802,
+      "profitPercentage": 0.024214332675900962,
+      "grossProfit": 624.1500000000299,
+      "netProfit": 24.197310000029802,
+      "grossProfitPercentage": 0.6245890861275776,
+      "netProfitPercentage": 0.024214332675900962,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 2956.5,
+      "volumeInfo": {
+        "breakoutCandleVolume": 50867,
+        "confirmationCandleVolume": 46290,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-02-19 11:18",
+        "breakoutPrice": 760.95,
+        "previousExtremeTime": "2024-02-19 09:17",
+        "timeSincePreviousExtreme": 121,
+        "previousExtremeType": "high",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 751.2,
+        "stopLossTime": "2024-02-19 09:52",
+        "swingLow": 751.2,
+        "swingHigh": 760.95,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 760.95,
+            "stopLossPrice": 751.2,
+            "actualStopLossPoints": 9.75,
+            "actualStopLossPercent": 1.2812931204415532,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 5.32665,
+            "difference": 0.5812931204415532
+          }
+        },
+        "pullbackEntryPrice": 760.95,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-02-19 11:25",
+        "actualEntryPrice": 760.5,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-02-19 11:21",
+          "orderPlacedAtCandle": 126,
+          "originalOrderPrice": 760.5,
+          "finalOrderPrice": 760.5,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 761.45,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 761.45,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-02-19 14:59",
+        "orderPlacementPrice": 761.45,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-02-19 15:02",
+        "orderFillPrice": 761.45,
+        "orderFillCandleIndex": 347,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 761.45,
+        "finalLimitPrice": 761.45,
+        "priceImprovement": 0,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
+    },
+    {
       "date": "28/02/2024",
       "type": "short",
       "entry": {
@@ -1158,7 +1283,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 85871,
         "confirmationCandleVolume": 40539,
-        "averageLookbackVolume": 25557.65
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-02-28 10:54",
@@ -1174,14 +1302,8 @@
         "swingHigh": 756.65,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "28/02/2024 10:53 AM",
-            "preBreakoutVolume": 40539,
-            "averageVolume": 25557.65,
-            "volumeThreshold": 25557.65,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -1323,7 +1445,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 362916,
         "confirmationCandleVolume": 515125,
-        "averageLookbackVolume": 72946.5
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-03-12 10:46",
@@ -1339,14 +1464,8 @@
         "swingHigh": 777.65,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "12/03/2024 10:45 AM",
-            "preBreakoutVolume": 515125,
-            "averageVolume": 72946.5,
-            "volumeThreshold": 72946.5,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -1478,7 +1597,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 116681,
         "confirmationCandleVolume": 86786,
-        "averageLookbackVolume": 58376.75
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-03-20 12:23",
@@ -1494,14 +1616,8 @@
         "swingHigh": 731.75,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "20/03/2024 12:22 PM",
-            "preBreakoutVolume": 86786,
-            "averageVolume": 58376.75,
-            "volumeThreshold": 58376.75,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -1588,6 +1704,173 @@
       }
     },
     {
+      "date": "27/03/2024",
+      "type": "short",
+      "entry": {
+        "price": 741,
+        "time": "2024-03-27 12:48",
+        "fee": 299.6604
+      },
+      "exit": {
+        "price": 734.95,
+        "time": "2024-03-27 14:23",
+        "reason": "target limit order filled",
+        "fee": 297.21378
+      },
+      "target": 735.35,
+      "stopLoss": 745.75,
+      "shares": 674,
+      "leverage": 5,
+      "grossInvestedAmount": 499434,
+      "actualCapitalUsed": 99886.8,
+      "totalFees": 596.87418,
+      "riskPoints": 4.75,
+      "profit": 3480.825819999969,
+      "profitPercentage": 3.484770580296865,
+      "grossProfit": 4077.6999999999694,
+      "netProfit": 3480.825819999969,
+      "grossProfitPercentage": 4.082321187584315,
+      "netProfitPercentage": 3.484770580296865,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 5088.69999999997,
+      "volumeInfo": {
+        "breakoutCandleVolume": 51869,
+        "confirmationCandleVolume": 9329,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-03-27 12:44",
+        "breakoutPrice": 740.5500000000001,
+        "previousExtremeTime": "2024-03-27 09:21",
+        "timeSincePreviousExtreme": 203,
+        "previousExtremeType": "low",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 745.75,
+        "stopLossTime": "2024-03-27 10:25",
+        "swingLow": 740.55,
+        "swingHigh": 745.75,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 740.5500000000001,
+            "stopLossPrice": 745.75,
+            "actualStopLossPoints": 5.199999999999932,
+            "actualStopLossPercent": 0.7021808115589672,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 5.18385,
+            "difference": 0.0021808115589672106
+          }
+        },
+        "pullbackEntryPrice": 740.5500000000001,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-03-27 12:48",
+        "actualEntryPrice": 741,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-03-27 12:46",
+          "orderPlacedAtCandle": 211,
+          "originalOrderPrice": 741,
+          "finalOrderPrice": 741,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 734.95,
+        "finalExitReason": "target limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": true,
+        "hitCandleTime": "2024-03-27 14:21",
+        "hitCandleClose": 734.95,
+        "hitCandleIndex": 306,
+        "limitOrderHistory": [
+          {
+            "action": "placed",
+            "price": 734.95,
+            "time": "2024-03-27 14:21",
+            "candleIndex": 306,
+            "reason": "target_hit"
+          }
+        ],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 734.95,
+        "finalLimitPrice": 734.95,
+        "finalExitPrice": 734.95,
+        "finalExitReason": "target limit order filled",
+        "orderFillDetails": {
+          "filledOrderPrice": 734.95,
+          "fillTime": "2024-03-27 14:23",
+          "fillCandleHigh": 734.5,
+          "fillCandleLow": 733.45,
+          "timeBetweenPlaceAndFill": 2,
+          "placedAtCandleIndex": 306,
+          "filledAtCandleIndex": 308
+        },
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": false,
+        "orderPlacementTime": null,
+        "orderPlacementPrice": null,
+        "orderPlacementCandleIndex": null,
+        "orderFilled": false,
+        "orderFillTime": null,
+        "orderFillPrice": null,
+        "orderFillCandleIndex": null,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "priceImprovement": 0,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
+    },
+    {
       "date": "02/04/2024",
       "type": "long",
       "entry": {
@@ -1632,7 +1915,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 79122,
         "confirmationCandleVolume": 109247,
-        "averageLookbackVolume": 33403.65
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-02 11:31",
@@ -1648,14 +1934,8 @@
         "swingHigh": 760.1,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "02/04/2024 11:30 AM",
-            "preBreakoutVolume": 109247,
-            "averageVolume": 33403.65,
-            "volumeThreshold": 33403.65,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -1794,7 +2074,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 172669,
         "confirmationCandleVolume": 51679,
-        "averageLookbackVolume": 38426.85
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-18 13:30",
@@ -1810,14 +2093,8 @@
         "swingHigh": 756.75,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "18/04/2024 01:29 PM",
-            "preBreakoutVolume": 51679,
-            "averageVolume": 38426.85,
-            "volumeThreshold": 38426.85,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -1956,7 +2233,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 69106,
         "confirmationCandleVolume": 40903,
-        "averageLookbackVolume": 22730.95
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-22 12:21",
@@ -1972,14 +2252,8 @@
         "swingHigh": 757.6,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "22/04/2024 12:20 PM",
-            "preBreakoutVolume": 40903,
-            "averageVolume": 22730.95,
-            "volumeThreshold": 22730.95,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -2123,7 +2397,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 124731,
         "confirmationCandleVolume": 95646,
-        "averageLookbackVolume": 35347.7
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-29 11:42",
@@ -2139,14 +2416,8 @@
         "swingHigh": 809.65,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "29/04/2024 11:41 AM",
-            "preBreakoutVolume": 95646,
-            "averageVolume": 35347.7,
-            "volumeThreshold": 35347.7,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -2249,6 +2520,168 @@
       }
     },
     {
+      "date": "08/05/2024",
+      "type": "long",
+      "entry": {
+        "price": 811.85,
+        "time": "2024-05-08 11:54",
+        "fee": 299.57265
+      },
+      "exit": {
+        "price": 819.8000000000001,
+        "time": "2024-05-08 13:31",
+        "reason": "target limit order filled",
+        "fee": 302.50620000000004
+      },
+      "target": 819.9000000000001,
+      "stopLoss": 804.1,
+      "shares": 615,
+      "leverage": 5,
+      "grossInvestedAmount": 499287.75,
+      "actualCapitalUsed": 99857.55,
+      "totalFees": 602.0788500000001,
+      "riskPoints": 7.75,
+      "profit": 4287.171150000028,
+      "profitPercentage": 4.293286937242129,
+      "grossProfit": 4889.250000000028,
+      "netProfit": 4287.171150000028,
+      "grossProfitPercentage": 4.896224672045356,
+      "netProfitPercentage": 4.293286937242129,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 5012.249999999986,
+      "volumeInfo": {
+        "breakoutCandleVolume": 61540,
+        "confirmationCandleVolume": 20137,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-05-08 11:45",
+        "breakoutPrice": 812,
+        "previousExtremeTime": "2024-05-08 10:21",
+        "timeSincePreviousExtreme": 84,
+        "previousExtremeType": "high",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 804.1,
+        "stopLossTime": "2024-05-08 10:48",
+        "swingLow": 804.1,
+        "swingHigh": 812,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 812,
+            "stopLossPrice": 804.1,
+            "actualStopLossPoints": 7.899999999999977,
+            "actualStopLossPercent": 0.972906403940884,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 5.684,
+            "difference": 0.27290640394088406
+          }
+        },
+        "pullbackEntryPrice": 812,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-05-08 11:54",
+        "actualEntryPrice": 811.85,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-05-08 11:52",
+          "orderPlacedAtCandle": 157,
+          "originalOrderPrice": 811.85,
+          "finalOrderPrice": 811.85,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 819.8000000000001,
+        "finalExitReason": "target limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": true,
+        "hitCandleTime": "2024-05-08 13:00",
+        "hitCandleClose": 819.8,
+        "hitCandleIndex": 225,
+        "limitOrderHistory": [
+          {
+            "action": "placed",
+            "price": 819.8000000000001,
+            "time": "2024-05-08 13:00",
+            "candleIndex": 225,
+            "reason": "target_hit"
+          }
+        ],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 819.8000000000001,
+        "finalLimitPrice": 819.8000000000001,
+        "finalExitPrice": 819.8000000000001,
+        "finalExitReason": "target limit order filled",
+        "orderFillDetails": {
+          "filledOrderPrice": 819.8000000000001,
+          "fillTime": "2024-05-08 13:31",
+          "fillCandleHigh": 820,
+          "fillCandleLow": 819.35,
+          "timeBetweenPlaceAndFill": 31,
+          "placedAtCandleIndex": 225,
+          "filledAtCandleIndex": 256
+        },
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": false,
+        "orderPlacementTime": null,
+        "orderPlacementPrice": null,
+        "orderPlacementCandleIndex": null,
+        "orderFilled": false,
+        "orderFillTime": null,
+        "orderFillPrice": null,
+        "orderFillCandleIndex": null,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "priceImprovement": 0,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
+    },
+    {
       "date": "09/05/2024",
       "type": "long",
       "entry": {
@@ -2294,7 +2727,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 2050730,
         "confirmationCandleVolume": 186473,
-        "averageLookbackVolume": 28768.45
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-05-09 13:47",
@@ -2310,14 +2746,8 @@
         "swingHigh": 818.25,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "09/05/2024 01:46 PM",
-            "preBreakoutVolume": 186473,
-            "averageVolume": 28768.45,
-            "volumeThreshold": 28768.45,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -2458,7 +2888,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 297531,
         "confirmationCandleVolume": 504233,
-        "averageLookbackVolume": 239034.3
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-06-04 10:43",
@@ -2474,14 +2907,8 @@
         "swingHigh": 864.8,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "04/06/2024 10:42 AM",
-            "preBreakoutVolume": 504233,
-            "averageVolume": 239034.3,
-            "volumeThreshold": 239034.3,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -2625,7 +3052,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 52257,
         "confirmationCandleVolume": 30327,
-        "averageLookbackVolume": 24668.8
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-06-10 12:13",
@@ -2641,14 +3071,8 @@
         "swingHigh": 844.75,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "10/06/2024 12:12 PM",
-            "preBreakoutVolume": 30327,
-            "averageVolume": 24668.8,
-            "volumeThreshold": 24668.8,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -2737,91 +3161,89 @@
   ],
   "losingDays": [
     {
-      "date": "08/12/2023",
-      "type": "short",
+      "date": "11/12/2023",
+      "type": "long",
       "entry": {
-        "price": 607.45,
-        "time": "2023-12-08 12:58",
-        "fee": 299.95881
+        "price": 618.95,
+        "time": "2023-12-11 10:35",
+        "fee": 299.69559000000004
       },
       "exit": {
-        "price": 612.45,
-        "time": "2023-12-08 15:02",
+        "price": 614.3000000000001,
+        "time": "2023-12-11 15:02",
         "reason": "pre-market exit limit order filled",
-        "fee": 302.42781
+        "fee": 297.44406000000004
       },
-      "target": 598.1,
-      "stopLoss": 616.6,
-      "shares": 823,
+      "target": 625.4000000000001,
+      "stopLoss": 613.3000000000001,
+      "shares": 807,
       "leverage": 5,
-      "grossInvestedAmount": 499931.35000000003,
-      "actualCapitalUsed": 99986.27,
-      "totalFees": 602.38662,
-      "riskPoints": 9.149999999999977,
-      "profit": -4717.38662,
-      "profitPercentage": -4.7180344061239605,
-      "grossProfit": -4115,
-      "netProfit": -4717.38662,
-      "grossProfitPercentage": -4.11556506708371,
-      "netProfitPercentage": -4.7180344061239605,
+      "grossInvestedAmount": 499492.65,
+      "actualCapitalUsed": 99898.53,
+      "totalFees": 597.1396500000001,
+      "riskPoints": 5.649999999999977,
+      "profit": -4349.689649999982,
+      "profitPercentage": -4.354107763147248,
+      "grossProfit": -3752.5499999999815,
+      "netProfit": -4349.689649999982,
+      "grossProfitPercentage": -3.7563615800953043,
+      "netProfitPercentage": -4.354107763147248,
       "patterns": [
+        "hammer",
         "hammer",
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 1728.3000000000188,
+      "maxFavorableExcursion": 0,
       "volumeInfo": {
-        "breakoutCandleVolume": 240823,
-        "confirmationCandleVolume": 144399,
-        "averageLookbackVolume": 19018.85
+        "breakoutCandleVolume": 68300,
+        "confirmationCandleVolume": 41795,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
-        "breakoutTime": "2023-12-08 12:48",
-        "breakoutPrice": 607.35,
-        "previousExtremeTime": "2023-12-08 10:10",
-        "timeSincePreviousExtreme": 158,
-        "previousExtremeType": "low",
+        "breakoutTime": "2023-12-11 10:32",
+        "breakoutPrice": 619.35,
+        "previousExtremeTime": "2023-12-11 09:16",
+        "timeSincePreviousExtreme": 76,
+        "previousExtremeType": "high",
         "minThresholdRequired": 70,
         "maxThresholdRequired": 300,
-        "stopLossValue": 616.6,
-        "stopLossTime": "2023-12-08 10:46",
-        "swingLow": 607.35,
-        "swingHigh": 616.6,
+        "stopLossValue": 613.3000000000001,
+        "stopLossTime": "2023-12-11 09:30",
+        "swingLow": 613.3,
+        "swingHigh": 619.35,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "08/12/2023 12:47 PM",
-            "preBreakoutVolume": 144399,
-            "averageVolume": 19018.85,
-            "volumeThreshold": 19018.85,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
           "reason": "Minimum stop loss percentage requirement met",
           "data": {
-            "currentPrice": 607.35,
-            "stopLossPrice": 616.6,
-            "actualStopLossPoints": 9.25,
-            "actualStopLossPercent": 1.5230097966576108,
+            "currentPrice": 619.35,
+            "stopLossPrice": 613.3000000000001,
+            "actualStopLossPoints": 6.0499999999999545,
+            "actualStopLossPercent": 0.9768305481553167,
             "minimumRequiredPercent": 0.7,
-            "minimumRequiredPoints": 4.25145,
-            "difference": 0.8230097966576109
+            "minimumRequiredPoints": 4.33545,
+            "difference": 0.2768305481553167
           }
         },
-        "pullbackEntryPrice": 607.35,
+        "pullbackEntryPrice": 619.35,
         "pullbackAmount": 0,
         "useBodyPricesOnly": true,
-        "actualEntryTime": "2023-12-08 12:58",
-        "actualEntryPrice": 607.45,
+        "actualEntryTime": "2023-12-11 10:35",
+        "actualEntryPrice": 618.95,
         "pullbackPercentage": 0,
         "entryOrderDetails": {
-          "orderPlacedTime": "2023-12-08 12:53",
-          "orderPlacedAtCandle": 218,
-          "originalOrderPrice": 607.45,
-          "finalOrderPrice": 607.45,
+          "orderPlacedTime": "2023-12-11 10:33",
+          "orderPlacedAtCandle": 78,
+          "originalOrderPrice": 618.95,
+          "finalOrderPrice": 618.95,
           "priceUpdates": [],
           "skipOneCandleLogic": true
         }
@@ -2837,7 +3259,7 @@
         "totalPriceUpdates": 0,
         "originalLimitPrice": null,
         "finalLimitPrice": null,
-        "finalExitPrice": 612.45,
+        "finalExitPrice": 614.3000000000001,
         "finalExitReason": "pre-market exit limit order filled",
         "maxLossPercent": 200,
         "forceMarketOrderAfterMax": true,
@@ -2856,7 +3278,7 @@
         "totalPriceUpdates": 0,
         "originalLimitPrice": null,
         "finalLimitPrice": null,
-        "finalExitPrice": 612.45,
+        "finalExitPrice": 614.3000000000001,
         "finalExitReason": "pre-market exit limit order filled",
         "orderFillDetails": null,
         "skipOneCandleLogic": true
@@ -2865,30 +3287,318 @@
         "enabled": true,
         "dynamicPriceAdjustment": true,
         "orderPlaced": true,
-        "orderPlacementTime": "2023-12-08 14:59",
-        "orderPlacementPrice": 612.2,
+        "orderPlacementTime": "2023-12-11 14:59",
+        "orderPlacementPrice": 614.7,
         "orderPlacementCandleIndex": 344,
         "orderFilled": true,
-        "orderFillTime": "2023-12-08 15:02",
-        "orderFillPrice": 612.45,
+        "orderFillTime": "2023-12-11 15:02",
+        "orderFillPrice": 614.3000000000001,
         "orderFillCandleIndex": 347,
         "preExitLimitOrderMinutes": 10,
         "priceUpdateHistory": [
           {
             "candleIndex": 346,
-            "time": "2023-12-08 15:01",
-            "oldPrice": 612.2,
-            "newPrice": 612.45,
-            "candleHigh": 612.95,
-            "candleLow": 612.3,
-            "candleClose": 612.45,
+            "time": "2023-12-11 15:01",
+            "oldPrice": 614.7,
+            "newPrice": 614.3000000000001,
+            "candleHigh": 614.55,
+            "candleLow": 614.1,
+            "candleClose": 614.3,
             "reason": "dynamic_price_adjustment"
           }
         ],
         "totalPriceUpdates": 1,
-        "originalLimitPrice": 612.2,
-        "finalLimitPrice": 612.45,
-        "priceImprovement": -0.25,
+        "originalLimitPrice": 614.7,
+        "finalLimitPrice": 614.3000000000001,
+        "priceImprovement": -0.39999999999997726,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
+    },
+    {
+      "date": "02/01/2024",
+      "type": "long",
+      "entry": {
+        "price": 643.5500000000001,
+        "time": "2024-01-02 11:49",
+        "fee": 299.63688
+      },
+      "exit": {
+        "price": 641.25,
+        "time": "2024-01-02 15:01",
+        "reason": "pre-market exit limit order filled",
+        "fee": 298.566
+      },
+      "target": 653,
+      "stopLoss": 634.6,
+      "shares": 776,
+      "leverage": 5,
+      "grossInvestedAmount": 499394.80000000005,
+      "actualCapitalUsed": 99878.96,
+      "totalFees": 598.20288,
+      "riskPoints": 8.950000000000045,
+      "profit": -2383.0028800000528,
+      "profitPercentage": -2.385890762178594,
+      "grossProfit": -1784.800000000053,
+      "netProfit": -2383.0028800000528,
+      "grossProfitPercentage": -1.786962939942559,
+      "netProfitPercentage": -2.385890762178594,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 310.39999999998236,
+      "volumeInfo": {
+        "breakoutCandleVolume": 147786,
+        "confirmationCandleVolume": 29036,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-01-02 11:37",
+        "breakoutPrice": 643.8000000000001,
+        "previousExtremeTime": "2024-01-02 09:42",
+        "timeSincePreviousExtreme": 115,
+        "previousExtremeType": "high",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 634.6,
+        "stopLossTime": "2024-01-02 10:40",
+        "swingLow": 634.6,
+        "swingHigh": 643.8,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 643.8000000000001,
+            "stopLossPrice": 634.6,
+            "actualStopLossPoints": 9.200000000000045,
+            "actualStopLossPercent": 1.4290152221186772,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 4.506600000000001,
+            "difference": 0.7290152221186772
+          }
+        },
+        "pullbackEntryPrice": 643.8000000000001,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-01-02 11:49",
+        "actualEntryPrice": 643.5500000000001,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-01-02 11:47",
+          "orderPlacedAtCandle": 152,
+          "originalOrderPrice": 643.5500000000001,
+          "finalOrderPrice": 643.5500000000001,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 641.25,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 641.25,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-01-02 14:59",
+        "orderPlacementPrice": 641.25,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-01-02 15:01",
+        "orderFillPrice": 641.25,
+        "orderFillCandleIndex": 346,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 641.25,
+        "finalLimitPrice": 641.25,
+        "priceImprovement": 0,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
+    },
+    {
+      "date": "17/01/2024",
+      "type": "short",
+      "entry": {
+        "price": 624.6,
+        "time": "2024-01-17 12:13",
+        "fee": 299.808
+      },
+      "exit": {
+        "price": 625,
+        "time": "2024-01-17 15:01",
+        "reason": "pre-market exit limit order filled",
+        "fee": 300
+      },
+      "target": 611.25,
+      "stopLoss": 636.75,
+      "shares": 800,
+      "leverage": 5,
+      "grossInvestedAmount": 499680,
+      "actualCapitalUsed": 99936,
+      "totalFees": 599.808,
+      "riskPoints": 12.149999999999977,
+      "profit": -919.8079999999818,
+      "profitPercentage": -0.9203970541146151,
+      "grossProfit": -319.9999999999818,
+      "netProfit": -919.8079999999818,
+      "grossProfitPercentage": -0.32020493115592163,
+      "netProfitPercentage": -0.9203970541146151,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 519.9999999999818,
+      "volumeInfo": {
+        "breakoutCandleVolume": 33252,
+        "confirmationCandleVolume": 38749,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-01-17 12:10",
+        "breakoutPrice": 624,
+        "previousExtremeTime": "2024-01-17 09:15",
+        "timeSincePreviousExtreme": 175,
+        "previousExtremeType": "low",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 636.75,
+        "stopLossTime": "2024-01-17 09:22",
+        "swingLow": 624,
+        "swingHigh": 636.75,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 624,
+            "stopLossPrice": 636.75,
+            "actualStopLossPoints": 12.75,
+            "actualStopLossPercent": 2.043269230769231,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 4.367999999999999,
+            "difference": 1.3432692307692309
+          }
+        },
+        "pullbackEntryPrice": 624,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-01-17 12:13",
+        "actualEntryPrice": 624.6,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-01-17 12:11",
+          "orderPlacedAtCandle": 176,
+          "originalOrderPrice": 624.6,
+          "finalOrderPrice": 624.6,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 625,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 625,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-01-17 14:59",
+        "orderPlacementPrice": 625,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-01-17 15:01",
+        "orderFillPrice": 625,
+        "orderFillCandleIndex": 346,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 625,
+        "finalLimitPrice": 625,
+        "priceImprovement": 0,
         "priceImprovementVsForcedExit": 0,
         "skipOneCandleLogic": true
       }
@@ -2930,7 +3640,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 197341,
         "confirmationCandleVolume": 103816,
-        "averageLookbackVolume": 27629.3
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-01-18 10:48",
@@ -2946,14 +3659,8 @@
         "swingHigh": 628.45,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "18/01/2024 10:47 AM",
-            "preBreakoutVolume": 103816,
-            "averageVolume": 27629.3,
-            "volumeThreshold": 27629.3,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -3083,7 +3790,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 41208,
         "confirmationCandleVolume": 113329,
-        "averageLookbackVolume": 39602.05
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-01-29 13:40",
@@ -3099,14 +3809,8 @@
         "swingHigh": 624.6,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "29/01/2024 01:39 PM",
-            "preBreakoutVolume": 113329,
-            "averageVolume": 39602.05,
-            "volumeThreshold": 39602.05,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -3193,6 +3897,164 @@
       }
     },
     {
+      "date": "12/02/2024",
+      "type": "short",
+      "entry": {
+        "price": 710.7,
+        "time": "2024-02-12 13:05",
+        "fee": 299.77326
+      },
+      "exit": {
+        "price": 711.4000000000001,
+        "time": "2024-02-12 15:02",
+        "reason": "pre-market exit limit order filled",
+        "fee": 300.06852000000003
+      },
+      "target": 701.85,
+      "stopLoss": 719.25,
+      "shares": 703,
+      "leverage": 5,
+      "grossInvestedAmount": 499622.10000000003,
+      "actualCapitalUsed": 99924.42000000001,
+      "totalFees": 599.84178,
+      "riskPoints": 8.549999999999955,
+      "profit": -1091.941780000032,
+      "profitPercentage": -1.0927676938230233,
+      "grossProfit": -492.10000000003197,
+      "netProfit": -1091.941780000032,
+      "grossProfitPercentage": -0.4924722104967253,
+      "netProfitPercentage": -1.0927676938230233,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 3971.950000000064,
+      "volumeInfo": {
+        "breakoutCandleVolume": 101337,
+        "confirmationCandleVolume": 33518,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-02-12 13:00",
+        "breakoutPrice": 710.5500000000001,
+        "previousExtremeTime": "2024-02-12 10:30",
+        "timeSincePreviousExtreme": 150,
+        "previousExtremeType": "low",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 719.25,
+        "stopLossTime": "2024-02-12 11:09",
+        "swingLow": 710.55,
+        "swingHigh": 719.25,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 710.5500000000001,
+            "stopLossPrice": 719.25,
+            "actualStopLossPoints": 8.699999999999932,
+            "actualStopLossPercent": 1.2244036309900683,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 4.97385,
+            "difference": 0.5244036309900684
+          }
+        },
+        "pullbackEntryPrice": 710.5500000000001,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-02-12 13:05",
+        "actualEntryPrice": 710.7,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-02-12 13:03",
+          "orderPlacedAtCandle": 228,
+          "originalOrderPrice": 710.7,
+          "finalOrderPrice": 710.7,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 711.4000000000001,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 711.4000000000001,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-02-12 14:59",
+        "orderPlacementPrice": 707.8000000000001,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-02-12 15:02",
+        "orderFillPrice": 711.4000000000001,
+        "orderFillCandleIndex": 347,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [
+          {
+            "candleIndex": 346,
+            "time": "2024-02-12 15:01",
+            "oldPrice": 707.8000000000001,
+            "newPrice": 711.4000000000001,
+            "candleHigh": 711.75,
+            "candleLow": 709.3,
+            "candleClose": 711.4,
+            "reason": "dynamic_price_adjustment"
+          }
+        ],
+        "totalPriceUpdates": 1,
+        "originalLimitPrice": 707.8000000000001,
+        "finalLimitPrice": 711.4000000000001,
+        "priceImprovement": -3.6000000000000227,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
+    },
+    {
       "date": "16/02/2024",
       "type": "long",
       "entry": {
@@ -3244,7 +4106,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 599700,
         "confirmationCandleVolume": 142811,
-        "averageLookbackVolume": 40241.4
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-02-16 11:50",
@@ -3260,14 +4125,8 @@
         "swingHigh": 765.95,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "16/02/2024 11:49 AM",
-            "preBreakoutVolume": 142811,
-            "averageVolume": 40241.4,
-            "volumeThreshold": 40241.4,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -3410,7 +4269,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 49313,
         "confirmationCandleVolume": 43784,
-        "averageLookbackVolume": 18044.75
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-02-26 11:42",
@@ -3426,14 +4288,8 @@
         "swingHigh": 765.9,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "26/02/2024 11:41 AM",
-            "preBreakoutVolume": 43784,
-            "averageVolume": 18044.75,
-            "volumeThreshold": 18044.75,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -3556,7 +4412,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 154042,
         "confirmationCandleVolume": 150245,
-        "averageLookbackVolume": 83135.85
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-03-06 10:41",
@@ -3572,14 +4431,8 @@
         "swingHigh": 784.9,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "06/03/2024 10:40 AM",
-            "preBreakoutVolume": 150245,
-            "averageVolume": 83135.85,
-            "volumeThreshold": 83135.85,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -3666,6 +4519,149 @@
       }
     },
     {
+      "date": "18/03/2024",
+      "type": "short",
+      "entry": {
+        "price": 727.3000000000001,
+        "time": "2024-03-18 11:10",
+        "fee": 299.79306
+      },
+      "exit": {
+        "price": 731.85,
+        "time": "2024-03-18 15:01",
+        "reason": "pre-market exit limit order filled",
+        "fee": 301.66857
+      },
+      "target": 717.6500000000001,
+      "stopLoss": 736.5500000000001,
+      "shares": 687,
+      "leverage": 5,
+      "grossInvestedAmount": 499655.10000000003,
+      "actualCapitalUsed": 99931.02,
+      "totalFees": 601.46163,
+      "riskPoints": 9.25,
+      "profit": -3727.3116299999683,
+      "profitPercentage": -3.7298845043310562,
+      "grossProfit": -3125.8499999999685,
+      "netProfit": -3727.3116299999683,
+      "grossProfitPercentage": -3.128007699711229,
+      "netProfitPercentage": -3.7298845043310562,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 3572.4000000000315,
+      "volumeInfo": {
+        "breakoutCandleVolume": 29123,
+        "confirmationCandleVolume": 36111,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-03-18 11:00",
+        "breakoutPrice": 727.1,
+        "previousExtremeTime": "2024-03-18 09:15",
+        "timeSincePreviousExtreme": 105,
+        "previousExtremeType": "low",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 736.5500000000001,
+        "stopLossTime": "2024-03-18 09:25",
+        "swingLow": 727.1,
+        "swingHigh": 736.55,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 727.1,
+            "stopLossPrice": 736.5500000000001,
+            "actualStopLossPoints": 9.450000000000045,
+            "actualStopLossPercent": 1.2996836748727885,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 5.0897,
+            "difference": 0.5996836748727885
+          }
+        },
+        "pullbackEntryPrice": 727.1,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-03-18 11:10",
+        "actualEntryPrice": 727.3000000000001,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-03-18 11:08",
+          "orderPlacedAtCandle": 113,
+          "originalOrderPrice": 727.3000000000001,
+          "finalOrderPrice": 727.3000000000001,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 731.85,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 731.85,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-03-18 14:59",
+        "orderPlacementPrice": 731.85,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-03-18 15:01",
+        "orderFillPrice": 731.85,
+        "orderFillCandleIndex": 346,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 731.85,
+        "finalLimitPrice": 731.85,
+        "priceImprovement": 0,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
+    },
+    {
       "date": "15/04/2024",
       "type": "long",
       "entry": {
@@ -3712,7 +4708,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 48459,
         "confirmationCandleVolume": 12955,
-        "averageLookbackVolume": 9031.7
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-15 11:55",
@@ -3728,14 +4727,8 @@
         "swingHigh": 759.8,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "15/04/2024 11:54 AM",
-            "preBreakoutVolume": 12955,
-            "averageVolume": 9031.7,
-            "volumeThreshold": 9031.7,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -3884,7 +4877,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 155023,
         "confirmationCandleVolume": 185469,
-        "averageLookbackVolume": 112494.75
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-30 14:05",
@@ -3900,14 +4896,8 @@
         "swingHigh": 832,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "30/04/2024 02:04 PM",
-            "preBreakoutVolume": 185469,
-            "averageVolume": 112494.75,
-            "volumeThreshold": 112494.75,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -4049,7 +5039,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 39814,
         "confirmationCandleVolume": 44330,
-        "averageLookbackVolume": 23968.05
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-05-14 12:48",
@@ -4065,14 +5058,8 @@
         "swingHigh": 817.55,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "14/05/2024 12:47 PM",
-            "preBreakoutVolume": 44330,
-            "averageVolume": 23968.05,
-            "volumeThreshold": 23968.05,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -4157,20 +5144,186 @@
         "priceImprovementVsForcedExit": 0,
         "skipOneCandleLogic": true
       }
+    },
+    {
+      "date": "16/05/2024",
+      "type": "short",
+      "entry": {
+        "price": 804.75,
+        "time": "2024-05-16 13:19",
+        "fee": 299.84985
+      },
+      "exit": {
+        "price": 810.5,
+        "time": "2024-05-16 15:02",
+        "reason": "pre-market exit limit order filled",
+        "fee": 301.9923
+      },
+      "target": 796.6,
+      "stopLoss": 812.8000000000001,
+      "shares": 621,
+      "leverage": 5,
+      "grossInvestedAmount": 499749.75,
+      "actualCapitalUsed": 99949.95,
+      "totalFees": 601.84215,
+      "riskPoints": 8.050000000000068,
+      "profit": -4172.59215,
+      "profitPercentage": -4.174681578129855,
+      "grossProfit": -3570.75,
+      "netProfit": -4172.59215,
+      "grossProfitPercentage": -3.5725380552966763,
+      "netProfitPercentage": -4.174681578129855,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 4595.399999999986,
+      "volumeInfo": {
+        "breakoutCandleVolume": 125888,
+        "confirmationCandleVolume": 26806,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-05-16 13:16",
+        "breakoutPrice": 804.7,
+        "previousExtremeTime": "2024-05-16 12:04",
+        "timeSincePreviousExtreme": 72,
+        "previousExtremeType": "low",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 812.8000000000001,
+        "stopLossTime": "2024-05-16 12:16",
+        "swingLow": 804.7,
+        "swingHigh": 812.8,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 804.7,
+            "stopLossPrice": 812.8000000000001,
+            "actualStopLossPoints": 8.100000000000023,
+            "actualStopLossPercent": 1.006586305455452,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 5.632899999999999,
+            "difference": 0.30658630545545207
+          }
+        },
+        "pullbackEntryPrice": 804.7,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-05-16 13:19",
+        "actualEntryPrice": 804.75,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-05-16 13:17",
+          "orderPlacedAtCandle": 242,
+          "originalOrderPrice": 804.75,
+          "finalOrderPrice": 804.75,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 810.5,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 810.5,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-05-16 14:59",
+        "orderPlacementPrice": 809.5,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-05-16 15:02",
+        "orderFillPrice": 810.5,
+        "orderFillCandleIndex": 347,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [
+          {
+            "candleIndex": 346,
+            "time": "2024-05-16 15:01",
+            "oldPrice": 809.5,
+            "newPrice": 810.5,
+            "candleHigh": 810.8,
+            "candleLow": 809.8,
+            "candleClose": 810.5,
+            "reason": "dynamic_price_adjustment"
+          }
+        ],
+        "totalPriceUpdates": 1,
+        "originalLimitPrice": 809.5,
+        "finalLimitPrice": 810.5,
+        "priceImprovement": -1,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
     }
   ],
-  "positiveDays": 17,
-  "negativeDays": 9,
+  "positiveDays": 20,
+  "negativeDays": 14,
   "statisticsByExitReason": {
     "pre-market exit limit order filled": {
-      "count": 16,
-      "totalProfit": -8115.017959999901,
-      "averageProfit": -507.1886224999938
+      "count": 22,
+      "totalProfit": -20017.780119999883,
+      "averageProfit": -909.8990963636311
     },
     "target limit order filled": {
-      "count": 9,
-      "totalProfit": 81277.49720999997,
-      "averageProfit": 9030.83302333333
+      "count": 11,
+      "totalProfit": 89045.49417999998,
+      "averageProfit": 8095.044925454544
     },
     "stop loss limit order filled": {
       "count": 1,
@@ -4179,14 +5332,14 @@
     }
   },
   "riskRewardAnalysis": {
-    "actualAverageRR": 0.3366322285461005,
+    "actualAverageRR": 0.24632264610289578,
     "plannedRR": 1,
-    "winRate": 0.6538461538461539
+    "winRate": 0.5882352941176471
   },
-  "winRate": 65.38461538461539,
-  "breakoutsWithoutEntry": 29,
-  "breakoutsOutsideTimeRange": 79,
-  "minimumStopLossRejections": 26,
+  "winRate": 58.82352941176471,
+  "breakoutsWithoutEntry": 44,
+  "breakoutsOutsideTimeRange": 56,
+  "minimumStopLossRejections": 39,
   "stopLossExitAnalysis": {
     "enabled": true,
     "skipOneCandleLogic": true,
@@ -4212,11 +5365,11 @@
     "enabled": true,
     "skipOneCandleLogic": true,
     "dynamicTargetAdjustment": true,
-    "totalTargetLimitOrderExits": 9,
-    "totalTradesWithTargetHit": 9,
+    "totalTargetLimitOrderExits": 11,
+    "totalTradesWithTargetHit": 11,
     "totalTradesWithDynamicAdjustment": 0,
     "targetLimitOrderFillRate": 100,
-    "averageProfitTargetLimitOrderExits": 9030.83302333333,
+    "averageProfitTargetLimitOrderExits": 8095.044925454544,
     "averageTargetPriceUpdates": 0,
     "config": {
       "enabled": true,
@@ -4228,16 +5381,16 @@
     "enabled": true,
     "skipOneCandleLogic": true,
     "dynamicPriceAdjustment": true,
-    "totalPreMarketExits": 16,
+    "totalPreMarketExits": 22,
     "totalForcedMarketExits": 0,
-    "totalTradesWithPreMarketOrders": 16,
-    "totalTradesWithDynamicPricing": 4,
+    "totalTradesWithPreMarketOrders": 22,
+    "totalTradesWithDynamicPricing": 6,
     "preMarketOrderFillRate": 100,
-    "averageProfitPreMarketExits": -507.1886224999938,
+    "averageProfitPreMarketExits": -909.8990963636311,
     "averageProfitForcedExits": 0,
     "preExitLimitOrderMinutes": 10,
     "averagePriceUpdatesPerTrade": 1,
-    "averagePriceImprovement": -0.2656249999999929,
+    "averagePriceImprovement": -0.4090909090909039,
     "averagePriceImprovementVsForcedExit": 0,
     "dynamicPricingFillRate": 100
   },
@@ -4245,7 +5398,7 @@
     "enabled": true,
     "skipOneCandleLogic": true,
     "dynamicEntryAdjustment": true,
-    "totalTradesWithEntryOrders": 26,
+    "totalTradesWithEntryOrders": 34,
     "totalTradesWithEntryPriceUpdates": 0,
     "entryOrderFillRate": 100,
     "averageEntryPriceUpdates": 0,
@@ -4264,7 +5417,7 @@
   "minimumStopLossConfig": {
     "enabled": true,
     "minimumStopLossPercent": 0.7,
-    "totalRejections": 26
+    "totalRejections": 39
   },
   "allTrades": [
     {
@@ -4284,22 +5437,22 @@
     },
     {
       "date": "04/12/2023",
-      "message": "Breakout detected but stop loss too tight (0.38% < 0.7%)",
+      "message": "Breakout detected but stop loss too tight (0.32% < 0.7%)",
       "breakoutDetected": true,
       "breakoutType": "long",
-      "breakoutTime": "2023-12-04 14:32",
-      "breakoutPrice": 592.35,
+      "breakoutTime": "2023-12-04 12:28",
+      "breakoutPrice": 591,
       "volumeRejection": false,
       "volumeData": null,
       "minimumStopLossRejection": true,
       "minimumStopLossData": {
-        "currentPrice": 592.35,
-        "stopLossPrice": 590.1,
-        "actualStopLossPoints": 2.25,
-        "actualStopLossPercent": 0.3798429982273993,
+        "currentPrice": 591,
+        "stopLossPrice": 589.1,
+        "actualStopLossPoints": 1.8999999999999773,
+        "actualStopLossPercent": 0.32148900169204353,
         "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 4.14645,
-        "difference": -0.32015700177260065
+        "minimumRequiredPoints": 4.137,
+        "difference": -0.3785109983079564
       },
       "useBodyPricesOnly": true
     },
@@ -4377,7 +5530,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 237157,
         "confirmationCandleVolume": 32168,
-        "averageLookbackVolume": 21819.85
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2023-12-07 11:04",
@@ -4393,14 +5549,8 @@
         "swingHigh": 610,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "07/12/2023 11:03 AM",
-            "preBreakoutVolume": 32168,
-            "averageVolume": 21819.85,
-            "volumeThreshold": 21819.85,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -4488,90 +5638,109 @@
     },
     {
       "date": "08/12/2023",
-      "type": "short",
+      "message": "Breakout detected but stop loss too tight (0.58% < 0.7%)",
+      "breakoutDetected": true,
+      "breakoutType": "long",
+      "breakoutTime": "2023-12-08 10:41",
+      "breakoutPrice": 610.9,
+      "volumeRejection": false,
+      "volumeData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 610.9,
+        "stopLossPrice": 607.35,
+        "actualStopLossPoints": 3.5499999999999545,
+        "actualStopLossPercent": 0.5811098379440096,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 4.276299999999999,
+        "difference": -0.11889016205599034
+      },
+      "useBodyPricesOnly": true
+    },
+    {
+      "date": "11/12/2023",
+      "type": "long",
       "entry": {
-        "price": 607.45,
-        "time": "2023-12-08 12:58",
-        "fee": 299.95881
+        "price": 618.95,
+        "time": "2023-12-11 10:35",
+        "fee": 299.69559000000004
       },
       "exit": {
-        "price": 612.45,
-        "time": "2023-12-08 15:02",
+        "price": 614.3000000000001,
+        "time": "2023-12-11 15:02",
         "reason": "pre-market exit limit order filled",
-        "fee": 302.42781
+        "fee": 297.44406000000004
       },
-      "target": 598.1,
-      "stopLoss": 616.6,
-      "shares": 823,
+      "target": 625.4000000000001,
+      "stopLoss": 613.3000000000001,
+      "shares": 807,
       "leverage": 5,
-      "grossInvestedAmount": 499931.35000000003,
-      "actualCapitalUsed": 99986.27,
-      "totalFees": 602.38662,
-      "riskPoints": 9.149999999999977,
-      "profit": -4717.38662,
-      "profitPercentage": -4.7180344061239605,
-      "grossProfit": -4115,
-      "netProfit": -4717.38662,
-      "grossProfitPercentage": -4.11556506708371,
-      "netProfitPercentage": -4.7180344061239605,
+      "grossInvestedAmount": 499492.65,
+      "actualCapitalUsed": 99898.53,
+      "totalFees": 597.1396500000001,
+      "riskPoints": 5.649999999999977,
+      "profit": -4349.689649999982,
+      "profitPercentage": -4.354107763147248,
+      "grossProfit": -3752.5499999999815,
+      "netProfit": -4349.689649999982,
+      "grossProfitPercentage": -3.7563615800953043,
+      "netProfitPercentage": -4.354107763147248,
       "patterns": [
+        "hammer",
         "hammer",
         "hammer",
         "hammer"
       ],
-      "maxFavorableExcursion": 1728.3000000000188,
+      "maxFavorableExcursion": 0,
       "volumeInfo": {
-        "breakoutCandleVolume": 240823,
-        "confirmationCandleVolume": 144399,
-        "averageLookbackVolume": 19018.85
+        "breakoutCandleVolume": 68300,
+        "confirmationCandleVolume": 41795,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
-        "breakoutTime": "2023-12-08 12:48",
-        "breakoutPrice": 607.35,
-        "previousExtremeTime": "2023-12-08 10:10",
-        "timeSincePreviousExtreme": 158,
-        "previousExtremeType": "low",
+        "breakoutTime": "2023-12-11 10:32",
+        "breakoutPrice": 619.35,
+        "previousExtremeTime": "2023-12-11 09:16",
+        "timeSincePreviousExtreme": 76,
+        "previousExtremeType": "high",
         "minThresholdRequired": 70,
         "maxThresholdRequired": 300,
-        "stopLossValue": 616.6,
-        "stopLossTime": "2023-12-08 10:46",
-        "swingLow": 607.35,
-        "swingHigh": 616.6,
+        "stopLossValue": 613.3000000000001,
+        "stopLossTime": "2023-12-11 09:30",
+        "swingLow": 613.3,
+        "swingHigh": 619.35,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "08/12/2023 12:47 PM",
-            "preBreakoutVolume": 144399,
-            "averageVolume": 19018.85,
-            "volumeThreshold": 19018.85,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
           "reason": "Minimum stop loss percentage requirement met",
           "data": {
-            "currentPrice": 607.35,
-            "stopLossPrice": 616.6,
-            "actualStopLossPoints": 9.25,
-            "actualStopLossPercent": 1.5230097966576108,
+            "currentPrice": 619.35,
+            "stopLossPrice": 613.3000000000001,
+            "actualStopLossPoints": 6.0499999999999545,
+            "actualStopLossPercent": 0.9768305481553167,
             "minimumRequiredPercent": 0.7,
-            "minimumRequiredPoints": 4.25145,
-            "difference": 0.8230097966576109
+            "minimumRequiredPoints": 4.33545,
+            "difference": 0.2768305481553167
           }
         },
-        "pullbackEntryPrice": 607.35,
+        "pullbackEntryPrice": 619.35,
         "pullbackAmount": 0,
         "useBodyPricesOnly": true,
-        "actualEntryTime": "2023-12-08 12:58",
-        "actualEntryPrice": 607.45,
+        "actualEntryTime": "2023-12-11 10:35",
+        "actualEntryPrice": 618.95,
         "pullbackPercentage": 0,
         "entryOrderDetails": {
-          "orderPlacedTime": "2023-12-08 12:53",
-          "orderPlacedAtCandle": 218,
-          "originalOrderPrice": 607.45,
-          "finalOrderPrice": 607.45,
+          "orderPlacedTime": "2023-12-11 10:33",
+          "orderPlacedAtCandle": 78,
+          "originalOrderPrice": 618.95,
+          "finalOrderPrice": 618.95,
           "priceUpdates": [],
           "skipOneCandleLogic": true
         }
@@ -4587,7 +5756,7 @@
         "totalPriceUpdates": 0,
         "originalLimitPrice": null,
         "finalLimitPrice": null,
-        "finalExitPrice": 612.45,
+        "finalExitPrice": 614.3000000000001,
         "finalExitReason": "pre-market exit limit order filled",
         "maxLossPercent": 200,
         "forceMarketOrderAfterMax": true,
@@ -4606,7 +5775,7 @@
         "totalPriceUpdates": 0,
         "originalLimitPrice": null,
         "finalLimitPrice": null,
-        "finalExitPrice": 612.45,
+        "finalExitPrice": 614.3000000000001,
         "finalExitReason": "pre-market exit limit order filled",
         "orderFillDetails": null,
         "skipOneCandleLogic": true
@@ -4615,48 +5784,33 @@
         "enabled": true,
         "dynamicPriceAdjustment": true,
         "orderPlaced": true,
-        "orderPlacementTime": "2023-12-08 14:59",
-        "orderPlacementPrice": 612.2,
+        "orderPlacementTime": "2023-12-11 14:59",
+        "orderPlacementPrice": 614.7,
         "orderPlacementCandleIndex": 344,
         "orderFilled": true,
-        "orderFillTime": "2023-12-08 15:02",
-        "orderFillPrice": 612.45,
+        "orderFillTime": "2023-12-11 15:02",
+        "orderFillPrice": 614.3000000000001,
         "orderFillCandleIndex": 347,
         "preExitLimitOrderMinutes": 10,
         "priceUpdateHistory": [
           {
             "candleIndex": 346,
-            "time": "2023-12-08 15:01",
-            "oldPrice": 612.2,
-            "newPrice": 612.45,
-            "candleHigh": 612.95,
-            "candleLow": 612.3,
-            "candleClose": 612.45,
+            "time": "2023-12-11 15:01",
+            "oldPrice": 614.7,
+            "newPrice": 614.3000000000001,
+            "candleHigh": 614.55,
+            "candleLow": 614.1,
+            "candleClose": 614.3,
             "reason": "dynamic_price_adjustment"
           }
         ],
         "totalPriceUpdates": 1,
-        "originalLimitPrice": 612.2,
-        "finalLimitPrice": 612.45,
-        "priceImprovement": -0.25,
+        "originalLimitPrice": 614.7,
+        "finalLimitPrice": 614.3000000000001,
+        "priceImprovement": -0.39999999999997726,
         "priceImprovementVsForcedExit": 0,
         "skipOneCandleLogic": true
       }
-    },
-    {
-      "date": "11/12/2023",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "long",
-      "breakoutTime": "2023-12-11 09:16",
-      "breakoutPrice": 618.3000000000001,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
-      "volumeRejection": false,
-      "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
-      "useBodyPricesOnly": true
     },
     {
       "date": "12/12/2023",
@@ -4696,22 +5850,22 @@
     },
     {
       "date": "14/12/2023",
-      "message": "Breakout detected but stop loss too tight (0.43% < 0.7%)",
+      "message": "Breakout detected but stop loss too tight (0.56% < 0.7%)",
       "breakoutDetected": true,
       "breakoutType": "short",
-      "breakoutTime": "2023-12-14 13:58",
-      "breakoutPrice": 623.0500000000001,
+      "breakoutTime": "2023-12-14 11:28",
+      "breakoutPrice": 623.3000000000001,
       "volumeRejection": false,
       "volumeData": null,
       "minimumStopLossRejection": true,
       "minimumStopLossData": {
-        "currentPrice": 623.0500000000001,
-        "stopLossPrice": 625.7,
-        "actualStopLossPoints": 2.6499999999999773,
-        "actualStopLossPercent": 0.4253270203033428,
+        "currentPrice": 623.3000000000001,
+        "stopLossPrice": 626.8000000000001,
+        "actualStopLossPoints": 3.5,
+        "actualStopLossPercent": 0.5615273544039787,
         "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 4.361350000000001,
-        "difference": -0.27467297969665716
+        "minimumRequiredPoints": 4.3631,
+        "difference": -0.13847264559602124
       },
       "useBodyPricesOnly": true
     },
@@ -4790,7 +5944,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 241804,
         "confirmationCandleVolume": 127016,
-        "averageLookbackVolume": 38660.75
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2023-12-19 11:49",
@@ -4806,14 +5963,8 @@
         "swingHigh": 652.35,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "19/12/2023 11:48 AM",
-            "preBreakoutVolume": 127016,
-            "averageVolume": 38660.75,
-            "volumeThreshold": 38660.75,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -4974,7 +6125,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 91888,
         "confirmationCandleVolume": 55520,
-        "averageLookbackVolume": 24169.35
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2023-12-22 12:33",
@@ -4990,14 +6144,8 @@
         "swingHigh": 649.3,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "22/12/2023 12:32 PM",
-            "preBreakoutVolume": 55520,
-            "averageVolume": 24169.35,
-            "volumeThreshold": 24169.35,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -5101,17 +6249,23 @@
     },
     {
       "date": "26/12/2023",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "long",
-      "breakoutTime": "2023-12-26 09:16",
-      "breakoutPrice": 638.85,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
+      "message": "Breakout detected but stop loss too tight (0.60% < 0.7%)",
+      "breakoutDetected": true,
+      "breakoutType": "short",
+      "breakoutTime": "2023-12-26 13:02",
+      "breakoutPrice": 637.45,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 637.45,
+        "stopLossPrice": 641.3000000000001,
+        "actualStopLossPoints": 3.8500000000000227,
+        "actualStopLossPercent": 0.6039689387402969,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 4.46215,
+        "difference": -0.09603106125970307
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -5182,18 +6336,147 @@
     },
     {
       "date": "02/01/2024",
-      "message": "Breakout detected but outside time threshold range (2 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "short",
-      "breakoutTime": "2024-01-02 09:17",
-      "breakoutPrice": 639.5,
-      "timeGap": 2,
-      "requiredTimeRange": "70-300",
-      "volumeRejection": false,
-      "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
-      "useBodyPricesOnly": true
+      "type": "long",
+      "entry": {
+        "price": 643.5500000000001,
+        "time": "2024-01-02 11:49",
+        "fee": 299.63688
+      },
+      "exit": {
+        "price": 641.25,
+        "time": "2024-01-02 15:01",
+        "reason": "pre-market exit limit order filled",
+        "fee": 298.566
+      },
+      "target": 653,
+      "stopLoss": 634.6,
+      "shares": 776,
+      "leverage": 5,
+      "grossInvestedAmount": 499394.80000000005,
+      "actualCapitalUsed": 99878.96,
+      "totalFees": 598.20288,
+      "riskPoints": 8.950000000000045,
+      "profit": -2383.0028800000528,
+      "profitPercentage": -2.385890762178594,
+      "grossProfit": -1784.800000000053,
+      "netProfit": -2383.0028800000528,
+      "grossProfitPercentage": -1.786962939942559,
+      "netProfitPercentage": -2.385890762178594,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 310.39999999998236,
+      "volumeInfo": {
+        "breakoutCandleVolume": 147786,
+        "confirmationCandleVolume": 29036,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-01-02 11:37",
+        "breakoutPrice": 643.8000000000001,
+        "previousExtremeTime": "2024-01-02 09:42",
+        "timeSincePreviousExtreme": 115,
+        "previousExtremeType": "high",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 634.6,
+        "stopLossTime": "2024-01-02 10:40",
+        "swingLow": 634.6,
+        "swingHigh": 643.8,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 643.8000000000001,
+            "stopLossPrice": 634.6,
+            "actualStopLossPoints": 9.200000000000045,
+            "actualStopLossPercent": 1.4290152221186772,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 4.506600000000001,
+            "difference": 0.7290152221186772
+          }
+        },
+        "pullbackEntryPrice": 643.8000000000001,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-01-02 11:49",
+        "actualEntryPrice": 643.5500000000001,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-01-02 11:47",
+          "orderPlacedAtCandle": 152,
+          "originalOrderPrice": 643.5500000000001,
+          "finalOrderPrice": 643.5500000000001,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 641.25,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 641.25,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-01-02 14:59",
+        "orderPlacementPrice": 641.25,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-01-02 15:01",
+        "orderFillPrice": 641.25,
+        "orderFillCandleIndex": 346,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 641.25,
+        "finalLimitPrice": 641.25,
+        "priceImprovement": 0,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
     },
     {
       "date": "03/01/2024",
@@ -5233,13 +6516,12 @@
     },
     {
       "date": "05/01/2024",
-      "message": "Breakout detected but outside time threshold range (2 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "long",
-      "breakoutTime": "2024-01-05 09:17",
-      "breakoutPrice": 646,
-      "timeGap": 2,
-      "requiredTimeRange": "70-300",
+      "message": "Breakout detected but no pullback entry (short)",
+      "breakoutDetected": true,
+      "breakoutType": "short",
+      "breakoutTime": "2024-01-05 12:41",
+      "breakoutPrice": 645,
+      "requiredPullbackPrice": 645,
       "volumeRejection": false,
       "volumeData": null,
       "minimumStopLossRejection": false,
@@ -5248,17 +6530,23 @@
     },
     {
       "date": "08/01/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "long",
-      "breakoutTime": "2024-01-08 09:16",
-      "breakoutPrice": 640,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
+      "message": "Breakout detected but stop loss too tight (0.48% < 0.7%)",
+      "breakoutDetected": true,
+      "breakoutType": "short",
+      "breakoutTime": "2024-01-08 11:46",
+      "breakoutPrice": 637.0500000000001,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 637.0500000000001,
+        "stopLossPrice": 640.1,
+        "actualStopLossPoints": 3.0499999999999545,
+        "actualStopLossPercent": 0.4787693273683312,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 4.45935,
+        "difference": -0.22123067263166873
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -5333,7 +6621,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 99306,
         "confirmationCandleVolume": 40804,
-        "averageLookbackVolume": 38796.2
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-01-11 11:51",
@@ -5349,14 +6640,8 @@
         "swingHigh": 625.75,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "11/01/2024 11:50 AM",
-            "preBreakoutVolume": 40804,
-            "averageVolume": 38796.2,
-            "volumeThreshold": 38796.2,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -5487,7 +6772,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 159489,
         "confirmationCandleVolume": 55998,
-        "averageLookbackVolume": 23360.65
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-01-12 13:36",
@@ -5503,14 +6791,8 @@
         "swingHigh": 632.6,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "12/01/2024 01:35 PM",
-            "preBreakoutVolume": 55998,
-            "averageVolume": 23360.65,
-            "volumeThreshold": 23360.65,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -5613,33 +6895,168 @@
     },
     {
       "date": "16/01/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
+      "message": "Breakout detected but stop loss too tight (0.44% < 0.7%)",
+      "breakoutDetected": true,
       "breakoutType": "long",
-      "breakoutTime": "2024-01-16 09:16",
-      "breakoutPrice": 640.3000000000001,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
+      "breakoutTime": "2024-01-16 11:55",
+      "breakoutPrice": 642.7,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 642.7,
+        "stopLossPrice": 639.9000000000001,
+        "actualStopLossPoints": 2.7999999999999545,
+        "actualStopLossPercent": 0.4356620507235031,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 4.4989,
+        "difference": -0.26433794927649684
+      },
       "useBodyPricesOnly": true
     },
     {
       "date": "17/01/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "long",
-      "breakoutTime": "2024-01-17 09:16",
-      "breakoutPrice": 628.8000000000001,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
-      "volumeRejection": false,
-      "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
-      "useBodyPricesOnly": true
+      "type": "short",
+      "entry": {
+        "price": 624.6,
+        "time": "2024-01-17 12:13",
+        "fee": 299.808
+      },
+      "exit": {
+        "price": 625,
+        "time": "2024-01-17 15:01",
+        "reason": "pre-market exit limit order filled",
+        "fee": 300
+      },
+      "target": 611.25,
+      "stopLoss": 636.75,
+      "shares": 800,
+      "leverage": 5,
+      "grossInvestedAmount": 499680,
+      "actualCapitalUsed": 99936,
+      "totalFees": 599.808,
+      "riskPoints": 12.149999999999977,
+      "profit": -919.8079999999818,
+      "profitPercentage": -0.9203970541146151,
+      "grossProfit": -319.9999999999818,
+      "netProfit": -919.8079999999818,
+      "grossProfitPercentage": -0.32020493115592163,
+      "netProfitPercentage": -0.9203970541146151,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 519.9999999999818,
+      "volumeInfo": {
+        "breakoutCandleVolume": 33252,
+        "confirmationCandleVolume": 38749,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-01-17 12:10",
+        "breakoutPrice": 624,
+        "previousExtremeTime": "2024-01-17 09:15",
+        "timeSincePreviousExtreme": 175,
+        "previousExtremeType": "low",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 636.75,
+        "stopLossTime": "2024-01-17 09:22",
+        "swingLow": 624,
+        "swingHigh": 636.75,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 624,
+            "stopLossPrice": 636.75,
+            "actualStopLossPoints": 12.75,
+            "actualStopLossPercent": 2.043269230769231,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 4.367999999999999,
+            "difference": 1.3432692307692309
+          }
+        },
+        "pullbackEntryPrice": 624,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-01-17 12:13",
+        "actualEntryPrice": 624.6,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-01-17 12:11",
+          "orderPlacedAtCandle": 176,
+          "originalOrderPrice": 624.6,
+          "finalOrderPrice": 624.6,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 625,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 625,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-01-17 14:59",
+        "orderPlacementPrice": 625,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-01-17 15:01",
+        "orderFillPrice": 625,
+        "orderFillCandleIndex": 346,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 625,
+        "finalLimitPrice": 625,
+        "priceImprovement": 0,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
     },
     {
       "date": "18/01/2024",
@@ -5678,7 +7095,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 197341,
         "confirmationCandleVolume": 103816,
-        "averageLookbackVolume": 27629.3
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-01-18 10:48",
@@ -5694,14 +7114,8 @@
         "swingHigh": 628.45,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "18/01/2024 10:47 AM",
-            "preBreakoutVolume": 103816,
-            "averageVolume": 27629.3,
-            "volumeThreshold": 27629.3,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -5912,7 +7326,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 41208,
         "confirmationCandleVolume": 113329,
-        "averageLookbackVolume": 39602.05
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-01-29 13:40",
@@ -5928,14 +7345,8 @@
         "swingHigh": 624.6,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "29/01/2024 01:39 PM",
-            "preBreakoutVolume": 113329,
-            "averageVolume": 39602.05,
-            "volumeThreshold": 39602.05,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -6023,17 +7434,23 @@
     },
     {
       "date": "30/01/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
+      "message": "Breakout detected but stop loss too tight (0.53% < 0.7%)",
+      "breakoutDetected": true,
       "breakoutType": "long",
-      "breakoutTime": "2024-01-30 09:16",
-      "breakoutPrice": 626.4000000000001,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
+      "breakoutTime": "2024-01-30 11:47",
+      "breakoutPrice": 628.2,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 628.2,
+        "stopLossPrice": 624.9000000000001,
+        "actualStopLossPoints": 3.2999999999999545,
+        "actualStopLossPercent": 0.525310410697223,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 4.3974,
+        "difference": -0.174689589302777
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -6081,7 +7498,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 219207,
         "confirmationCandleVolume": 83225,
-        "averageLookbackVolume": 36327.6
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-01-31 14:00",
@@ -6097,14 +7517,8 @@
         "swingHigh": 635.6,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "31/01/2024 01:59 PM",
-            "preBreakoutVolume": 83225,
-            "averageVolume": 36327.6,
-            "volumeThreshold": 36327.6,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -6303,13 +7717,12 @@
     },
     {
       "date": "09/02/2024",
-      "message": "Breakout detected but outside time threshold range (2 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "short",
-      "breakoutTime": "2024-02-09 09:17",
-      "breakoutPrice": 702.5500000000001,
-      "timeGap": 2,
-      "requiredTimeRange": "70-300",
+      "message": "Breakout detected but no pullback entry (long)",
+      "breakoutDetected": true,
+      "breakoutType": "long",
+      "breakoutTime": "2024-02-09 11:35",
+      "breakoutPrice": 708.6,
+      "requiredPullbackPrice": 708.6,
       "volumeRejection": false,
       "volumeData": null,
       "minimumStopLossRejection": false,
@@ -6318,18 +7731,161 @@
     },
     {
       "date": "12/02/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "short",
-      "breakoutTime": "2024-02-12 09:16",
-      "breakoutPrice": 721,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
-      "volumeRejection": false,
-      "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
-      "useBodyPricesOnly": true
+      "type": "short",
+      "entry": {
+        "price": 710.7,
+        "time": "2024-02-12 13:05",
+        "fee": 299.77326
+      },
+      "exit": {
+        "price": 711.4000000000001,
+        "time": "2024-02-12 15:02",
+        "reason": "pre-market exit limit order filled",
+        "fee": 300.06852000000003
+      },
+      "target": 701.85,
+      "stopLoss": 719.25,
+      "shares": 703,
+      "leverage": 5,
+      "grossInvestedAmount": 499622.10000000003,
+      "actualCapitalUsed": 99924.42000000001,
+      "totalFees": 599.84178,
+      "riskPoints": 8.549999999999955,
+      "profit": -1091.941780000032,
+      "profitPercentage": -1.0927676938230233,
+      "grossProfit": -492.10000000003197,
+      "netProfit": -1091.941780000032,
+      "grossProfitPercentage": -0.4924722104967253,
+      "netProfitPercentage": -1.0927676938230233,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 3971.950000000064,
+      "volumeInfo": {
+        "breakoutCandleVolume": 101337,
+        "confirmationCandleVolume": 33518,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-02-12 13:00",
+        "breakoutPrice": 710.5500000000001,
+        "previousExtremeTime": "2024-02-12 10:30",
+        "timeSincePreviousExtreme": 150,
+        "previousExtremeType": "low",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 719.25,
+        "stopLossTime": "2024-02-12 11:09",
+        "swingLow": 710.55,
+        "swingHigh": 719.25,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 710.5500000000001,
+            "stopLossPrice": 719.25,
+            "actualStopLossPoints": 8.699999999999932,
+            "actualStopLossPercent": 1.2244036309900683,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 4.97385,
+            "difference": 0.5244036309900684
+          }
+        },
+        "pullbackEntryPrice": 710.5500000000001,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-02-12 13:05",
+        "actualEntryPrice": 710.7,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-02-12 13:03",
+          "orderPlacedAtCandle": 228,
+          "originalOrderPrice": 710.7,
+          "finalOrderPrice": 710.7,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 711.4000000000001,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 711.4000000000001,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-02-12 14:59",
+        "orderPlacementPrice": 707.8000000000001,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-02-12 15:02",
+        "orderFillPrice": 711.4000000000001,
+        "orderFillCandleIndex": 347,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [
+          {
+            "candleIndex": 346,
+            "time": "2024-02-12 15:01",
+            "oldPrice": 707.8000000000001,
+            "newPrice": 711.4000000000001,
+            "candleHigh": 711.75,
+            "candleLow": 709.3,
+            "candleClose": 711.4,
+            "reason": "dynamic_price_adjustment"
+          }
+        ],
+        "totalPriceUpdates": 1,
+        "originalLimitPrice": 707.8000000000001,
+        "finalLimitPrice": 711.4000000000001,
+        "priceImprovement": -3.6000000000000227,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
     },
     {
       "date": "13/02/2024",
@@ -6402,7 +7958,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 72479,
         "confirmationCandleVolume": 258746,
-        "averageLookbackVolume": 26196.65
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-02-15 11:39",
@@ -6418,14 +7977,8 @@
         "swingHigh": 751.95,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "15/02/2024 11:38 AM",
-            "preBreakoutVolume": 258746,
-            "averageVolume": 26196.65,
-            "volumeThreshold": 26196.65,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -6579,7 +8132,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 599700,
         "confirmationCandleVolume": 142811,
-        "averageLookbackVolume": 40241.4
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-02-16 11:50",
@@ -6595,14 +8151,8 @@
         "swingHigh": 765.95,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "16/02/2024 11:49 AM",
-            "preBreakoutVolume": 142811,
-            "averageVolume": 40241.4,
-            "volumeThreshold": 40241.4,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -6706,24 +8256,149 @@
     },
     {
       "date": "19/02/2024",
-      "message": "Breakout detected but stop loss too tight (0.58% < 0.7%)",
-      "breakoutDetected": true,
-      "breakoutType": "long",
-      "breakoutTime": "2024-02-19 14:24",
-      "breakoutPrice": 761.6,
-      "volumeRejection": false,
-      "volumeData": null,
-      "minimumStopLossRejection": true,
-      "minimumStopLossData": {
-        "currentPrice": 761.6,
-        "stopLossPrice": 757.2,
-        "actualStopLossPoints": 4.399999999999977,
-        "actualStopLossPercent": 0.5777310924369717,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 5.3312,
-        "difference": -0.12226890756302822
+      "type": "long",
+      "entry": {
+        "price": 760.5,
+        "time": "2024-02-19 11:25",
+        "fee": 299.7891
       },
-      "useBodyPricesOnly": true
+      "exit": {
+        "price": 761.45,
+        "time": "2024-02-19 15:02",
+        "reason": "pre-market exit limit order filled",
+        "fee": 300.16359
+      },
+      "target": 770.7,
+      "stopLoss": 751.2,
+      "shares": 657,
+      "leverage": 5,
+      "grossInvestedAmount": 499648.5,
+      "actualCapitalUsed": 99929.7,
+      "totalFees": 599.9526900000001,
+      "riskPoints": 9.299999999999955,
+      "profit": 24.197310000029802,
+      "profitPercentage": 0.024214332675900962,
+      "grossProfit": 624.1500000000299,
+      "netProfit": 24.197310000029802,
+      "grossProfitPercentage": 0.6245890861275776,
+      "netProfitPercentage": 0.024214332675900962,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 2956.5,
+      "volumeInfo": {
+        "breakoutCandleVolume": 50867,
+        "confirmationCandleVolume": 46290,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-02-19 11:18",
+        "breakoutPrice": 760.95,
+        "previousExtremeTime": "2024-02-19 09:17",
+        "timeSincePreviousExtreme": 121,
+        "previousExtremeType": "high",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 751.2,
+        "stopLossTime": "2024-02-19 09:52",
+        "swingLow": 751.2,
+        "swingHigh": 760.95,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 760.95,
+            "stopLossPrice": 751.2,
+            "actualStopLossPoints": 9.75,
+            "actualStopLossPercent": 1.2812931204415532,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 5.32665,
+            "difference": 0.5812931204415532
+          }
+        },
+        "pullbackEntryPrice": 760.95,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-02-19 11:25",
+        "actualEntryPrice": 760.5,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-02-19 11:21",
+          "orderPlacedAtCandle": 126,
+          "originalOrderPrice": 760.5,
+          "finalOrderPrice": 760.5,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 761.45,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 761.45,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-02-19 14:59",
+        "orderPlacementPrice": 761.45,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-02-19 15:02",
+        "orderFillPrice": 761.45,
+        "orderFillCandleIndex": 347,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 761.45,
+        "finalLimitPrice": 761.45,
+        "priceImprovement": 0,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
     },
     {
       "date": "20/02/2024",
@@ -6757,17 +8432,23 @@
     },
     {
       "date": "22/02/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
+      "message": "Breakout detected but stop loss too tight (0.68% < 0.7%)",
+      "breakoutDetected": true,
       "breakoutType": "short",
-      "breakoutTime": "2024-02-22 09:16",
-      "breakoutPrice": 771.5,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
+      "breakoutTime": "2024-02-22 13:05",
+      "breakoutPrice": 759.5,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 759.5,
+        "stopLossPrice": 764.6500000000001,
+        "actualStopLossPoints": 5.150000000000091,
+        "actualStopLossPercent": 0.6780776826859897,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 5.3165,
+        "difference": -0.021922317314010287
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -6825,7 +8506,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 49313,
         "confirmationCandleVolume": 43784,
-        "averageLookbackVolume": 18044.75
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-02-26 11:42",
@@ -6841,14 +8525,8 @@
         "swingHigh": 765.9,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "26/02/2024 11:41 AM",
-            "preBreakoutVolume": 43784,
-            "averageVolume": 18044.75,
-            "volumeThreshold": 18044.75,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -7000,7 +8678,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 85871,
         "confirmationCandleVolume": 40539,
-        "averageLookbackVolume": 25557.65
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-02-28 10:54",
@@ -7016,14 +8697,8 @@
         "swingHigh": 756.65,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "28/02/2024 10:53 AM",
-            "preBreakoutVolume": 40539,
-            "averageVolume": 25557.65,
-            "volumeThreshold": 25557.65,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -7142,17 +8817,23 @@
     },
     {
       "date": "01/03/2024",
-      "message": "Breakout detected but outside time threshold range (7 mins)",
-      "breakoutOutsideTimeRange": true,
+      "message": "Breakout detected but stop loss too tight (0.63% < 0.7%)",
+      "breakoutDetected": true,
       "breakoutType": "long",
-      "breakoutTime": "2024-03-01 09:22",
-      "breakoutPrice": 756.6,
-      "timeGap": 7,
-      "requiredTimeRange": "70-300",
+      "breakoutTime": "2024-03-01 11:54",
+      "breakoutPrice": 757.85,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 757.85,
+        "stopLossPrice": 753.1,
+        "actualStopLossPoints": 4.75,
+        "actualStopLossPercent": 0.6267731081348551,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 5.30495,
+        "difference": -0.07322689186514486
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -7243,7 +8924,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 154042,
         "confirmationCandleVolume": 150245,
-        "averageLookbackVolume": 83135.85
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-03-06 10:41",
@@ -7259,14 +8943,8 @@
         "swingHigh": 784.9,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "06/03/2024 10:40 AM",
-            "preBreakoutVolume": 150245,
-            "averageVolume": 83135.85,
-            "volumeThreshold": 83135.85,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -7428,7 +9106,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 362916,
         "confirmationCandleVolume": 515125,
-        "averageLookbackVolume": 72946.5
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-03-12 10:46",
@@ -7444,14 +9125,8 @@
         "swingHigh": 777.65,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "12/03/2024 10:45 AM",
-            "preBreakoutVolume": 515125,
-            "averageVolume": 72946.5,
-            "volumeThreshold": 72946.5,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -7539,13 +9214,12 @@
     },
     {
       "date": "13/03/2024",
-      "message": "Breakout detected but outside time threshold range (5 mins)",
-      "breakoutOutsideTimeRange": true,
+      "message": "Breakout detected but no pullback entry (short)",
+      "breakoutDetected": true,
       "breakoutType": "short",
-      "breakoutTime": "2024-03-13 09:20",
-      "breakoutPrice": 758.6500000000001,
-      "timeGap": 5,
-      "requiredTimeRange": "70-300",
+      "breakoutTime": "2024-03-13 14:05",
+      "breakoutPrice": 750.6500000000001,
+      "requiredPullbackPrice": 750.6500000000001,
       "volumeRejection": false,
       "volumeData": null,
       "minimumStopLossRejection": false,
@@ -7584,32 +9258,166 @@
     },
     {
       "date": "18/03/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "long",
-      "breakoutTime": "2024-03-18 09:16",
-      "breakoutPrice": 727.7,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
-      "volumeRejection": false,
-      "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
-      "useBodyPricesOnly": true
+      "type": "short",
+      "entry": {
+        "price": 727.3000000000001,
+        "time": "2024-03-18 11:10",
+        "fee": 299.79306
+      },
+      "exit": {
+        "price": 731.85,
+        "time": "2024-03-18 15:01",
+        "reason": "pre-market exit limit order filled",
+        "fee": 301.66857
+      },
+      "target": 717.6500000000001,
+      "stopLoss": 736.5500000000001,
+      "shares": 687,
+      "leverage": 5,
+      "grossInvestedAmount": 499655.10000000003,
+      "actualCapitalUsed": 99931.02,
+      "totalFees": 601.46163,
+      "riskPoints": 9.25,
+      "profit": -3727.3116299999683,
+      "profitPercentage": -3.7298845043310562,
+      "grossProfit": -3125.8499999999685,
+      "netProfit": -3727.3116299999683,
+      "grossProfitPercentage": -3.128007699711229,
+      "netProfitPercentage": -3.7298845043310562,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 3572.4000000000315,
+      "volumeInfo": {
+        "breakoutCandleVolume": 29123,
+        "confirmationCandleVolume": 36111,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-03-18 11:00",
+        "breakoutPrice": 727.1,
+        "previousExtremeTime": "2024-03-18 09:15",
+        "timeSincePreviousExtreme": 105,
+        "previousExtremeType": "low",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 736.5500000000001,
+        "stopLossTime": "2024-03-18 09:25",
+        "swingLow": 727.1,
+        "swingHigh": 736.55,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 727.1,
+            "stopLossPrice": 736.5500000000001,
+            "actualStopLossPoints": 9.450000000000045,
+            "actualStopLossPercent": 1.2996836748727885,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 5.0897,
+            "difference": 0.5996836748727885
+          }
+        },
+        "pullbackEntryPrice": 727.1,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-03-18 11:10",
+        "actualEntryPrice": 727.3000000000001,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-03-18 11:08",
+          "orderPlacedAtCandle": 113,
+          "originalOrderPrice": 727.3000000000001,
+          "finalOrderPrice": 727.3000000000001,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 731.85,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 731.85,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-03-18 14:59",
+        "orderPlacementPrice": 731.85,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-03-18 15:01",
+        "orderFillPrice": 731.85,
+        "orderFillCandleIndex": 346,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 731.85,
+        "finalLimitPrice": 731.85,
+        "priceImprovement": 0,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
     },
     {
       "date": "19/03/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "long",
-      "breakoutTime": "2024-03-19 09:16",
-      "breakoutPrice": 730.7,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
+      "message": "Breakout detected but stop loss too tight (0.58% < 0.7%)",
+      "breakoutDetected": true,
+      "breakoutType": "short",
+      "breakoutTime": "2024-03-19 11:36",
+      "breakoutPrice": 726.1,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 726.1,
+        "stopLossPrice": 730.3000000000001,
+        "actualStopLossPoints": 4.2000000000000455,
+        "actualStopLossPercent": 0.5784327227654655,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 5.0827,
+        "difference": -0.12156727723453442
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -7658,7 +9466,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 116681,
         "confirmationCandleVolume": 86786,
-        "averageLookbackVolume": 58376.75
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-03-20 12:23",
@@ -7674,14 +9485,8 @@
         "swingHigh": 731.75,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "20/03/2024 12:22 PM",
-            "preBreakoutVolume": 86786,
-            "averageVolume": 58376.75,
-            "volumeThreshold": 58376.75,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -7820,18 +9625,170 @@
     },
     {
       "date": "27/03/2024",
-      "message": "Breakout detected but outside time threshold range (2 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "short",
-      "breakoutTime": "2024-03-27 09:17",
-      "breakoutPrice": 743,
-      "timeGap": 2,
-      "requiredTimeRange": "70-300",
-      "volumeRejection": false,
-      "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
-      "useBodyPricesOnly": true
+      "type": "short",
+      "entry": {
+        "price": 741,
+        "time": "2024-03-27 12:48",
+        "fee": 299.6604
+      },
+      "exit": {
+        "price": 734.95,
+        "time": "2024-03-27 14:23",
+        "reason": "target limit order filled",
+        "fee": 297.21378
+      },
+      "target": 735.35,
+      "stopLoss": 745.75,
+      "shares": 674,
+      "leverage": 5,
+      "grossInvestedAmount": 499434,
+      "actualCapitalUsed": 99886.8,
+      "totalFees": 596.87418,
+      "riskPoints": 4.75,
+      "profit": 3480.825819999969,
+      "profitPercentage": 3.484770580296865,
+      "grossProfit": 4077.6999999999694,
+      "netProfit": 3480.825819999969,
+      "grossProfitPercentage": 4.082321187584315,
+      "netProfitPercentage": 3.484770580296865,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 5088.69999999997,
+      "volumeInfo": {
+        "breakoutCandleVolume": 51869,
+        "confirmationCandleVolume": 9329,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-03-27 12:44",
+        "breakoutPrice": 740.5500000000001,
+        "previousExtremeTime": "2024-03-27 09:21",
+        "timeSincePreviousExtreme": 203,
+        "previousExtremeType": "low",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 745.75,
+        "stopLossTime": "2024-03-27 10:25",
+        "swingLow": 740.55,
+        "swingHigh": 745.75,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 740.5500000000001,
+            "stopLossPrice": 745.75,
+            "actualStopLossPoints": 5.199999999999932,
+            "actualStopLossPercent": 0.7021808115589672,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 5.18385,
+            "difference": 0.0021808115589672106
+          }
+        },
+        "pullbackEntryPrice": 740.5500000000001,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-03-27 12:48",
+        "actualEntryPrice": 741,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-03-27 12:46",
+          "orderPlacedAtCandle": 211,
+          "originalOrderPrice": 741,
+          "finalOrderPrice": 741,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 734.95,
+        "finalExitReason": "target limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": true,
+        "hitCandleTime": "2024-03-27 14:21",
+        "hitCandleClose": 734.95,
+        "hitCandleIndex": 306,
+        "limitOrderHistory": [
+          {
+            "action": "placed",
+            "price": 734.95,
+            "time": "2024-03-27 14:21",
+            "candleIndex": 306,
+            "reason": "target_hit"
+          }
+        ],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 734.95,
+        "finalLimitPrice": 734.95,
+        "finalExitPrice": 734.95,
+        "finalExitReason": "target limit order filled",
+        "orderFillDetails": {
+          "filledOrderPrice": 734.95,
+          "fillTime": "2024-03-27 14:23",
+          "fillCandleHigh": 734.5,
+          "fillCandleLow": 733.45,
+          "timeBetweenPlaceAndFill": 2,
+          "placedAtCandleIndex": 306,
+          "filledAtCandleIndex": 308
+        },
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": false,
+        "orderPlacementTime": null,
+        "orderPlacementPrice": null,
+        "orderPlacementCandleIndex": null,
+        "orderFilled": false,
+        "orderFillTime": null,
+        "orderFillPrice": null,
+        "orderFillCandleIndex": null,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "priceImprovement": 0,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
     },
     {
       "date": "28/03/2024",
@@ -7850,17 +9807,23 @@
     },
     {
       "date": "01/04/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "long",
-      "breakoutTime": "2024-04-01 09:16",
-      "breakoutPrice": 760.8000000000001,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
+      "message": "Breakout detected but stop loss too tight (0.52% < 0.7%)",
+      "breakoutDetected": true,
+      "breakoutType": "short",
+      "breakoutTime": "2024-04-01 11:09",
+      "breakoutPrice": 756.3000000000001,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 756.3000000000001,
+        "stopLossPrice": 760.2,
+        "actualStopLossPoints": 3.8999999999999773,
+        "actualStopLossPercent": 0.5156683855612821,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 5.294099999999999,
+        "difference": -0.18433161443871782
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -7908,7 +9871,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 79122,
         "confirmationCandleVolume": 109247,
-        "averageLookbackVolume": 33403.65
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-02 11:31",
@@ -7924,14 +9890,8 @@
         "swingHigh": 760.1,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "02/04/2024 11:30 AM",
-            "preBreakoutVolume": 109247,
-            "averageVolume": 33403.65,
-            "volumeThreshold": 33403.65,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -8128,16 +10088,23 @@
     },
     {
       "date": "10/04/2024",
-      "message": "Breakout detected but no pullback entry (long)",
+      "message": "Breakout detected but stop loss too tight (0.51% < 0.7%)",
       "breakoutDetected": true,
-      "breakoutType": "long",
-      "breakoutTime": "2024-04-10 14:05",
-      "breakoutPrice": 769.95,
-      "requiredPullbackPrice": 769.95,
+      "breakoutType": "short",
+      "breakoutTime": "2024-04-10 11:24",
+      "breakoutPrice": 766.0500000000001,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 766.0500000000001,
+        "stopLossPrice": 769.95,
+        "actualStopLossPoints": 3.8999999999999773,
+        "actualStopLossPercent": 0.5091051497943968,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 5.36235,
+        "difference": -0.19089485020560315
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -8208,7 +10175,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 48459,
         "confirmationCandleVolume": 12955,
-        "averageLookbackVolume": 9031.7
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-15 11:55",
@@ -8224,14 +10194,8 @@
         "swingHigh": 759.8,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "15/04/2024 11:54 AM",
-            "preBreakoutVolume": 12955,
-            "averageVolume": 9031.7,
-            "volumeThreshold": 9031.7,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -8380,7 +10344,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 172669,
         "confirmationCandleVolume": 51679,
-        "averageLookbackVolume": 38426.85
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-18 13:30",
@@ -8396,14 +10363,8 @@
         "swingHigh": 756.75,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "18/04/2024 01:29 PM",
-            "preBreakoutVolume": 51679,
-            "averageVolume": 38426.85,
-            "volumeThreshold": 38426.85,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -8502,17 +10463,23 @@
     },
     {
       "date": "19/04/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "short",
-      "breakoutTime": "2024-04-19 09:16",
-      "breakoutPrice": 734.5,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
+      "message": "Breakout detected but stop loss too tight (0.63% < 0.7%)",
+      "breakoutDetected": true,
+      "breakoutType": "long",
+      "breakoutTime": "2024-04-19 11:43",
+      "breakoutPrice": 741.45,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 741.45,
+        "stopLossPrice": 736.8000000000001,
+        "actualStopLossPoints": 4.649999999999977,
+        "actualStopLossPercent": 0.6271495043495822,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 5.19015,
+        "difference": -0.07285049565041779
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -8557,7 +10524,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 69106,
         "confirmationCandleVolume": 40903,
-        "averageLookbackVolume": 22730.95
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-22 12:21",
@@ -8573,14 +10543,8 @@
         "swingHigh": 757.6,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "22/04/2024 12:20 PM",
-            "preBreakoutVolume": 40903,
-            "averageVolume": 22730.95,
-            "volumeThreshold": 22730.95,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -8684,17 +10648,23 @@
     },
     {
       "date": "23/04/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "short",
-      "breakoutTime": "2024-04-23 09:16",
-      "breakoutPrice": 767.1500000000001,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
+      "message": "Breakout detected but stop loss too tight (0.64% < 0.7%)",
+      "breakoutDetected": true,
+      "breakoutType": "long",
+      "breakoutTime": "2024-04-23 12:15",
+      "breakoutPrice": 776.2,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 776.2,
+        "stopLossPrice": 771.2,
+        "actualStopLossPoints": 5,
+        "actualStopLossPercent": 0.6441638752898737,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 5.433400000000001,
+        "difference": -0.05583612471012622
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -8796,7 +10766,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 124731,
         "confirmationCandleVolume": 95646,
-        "averageLookbackVolume": 35347.7
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-29 11:42",
@@ -8812,14 +10785,8 @@
         "swingHigh": 809.65,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "29/04/2024 11:41 AM",
-            "preBreakoutVolume": 95646,
-            "averageVolume": 35347.7,
-            "volumeThreshold": 35347.7,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -8973,7 +10940,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 155023,
         "confirmationCandleVolume": 185469,
-        "averageLookbackVolume": 112494.75
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-04-30 14:05",
@@ -8989,14 +10959,8 @@
         "swingHigh": 832,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "30/04/2024 02:04 PM",
-            "preBreakoutVolume": 185469,
-            "averageVolume": 112494.75,
-            "volumeThreshold": 112494.75,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -9155,18 +11119,165 @@
     },
     {
       "date": "08/05/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "long",
-      "breakoutTime": "2024-05-08 09:16",
-      "breakoutPrice": 804.0500000000001,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
-      "volumeRejection": false,
-      "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
-      "useBodyPricesOnly": true
+      "type": "long",
+      "entry": {
+        "price": 811.85,
+        "time": "2024-05-08 11:54",
+        "fee": 299.57265
+      },
+      "exit": {
+        "price": 819.8000000000001,
+        "time": "2024-05-08 13:31",
+        "reason": "target limit order filled",
+        "fee": 302.50620000000004
+      },
+      "target": 819.9000000000001,
+      "stopLoss": 804.1,
+      "shares": 615,
+      "leverage": 5,
+      "grossInvestedAmount": 499287.75,
+      "actualCapitalUsed": 99857.55,
+      "totalFees": 602.0788500000001,
+      "riskPoints": 7.75,
+      "profit": 4287.171150000028,
+      "profitPercentage": 4.293286937242129,
+      "grossProfit": 4889.250000000028,
+      "netProfit": 4287.171150000028,
+      "grossProfitPercentage": 4.896224672045356,
+      "netProfitPercentage": 4.293286937242129,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 5012.249999999986,
+      "volumeInfo": {
+        "breakoutCandleVolume": 61540,
+        "confirmationCandleVolume": 20137,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-05-08 11:45",
+        "breakoutPrice": 812,
+        "previousExtremeTime": "2024-05-08 10:21",
+        "timeSincePreviousExtreme": 84,
+        "previousExtremeType": "high",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 804.1,
+        "stopLossTime": "2024-05-08 10:48",
+        "swingLow": 804.1,
+        "swingHigh": 812,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 812,
+            "stopLossPrice": 804.1,
+            "actualStopLossPoints": 7.899999999999977,
+            "actualStopLossPercent": 0.972906403940884,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 5.684,
+            "difference": 0.27290640394088406
+          }
+        },
+        "pullbackEntryPrice": 812,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-05-08 11:54",
+        "actualEntryPrice": 811.85,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-05-08 11:52",
+          "orderPlacedAtCandle": 157,
+          "originalOrderPrice": 811.85,
+          "finalOrderPrice": 811.85,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 819.8000000000001,
+        "finalExitReason": "target limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": true,
+        "hitCandleTime": "2024-05-08 13:00",
+        "hitCandleClose": 819.8,
+        "hitCandleIndex": 225,
+        "limitOrderHistory": [
+          {
+            "action": "placed",
+            "price": 819.8000000000001,
+            "time": "2024-05-08 13:00",
+            "candleIndex": 225,
+            "reason": "target_hit"
+          }
+        ],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": 819.8000000000001,
+        "finalLimitPrice": 819.8000000000001,
+        "finalExitPrice": 819.8000000000001,
+        "finalExitReason": "target limit order filled",
+        "orderFillDetails": {
+          "filledOrderPrice": 819.8000000000001,
+          "fillTime": "2024-05-08 13:31",
+          "fillCandleHigh": 820,
+          "fillCandleLow": 819.35,
+          "timeBetweenPlaceAndFill": 31,
+          "placedAtCandleIndex": 225,
+          "filledAtCandleIndex": 256
+        },
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": false,
+        "orderPlacementTime": null,
+        "orderPlacementPrice": null,
+        "orderPlacementCandleIndex": null,
+        "orderFilled": false,
+        "orderFillTime": null,
+        "orderFillPrice": null,
+        "orderFillCandleIndex": null,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "priceImprovement": 0,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
     },
     {
       "date": "09/05/2024",
@@ -9214,7 +11325,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 2050730,
         "confirmationCandleVolume": 186473,
-        "averageLookbackVolume": 28768.45
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-05-09 13:47",
@@ -9230,14 +11344,8 @@
         "swingHigh": 818.25,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "09/05/2024 01:46 PM",
-            "preBreakoutVolume": 186473,
-            "averageVolume": 28768.45,
-            "volumeThreshold": 28768.45,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -9414,7 +11522,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 39814,
         "confirmationCandleVolume": 44330,
-        "averageLookbackVolume": 23968.05
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-05-14 12:48",
@@ -9430,14 +11541,8 @@
         "swingHigh": 817.55,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "14/05/2024 12:47 PM",
-            "preBreakoutVolume": 44330,
-            "averageVolume": 23968.05,
-            "volumeThreshold": 23968.05,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -9546,18 +11651,169 @@
     },
     {
       "date": "16/05/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "short",
-      "breakoutTime": "2024-05-16 09:16",
-      "breakoutPrice": 823.95,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
-      "volumeRejection": false,
-      "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
-      "useBodyPricesOnly": true
+      "type": "short",
+      "entry": {
+        "price": 804.75,
+        "time": "2024-05-16 13:19",
+        "fee": 299.84985
+      },
+      "exit": {
+        "price": 810.5,
+        "time": "2024-05-16 15:02",
+        "reason": "pre-market exit limit order filled",
+        "fee": 301.9923
+      },
+      "target": 796.6,
+      "stopLoss": 812.8000000000001,
+      "shares": 621,
+      "leverage": 5,
+      "grossInvestedAmount": 499749.75,
+      "actualCapitalUsed": 99949.95,
+      "totalFees": 601.84215,
+      "riskPoints": 8.050000000000068,
+      "profit": -4172.59215,
+      "profitPercentage": -4.174681578129855,
+      "grossProfit": -3570.75,
+      "netProfit": -4172.59215,
+      "grossProfitPercentage": -3.5725380552966763,
+      "netProfitPercentage": -4.174681578129855,
+      "patterns": [
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer",
+        "hammer"
+      ],
+      "maxFavorableExcursion": 4595.399999999986,
+      "volumeInfo": {
+        "breakoutCandleVolume": 125888,
+        "confirmationCandleVolume": 26806,
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
+      },
+      "breakout": {
+        "breakoutTime": "2024-05-16 13:16",
+        "breakoutPrice": 804.7,
+        "previousExtremeTime": "2024-05-16 12:04",
+        "timeSincePreviousExtreme": 72,
+        "previousExtremeType": "low",
+        "minThresholdRequired": 70,
+        "maxThresholdRequired": 300,
+        "stopLossValue": 812.8000000000001,
+        "stopLossTime": "2024-05-16 12:16",
+        "swingLow": 804.7,
+        "swingHigh": 812.8,
+        "volumeConfirmation": {
+          "passed": true,
+          "reason": "Volume confirmation disabled",
+          "data": null
+        },
+        "minimumStopLossValidation": {
+          "passed": true,
+          "reason": "Minimum stop loss percentage requirement met",
+          "data": {
+            "currentPrice": 804.7,
+            "stopLossPrice": 812.8000000000001,
+            "actualStopLossPoints": 8.100000000000023,
+            "actualStopLossPercent": 1.006586305455452,
+            "minimumRequiredPercent": 0.7,
+            "minimumRequiredPoints": 5.632899999999999,
+            "difference": 0.30658630545545207
+          }
+        },
+        "pullbackEntryPrice": 804.7,
+        "pullbackAmount": 0,
+        "useBodyPricesOnly": true,
+        "actualEntryTime": "2024-05-16 13:19",
+        "actualEntryPrice": 804.75,
+        "pullbackPercentage": 0,
+        "entryOrderDetails": {
+          "orderPlacedTime": "2024-05-16 13:17",
+          "orderPlacedAtCandle": 242,
+          "originalOrderPrice": 804.75,
+          "finalOrderPrice": 804.75,
+          "priceUpdates": [],
+          "skipOneCandleLogic": true
+        }
+      },
+      "stopLossExitDetails": {
+        "enabled": true,
+        "dynamicStopLossAdjustment": true,
+        "stopLossBreached": false,
+        "breachCandleTime": null,
+        "breachCandleClose": null,
+        "breachCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 810.5,
+        "finalExitReason": "pre-market exit limit order filled",
+        "maxLossPercent": 200,
+        "forceMarketOrderAfterMax": true,
+        "circuitBreakerTriggered": false,
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "targetExitDetails": {
+        "enabled": true,
+        "dynamicTargetAdjustment": true,
+        "targetHit": false,
+        "hitCandleTime": null,
+        "hitCandleClose": null,
+        "hitCandleIndex": null,
+        "limitOrderHistory": [],
+        "totalPriceUpdates": 0,
+        "originalLimitPrice": null,
+        "finalLimitPrice": null,
+        "finalExitPrice": 810.5,
+        "finalExitReason": "pre-market exit limit order filled",
+        "orderFillDetails": null,
+        "skipOneCandleLogic": true
+      },
+      "preMarketExitDetails": {
+        "enabled": true,
+        "dynamicPriceAdjustment": true,
+        "orderPlaced": true,
+        "orderPlacementTime": "2024-05-16 14:59",
+        "orderPlacementPrice": 809.5,
+        "orderPlacementCandleIndex": 344,
+        "orderFilled": true,
+        "orderFillTime": "2024-05-16 15:02",
+        "orderFillPrice": 810.5,
+        "orderFillCandleIndex": 347,
+        "preExitLimitOrderMinutes": 10,
+        "priceUpdateHistory": [
+          {
+            "candleIndex": 346,
+            "time": "2024-05-16 15:01",
+            "oldPrice": 809.5,
+            "newPrice": 810.5,
+            "candleHigh": 810.8,
+            "candleLow": 809.8,
+            "candleClose": 810.5,
+            "reason": "dynamic_price_adjustment"
+          }
+        ],
+        "totalPriceUpdates": 1,
+        "originalLimitPrice": 809.5,
+        "finalLimitPrice": 810.5,
+        "priceImprovement": -1,
+        "priceImprovementVsForcedExit": 0,
+        "skipOneCandleLogic": true
+      }
     },
     {
       "date": "17/05/2024",
@@ -9666,17 +11922,23 @@
     },
     {
       "date": "28/05/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "long",
-      "breakoutTime": "2024-05-28 09:16",
-      "breakoutPrice": 836.4000000000001,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
+      "message": "Breakout detected but stop loss too tight (0.52% < 0.7%)",
+      "breakoutDetected": true,
+      "breakoutType": "short",
+      "breakoutTime": "2024-05-28 11:28",
+      "breakoutPrice": 832.1500000000001,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 832.1500000000001,
+        "stopLossPrice": 836.5,
+        "actualStopLossPoints": 4.349999999999909,
+        "actualStopLossPercent": 0.5227422940575508,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 5.82505,
+        "difference": -0.17725770594244916
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -9778,7 +12040,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 297531,
         "confirmationCandleVolume": 504233,
-        "averageLookbackVolume": 239034.3
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-06-04 10:43",
@@ -9794,14 +12059,8 @@
         "swingHigh": 864.8,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "04/06/2024 10:42 AM",
-            "preBreakoutVolume": 504233,
-            "averageVolume": 239034.3,
-            "volumeThreshold": 239034.3,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -9996,7 +12255,10 @@
       "volumeInfo": {
         "breakoutCandleVolume": 52257,
         "confirmationCandleVolume": 30327,
-        "averageLookbackVolume": 24668.8
+        "averageLookbackVolume": null,
+        "volumeConfirmationEnabled": false,
+        "volumeConfirmationPassed": true,
+        "volumeConfirmationReason": "Volume confirmation disabled"
       },
       "breakout": {
         "breakoutTime": "2024-06-10 12:13",
@@ -10012,14 +12274,8 @@
         "swingHigh": 844.75,
         "volumeConfirmation": {
           "passed": true,
-          "reason": "Volume confirmation passed",
-          "data": {
-            "preBreakoutCandleTime": "10/06/2024 12:12 PM",
-            "preBreakoutVolume": 30327,
-            "averageVolume": 24668.8,
-            "volumeThreshold": 24668.8,
-            "volumeMultiplier": 1
-          }
+          "reason": "Volume confirmation disabled",
+          "data": null
         },
         "minimumStopLossValidation": {
           "passed": true,
@@ -10107,17 +12363,23 @@
     },
     {
       "date": "11/06/2024",
-      "message": "Breakout detected but outside time threshold range (1 mins)",
-      "breakoutOutsideTimeRange": true,
-      "breakoutType": "short",
-      "breakoutTime": "2024-06-11 09:16",
-      "breakoutPrice": 831,
-      "timeGap": 1,
-      "requiredTimeRange": "70-300",
+      "message": "Breakout detected but stop loss too tight (0.32% < 0.7%)",
+      "breakoutDetected": true,
+      "breakoutType": "long",
+      "breakoutTime": "2024-06-11 12:54",
+      "breakoutPrice": 837.2,
       "volumeRejection": false,
       "volumeData": null,
-      "minimumStopLossRejection": false,
-      "minimumStopLossData": null,
+      "minimumStopLossRejection": true,
+      "minimumStopLossData": {
+        "currentPrice": 837.2,
+        "stopLossPrice": 834.5,
+        "actualStopLossPoints": 2.7000000000000455,
+        "actualStopLossPercent": 0.32250358337315405,
+        "minimumRequiredPercent": 0.7,
+        "minimumRequiredPoints": 5.860399999999999,
+        "difference": -0.3774964166268459
+      },
       "useBodyPricesOnly": true
     },
     {
@@ -10204,7 +12466,7 @@
       }
     },
     "volumeConfirmation": {
-      "enabled": true,
+      "enabled": false,
       "volumeMultiplier": 1,
       "lookbackPeriod": 20
     },
