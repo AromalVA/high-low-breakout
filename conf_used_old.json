@@ -1,4 +1,9 @@
 {
+  "minThreshold": 70,
+  "maxThreshold": 300,
+  "riskRewardRatio": 1,
+  "pullbackPercentage": 0,
+  "minimumStopLossPercent": 0.7,
   "entryTimeRange": {
     "enabled": true,
     "startTime": "9:15",
@@ -14,14 +19,14 @@
     "enabled": true,
     "specificDate": null,
     "dateRange": {
-      "start": "02/01/2020",
-      "end": "01/01/2023"
+      "start": "01/12/2022",
+      "end": "15/06/2023"
     }
   },
   "volumeConfirmation": {
     "enabled": true,
     "volumeMultiplier": 1,
-    "lookbackPeriod": 15
+    "lookbackPeriod": 20
   },
   "capital": {
     "initial": 100000,
@@ -49,10 +54,5 @@
   "priceRounding": {
     "enabled": true,
     "tickSize": 0.05
-  },
-  "minThreshold": 30,
-  "maxThreshold": 250,
-  "riskRewardRatio": 1.5,
-  "pullbackPercentage": 20,
-  "minimumStopLossPercent": 1.5
+  }
 }

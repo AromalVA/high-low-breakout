@@ -31,8 +31,8 @@ const BASE_CONFIG = {
     enabled: true,
     specificDate: null,
     dateRange: {
-      start: "01/12/2023",
-      end: "15/01/2024"
+      start: "01/01/2017",  // Start of date range
+      end: "01/01/2020"  // End of date range
     }
   },
   volumeConfirmation: {

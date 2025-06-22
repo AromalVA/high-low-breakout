@@ -3,63 +3,63 @@ const fs = require('fs');
 
 // Configuration for the backtest with DYNAMIC STOP LOSS, PRE-MARKET EXIT ORDERS, AND MINIMUM STOP LOSS %
 const config = {
-  minThreshold: 70,  // Minimum time threshold for breakout in minutes
-  maxThreshold: 300, // Maximum time threshold for breakout in minutes
-  riskRewardRatio: 1,  // Risk to reward ratio
-  pullbackPercentage: 0,  // Percentage of stop-loss points to wait for pullback
-  minimumStopLossPercent: 0.7, // NEW: Minimum stop loss as percentage of current price (0.5% = 0.5)
-  entryTimeRange: {
-    enabled: true,  // Whether to restrict entry times
-    startTime: "9:15", // Entry allowed from this time (24-hour format HH:MM)
-    endTime: "14:45"   // Entry allowed until this time (24-hour format HH:MM)
-  },
-  marketExitTime: {
-    enabled: true, // Whether to force exit at specific time
-    exitTime: "15:09", // Force exit at this time (24-hour format HH:MM)
-    preExitLimitOrderMinutes: 10, // Place limit order X minutes before market exit time
-    dynamicPriceAdjustment: true // Enable dynamic price adjustment for pre-market exit orders
-  },
-  dateFilter: {
-    enabled: false,  // Whether to filter by date
-    specificDate: "01/12/2023",  // Test a specific day
-    dateRange: {
-      start: null,  // Start of date range
-      end: null  // End of date range
-    }
-  },
-  volumeConfirmation: {
-    enabled: true,  // Whether to use volume confirmation
-    volumeMultiplier: 1,  // Volume must be X times the average
-    lookbackPeriod: 20  // Number of periods to look back for average volume
-  },
-  capital: {
-    initial: 100000,  // Initial capital of 100,000
-    utilizationPercent: 100,  // Use 100% of capital for each trade
-    leverage: 5,  // 5x leverage
-    brokerageFeePercent: 0.06  // 0.06% brokerage fee
-  },
-  stopLossExitConfig: {
-    enabled: true,  // Enable dynamic stop loss exit system
-    dynamicStopLossAdjustment: true,  // Enable dynamic price adjustment for stop loss orders
-    maxLossPercent: 200,  // Force market exit if loss exceeds 200% of stop loss (circuit breaker)
-    forceMarketOrderAfterMax: true,  // Use market order as circuit breaker
-    description: "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
-  },
-  targetExitConfig: {
-    enabled: true,  // Enable dynamic target exit with limit orders
-    dynamicTargetAdjustment: true,  // Enable dynamic target price adjustment
-    description: "Place limit order when target hit, skip one candle, then check for fill"
-  },
-  entryOrderConfig: {
-    enabled: true,  // Enable dynamic entry with limit orders
-    dynamicEntryAdjustment: true,  // Enable dynamic entry price adjustment
-    description: "Place limit order when pullback hit, skip one candle, then check for fill"
-  },
-  priceRounding: {
-    enabled: true,  // Enable price rounding to nearest 0.05
-    tickSize: 0.05  // Round to nearest 0.05 rupees
-  }
-};
+    "entryTimeRange": {
+      "enabled": true,
+      "startTime": "9:15",
+      "endTime": "14:45"
+    },
+    "marketExitTime": {
+      "enabled": true,
+      "exitTime": "15:09",
+      "preExitLimitOrderMinutes": 10,
+      "dynamicPriceAdjustment": true
+    },
+    "dateFilter": {
+      "enabled": true,
+      "specificDate": null,
+      "dateRange": {
+        "start": "02/01/2020",
+        "end": "01/01/2023"
+      }
+    },
+    "volumeConfirmation": {
+      "enabled": true,
+      "volumeMultiplier": 1,
+      "lookbackPeriod": 15
+    },
+    "capital": {
+      "initial": 100000,
+      "utilizationPercent": 100,
+      "leverage": 5,
+      "brokerageFeePercent": 0.06
+    },
+    "stopLossExitConfig": {
+      "enabled": true,
+      "dynamicStopLossAdjustment": true,
+      "maxLossPercent": 200,
+      "forceMarketOrderAfterMax": true,
+      "description": "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
+    },
+    "targetExitConfig": {
+      "enabled": true,
+      "dynamicTargetAdjustment": true,
+      "description": "Place limit order when target hit, skip one candle, then check for fill"
+    },
+    "entryOrderConfig": {
+      "enabled": true,
+      "dynamicEntryAdjustment": true,
+      "description": "Place limit order when pullback hit, skip one candle, then check for fill"
+    },
+    "priceRounding": {
+      "enabled": true,
+      "tickSize": 0.05
+    },
+    "minThreshold": 30,
+    "maxThreshold": 250,
+    "riskRewardRatio": 1.5,
+    "pullbackPercentage": 20,
+    "minimumStopLossPercent": 1.5
+  };
 
 // Run the backtest
 const results = runBacktest('SBIN-EQ.json', config);
