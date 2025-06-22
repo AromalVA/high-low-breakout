@@ -52,7 +52,7 @@
       "tickSize": 0.05
     },
     "minThreshold": 60,
-    "maxThreshold": 190,
+    "maxThreshold": 220,
     "riskRewardRatio": 1,
     "pullbackPercentage": 30,
     "minimumStopLossPercent": 0.75
@@ -61,7 +61,7 @@
     "totalNetProfit": 9677.186750000003,
     "totalGrossProfit": 11475.35,
     "winRate": 66.66666666666666,
-    "totalTrades": 3,
+    "totalTrades": 0,
     "averageNetProfitPerTrade": 3225.7289166666674,
     "totalNetReturnPercentage": 9.677186750000002,
     "averageGrossProfitPerTrade": 3825.116666666667,
@@ -72,10 +72,12 @@
     "minimumStopLossRejections": 8
   },
   "optimizationInfo": {
-    "combinationNumber": 88450,
+    "combinationNumber": 92400,
     "totalCombinations": 92400,
-    "progressPercentage": "95.73",
-    "timestamp": "2025-06-22T18:47:17.276Z",
+    "progressPercentage": "100.00",
+    "timestamp": "2025-06-22T18:57:59.197Z",
+    "isLiveSave": false,
+    "saveType": "FINAL_RESULT",
     "dateRange": {
       "start": "01/12/2023",
       "end": "15/06/2024"
@@ -84,7 +86,7 @@
   },
   "parameterValues": {
     "minThreshold": 60,
-    "maxThreshold": 190,
+    "maxThreshold": 220,
     "riskRewardRatio": 1,
     "pullbackPercentage": 30,
     "minimumStopLossPercent": 0.75,

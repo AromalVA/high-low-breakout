@@ -150,7 +150,7 @@ function splitIntoChunks(combinations, numChunks) {
 /**
  * Save the best configuration to file
  */
-function saveBestConfig(bestResult, combinationNumber, totalCombinations) {
+function saveBestConfig(bestResult, combinationNumber, totalCombinations, isLiveSave = false) {
   const output = {
     bestConfiguration: bestResult.config,
     results: {
@@ -172,6 +172,8 @@ function saveBestConfig(bestResult, combinationNumber, totalCombinations) {
       totalCombinations: totalCombinations,
       progressPercentage: ((combinationNumber / totalCombinations) * 100).toFixed(2),
       timestamp: new Date().toISOString(),
+      isLiveSave: isLiveSave,
+      saveType: isLiveSave ? 'LIVE_UPDATE' : 'FINAL_RESULT',
       dateRange: {
         start: "01/12/2023",
         end: "15/06/2024"
@@ -190,12 +192,42 @@ function saveBestConfig(bestResult, combinationNumber, totalCombinations) {
   };
   
   try {
+    // Write to main file only
     fs.writeFileSync('best_conf.json', JSON.stringify(output, null, 2));
     return true;
   } catch (error) {
-    console.error('Error saving best configuration:', error.message);
+    console.error(`❌ Error saving best configuration: ${error.message}`);
     return false;
   }
+}
+
+/**
+ * Load existing best configuration if it exists
+ */
+function loadExistingBestConfig() {
+  try {
+    if (fs.existsSync('best_conf.json')) {
+      const content = fs.readFileSync('best_conf.json', 'utf8');
+      const existing = JSON.parse(content);
+      
+      if (existing.results && typeof existing.results.totalNetProfit === 'number') {
+        console.log(`📁 Found existing best configuration with profit: ₹${existing.results.totalNetProfit.toFixed(2)}`);
+        return {
+          profit: existing.results.totalNetProfit,
+          config: existing.bestConfiguration,
+          results: existing.results
+        };
+      }
+    }
+  } catch (error) {
+    console.warn(`⚠️  Could not load existing configuration: ${error.message}`);
+  }
+  
+  return {
+    profit: -Infinity,
+    config: null,
+    results: null
+  };
 }
 
 // ============================================================================
@@ -335,6 +367,14 @@ if (!isMainThread) {
           };
           
           console.log(`Worker ${workerId}: New best profit: ₹${bestResult.profit.toFixed(2)} (was ₹${bestResult.profit === results.totalNetProfit ? 'first' : 'previous'})`);
+          
+          // Immediately notify main thread of new best result for live saving
+          parentPort.postMessage({
+            type: 'new_best',
+            workerId: workerId,
+            bestResult: bestResult,
+            processedCount: processedCount
+          });
         }
         
         // Report progress every 50 combinations
@@ -401,6 +441,10 @@ async function main() {
     process.exit(1);
   }
   
+  // Load existing best configuration if available
+  console.log('📁 Loading existing best configuration...');
+  let globalBestResult = loadExistingBestConfig();
+  
   // Quick validation of stock data and backtest function
   console.log('📁 Validating stock data file and backtest function...');
   try {
@@ -460,16 +504,11 @@ async function main() {
   });
   
   // Initialize tracking variables
-  let globalBestResult = {
-    profit: -Infinity,
-    config: null,
-    results: null
-  };
-  
   let totalProcessed = 0;
   const startTime = Date.now();
   const workerStats = new Map();
   let lastProgressTime = startTime;
+  let lastSaveTime = startTime;
   
   // Create and start worker threads (limit to CPU count)
   console.log('\n🚀 Starting optimization with worker threads...\n');
@@ -518,6 +557,35 @@ async function main() {
             lastProgressTime = currentTime;
           }
           
+        } else if (message.type === 'new_best') {
+          // Handle immediate best result notification for live saving
+          if (message.bestResult.profit > globalBestResult.profit) {
+            console.log(`🔄 LIVE UPDATE: New global best from Worker ${message.workerId}!`);
+            console.log(`   Previous best: ₹${globalBestResult.profit === -Infinity ? 'None' : globalBestResult.profit.toFixed(2)}`);
+            console.log(`   New best: ₹${message.bestResult.profit.toFixed(2)}`);
+            
+            globalBestResult = {
+              profit: message.bestResult.profit,
+              config: message.bestResult.config,
+              results: message.bestResult.results
+            };
+            
+            // LIVE SAVE: Save immediately when new best is found
+            const saveSuccess = saveBestConfig(globalBestResult, totalProcessed + message.processedCount, combinations.length, true);
+            
+            if (saveSuccess) {
+              console.log(`   💾 ✅ LIVE SAVE: Configuration saved to best_conf.json`);
+            } else {
+              console.log(`   💾 ❌ LIVE SAVE FAILED!`);
+            }
+            
+            if (message.bestResult.params) {
+              console.log(`   📊 Config: minT=${message.bestResult.params.minThreshold}, maxT=${message.bestResult.params.maxThreshold}, RR=${message.bestResult.params.riskRewardRatio}, PB=${message.bestResult.params.pullbackPercentage}%, MinSL=${message.bestResult.params.minimumStopLossPercent}%, Vol=${message.bestResult.params.volumeMultiplier}x, LB=${message.bestResult.params.lookbackPeriod}`);
+            }
+            
+            lastSaveTime = Date.now();
+          }
+          
         } else if (message.type === 'error') {
           if (message.fatal) {
             console.error(`❌ Worker ${message.workerId} fatal error:`, message.error);
@@ -527,11 +595,11 @@ async function main() {
           }
           
         } else if (message.type === 'result') {
-          console.log(`📥 Received result from Worker ${message.workerId}: profit = ${message.bestResult.profit}`);
+          console.log(`📥 Final result from Worker ${message.workerId}: profit = ${message.bestResult.profit}`);
           
-          // Check if this worker found a better result
+          // Check if this worker found a better result (shouldn't happen due to live updates, but just in case)
           if (message.bestResult.profit > globalBestResult.profit) {
-            console.log(`🔄 Updating global best from ₹${globalBestResult.profit === -Infinity ? 'None' : globalBestResult.profit.toFixed(2)} to ₹${message.bestResult.profit.toFixed(2)}`);
+            console.log(`🔄 Final update: Worker ${message.workerId} found better result than live updates!`);
             
             globalBestResult = {
               profit: message.bestResult.profit,
@@ -539,18 +607,12 @@ async function main() {
               results: message.bestResult.results
             };
             
-            // Save the best configuration immediately
-            const saveSuccess = saveBestConfig(globalBestResult, totalProcessed, combinations.length);
+            // Save the best configuration
+            const saveSuccess = saveBestConfig(globalBestResult, totalProcessed, combinations.length, false);
             
-            console.log(`🎉 NEW GLOBAL BEST! Worker ${message.workerId} found profit: ₹${globalBestResult.profit.toFixed(2)}`);
-            if (message.bestResult.params) {
-              console.log(`   Config: minT=${message.bestResult.params.minThreshold}, maxT=${message.bestResult.params.maxThreshold}, RR=${message.bestResult.params.riskRewardRatio}, PB=${message.bestResult.params.pullbackPercentage}%, MinSL=${message.bestResult.params.minimumStopLossPercent}%, Vol=${message.bestResult.params.volumeMultiplier}x, LB=${message.bestResult.params.lookbackPeriod}`);
-            }
             if (saveSuccess) {
-              console.log(`   💾 Configuration saved to best_conf.json`);
+              console.log(`   💾 Final configuration saved to best_conf.json`);
             }
-          } else {
-            console.log(`📊 Worker ${message.workerId} result (₹${message.bestResult.profit.toFixed(2)}) not better than current best (₹${globalBestResult.profit === -Infinity ? 'None' : globalBestResult.profit.toFixed(2)})`);
           }
           
           totalProcessed += message.processedCount;
@@ -581,6 +643,14 @@ async function main() {
     
     // Final cleanup
     workers.forEach(worker => worker.terminate());
+    
+    // Final save (in case no live saves occurred)
+    if (globalBestResult.profit > -Infinity) {
+      const finalSaveSuccess = saveBestConfig(globalBestResult, combinations.length, combinations.length, false);
+      if (finalSaveSuccess) {
+        console.log(`💾 Final configuration confirmed in best_conf.json`);
+      }
+    }
     
     // Final results
     const totalTime = (Date.now() - startTime) / 1000;
@@ -646,5 +716,6 @@ module.exports = {
   createConfig,
   saveBestConfig,
   generateAllCombinations,
-  splitIntoChunks
+  splitIntoChunks,
+  loadExistingBestConfig
 };
