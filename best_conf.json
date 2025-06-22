@@ -1,0 +1,93 @@
+{
+  "bestConfiguration": {
+    "entryTimeRange": {
+      "enabled": true,
+      "startTime": "9:15",
+      "endTime": "14:45"
+    },
+    "marketExitTime": {
+      "enabled": true,
+      "exitTime": "15:09",
+      "preExitLimitOrderMinutes": 10,
+      "dynamicPriceAdjustment": true
+    },
+    "dateFilter": {
+      "enabled": true,
+      "specificDate": null,
+      "dateRange": {
+        "start": "01/12/2023",
+        "end": "15/06/2024"
+      }
+    },
+    "volumeConfirmation": {
+      "enabled": true,
+      "volumeMultiplier": 2,
+      "lookbackPeriod": 15
+    },
+    "capital": {
+      "initial": 100000,
+      "utilizationPercent": 100,
+      "leverage": 5,
+      "brokerageFeePercent": 0.06
+    },
+    "stopLossExitConfig": {
+      "enabled": true,
+      "dynamicStopLossAdjustment": true,
+      "maxLossPercent": 200,
+      "forceMarketOrderAfterMax": true,
+      "description": "Wait for actual SL breach, place limit order at breach candle close, dynamically adjust if not filled"
+    },
+    "targetExitConfig": {
+      "enabled": true,
+      "dynamicTargetAdjustment": true,
+      "description": "Place limit order when target hit, skip one candle, then check for fill"
+    },
+    "entryOrderConfig": {
+      "enabled": true,
+      "dynamicEntryAdjustment": true,
+      "description": "Place limit order when pullback hit, skip one candle, then check for fill"
+    },
+    "priceRounding": {
+      "enabled": true,
+      "tickSize": 0.05
+    },
+    "minThreshold": 30,
+    "maxThreshold": 280,
+    "riskRewardRatio": 3,
+    "pullbackPercentage": 0,
+    "minimumStopLossPercent": 1.25
+  },
+  "results": {
+    "totalNetProfit": 67848.03434000004,
+    "totalGrossProfit": 72628.40000000004,
+    "winRate": 75,
+    "totalTrades": 8,
+    "averageNetProfitPerTrade": 8481.004292500005,
+    "totalNetReturnPercentage": 67.84803434000004,
+    "averageGrossProfitPerTrade": 9078.550000000005,
+    "totalGrossReturnPercentage": 72.62840000000004,
+    "totalFees": 4780.3656599999995,
+    "breakoutsWithoutEntry": 51,
+    "breakoutsOutsideTimeRange": 75,
+    "minimumStopLossRejections": 51
+  },
+  "optimizationInfo": {
+    "combinationNumber": 11467,
+    "totalCombinations": 94080,
+    "progressPercentage": "12.19",
+    "timestamp": "2025-06-22T18:23:29.985Z",
+    "dateRange": {
+      "start": "01/12/2023",
+      "end": "15/06/2024"
+    }
+  },
+  "parameterValues": {
+    "minThreshold": 30,
+    "maxThreshold": 280,
+    "riskRewardRatio": 3,
+    "pullbackPercentage": 0,
+    "minimumStopLossPercent": 1.25,
+    "volumeMultiplier": 2,
+    "lookbackPeriod": 15
+  }
+}

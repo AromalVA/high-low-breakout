@@ -24,7 +24,7 @@
     }
   },
   "volumeConfirmation": {
-    "enabled": false,
+    "enabled": true,
     "volumeMultiplier": 1,
     "lookbackPeriod": 20
   },

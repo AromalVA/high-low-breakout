@@ -6,24 +6,24 @@
   "analysis": {
     "enabled": true,
     "minimumStopLossPercent": 0.7,
-    "totalRejections": 39
+    "totalRejections": 26
   },
   "rejectedBreakouts": [
     {
       "date": "04/12/2023",
       "breakoutType": "long",
-      "breakoutTime": "2023-12-04 12:28",
-      "breakoutPrice": 591,
+      "breakoutTime": "2023-12-04 14:32",
+      "breakoutPrice": 592.35,
       "minimumStopLossData": {
-        "currentPrice": 591,
-        "stopLossPrice": 589.1,
-        "actualStopLossPoints": 1.8999999999999773,
-        "actualStopLossPercent": 0.32148900169204353,
+        "currentPrice": 592.35,
+        "stopLossPrice": 590.1,
+        "actualStopLossPoints": 2.25,
+        "actualStopLossPercent": 0.3798429982273993,
         "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 4.137,
-        "difference": -0.3785109983079564
+        "minimumRequiredPoints": 4.14645,
+        "difference": -0.32015700177260065
       },
-      "message": "Breakout detected but stop loss too tight (0.32% < 0.7%)"
+      "message": "Breakout detected but stop loss too tight (0.38% < 0.7%)"
     },
     {
       "date": "06/12/2023",
@@ -40,22 +40,6 @@
         "difference": -0.0185550082101843
       },
       "message": "Breakout detected but stop loss too tight (0.68% < 0.7%)"
-    },
-    {
-      "date": "08/12/2023",
-      "breakoutType": "long",
-      "breakoutTime": "2023-12-08 10:41",
-      "breakoutPrice": 610.9,
-      "minimumStopLossData": {
-        "currentPrice": 610.9,
-        "stopLossPrice": 607.35,
-        "actualStopLossPoints": 3.5499999999999545,
-        "actualStopLossPercent": 0.5811098379440096,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 4.276299999999999,
-        "difference": -0.11889016205599034
-      },
-      "message": "Breakout detected but stop loss too tight (0.58% < 0.7%)"
     },
     {
       "date": "13/12/2023",
@@ -76,18 +60,18 @@
     {
       "date": "14/12/2023",
       "breakoutType": "short",
-      "breakoutTime": "2023-12-14 11:28",
-      "breakoutPrice": 623.3000000000001,
+      "breakoutTime": "2023-12-14 13:58",
+      "breakoutPrice": 623.0500000000001,
       "minimumStopLossData": {
-        "currentPrice": 623.3000000000001,
-        "stopLossPrice": 626.8000000000001,
-        "actualStopLossPoints": 3.5,
-        "actualStopLossPercent": 0.5615273544039787,
+        "currentPrice": 623.0500000000001,
+        "stopLossPrice": 625.7,
+        "actualStopLossPoints": 2.6499999999999773,
+        "actualStopLossPercent": 0.4253270203033428,
         "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 4.3631,
-        "difference": -0.13847264559602124
+        "minimumRequiredPoints": 4.361350000000001,
+        "difference": -0.27467297969665716
       },
-      "message": "Breakout detected but stop loss too tight (0.56% < 0.7%)"
+      "message": "Breakout detected but stop loss too tight (0.43% < 0.7%)"
     },
     {
       "date": "15/12/2023",
@@ -122,22 +106,6 @@
       "message": "Breakout detected but stop loss too tight (0.38% < 0.7%)"
     },
     {
-      "date": "26/12/2023",
-      "breakoutType": "short",
-      "breakoutTime": "2023-12-26 13:02",
-      "breakoutPrice": 637.45,
-      "minimumStopLossData": {
-        "currentPrice": 637.45,
-        "stopLossPrice": 641.3000000000001,
-        "actualStopLossPoints": 3.8500000000000227,
-        "actualStopLossPercent": 0.6039689387402969,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 4.46215,
-        "difference": -0.09603106125970307
-      },
-      "message": "Breakout detected but stop loss too tight (0.60% < 0.7%)"
-    },
-    {
       "date": "29/12/2023",
       "breakoutType": "short",
       "breakoutTime": "2023-12-29 14:16",
@@ -170,22 +138,6 @@
       "message": "Breakout detected but stop loss too tight (0.69% < 0.7%)"
     },
     {
-      "date": "08/01/2024",
-      "breakoutType": "short",
-      "breakoutTime": "2024-01-08 11:46",
-      "breakoutPrice": 637.0500000000001,
-      "minimumStopLossData": {
-        "currentPrice": 637.0500000000001,
-        "stopLossPrice": 640.1,
-        "actualStopLossPoints": 3.0499999999999545,
-        "actualStopLossPercent": 0.4787693273683312,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 4.45935,
-        "difference": -0.22123067263166873
-      },
-      "message": "Breakout detected but stop loss too tight (0.48% < 0.7%)"
-    },
-    {
       "date": "09/01/2024",
       "breakoutType": "short",
       "breakoutTime": "2024-01-09 14:18",
@@ -200,22 +152,6 @@
         "difference": -0.024592769169646367
       },
       "message": "Breakout detected but stop loss too tight (0.68% < 0.7%)"
-    },
-    {
-      "date": "16/01/2024",
-      "breakoutType": "long",
-      "breakoutTime": "2024-01-16 11:55",
-      "breakoutPrice": 642.7,
-      "minimumStopLossData": {
-        "currentPrice": 642.7,
-        "stopLossPrice": 639.9000000000001,
-        "actualStopLossPoints": 2.7999999999999545,
-        "actualStopLossPercent": 0.4356620507235031,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 4.4989,
-        "difference": -0.26433794927649684
-      },
-      "message": "Breakout detected but stop loss too tight (0.44% < 0.7%)"
     },
     {
       "date": "20/01/2024",
@@ -234,22 +170,6 @@
       "message": "Breakout detected but stop loss too tight (0.47% < 0.7%)"
     },
     {
-      "date": "30/01/2024",
-      "breakoutType": "long",
-      "breakoutTime": "2024-01-30 11:47",
-      "breakoutPrice": 628.2,
-      "minimumStopLossData": {
-        "currentPrice": 628.2,
-        "stopLossPrice": 624.9000000000001,
-        "actualStopLossPoints": 3.2999999999999545,
-        "actualStopLossPercent": 0.525310410697223,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 4.3974,
-        "difference": -0.174689589302777
-      },
-      "message": "Breakout detected but stop loss too tight (0.53% < 0.7%)"
-    },
-    {
       "date": "01/02/2024",
       "breakoutType": "short",
       "breakoutTime": "2024-02-01 11:18",
@@ -266,20 +186,20 @@
       "message": "Breakout detected but stop loss too tight (0.64% < 0.7%)"
     },
     {
-      "date": "22/02/2024",
-      "breakoutType": "short",
-      "breakoutTime": "2024-02-22 13:05",
-      "breakoutPrice": 759.5,
+      "date": "19/02/2024",
+      "breakoutType": "long",
+      "breakoutTime": "2024-02-19 14:24",
+      "breakoutPrice": 761.6,
       "minimumStopLossData": {
-        "currentPrice": 759.5,
-        "stopLossPrice": 764.6500000000001,
-        "actualStopLossPoints": 5.150000000000091,
-        "actualStopLossPercent": 0.6780776826859897,
+        "currentPrice": 761.6,
+        "stopLossPrice": 757.2,
+        "actualStopLossPoints": 4.399999999999977,
+        "actualStopLossPercent": 0.5777310924369717,
         "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 5.3165,
-        "difference": -0.021922317314010287
+        "minimumRequiredPoints": 5.3312,
+        "difference": -0.12226890756302822
       },
-      "message": "Breakout detected but stop loss too tight (0.68% < 0.7%)"
+      "message": "Breakout detected but stop loss too tight (0.58% < 0.7%)"
     },
     {
       "date": "27/02/2024",
@@ -296,22 +216,6 @@
         "difference": -0.3554237625074518
       },
       "message": "Breakout detected but stop loss too tight (0.34% < 0.7%)"
-    },
-    {
-      "date": "01/03/2024",
-      "breakoutType": "long",
-      "breakoutTime": "2024-03-01 11:54",
-      "breakoutPrice": 757.85,
-      "minimumStopLossData": {
-        "currentPrice": 757.85,
-        "stopLossPrice": 753.1,
-        "actualStopLossPoints": 4.75,
-        "actualStopLossPercent": 0.6267731081348551,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 5.30495,
-        "difference": -0.07322689186514486
-      },
-      "message": "Breakout detected but stop loss too tight (0.63% < 0.7%)"
     },
     {
       "date": "05/03/2024",
@@ -346,22 +250,6 @@
       "message": "Breakout detected but stop loss too tight (0.65% < 0.7%)"
     },
     {
-      "date": "19/03/2024",
-      "breakoutType": "short",
-      "breakoutTime": "2024-03-19 11:36",
-      "breakoutPrice": 726.1,
-      "minimumStopLossData": {
-        "currentPrice": 726.1,
-        "stopLossPrice": 730.3000000000001,
-        "actualStopLossPoints": 4.2000000000000455,
-        "actualStopLossPercent": 0.5784327227654655,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 5.0827,
-        "difference": -0.12156727723453442
-      },
-      "message": "Breakout detected but stop loss too tight (0.58% < 0.7%)"
-    },
-    {
       "date": "26/03/2024",
       "breakoutType": "short",
       "breakoutTime": "2024-03-26 14:36",
@@ -376,22 +264,6 @@
         "difference": -0.07102664682808368
       },
       "message": "Breakout detected but stop loss too tight (0.63% < 0.7%)"
-    },
-    {
-      "date": "01/04/2024",
-      "breakoutType": "short",
-      "breakoutTime": "2024-04-01 11:09",
-      "breakoutPrice": 756.3000000000001,
-      "minimumStopLossData": {
-        "currentPrice": 756.3000000000001,
-        "stopLossPrice": 760.2,
-        "actualStopLossPoints": 3.8999999999999773,
-        "actualStopLossPercent": 0.5156683855612821,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 5.294099999999999,
-        "difference": -0.18433161443871782
-      },
-      "message": "Breakout detected but stop loss too tight (0.52% < 0.7%)"
     },
     {
       "date": "03/04/2024",
@@ -442,22 +314,6 @@
       "message": "Breakout detected but stop loss too tight (0.70% < 0.7%)"
     },
     {
-      "date": "10/04/2024",
-      "breakoutType": "short",
-      "breakoutTime": "2024-04-10 11:24",
-      "breakoutPrice": 766.0500000000001,
-      "minimumStopLossData": {
-        "currentPrice": 766.0500000000001,
-        "stopLossPrice": 769.95,
-        "actualStopLossPoints": 3.8999999999999773,
-        "actualStopLossPercent": 0.5091051497943968,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 5.36235,
-        "difference": -0.19089485020560315
-      },
-      "message": "Breakout detected but stop loss too tight (0.51% < 0.7%)"
-    },
-    {
       "date": "12/04/2024",
       "breakoutType": "short",
       "breakoutTime": "2024-04-12 12:18",
@@ -472,38 +328,6 @@
         "difference": -0.37022308438408424
       },
       "message": "Breakout detected but stop loss too tight (0.33% < 0.7%)"
-    },
-    {
-      "date": "19/04/2024",
-      "breakoutType": "long",
-      "breakoutTime": "2024-04-19 11:43",
-      "breakoutPrice": 741.45,
-      "minimumStopLossData": {
-        "currentPrice": 741.45,
-        "stopLossPrice": 736.8000000000001,
-        "actualStopLossPoints": 4.649999999999977,
-        "actualStopLossPercent": 0.6271495043495822,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 5.19015,
-        "difference": -0.07285049565041779
-      },
-      "message": "Breakout detected but stop loss too tight (0.63% < 0.7%)"
-    },
-    {
-      "date": "23/04/2024",
-      "breakoutType": "long",
-      "breakoutTime": "2024-04-23 12:15",
-      "breakoutPrice": 776.2,
-      "minimumStopLossData": {
-        "currentPrice": 776.2,
-        "stopLossPrice": 771.2,
-        "actualStopLossPoints": 5,
-        "actualStopLossPercent": 0.6441638752898737,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 5.433400000000001,
-        "difference": -0.05583612471012622
-      },
-      "message": "Breakout detected but stop loss too tight (0.64% < 0.7%)"
     },
     {
       "date": "24/04/2024",
@@ -554,22 +378,6 @@
       "message": "Breakout detected but stop loss too tight (0.70% < 0.7%)"
     },
     {
-      "date": "28/05/2024",
-      "breakoutType": "short",
-      "breakoutTime": "2024-05-28 11:28",
-      "breakoutPrice": 832.1500000000001,
-      "minimumStopLossData": {
-        "currentPrice": 832.1500000000001,
-        "stopLossPrice": 836.5,
-        "actualStopLossPoints": 4.349999999999909,
-        "actualStopLossPercent": 0.5227422940575508,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 5.82505,
-        "difference": -0.17725770594244916
-      },
-      "message": "Breakout detected but stop loss too tight (0.52% < 0.7%)"
-    },
-    {
       "date": "07/06/2024",
       "breakoutType": "long",
       "breakoutTime": "2024-06-07 14:21",
@@ -584,22 +392,6 @@
         "difference": -0.2584588398959547
       },
       "message": "Breakout detected but stop loss too tight (0.44% < 0.7%)"
-    },
-    {
-      "date": "11/06/2024",
-      "breakoutType": "long",
-      "breakoutTime": "2024-06-11 12:54",
-      "breakoutPrice": 837.2,
-      "minimumStopLossData": {
-        "currentPrice": 837.2,
-        "stopLossPrice": 834.5,
-        "actualStopLossPoints": 2.7000000000000455,
-        "actualStopLossPercent": 0.32250358337315405,
-        "minimumRequiredPercent": 0.7,
-        "minimumRequiredPoints": 5.860399999999999,
-        "difference": -0.3774964166268459
-      },
-      "message": "Breakout detected but stop loss too tight (0.32% < 0.7%)"
     },
     {
       "date": "13/06/2024",
