@@ -1,5 +1,7 @@
 const fs = require('fs');
-const { backtest } = require('./trading-strategy');
+const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
+const os = require('os');
+const path = require('path');
 
 // Configuration ranges for optimization
 const PARAM_RANGES = {
@@ -30,13 +32,13 @@ const BASE_CONFIG = {
     specificDate: null,
     dateRange: {
       start: "01/12/2023",
-      end: "15/06/2024"
+      end: "15/01/2024"
     }
   },
   volumeConfirmation: {
     enabled: true,
-    volumeMultiplier: 1, // Will be overridden
-    lookbackPeriod: 5    // Will be overridden
+    volumeMultiplier: 1,
+    lookbackPeriod: 5
   },
   capital: {
     initial: 100000,
@@ -73,7 +75,7 @@ const BASE_CONFIG = {
 function generateParameterValues(range) {
   const values = [];
   for (let i = range.start; i <= range.end; i += range.step) {
-    values.push(Number(i.toFixed(2))); // Handle floating point precision
+    values.push(Number(i.toFixed(2)));
   }
   return values;
 }
@@ -82,20 +84,67 @@ function generateParameterValues(range) {
  * Create a configuration object with specific parameter values
  */
 function createConfig(params) {
-  const config = JSON.parse(JSON.stringify(BASE_CONFIG)); // Deep clone
+  const config = JSON.parse(JSON.stringify(BASE_CONFIG));
   
-  // Set direct parameters
   config.minThreshold = params.minThreshold;
   config.maxThreshold = params.maxThreshold;
   config.riskRewardRatio = params.riskRewardRatio;
   config.pullbackPercentage = params.pullbackPercentage;
   config.minimumStopLossPercent = params.minimumStopLossPercent;
-  
-  // Set volume configuration parameters
   config.volumeConfirmation.volumeMultiplier = params.volumeMultiplier;
   config.volumeConfirmation.lookbackPeriod = params.lookbackPeriod;
   
   return config;
+}
+
+/**
+ * Generate all valid parameter combinations
+ */
+function generateAllCombinations() {
+  const paramValues = {};
+  for (const [param, range] of Object.entries(PARAM_RANGES)) {
+    paramValues[param] = generateParameterValues(range);
+  }
+
+  const combinations = [];
+  const paramNames = Object.keys(paramValues);
+  
+  function generateRecursive(index, current) {
+    if (index === paramNames.length) {
+      // Skip invalid combinations (minThreshold should be less than maxThreshold)
+      if (current.minThreshold < current.maxThreshold) {
+        combinations.push({ ...current });
+      }
+      return;
+    }
+    
+    const param = paramNames[index];
+    for (const value of paramValues[param]) {
+      current[param] = value;
+      generateRecursive(index + 1, current);
+    }
+  }
+  
+  generateRecursive(0, {});
+  return combinations;
+}
+
+/**
+ * Split combinations into chunks for worker threads
+ */
+function splitIntoChunks(combinations, numChunks) {
+  const chunks = [];
+  const chunkSize = Math.ceil(combinations.length / numChunks);
+  
+  for (let i = 0; i < numChunks; i++) {
+    const start = i * chunkSize;
+    const end = Math.min(start + chunkSize, combinations.length);
+    if (start < combinations.length) {
+      chunks.push(combinations.slice(start, end));
+    }
+  }
+  
+  return chunks;
 }
 
 /**
@@ -126,7 +175,8 @@ function saveBestConfig(bestResult, combinationNumber, totalCombinations) {
       dateRange: {
         start: "01/12/2023",
         end: "15/06/2024"
-      }
+      },
+      threadsUsed: os.cpus().length
     },
     parameterValues: {
       minThreshold: bestResult.config.minThreshold,
@@ -141,178 +191,440 @@ function saveBestConfig(bestResult, combinationNumber, totalCombinations) {
   
   try {
     fs.writeFileSync('best_conf.json', JSON.stringify(output, null, 2));
+    return true;
   } catch (error) {
     console.error('Error saving best configuration:', error.message);
+    return false;
   }
 }
 
-/**
- * Main optimization function
- */
-function main() {
-  console.log('=' .repeat(60));
-  console.log('TRADING STRATEGY CONFIGURATION OPTIMIZER');
-  console.log('=' .repeat(60));
-  
-  // Load stock data once
-  console.log('Loading stock data from SBIN-EQ.json...');
-  const loadStartTime = Date.now();
-  
-  let stockData;
+// ============================================================================
+// WORKER THREAD CODE
+// ============================================================================
+if (!isMainThread) {
   try {
-    const fileContent = fs.readFileSync('SBIN-EQ.json', 'utf8');
-    stockData = JSON.parse(fileContent);
-    const loadTime = Date.now() - loadStartTime;
-    console.log(`✓ Stock data loaded successfully in ${loadTime}ms`);
+    // Import the trading strategy module with proper path resolution
+    const tradingStrategy = require(path.resolve(__dirname, 'trading-strategy.js'));
+    const { backtest } = tradingStrategy;
+    
+    const { stockDataPath, combinations, workerId } = workerData;
+    
+    // Each worker reads the stock data file independently to avoid serialization issues
+    let stockData;
+    try {
+      console.log(`Worker ${workerId}: Loading stock data from ${stockDataPath}`);
+      const fileContent = fs.readFileSync(stockDataPath, 'utf8');
+      stockData = JSON.parse(fileContent);
+      console.log(`Worker ${workerId}: Stock data loaded successfully`);
+      
+      // Validate stock data
+      if (!stockData || !stockData.data) {
+        throw new Error('Invalid stock data structure');
+      }
+      
+      const dateCount = Object.keys(stockData.data).length;
+      console.log(`Worker ${workerId}: Found ${dateCount} trading days in data`);
+      
+    } catch (error) {
+      parentPort.postMessage({
+        type: 'error',
+        workerId: workerId,
+        error: `Failed to load stock data: ${error.message}`,
+        fatal: true
+      });
+      process.exit(1);
+    }
+    
+    let bestResult = {
+      profit: -Infinity,
+      config: null,
+      results: null,
+      combinationIndex: -1
+    };
+    
+    let processedCount = 0;
+    const totalInChunk = combinations.length;
+    
+    if (totalInChunk === 0) {
+      console.log(`Worker ${workerId}: No combinations to process`);
+      parentPort.postMessage({
+        type: 'result',
+        workerId: workerId,
+        bestResult: bestResult,
+        processedCount: 0
+      });
+      process.exit(0);
+    }
+    
+    console.log(`Worker ${workerId}: Processing ${totalInChunk} combinations`);
+    
+    // Test first combination to ensure everything works
+    if (totalInChunk > 0) {
+      console.log(`Worker ${workerId}: Testing first combination...`);
+      const testParams = combinations[0];
+      const testConfig = createConfig(testParams);
+      console.log(`Worker ${workerId}: First config - minT: ${testConfig.minThreshold}, maxT: ${testConfig.maxThreshold}, RR: ${testConfig.riskRewardRatio}`);
+    }
+    
+    // Process each combination in this worker's chunk
+    for (let i = 0; i < combinations.length; i++) {
+      try {
+        const params = combinations[i];
+        const config = createConfig(params);
+        
+        // Add some validation
+        if (config.minThreshold >= config.maxThreshold) {
+          console.log(`Worker ${workerId}: Skipping invalid config - minThreshold ${config.minThreshold} >= maxThreshold ${config.maxThreshold}`);
+          continue;
+        }
+        
+        const results = backtest(stockData, config);
+        
+        processedCount++;
+        
+        // Debug: Always log first 5 results to see what we're getting
+        if (processedCount <= 5) {
+          console.log(`Worker ${workerId}: Result ${processedCount}:`);
+          console.log(`  Config: minT=${params.minThreshold}, maxT=${params.maxThreshold}, RR=${params.riskRewardRatio}`);
+          console.log(`  Results type: ${typeof results}, has totalNetProfit: ${results?.hasOwnProperty('totalNetProfit')}`);
+          console.log(`  totalNetProfit: ${results?.totalNetProfit}, totalProfit: ${results?.totalProfit}`);
+          console.log(`  winningDays: ${results?.totalWinningDays}, losingDays: ${results?.totalLosingDays}`);
+          console.log(`  error: ${results?.error}`);
+          
+          if (results?.allTrades) {
+            const actualTrades = results.allTrades.filter(trade => trade.profit !== undefined || trade.netProfit !== undefined);
+            console.log(`  Total trades found: ${actualTrades.length}`);
+            if (actualTrades.length > 0) {
+              const sampleTrade = actualTrades[0];
+              console.log(`  Sample trade: ${sampleTrade.date}, profit: ${sampleTrade.netProfit || sampleTrade.profit}`);
+            }
+          }
+        }
+        
+        // Validate results
+        if (!results) {
+          console.log(`Worker ${workerId}: No results returned for combination ${i}`);
+          continue;
+        }
+        
+        if (results.error) {
+          console.log(`Worker ${workerId}: Backtest error for combination ${i}: ${results.error}`);
+          continue;
+        }
+        
+        if (typeof results.totalNetProfit !== 'number') {
+          console.log(`Worker ${workerId}: Invalid totalNetProfit (${typeof results.totalNetProfit}): ${results.totalNetProfit}`);
+          // Try alternative profit fields
+          if (typeof results.totalProfit === 'number') {
+            console.log(`Worker ${workerId}: Using totalProfit instead: ${results.totalProfit}`);
+            results.totalNetProfit = results.totalProfit;
+          } else {
+            console.log(`Worker ${workerId}: No valid profit field found, skipping`);
+            continue;
+          }
+        }
+        
+        // Check if this is the best result in this chunk
+        if (results.totalNetProfit > bestResult.profit) {
+          bestResult = {
+            profit: results.totalNetProfit,
+            config: config,
+            results: results,
+            combinationIndex: i,
+            params: params
+          };
+          
+          console.log(`Worker ${workerId}: New best profit: ₹${bestResult.profit.toFixed(2)} (was ₹${bestResult.profit === results.totalNetProfit ? 'first' : 'previous'})`);
+        }
+        
+        // Report progress every 50 combinations
+        if (processedCount % 50 === 0) {
+          parentPort.postMessage({
+            type: 'progress',
+            workerId: workerId,
+            processed: processedCount,
+            total: totalInChunk,
+            bestProfit: bestResult.profit
+          });
+        }
+        
+      } catch (error) {
+        console.error(`Worker ${workerId}: Error processing combination ${i}:`, error.message);
+        parentPort.postMessage({
+          type: 'error',
+          workerId: workerId,
+          error: error.message,
+          combination: i,
+          fatal: false
+        });
+      }
+    }
+    
+    console.log(`Worker ${workerId}: Completed processing. Best profit: ₹${bestResult.profit.toFixed(2)}`);
+    
+    // Send final result back to main thread
+    parentPort.postMessage({
+      type: 'result',
+      workerId: workerId,
+      bestResult: bestResult,
+      processedCount: processedCount
+    });
+    
   } catch (error) {
-    console.error('✗ Error loading stock data:', error.message);
+    console.error(`Worker ${workerId}: Fatal error:`, error.message);
+    parentPort.postMessage({
+      type: 'error',
+      workerId: workerId,
+      error: error.message,
+      fatal: true
+    });
+  }
+  
+  process.exit(0);
+}
+
+// ============================================================================
+// MAIN THREAD CODE
+// ============================================================================
+async function main() {
+  console.log('=' .repeat(70));
+  console.log('MULTI-THREADED TRADING STRATEGY CONFIGURATION OPTIMIZER');
+  console.log('=' .repeat(70));
+  
+  const numCPUs = os.cpus().length;
+  console.log(`🔧 Detected ${numCPUs} CPU cores`);
+  
+  // Verify stock data file exists
+  const stockDataPath = path.resolve(__dirname, 'SBIN-EQ.json');
+  if (!fs.existsSync(stockDataPath)) {
+    console.error('✗ Error: SBIN-EQ.json file not found');
+    process.exit(1);
+  }
+  
+  // Quick validation of stock data and backtest function
+  console.log('📁 Validating stock data file and backtest function...');
+  try {
+    const fileContent = fs.readFileSync(stockDataPath, 'utf8');
+    const stockData = JSON.parse(fileContent);
+    if (!stockData || !stockData.data) {
+      throw new Error('Invalid stock data structure');
+    }
+    const dateCount = Object.keys(stockData.data).length;
+    console.log(`✓ Stock data validated: ${dateCount} trading days found`);
+    
+    // Test backtest function with a simple configuration
+    console.log('🧪 Testing backtest function...');
+    const { backtest } = require('./trading-strategy');
+    const testConfig = createConfig({
+      minThreshold: 60,
+      maxThreshold: 180,
+      riskRewardRatio: 1.5,
+      pullbackPercentage: 10,
+      minimumStopLossPercent: 1.0,
+      volumeMultiplier: 2,
+      lookbackPeriod: 10
+    });
+    
+    const testResult = backtest(stockData, testConfig);
+    console.log(`✓ Backtest test completed:`);
+    console.log(`  totalNetProfit: ${testResult?.totalNetProfit}`);
+    console.log(`  totalProfit: ${testResult?.totalProfit}`);
+    console.log(`  totalTrades: ${(testResult?.totalWinningDays || 0) + (testResult?.totalLosingDays || 0)}`);
+    console.log(`  hasError: ${!!testResult?.error}`);
+    
+    if (testResult?.error) {
+      console.error(`⚠️  Test backtest failed: ${testResult.error}`);
+    }
+    
+  } catch (error) {
+    console.error('✗ Error validating stock data or backtest:', error.message);
     process.exit(1);
   }
 
-  // Generate parameter value arrays
-  console.log('\nGenerating parameter combinations...');
-  const paramValues = {};
-  for (const [param, range] of Object.entries(PARAM_RANGES)) {
-    paramValues[param] = generateParameterValues(range);
-    console.log(`  ${param}: ${paramValues[param].length} values (${paramValues[param][0]} to ${paramValues[param][paramValues[param].length-1]})`);
-  }
-
-  // Calculate total combinations
-  const totalCombinations = Object.values(paramValues).reduce((total, values) => total * values.length, 1);
-  console.log(`\n📊 Total combinations to test: ${totalCombinations.toLocaleString()}`);
-  console.log(`⏱️  Estimated time (at 100 combinations/sec): ${(totalCombinations/100/60).toFixed(1)} minutes`);
-
+  // Generate all parameter combinations
+  console.log('\n🔢 Generating parameter combinations...');
+  const combinations = generateAllCombinations();
+  console.log(`📊 Total valid combinations: ${combinations.toLocaleString()}`);
+  
+  // Split combinations into chunks for workers (limit to CPU count)
+  const chunks = splitIntoChunks(combinations, numCPUs);
+  console.log(`⚡ Using ${numCPUs} worker threads (${Math.ceil(combinations.length / numCPUs)} combinations per thread)`);
+  
+  // Debug: Show chunk distribution
+  const nonEmptyChunks = chunks.filter(chunk => chunk.length > 0);
+  console.log(`⚡ Creating ${nonEmptyChunks.length} workers for ${chunks.length} chunks:`);
+  chunks.forEach((chunk, i) => {
+    if (chunk.length > 0) {
+      console.log(`   Worker ${i}: ${chunk.length} combinations`);
+    }
+  });
+  
   // Initialize tracking variables
-  let bestResult = {
+  let globalBestResult = {
     profit: -Infinity,
     config: null,
     results: null
   };
   
-  let combinationCount = 0;
+  let totalProcessed = 0;
   const startTime = Date.now();
+  const workerStats = new Map();
   let lastProgressTime = startTime;
-
-  // Generate and test all combinations using iterative approach
-  console.log('\n🚀 Starting optimization...\n');
   
-  const paramNames = Object.keys(paramValues);
-  const paramLengths = paramNames.map(name => paramValues[name].length);
-  const maxIndices = paramLengths.map(len => len - 1);
+  // Create and start worker threads (limit to CPU count)
+  console.log('\n🚀 Starting optimization with worker threads...\n');
   
-  // Initialize indices
-  const indices = new Array(paramNames.length).fill(0);
+  const workers = [];
+  const workerPromises = [];
   
-  while (true) {
-    combinationCount++;
+  for (let i = 0; i < chunks.length; i++) {
+    if (chunks[i].length === 0) continue; // Skip empty chunks
     
-    // Create configuration for current combination
-    const currentParams = {};
-    for (let i = 0; i < paramNames.length; i++) {
-      currentParams[paramNames[i]] = paramValues[paramNames[i]][indices[i]];
-    }
+    const worker = new Worker(__filename, {
+      workerData: {
+        stockDataPath: stockDataPath, // Pass file path instead of data
+        combinations: chunks[i],
+        workerId: i
+      }
+    });
     
-    // Skip invalid combinations (minThreshold should be less than maxThreshold)
-    if (currentParams.minThreshold >= currentParams.maxThreshold) {
-      // Move to next combination
-      let carryOver = 1;
-      for (let i = paramNames.length - 1; i >= 0 && carryOver; i--) {
-        indices[i] += carryOver;
-        if (indices[i] > maxIndices[i]) {
-          indices[i] = 0;
-          carryOver = 1;
-        } else {
-          carryOver = 0;
+    workers.push(worker);
+    workerStats.set(i, { processed: 0, total: chunks[i].length, bestProfit: -Infinity });
+    
+    const workerPromise = new Promise((resolve, reject) => {
+      worker.on('message', (message) => {
+        if (message.type === 'progress') {
+          workerStats.set(message.workerId, {
+            processed: message.processed,
+            total: workerStats.get(message.workerId).total,
+            bestProfit: message.bestProfit
+          });
+          
+          // Update total processed
+          totalProcessed = Array.from(workerStats.values()).reduce((sum, stat) => sum + stat.processed, 0);
+          
+          // Report global progress 
+          const currentTime = Date.now();
+          if ((currentTime - lastProgressTime) > 3000) { // Every 3 seconds
+            const elapsed = (currentTime - startTime) / 1000;
+            const rate = totalProcessed / elapsed;
+            const eta = (combinations.length - totalProcessed) / rate;
+            const progress = (totalProcessed / combinations.length * 100).toFixed(2);
+            
+            // Show actual best profit (even if negative) instead of 0.00
+            const bestProfitDisplay = globalBestResult.profit === -Infinity ? 'None' : `₹${globalBestResult.profit.toFixed(2)}`;
+            
+            console.log(`📈 Progress: ${totalProcessed.toLocaleString()}/${combinations.length.toLocaleString()} (${progress}%) | Rate: ${rate.toFixed(0)}/sec | ETA: ${(eta/60).toFixed(1)}min | Best: ${bestProfitDisplay}`);
+            lastProgressTime = currentTime;
+          }
+          
+        } else if (message.type === 'error') {
+          if (message.fatal) {
+            console.error(`❌ Worker ${message.workerId} fatal error:`, message.error);
+            reject(new Error(message.error));
+          } else {
+            console.error(`⚠️  Worker ${message.workerId} error:`, message.error);
+          }
+          
+        } else if (message.type === 'result') {
+          console.log(`📥 Received result from Worker ${message.workerId}: profit = ${message.bestResult.profit}`);
+          
+          // Check if this worker found a better result
+          if (message.bestResult.profit > globalBestResult.profit) {
+            console.log(`🔄 Updating global best from ₹${globalBestResult.profit === -Infinity ? 'None' : globalBestResult.profit.toFixed(2)} to ₹${message.bestResult.profit.toFixed(2)}`);
+            
+            globalBestResult = {
+              profit: message.bestResult.profit,
+              config: message.bestResult.config,
+              results: message.bestResult.results
+            };
+            
+            // Save the best configuration immediately
+            const saveSuccess = saveBestConfig(globalBestResult, totalProcessed, combinations.length);
+            
+            console.log(`🎉 NEW GLOBAL BEST! Worker ${message.workerId} found profit: ₹${globalBestResult.profit.toFixed(2)}`);
+            if (message.bestResult.params) {
+              console.log(`   Config: minT=${message.bestResult.params.minThreshold}, maxT=${message.bestResult.params.maxThreshold}, RR=${message.bestResult.params.riskRewardRatio}, PB=${message.bestResult.params.pullbackPercentage}%, MinSL=${message.bestResult.params.minimumStopLossPercent}%, Vol=${message.bestResult.params.volumeMultiplier}x, LB=${message.bestResult.params.lookbackPeriod}`);
+            }
+            if (saveSuccess) {
+              console.log(`   💾 Configuration saved to best_conf.json`);
+            }
+          } else {
+            console.log(`📊 Worker ${message.workerId} result (₹${message.bestResult.profit.toFixed(2)}) not better than current best (₹${globalBestResult.profit === -Infinity ? 'None' : globalBestResult.profit.toFixed(2)})`);
+          }
+          
+          totalProcessed += message.processedCount;
+          const workerBestDisplay = message.bestResult.profit === -Infinity ? 'None' : `₹${message.bestResult.profit.toFixed(2)}`;
+          console.log(`✅ Worker ${message.workerId} completed: ${message.processedCount} combinations, best profit: ${workerBestDisplay}`);
+          resolve(message.bestResult);
         }
-      }
+      });
       
-      if (carryOver) break; // All combinations tested
-      continue;
-    }
-    
-    // Progress reporting
-    const currentTime = Date.now();
-    if (combinationCount % 500 === 0 || (currentTime - lastProgressTime) > 5000) {
-      const elapsed = (currentTime - startTime) / 1000;
-      const rate = combinationCount / elapsed;
-      const eta = (totalCombinations - combinationCount) / rate;
-      const progress = (combinationCount / totalCombinations * 100).toFixed(2);
+      worker.on('error', (error) => {
+        console.error(`❌ Worker ${i} error:`, error);
+        reject(error);
+      });
       
-      console.log(`📈 Progress: ${combinationCount.toLocaleString()}/${totalCombinations.toLocaleString()} (${progress}%) | Rate: ${rate.toFixed(0)}/sec | ETA: ${(eta/60).toFixed(1)}min | Best: ₹${bestResult.profit === -Infinity ? '0.00' : bestResult.profit.toFixed(2)}`);
-      lastProgressTime = currentTime;
-    }
-
-    try {
-      // Create configuration and run backtest
-      const config = createConfig(currentParams);
-      const results = backtest(stockData, config);
-      
-      // Check if this is the best result so far
-      if (results.totalNetProfit > bestResult.profit) {
-        bestResult = {
-          profit: results.totalNetProfit,
-          config: config,
-          results: results
-        };
-        
-        // Save the best configuration immediately
-        saveBestConfig(bestResult, combinationCount, totalCombinations);
-        
-        console.log(`🎉 NEW BEST FOUND! Profit: ₹${bestResult.profit.toFixed(2)} (Combination #${combinationCount})`);
-        console.log(`   Config: minT=${currentParams.minThreshold}, maxT=${currentParams.maxThreshold}, RR=${currentParams.riskRewardRatio}, PB=${currentParams.pullbackPercentage}%, MinSL=${currentParams.minimumStopLossPercent}%, Vol=${currentParams.volumeMultiplier}x, LB=${currentParams.lookbackPeriod}`);
-      }
-      
-    } catch (error) {
-      console.error(`❌ Error in combination ${combinationCount}:`, error.message);
-    }
+      worker.on('exit', (code) => {
+        if (code !== 0) {
+          console.error(`⚠️  Worker ${i} stopped with exit code ${code}`);
+        }
+      });
+    });
     
-    // Move to next combination
-    let carryOver = 1;
-    for (let i = paramNames.length - 1; i >= 0 && carryOver; i--) {
-      indices[i] += carryOver;
-      if (indices[i] > maxIndices[i]) {
-        indices[i] = 0;
-        carryOver = 1;
-      } else {
-        carryOver = 0;
-      }
-    }
-    
-    if (carryOver) break; // All combinations tested
-  }
-
-  // Final results
-  const totalTime = (Date.now() - startTime) / 1000;
-  console.log('\n' + '=' .repeat(60));
-  console.log('OPTIMIZATION COMPLETED');
-  console.log('=' .repeat(60));
-  console.log(`⏱️  Total time: ${(totalTime/60).toFixed(1)} minutes`);
-  console.log(`📊 Combinations tested: ${combinationCount.toLocaleString()}`);
-  console.log(`⚡ Average rate: ${(combinationCount/totalTime).toFixed(0)} combinations/second`);
-  
-  if (bestResult.profit > -Infinity) {
-    console.log(`\n🏆 BEST CONFIGURATION FOUND:`);
-    console.log(`💰 Total Net Profit: ₹${bestResult.profit.toFixed(2)}`);
-    console.log(`📈 Win Rate: ${bestResult.results.winRate.toFixed(2)}%`);
-    console.log(`📊 Total Trades: ${(bestResult.results.totalWinningDays || 0) + (bestResult.results.totalLosingDays || 0)}`);
-    console.log(`💵 Average Profit/Trade: ₹${(bestResult.results.averageNetProfitPerTrade || 0).toFixed(2)}`);
-    console.log(`📊 Return %: ${(bestResult.results.totalNetReturnPercentage || 0).toFixed(2)}%`);
-    
-    console.log(`\n📋 Optimal Parameters:`);
-    console.log(`   Min Threshold: ${bestResult.config.minThreshold} minutes`);
-    console.log(`   Max Threshold: ${bestResult.config.maxThreshold} minutes`);
-    console.log(`   Risk-Reward Ratio: ${bestResult.config.riskRewardRatio}`);
-    console.log(`   Pullback Percentage: ${bestResult.config.pullbackPercentage}%`);
-    console.log(`   Minimum Stop Loss: ${bestResult.config.minimumStopLossPercent}%`);
-    console.log(`   Volume Multiplier: ${bestResult.config.volumeConfirmation.volumeMultiplier}x`);
-    console.log(`   Lookback Period: ${bestResult.config.volumeConfirmation.lookbackPeriod} candles`);
-    
-    console.log(`\n💾 Configuration saved to: best_conf.json`);
-  } else {
-    console.log(`\n❌ No profitable configuration found`);
+    workerPromises.push(workerPromise);
   }
   
-  console.log('=' .repeat(60));
+  // Wait for all workers to complete
+  try {
+    const allResults = await Promise.all(workerPromises);
+    
+    // Final cleanup
+    workers.forEach(worker => worker.terminate());
+    
+    // Final results
+    const totalTime = (Date.now() - startTime) / 1000;
+    console.log('\n' + '=' .repeat(70));
+    console.log('MULTI-THREADED OPTIMIZATION COMPLETED');
+    console.log('=' .repeat(70));
+    console.log(`⏱️  Total time: ${(totalTime/60).toFixed(1)} minutes`);
+    console.log(`🧵 Threads used: ${numCPUs}`);
+    console.log(`📊 Combinations tested: ${combinations.length.toLocaleString()}`);
+    console.log(`⚡ Average rate: ${(combinations.length/totalTime).toFixed(0)} combinations/second`);
+    console.log(`🚀 Speed improvement: ~${numCPUs}x faster than single-threaded`);
+    
+    if (globalBestResult.profit > -Infinity) {
+      console.log(`\n🏆 BEST CONFIGURATION FOUND:`);
+      console.log(`💰 Total Net Profit: ₹${globalBestResult.profit.toFixed(2)}`);
+      console.log(`📈 Win Rate: ${globalBestResult.results.winRate.toFixed(2)}%`);
+      console.log(`📊 Total Trades: ${(globalBestResult.results.totalWinningDays || 0) + (globalBestResult.results.totalLosingDays || 0)}`);
+      console.log(`💵 Average Profit/Trade: ₹${(globalBestResult.results.averageNetProfitPerTrade || 0).toFixed(2)}`);
+      console.log(`📊 Return %: ${(globalBestResult.results.totalNetReturnPercentage || 0).toFixed(2)}%`);
+      
+      console.log(`\n📋 Optimal Parameters:`);
+      console.log(`   Min Threshold: ${globalBestResult.config.minThreshold} minutes`);
+      console.log(`   Max Threshold: ${globalBestResult.config.maxThreshold} minutes`);
+      console.log(`   Risk-Reward Ratio: ${globalBestResult.config.riskRewardRatio}`);
+      console.log(`   Pullback Percentage: ${globalBestResult.config.pullbackPercentage}%`);
+      console.log(`   Minimum Stop Loss: ${globalBestResult.config.minimumStopLossPercent}%`);
+      console.log(`   Volume Multiplier: ${globalBestResult.config.volumeConfirmation.volumeMultiplier}x`);
+      console.log(`   Lookback Period: ${globalBestResult.config.volumeConfirmation.lookbackPeriod} candles`);
+      
+      console.log(`\n💾 Final configuration saved to: best_conf.json`);
+      
+      if (globalBestResult.profit < 0) {
+        console.log(`\n⚠️  Note: Best configuration still shows a loss. Consider adjusting strategy parameters.`);
+      }
+    } else {
+      console.log(`\n❌ No valid backtest results found - check data and strategy logic`);
+    }
+    
+  } catch (error) {
+    console.error('❌ Error in worker threads:', error);
+    workers.forEach(worker => worker.terminate());
+  }
+  
+  console.log('=' .repeat(70));
 }
 
 // Handle process interruption gracefully
@@ -324,7 +636,7 @@ process.on('SIGINT', () => {
 
 // Run the optimization if this file is executed directly
 if (require.main === module) {
-  main();
+  main().catch(console.error);
 }
 
 module.exports = {
@@ -332,5 +644,7 @@ module.exports = {
   PARAM_RANGES,
   BASE_CONFIG,
   createConfig,
-  saveBestConfig
+  saveBestConfig,
+  generateAllCombinations,
+  splitIntoChunks
 };

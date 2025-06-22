@@ -16,12 +16,12 @@
       "specificDate": null,
       "dateRange": {
         "start": "01/12/2023",
-        "end": "15/06/2024"
+        "end": "15/01/2024"
       }
     },
     "volumeConfirmation": {
       "enabled": true,
-      "volumeMultiplier": 2,
+      "volumeMultiplier": 1,
       "lookbackPeriod": 15
     },
     "capital": {
@@ -51,43 +51,44 @@
       "enabled": true,
       "tickSize": 0.05
     },
-    "minThreshold": 30,
-    "maxThreshold": 280,
-    "riskRewardRatio": 3,
-    "pullbackPercentage": 0,
-    "minimumStopLossPercent": 1.25
+    "minThreshold": 60,
+    "maxThreshold": 190,
+    "riskRewardRatio": 1,
+    "pullbackPercentage": 30,
+    "minimumStopLossPercent": 0.75
   },
   "results": {
-    "totalNetProfit": 67848.03434000004,
-    "totalGrossProfit": 72628.40000000004,
-    "winRate": 75,
-    "totalTrades": 8,
-    "averageNetProfitPerTrade": 8481.004292500005,
-    "totalNetReturnPercentage": 67.84803434000004,
-    "averageGrossProfitPerTrade": 9078.550000000005,
-    "totalGrossReturnPercentage": 72.62840000000004,
-    "totalFees": 4780.3656599999995,
-    "breakoutsWithoutEntry": 51,
-    "breakoutsOutsideTimeRange": 75,
-    "minimumStopLossRejections": 51
+    "totalNetProfit": 9677.186750000003,
+    "totalGrossProfit": 11475.35,
+    "winRate": 66.66666666666666,
+    "totalTrades": 3,
+    "averageNetProfitPerTrade": 3225.7289166666674,
+    "totalNetReturnPercentage": 9.677186750000002,
+    "averageGrossProfitPerTrade": 3825.116666666667,
+    "totalGrossReturnPercentage": 11.47535,
+    "totalFees": 1798.1632500000003,
+    "breakoutsWithoutEntry": 11,
+    "breakoutsOutsideTimeRange": 17,
+    "minimumStopLossRejections": 8
   },
   "optimizationInfo": {
-    "combinationNumber": 11467,
-    "totalCombinations": 94080,
-    "progressPercentage": "12.19",
-    "timestamp": "2025-06-22T18:23:29.985Z",
+    "combinationNumber": 88450,
+    "totalCombinations": 92400,
+    "progressPercentage": "95.73",
+    "timestamp": "2025-06-22T18:47:17.276Z",
     "dateRange": {
       "start": "01/12/2023",
       "end": "15/06/2024"
-    }
+    },
+    "threadsUsed": 20
   },
   "parameterValues": {
-    "minThreshold": 30,
-    "maxThreshold": 280,
-    "riskRewardRatio": 3,
-    "pullbackPercentage": 0,
-    "minimumStopLossPercent": 1.25,
-    "volumeMultiplier": 2,
+    "minThreshold": 60,
+    "maxThreshold": 190,
+    "riskRewardRatio": 1,
+    "pullbackPercentage": 30,
+    "minimumStopLossPercent": 0.75,
+    "volumeMultiplier": 1,
     "lookbackPeriod": 15
   }
 }
