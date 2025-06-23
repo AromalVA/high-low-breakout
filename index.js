@@ -2,7 +2,7 @@ const { runBacktest } = require('./trading-strategy');
 const fs = require('fs');
 
 // Configuration for the backtest with DYNAMIC STOP LOSS, PRE-MARKET EXIT ORDERS, AND MINIMUM STOP LOSS %
-const config = {
+const config ={
     "entryTimeRange": {
       "enabled": true,
       "startTime": "9:15",
@@ -23,9 +23,9 @@ const config = {
       }
     },
     "volumeConfirmation": {
-      "enabled": true,
+      "enabled": false,
       "volumeMultiplier": 1,
-      "lookbackPeriod": 15
+      "lookbackPeriod": 5
     },
     "capital": {
       "initial": 100000,
@@ -54,12 +54,12 @@ const config = {
       "enabled": true,
       "tickSize": 0.05
     },
-    "minThreshold": 30,
-    "maxThreshold": 250,
-    "riskRewardRatio": 1.5,
-    "pullbackPercentage": 20,
-    "minimumStopLossPercent": 1.5
-  };
+    "minThreshold": 50,
+    "maxThreshold": 280,
+    "riskRewardRatio": 2,
+    "pullbackPercentage": 0,
+    "minimumStopLossPercent": 1.75
+  }
 
 // Run the backtest
 const results = runBacktest('SBIN-EQ.json', config);

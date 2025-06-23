@@ -19,9 +19,9 @@
     }
   },
   "volumeConfirmation": {
-    "enabled": true,
+    "enabled": false,
     "volumeMultiplier": 1,
-    "lookbackPeriod": 15
+    "lookbackPeriod": 5
   },
   "capital": {
     "initial": 100000,
@@ -50,9 +50,9 @@
     "enabled": true,
     "tickSize": 0.05
   },
-  "minThreshold": 30,
-  "maxThreshold": 250,
-  "riskRewardRatio": 1.5,
-  "pullbackPercentage": 20,
-  "minimumStopLossPercent": 1.5
+  "minThreshold": 50,
+  "maxThreshold": 280,
+  "riskRewardRatio": 2,
+  "pullbackPercentage": 0,
+  "minimumStopLossPercent": 1.75
 }

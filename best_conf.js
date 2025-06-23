@@ -3,15 +3,19 @@ const { Worker, isMainThread, parentPort, workerData } = require('worker_threads
 const os = require('os');
 const path = require('path');
 
-// Configuration ranges for optimization
+// Configuration ranges for optimization (volumeConfirmation removed)
 const PARAM_RANGES = {
   minThreshold: { start: 30, end: 100, step: 10 },
   maxThreshold: { start: 100, end: 300, step: 30 },
   riskRewardRatio: { start: 1.0, end: 3.0, step: 0.5 },
   pullbackPercentage: { start: 0, end: 30, step: 10 },
-  minimumStopLossPercent: { start: 0.5, end: 2.0, step: 0.25 },
-  volumeMultiplier: { start: 1, end: 3, step: 1 },
-  lookbackPeriod: { start: 5, end: 20, step: 5 }
+  minimumStopLossPercent: { start: 0.5, end: 2.0, step: 0.25 }
+};
+
+// Validation settings
+const VALIDATION_SETTINGS = {
+  minimumTrades: 20,  // Minimum number of trades required for a configuration to be considered valid
+  description: "Only configurations with at least this many trades will be considered valid"
 };
 
 // Base configuration template
@@ -36,7 +40,7 @@ const BASE_CONFIG = {
     }
   },
   volumeConfirmation: {
-    enabled: true,
+    enabled: false,  // Always disabled
     volumeMultiplier: 1,
     lookbackPeriod: 5
   },
@@ -91,8 +95,6 @@ function createConfig(params) {
   config.riskRewardRatio = params.riskRewardRatio;
   config.pullbackPercentage = params.pullbackPercentage;
   config.minimumStopLossPercent = params.minimumStopLossPercent;
-  config.volumeConfirmation.volumeMultiplier = params.volumeMultiplier;
-  config.volumeConfirmation.lookbackPeriod = params.lookbackPeriod;
   
   return config;
 }
@@ -178,16 +180,18 @@ function saveBestConfig(bestResult, combinationNumber, totalCombinations, isLive
         start: "01/12/2023",
         end: "15/06/2024"
       },
-      threadsUsed: os.cpus().length
+      threadsUsed: os.cpus().length,
+      validationSettings: {
+        minimumTradesRequired: VALIDATION_SETTINGS.minimumTrades,
+        volumeConfirmationEnabled: false
+      }
     },
     parameterValues: {
       minThreshold: bestResult.config.minThreshold,
       maxThreshold: bestResult.config.maxThreshold,
       riskRewardRatio: bestResult.config.riskRewardRatio,
       pullbackPercentage: bestResult.config.pullbackPercentage,
-      minimumStopLossPercent: bestResult.config.minimumStopLossPercent,
-      volumeMultiplier: bestResult.config.volumeConfirmation.volumeMultiplier,
-      lookbackPeriod: bestResult.config.volumeConfirmation.lookbackPeriod
+      minimumStopLossPercent: bestResult.config.minimumStopLossPercent
     }
   };
   
@@ -356,6 +360,15 @@ if (!isMainThread) {
           }
         }
         
+        // Validate minimum trades requirement
+        const totalTrades = (results.totalWinningDays || 0) + (results.totalLosingDays || 0);
+        if (totalTrades < VALIDATION_SETTINGS.minimumTrades) {
+          if (processedCount <= 10) { // Log first few rejections for debugging
+            console.log(`Worker ${workerId}: Configuration rejected - only ${totalTrades} trades (minimum required: ${VALIDATION_SETTINGS.minimumTrades})`);
+          }
+          continue;
+        }
+        
         // Check if this is the best result in this chunk
         if (results.totalNetProfit > bestResult.profit) {
           bestResult = {
@@ -433,6 +446,8 @@ async function main() {
   
   const numCPUs = os.cpus().length;
   console.log(`🔧 Detected ${numCPUs} CPU cores`);
+  console.log(`📊 Minimum trades required: ${VALIDATION_SETTINGS.minimumTrades}`);
+  console.log(`📊 Volume confirmation: DISABLED (permanently off)`);
   
   // Verify stock data file exists
   const stockDataPath = path.resolve(__dirname, 'SBIN-EQ.json');
@@ -464,9 +479,7 @@ async function main() {
       maxThreshold: 180,
       riskRewardRatio: 1.5,
       pullbackPercentage: 10,
-      minimumStopLossPercent: 1.0,
-      volumeMultiplier: 2,
-      lookbackPeriod: 10
+      minimumStopLossPercent: 1.0
     });
     
     const testResult = backtest(stockData, testConfig);
@@ -580,7 +593,7 @@ async function main() {
             }
             
             if (message.bestResult.params) {
-              console.log(`   📊 Config: minT=${message.bestResult.params.minThreshold}, maxT=${message.bestResult.params.maxThreshold}, RR=${message.bestResult.params.riskRewardRatio}, PB=${message.bestResult.params.pullbackPercentage}%, MinSL=${message.bestResult.params.minimumStopLossPercent}%, Vol=${message.bestResult.params.volumeMultiplier}x, LB=${message.bestResult.params.lookbackPeriod}`);
+              console.log(`   📊 Config: minT=${message.bestResult.params.minThreshold}, maxT=${message.bestResult.params.maxThreshold}, RR=${message.bestResult.params.riskRewardRatio}, PB=${message.bestResult.params.pullbackPercentage}%, MinSL=${message.bestResult.params.minimumStopLossPercent}%`);
             }
             
             lastSaveTime = Date.now();
@@ -660,6 +673,7 @@ async function main() {
     console.log(`⏱️  Total time: ${(totalTime/60).toFixed(1)} minutes`);
     console.log(`🧵 Threads used: ${numCPUs}`);
     console.log(`📊 Combinations tested: ${combinations.length.toLocaleString()}`);
+    console.log(`📊 Minimum trades filter: ${VALIDATION_SETTINGS.minimumTrades}+ trades required`);
     console.log(`⚡ Average rate: ${(combinations.length/totalTime).toFixed(0)} combinations/second`);
     console.log(`🚀 Speed improvement: ~${numCPUs}x faster than single-threaded`);
     
@@ -677,8 +691,6 @@ async function main() {
       console.log(`   Risk-Reward Ratio: ${globalBestResult.config.riskRewardRatio}`);
       console.log(`   Pullback Percentage: ${globalBestResult.config.pullbackPercentage}%`);
       console.log(`   Minimum Stop Loss: ${globalBestResult.config.minimumStopLossPercent}%`);
-      console.log(`   Volume Multiplier: ${globalBestResult.config.volumeConfirmation.volumeMultiplier}x`);
-      console.log(`   Lookback Period: ${globalBestResult.config.volumeConfirmation.lookbackPeriod} candles`);
       
       console.log(`\n💾 Final configuration saved to: best_conf.json`);
       
@@ -687,6 +699,7 @@ async function main() {
       }
     } else {
       console.log(`\n❌ No valid backtest results found - check data and strategy logic`);
+      console.log(`💡 Tip: Consider lowering VALIDATION_SETTINGS.minimumTrades (currently ${VALIDATION_SETTINGS.minimumTrades}) if no configurations meet the minimum trades requirement`);
     }
     
   } catch (error) {
@@ -713,6 +726,7 @@ module.exports = {
   main,
   PARAM_RANGES,
   BASE_CONFIG,
+  VALIDATION_SETTINGS,
   createConfig,
   saveBestConfig,
   generateAllCombinations,
