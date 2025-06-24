@@ -5,16 +5,16 @@ const path = require('path');
 
 // Configuration ranges for optimization (volumeConfirmation removed)
 const PARAM_RANGES = {
-  minThreshold: { start: 30, end: 100, step: 10 },
+  minThreshold: { start: 30, end: 100, step: 5 },
   maxThreshold: { start: 100, end: 300, step: 30 },
-  riskRewardRatio: { start: 1.0, end: 3.0, step: 0.5 },
-  pullbackPercentage: { start: 0, end: 30, step: 10 },
-  minimumStopLossPercent: { start: 0.5, end: 2.0, step: 0.25 }
+  riskRewardRatio: { start: 0.5, end: 3.0, step: 0.5 },
+  pullbackPercentage: { start: 0, end: 30, step: 5 },
+  minimumStopLossPercent: { start: 0.5, end: 3.0, step: 0.25 }
 };
 
 // Validation settings
 const VALIDATION_SETTINGS = {
-  minimumTrades: 30,  // Minimum number of trades required for a configuration to be considered valid
+  minimumTrades: 10,  // Minimum number of trades required for a configuration to be considered valid
   description: "Only configurations with at least this many trades will be considered valid"
 };
 

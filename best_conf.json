@@ -15,8 +15,8 @@
       "enabled": true,
       "specificDate": null,
       "dateRange": {
-        "start": "01/01/2017",
-        "end": "01/01/2020"
+        "start": "01/12/2023",
+        "end": "15/03/2024"
       }
     },
     "volumeConfirmation": {
@@ -51,31 +51,31 @@
       "enabled": true,
       "tickSize": 0.05
     },
-    "minThreshold": 30,
-    "maxThreshold": 220,
-    "riskRewardRatio": 1,
-    "pullbackPercentage": 10,
-    "minimumStopLossPercent": 0.75
+    "minThreshold": 55,
+    "maxThreshold": 160,
+    "riskRewardRatio": 0.5,
+    "pullbackPercentage": 30,
+    "minimumStopLossPercent": 0.5
   },
   "results": {
-    "totalNetProfit": -2071.579370000473,
-    "totalGrossProfit": 92666.3499999995,
-    "winRate": 48.734177215189874,
-    "totalTrades": 158,
-    "averageNetProfitPerTrade": -13.111261835446031,
-    "totalNetReturnPercentage": -2.0715793700004728,
-    "averageGrossProfitPerTrade": 586.4958860759461,
-    "totalGrossReturnPercentage": 92.6663499999995,
-    "totalFees": 94737.92937,
-    "breakoutsWithoutEntry": 369,
-    "breakoutsOutsideTimeRange": 89,
-    "minimumStopLossRejections": 318
+    "totalNetProfit": 11647.534099999966,
+    "totalGrossProfit": 18817.399999999965,
+    "winRate": 58.333333333333336,
+    "totalTrades": 12,
+    "averageNetProfitPerTrade": 970.6278416666638,
+    "totalNetReturnPercentage": 11.647534099999966,
+    "averageGrossProfitPerTrade": 1568.1166666666638,
+    "totalGrossReturnPercentage": 18.817399999999964,
+    "totalFees": 7169.865899999999,
+    "breakoutsWithoutEntry": 23,
+    "breakoutsOutsideTimeRange": 39,
+    "minimumStopLossRejections": 16
   },
   "optimizationInfo": {
-    "combinationNumber": 1534,
-    "totalCombinations": 7700,
-    "progressPercentage": "19.92",
-    "timestamp": "2025-06-24T11:03:26.125Z",
+    "combinationNumber": 2140,
+    "totalCombinations": 48048,
+    "progressPercentage": "4.45",
+    "timestamp": "2025-06-24T11:55:40.892Z",
     "isLiveSave": true,
     "saveType": "LIVE_UPDATE",
     "dateRange": {
@@ -84,17 +84,17 @@
     },
     "threadsUsed": 20,
     "validationSettings": {
-      "minimumTradesRequired": 100,
+      "minimumTradesRequired": 10,
       "volumeConfirmationEnabled": false,
-      "actualTradesFound": 158,
+      "actualTradesFound": 12,
       "validationPassed": true
     }
   },
   "parameterValues": {
-    "minThreshold": 30,
-    "maxThreshold": 220,
-    "riskRewardRatio": 1,
-    "pullbackPercentage": 10,
-    "minimumStopLossPercent": 0.75
+    "minThreshold": 55,
+    "maxThreshold": 160,
+    "riskRewardRatio": 0.5,
+    "pullbackPercentage": 30,
+    "minimumStopLossPercent": 0.5
   }
 }

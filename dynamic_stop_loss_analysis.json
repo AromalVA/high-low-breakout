@@ -10,15 +10,15 @@
     "enabled": true,
     "skipOneCandleLogic": true,
     "dynamicStopLossAdjustment": true,
-    "totalDynamicStopLossExits": 36,
+    "totalDynamicStopLossExits": 3,
     "totalTraditionalStopLossExits": 0,
-    "totalCircuitBreakerExits": 2,
-    "totalTradesWithStopLossBreach": 39,
-    "totalTradesWithDynamicAdjustment": 6,
-    "averageProfitDynamicStopLossExits": -5376.580115555553,
+    "totalCircuitBreakerExits": 1,
+    "totalTradesWithStopLossBreach": 4,
+    "totalTradesWithDynamicAdjustment": 1,
+    "averageProfitDynamicStopLossExits": -3150.093059999977,
     "averageProfitTraditionalExits": 0,
-    "averageProfitCircuitBreakerExits": -9787.049859999988,
-    "averageStopLossPriceUpdates": 1.1666666666666667,
+    "averageProfitCircuitBreakerExits": -2951.9052799999536,
+    "averageStopLossPriceUpdates": 1,
     "config": {
       "enabled": true,
       "dynamicStopLossAdjustment": true,
@@ -29,1355 +29,139 @@
   },
   "tradesWithDynamicStopLossDetails": [
     {
-      "date": "10/08/2017",
+      "date": "18/04/2024",
       "type": "long",
-      "entryPrice": 301,
-      "exitPrice": 297.5,
-      "exitReason": "stop loss limit order filled",
+      "entryPrice": 3894,
+      "exitPrice": 3875.6000000000004,
+      "exitReason": "circuit breaker (200% max loss)",
       "stopLossBreached": true,
-      "breachCandleTime": "2017-08-10 14:26",
-      "breachCandleClose": 297.5,
+      "breachCandleTime": "2024-04-18 13:29",
+      "breachCandleClose": 3882.1,
       "limitOrderHistory": [
         {
           "action": "placed",
-          "price": 297.5,
-          "time": "2017-08-10 14:26",
-          "candleIndex": 311,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 297.5,
-      "finalLimitPrice": 297.5,
-      "orderFillDetails": {
-        "filledOrderPrice": 297.5,
-        "fillTime": "2017-08-10 14:28",
-        "fillCandleHigh": 298.05,
-        "fillCandleLow": 297.65,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 311,
-        "filledAtCandleIndex": 313
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -5813.5,
-      "netProfit": -6409.9651
-    },
-    {
-      "date": "10/11/2017",
-      "type": "long",
-      "entryPrice": 317.90000000000003,
-      "exitPrice": 311.1,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2017-11-10 12:47",
-      "breachCandleClose": 311.1,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 311.1,
-          "time": "2017-11-10 12:47",
-          "candleIndex": 212,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 311.1,
-      "finalLimitPrice": 311.1,
-      "orderFillDetails": {
-        "filledOrderPrice": 311.1,
-        "fillTime": "2017-11-10 12:49",
-        "fillCandleHigh": 312.6,
-        "fillCandleLow": 310,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 212,
-        "filledAtCandleIndex": 214
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -10689.600000000019,
-      "netProfit": -11282.87280000002
-    },
-    {
-      "date": "15/11/2017",
-      "type": "long",
-      "entryPrice": 329.3,
-      "exitPrice": 327.05,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2017-11-15 12:56",
-      "breachCandleClose": 327.05,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 327.05,
-          "time": "2017-11-15 12:56",
-          "candleIndex": 221,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 327.05,
-      "finalLimitPrice": 327.05,
-      "orderFillDetails": {
-        "filledOrderPrice": 327.05,
-        "fillTime": "2017-11-15 12:58",
-        "fillCandleHigh": 327.45,
-        "fillCandleLow": 327.25,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 221,
-        "filledAtCandleIndex": 223
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3415.5,
-      "netProfit": -4013.30358
-    },
-    {
-      "date": "22/01/2018",
-      "type": "short",
-      "entryPrice": 305.85,
-      "exitPrice": 307.75,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-01-22 12:14",
-      "breachCandleClose": 307.75,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 307.75,
-          "time": "2018-01-22 12:14",
-          "candleIndex": 179,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 307.75,
-      "finalLimitPrice": 307.75,
-      "orderFillDetails": {
-        "filledOrderPrice": 307.75,
-        "fillTime": "2018-01-22 12:16",
-        "fillCandleHigh": 307.95,
-        "fillCandleLow": 307.7,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 179,
-        "filledAtCandleIndex": 181
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3104.599999999963,
-      "netProfit": -3706.173439999963
-    },
-    {
-      "date": "09/02/2018",
-      "type": "short",
-      "entryPrice": 297.3,
-      "exitPrice": 299.40000000000003,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-02-09 14:09",
-      "breachCandleClose": 299.4,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 299.40000000000003,
-          "time": "2018-02-09 14:09",
-          "candleIndex": 294,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 299.40000000000003,
-      "finalLimitPrice": 299.40000000000003,
-      "orderFillDetails": {
-        "filledOrderPrice": 299.40000000000003,
-        "fillTime": "2018-02-09 14:11",
-        "fillCandleHigh": 299.85,
-        "fillCandleLow": 299.35,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 294,
-        "filledAtCandleIndex": 296
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3530.100000000038,
-      "netProfit": -4131.9316200000385
-    },
-    {
-      "date": "09/03/2018",
-      "type": "short",
-      "entryPrice": 253.35000000000002,
-      "exitPrice": 255.15,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-03-09 13:21",
-      "breachCandleClose": 255.15,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 255.15,
-          "time": "2018-03-09 13:21",
-          "candleIndex": 246,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 255.15,
-      "finalLimitPrice": 255.15,
-      "orderFillDetails": {
-        "filledOrderPrice": 255.15,
-        "fillTime": "2018-03-09 13:23",
-        "fillCandleHigh": 254.95,
-        "fillCandleLow": 254.8,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 246,
-        "filledAtCandleIndex": 248
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3551.3999999999664,
-      "netProfit": -4153.362299999966
-    },
-    {
-      "date": "04/04/2018",
-      "type": "long",
-      "entryPrice": 251.45000000000002,
-      "exitPrice": 249.5,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-04-04 13:20",
-      "breachCandleClose": 249.5,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 249.5,
-          "time": "2018-04-04 13:20",
-          "candleIndex": 245,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 249.5,
-      "finalLimitPrice": 249.5,
-      "orderFillDetails": {
-        "filledOrderPrice": 249.5,
-        "fillTime": "2018-04-04 13:22",
-        "fillCandleHigh": 249.6,
-        "fillCandleLow": 249.3,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 245,
-        "filledAtCandleIndex": 247
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3876.600000000034,
-      "netProfit": -4474.133160000034
-    },
-    {
-      "date": "17/04/2018",
-      "type": "long",
-      "entryPrice": 251.10000000000002,
-      "exitPrice": 249.4,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-04-17 12:24",
-      "breachCandleClose": 249.4,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 249.4,
-          "time": "2018-04-17 12:24",
-          "candleIndex": 187,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 249.4,
-      "finalLimitPrice": 249.4,
-      "orderFillDetails": {
-        "filledOrderPrice": 249.4,
-        "fillTime": "2018-04-17 12:26",
-        "fillCandleHigh": 249.55,
-        "fillCandleLow": 249.25,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 187,
-        "filledAtCandleIndex": 189
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3384.700000000034,
-      "netProfit": -3982.597300000034
-    },
-    {
-      "date": "18/04/2018",
-      "type": "long",
-      "entryPrice": 249,
-      "exitPrice": 247.10000000000002,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-04-18 11:24",
-      "breachCandleClose": 247.1,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 247.10000000000002,
-          "time": "2018-04-18 11:24",
-          "candleIndex": 129,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 247.10000000000002,
-      "finalLimitPrice": 247.10000000000002,
-      "orderFillDetails": {
-        "filledOrderPrice": 247.10000000000002,
-        "fillTime": "2018-04-18 11:26",
-        "fillCandleHigh": 247.45,
-        "fillCandleLow": 247.3,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 129,
-        "filledAtCandleIndex": 131
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3815.1999999999543,
-      "netProfit": -4412.901279999955
-    },
-    {
-      "date": "04/05/2018",
-      "type": "long",
-      "entryPrice": 243.25,
-      "exitPrice": 241.25,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-05-04 11:34",
-      "breachCandleClose": 241.25,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 241.25,
-          "time": "2018-05-04 11:34",
-          "candleIndex": 139,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 241.25,
-      "finalLimitPrice": 241.25,
-      "orderFillDetails": {
-        "filledOrderPrice": 241.25,
-        "fillTime": "2018-05-04 11:36",
-        "fillCandleHigh": 241.4,
-        "fillCandleLow": 241.15,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 139,
-        "filledAtCandleIndex": 141
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -4110,
-      "netProfit": -4707.3885
-    },
-    {
-      "date": "21/05/2018",
-      "type": "short",
-      "entryPrice": 243.10000000000002,
-      "exitPrice": 245.4,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-05-21 13:44",
-      "breachCandleClose": 245.4,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 245.4,
-          "time": "2018-05-21 13:44",
-          "candleIndex": 269,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 245.4,
-      "finalLimitPrice": 245.4,
-      "orderFillDetails": {
-        "filledOrderPrice": 245.4,
-        "fillTime": "2018-05-21 13:46",
-        "fillCandleHigh": 245,
-        "fillCandleLow": 244.55,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 269,
-        "filledAtCandleIndex": 271
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -4728.799999999965,
-      "netProfit": -5331.413599999964
-    },
-    {
-      "date": "01/06/2018",
-      "type": "long",
-      "entryPrice": 268.95,
-      "exitPrice": 266.05,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-06-01 11:48",
-      "breachCandleClose": 266.7,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 266.7,
-          "time": "2018-06-01 11:48",
-          "candleIndex": 153,
-          "reason": "stop_loss_breach"
-        },
-        {
-          "action": "updated",
-          "price": 266.05,
-          "time": "2018-06-01 11:50",
-          "candleIndex": 155,
-          "reason": "dynamic_adjustment"
-        }
-      ],
-      "totalPriceUpdates": 1,
-      "originalLimitPrice": 266.7,
-      "finalLimitPrice": 266.05,
-      "orderFillDetails": {
-        "filledOrderPrice": 266.05,
-        "fillTime": "2018-06-01 11:51",
-        "fillCandleHigh": 266.4,
-        "fillCandleLow": 266,
-        "timeBetweenPlaceAndFill": 3,
-        "placedAtCandleIndex": 153,
-        "filledAtCandleIndex": 156
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -5391.099999999958,
-      "netProfit": -5987.838999999958
-    },
-    {
-      "date": "28/06/2018",
-      "type": "long",
-      "entryPrice": 259.8,
-      "exitPrice": 256.65000000000003,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-06-28 13:47",
-      "breachCandleClose": 256.9,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 256.90000000000003,
-          "time": "2018-06-28 13:47",
-          "candleIndex": 272,
-          "reason": "stop_loss_breach"
-        },
-        {
-          "action": "updated",
-          "price": 256.65000000000003,
-          "time": "2018-06-28 13:49",
-          "candleIndex": 274,
-          "reason": "dynamic_adjustment"
-        }
-      ],
-      "totalPriceUpdates": 1,
-      "originalLimitPrice": 256.90000000000003,
-      "finalLimitPrice": 256.65000000000003,
-      "orderFillDetails": {
-        "filledOrderPrice": 256.65000000000003,
-        "fillTime": "2018-06-28 13:50",
-        "fillCandleHigh": 256.7,
-        "fillCandleLow": 256.15,
-        "timeBetweenPlaceAndFill": 3,
-        "placedAtCandleIndex": 272,
-        "filledAtCandleIndex": 275
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -6060.599999999957,
-      "netProfit": -6656.789879999957
-    },
-    {
-      "date": "02/07/2018",
-      "type": "short",
-      "entryPrice": 260,
-      "exitPrice": 261.1,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-07-02 14:30",
-      "breachCandleClose": 261.1,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 261.1,
-          "time": "2018-07-02 14:30",
-          "candleIndex": 315,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 261.1,
-      "finalLimitPrice": 261.1,
-      "orderFillDetails": {
-        "filledOrderPrice": 261.1,
-        "fillTime": "2018-07-02 14:32",
-        "fillCandleHigh": 261.55,
-        "fillCandleLow": 261,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 315,
-        "filledAtCandleIndex": 317
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -2115.300000000044,
-      "netProfit": -2716.5451800000437
-    },
-    {
-      "date": "18/07/2018",
-      "type": "short",
-      "entryPrice": 258.05,
-      "exitPrice": 259.75,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-07-18 12:50",
-      "breachCandleClose": 259.75,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 259.75,
-          "time": "2018-07-18 12:50",
-          "candleIndex": 215,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 259.75,
-      "finalLimitPrice": 259.75,
-      "orderFillDetails": {
-        "filledOrderPrice": 259.75,
-        "fillTime": "2018-07-18 12:52",
-        "fillCandleHigh": 260.6,
-        "fillCandleLow": 259.55,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 215,
-        "filledAtCandleIndex": 217
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3292.899999999978,
-      "netProfit": -3894.6871599999777
-    },
-    {
-      "date": "23/07/2018",
-      "type": "short",
-      "entryPrice": 262.5,
-      "exitPrice": 264.2,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-07-23 13:42",
-      "breachCandleClose": 264.2,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 264.2,
-          "time": "2018-07-23 13:42",
-          "candleIndex": 267,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 264.2,
-      "finalLimitPrice": 264.2,
-      "orderFillDetails": {
-        "filledOrderPrice": 264.2,
-        "fillTime": "2018-07-23 13:44",
-        "fillCandleHigh": 264.75,
-        "fillCandleLow": 264.1,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 267,
-        "filledAtCandleIndex": 269
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3236.7999999999784,
-      "netProfit": -3838.5020799999784
-    },
-    {
-      "date": "20/08/2018",
-      "type": "short",
-      "entryPrice": 304.45,
-      "exitPrice": 308,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-08-20 14:51",
-      "breachCandleClose": 307.7,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 307.70000000000005,
-          "time": "2018-08-20 14:51",
-          "candleIndex": 336,
-          "reason": "stop_loss_breach"
-        },
-        {
-          "action": "updated",
-          "price": 308,
-          "time": "2018-08-20 14:53",
-          "candleIndex": 338,
-          "reason": "dynamic_adjustment"
-        }
-      ],
-      "totalPriceUpdates": 1,
-      "originalLimitPrice": 307.70000000000005,
-      "finalLimitPrice": 308,
-      "orderFillDetails": {
-        "filledOrderPrice": 308,
-        "fillTime": "2018-08-20 14:54",
-        "fillCandleHigh": 308.1,
-        "fillCandleLow": 307.35,
-        "timeBetweenPlaceAndFill": 3,
-        "placedAtCandleIndex": 336,
-        "filledAtCandleIndex": 339
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -5829.100000000019,
-      "netProfit": -6432.485740000018
-    },
-    {
-      "date": "06/09/2018",
-      "type": "long",
-      "entryPrice": 298.3,
-      "exitPrice": 295.55,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-09-06 12:45",
-      "breachCandleClose": 295.55,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 295.55,
-          "time": "2018-09-06 12:45",
-          "candleIndex": 210,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 295.55,
-      "finalLimitPrice": 295.55,
-      "orderFillDetails": {
-        "filledOrderPrice": 295.55,
-        "fillTime": "2018-09-06 12:47",
-        "fillCandleHigh": 296,
-        "fillCandleLow": 295.8,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 210,
-        "filledAtCandleIndex": 212
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -4609,
-      "netProfit": -5206.17556
-    },
-    {
-      "date": "19/09/2018",
-      "type": "long",
-      "entryPrice": 274.95,
-      "exitPrice": 270.90000000000003,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-09-19 14:41",
-      "breachCandleClose": 270.9,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 270.90000000000003,
-          "time": "2018-09-19 14:41",
-          "candleIndex": 326,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 270.90000000000003,
-      "finalLimitPrice": 270.90000000000003,
-      "orderFillDetails": {
-        "filledOrderPrice": 270.90000000000003,
-        "fillTime": "2018-09-19 14:43",
-        "fillCandleHigh": 271.35,
-        "fillCandleLow": 271.05,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 326,
-        "filledAtCandleIndex": 328
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -7362.899999999918,
-      "netProfit": -7958.313179999917
-    },
-    {
-      "date": "08/10/2018",
-      "type": "long",
-      "entryPrice": 263.3,
-      "exitPrice": 261.05,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-10-08 13:50",
-      "breachCandleClose": 261.05,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 261.05,
-          "time": "2018-10-08 13:50",
-          "candleIndex": 275,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 261.05,
-      "finalLimitPrice": 261.05,
-      "orderFillDetails": {
-        "filledOrderPrice": 261.05,
-        "fillTime": "2018-10-08 13:52",
-        "fillCandleHigh": 261.45,
-        "fillCandleLow": 261,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 275,
-        "filledAtCandleIndex": 277
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -4270.5,
-      "netProfit": -4867.62978
-    },
-    {
-      "date": "26/10/2018",
-      "type": "long",
-      "entryPrice": 251.20000000000002,
-      "exitPrice": 247.55,
-      "exitReason": "pre-market exit limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-10-26 15:02",
-      "breachCandleClose": 247.55,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 247.55,
-          "time": "2018-10-26 15:02",
-          "candleIndex": 347,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 247.55,
-      "finalLimitPrice": 247.55,
-      "orderFillDetails": null,
-      "circuitBreakerTriggered": false,
-      "grossProfit": -7263.500000000011,
-      "netProfit": -7859.007500000011
-    },
-    {
-      "date": "14/12/2018",
-      "type": "long",
-      "entryPrice": 289.35,
-      "exitPrice": 287.40000000000003,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2018-12-14 13:55",
-      "breachCandleClose": 287.4,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 287.40000000000003,
-          "time": "2018-12-14 13:55",
-          "candleIndex": 280,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 287.40000000000003,
-      "finalLimitPrice": 287.40000000000003,
-      "orderFillDetails": {
-        "filledOrderPrice": 287.40000000000003,
-        "fillTime": "2018-12-14 13:57",
-        "fillCandleHigh": 287.8,
-        "fillCandleLow": 287.55,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 280,
-        "filledAtCandleIndex": 282
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3369.5999999999804,
-      "netProfit": -3967.5743999999804
-    },
-    {
-      "date": "29/01/2019",
-      "type": "long",
-      "entryPrice": 285.05,
-      "exitPrice": 283.25,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-01-29 13:15",
-      "breachCandleClose": 283.25,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 283.25,
-          "time": "2019-01-29 13:15",
-          "candleIndex": 240,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 283.25,
-      "finalLimitPrice": 283.25,
-      "orderFillDetails": {
-        "filledOrderPrice": 283.25,
-        "fillTime": "2019-01-29 13:17",
-        "fillCandleHigh": 283.3,
-        "fillCandleLow": 283.1,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 240,
-        "filledAtCandleIndex": 242
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3157.20000000002,
-      "netProfit": -3755.2789200000198
-    },
-    {
-      "date": "01/02/2019",
-      "type": "long",
-      "entryPrice": 295.7,
-      "exitPrice": 290.40000000000003,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-02-01 13:56",
-      "breachCandleClose": 290.4,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 290.40000000000003,
-          "time": "2019-02-01 13:56",
-          "candleIndex": 281,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 290.40000000000003,
-      "finalLimitPrice": 290.40000000000003,
-      "orderFillDetails": {
-        "filledOrderPrice": 290.40000000000003,
-        "fillTime": "2019-02-01 13:58",
-        "fillCandleHigh": 290.45,
-        "fillCandleLow": 287.6,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 281,
-        "filledAtCandleIndex": 283
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -8956.999999999924,
-      "netProfit": -9551.305399999923
-    },
-    {
-      "date": "12/02/2019",
-      "type": "long",
-      "entryPrice": 281.5,
-      "exitPrice": 278.45,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-02-12 14:41",
-      "breachCandleClose": 278.45,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 278.45,
-          "time": "2019-02-12 14:41",
-          "candleIndex": 326,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 278.45,
-      "finalLimitPrice": 278.45,
-      "orderFillDetails": {
-        "filledOrderPrice": 278.45,
-        "fillTime": "2019-02-12 14:43",
-        "fillCandleHigh": 278.5,
-        "fillCandleLow": 277.75,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 326,
-        "filledAtCandleIndex": 328
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -5416.80000000002,
-      "netProfit": -6013.48272000002
-    },
-    {
-      "date": "10/05/2019",
-      "type": "short",
-      "entryPrice": 300.35,
-      "exitPrice": 301.85,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-05-10 14:13",
-      "breachCandleClose": 301.85,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 301.85,
-          "time": "2019-05-10 14:13",
-          "candleIndex": 298,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 301.85,
-      "finalLimitPrice": 301.85,
-      "orderFillDetails": {
-        "filledOrderPrice": 301.85,
-        "fillTime": "2019-05-10 14:15",
-        "fillCandleHigh": 301.9,
-        "fillCandleLow": 301.3,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 298,
-        "filledAtCandleIndex": 300
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -2496,
-      "netProfit": -3097.23648
-    },
-    {
-      "date": "17/05/2019",
-      "type": "short",
-      "entryPrice": 314.85,
-      "exitPrice": 318,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-05-17 14:33",
-      "breachCandleClose": 318,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 318,
-          "time": "2019-05-17 14:33",
-          "candleIndex": 318,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 318,
-      "finalLimitPrice": 318,
-      "orderFillDetails": {
-        "filledOrderPrice": 318,
-        "fillTime": "2019-05-17 14:35",
-        "fillCandleHigh": 318.35,
-        "fillCandleLow": 317.6,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 318,
-        "filledAtCandleIndex": 320
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -5002.199999999964,
-      "netProfit": -5605.179479999964
-    },
-    {
-      "date": "21/05/2019",
-      "type": "long",
-      "entryPrice": 344.85,
-      "exitPrice": 339.70000000000005,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-05-21 11:54",
-      "breachCandleClose": 339.9,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 339.90000000000003,
-          "time": "2019-05-21 11:54",
-          "candleIndex": 159,
-          "reason": "stop_loss_breach"
-        },
-        {
-          "action": "updated",
-          "price": 339.70000000000005,
-          "time": "2019-05-21 11:56",
-          "candleIndex": 161,
-          "reason": "dynamic_adjustment"
-        }
-      ],
-      "totalPriceUpdates": 1,
-      "originalLimitPrice": 339.90000000000003,
-      "finalLimitPrice": 339.70000000000005,
-      "orderFillDetails": {
-        "filledOrderPrice": 339.70000000000005,
-        "fillTime": "2019-05-21 11:57",
-        "fillCandleHigh": 339.9,
-        "fillCandleLow": 339.6,
-        "timeBetweenPlaceAndFill": 3,
-        "placedAtCandleIndex": 159,
-        "filledAtCandleIndex": 162
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -7462.349999999967,
-      "netProfit": -8057.497769999967
-    },
-    {
-      "date": "23/05/2019",
-      "type": "long",
-      "entryPrice": 356.90000000000003,
-      "exitPrice": 354.5,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-05-23 11:18",
-      "breachCandleClose": 354.5,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 354.5,
-          "time": "2019-05-23 11:18",
-          "candleIndex": 123,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 354.5,
-      "finalLimitPrice": 354.5,
-      "orderFillDetails": {
-        "filledOrderPrice": 354.5,
-        "fillTime": "2019-05-23 11:20",
-        "fillCandleHigh": 354.55,
-        "fillCandleLow": 353.75,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 123,
-        "filledAtCandleIndex": 125
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3360.0000000000477,
-      "netProfit": -3957.5760000000478
-    },
-    {
-      "date": "06/06/2019",
-      "type": "long",
-      "entryPrice": 347.95000000000005,
-      "exitPrice": 342.45000000000005,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-06-06 13:29",
-      "breachCandleClose": 343.5,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 343.5,
-          "time": "2019-06-06 13:29",
+          "price": 3882.1000000000004,
+          "time": "2024-04-18 13:29",
           "candleIndex": 254,
           "reason": "stop_loss_breach"
+        }
+      ],
+      "totalPriceUpdates": 0,
+      "originalLimitPrice": 3882.1000000000004,
+      "finalLimitPrice": 3882.1000000000004,
+      "orderFillDetails": null,
+      "circuitBreakerTriggered": true,
+      "grossProfit": -2355.1999999999534,
+      "netProfit": -2951.9052799999536
+    },
+    {
+      "date": "19/04/2024",
+      "type": "short",
+      "entryPrice": 3820.9500000000003,
+      "exitPrice": 3836.9,
+      "exitReason": "stop loss limit order filled",
+      "stopLossBreached": true,
+      "breachCandleTime": "2024-04-19 13:05",
+      "breachCandleClose": 3836.9,
+      "limitOrderHistory": [
+        {
+          "action": "placed",
+          "price": 3836.9,
+          "time": "2024-04-19 13:05",
+          "candleIndex": 230,
+          "reason": "stop_loss_breach"
+        }
+      ],
+      "totalPriceUpdates": 0,
+      "originalLimitPrice": 3836.9,
+      "finalLimitPrice": 3836.9,
+      "orderFillDetails": {
+        "filledOrderPrice": 3836.9,
+        "fillTime": "2024-04-19 13:07",
+        "fillCandleHigh": 3836.95,
+        "fillCandleLow": 3835.3,
+        "timeBetweenPlaceAndFill": 2,
+        "placedAtCandleIndex": 230,
+        "filledAtCandleIndex": 232
+      },
+      "circuitBreakerTriggered": false,
+      "grossProfit": -2073.4999999999764,
+      "netProfit": -2670.8122999999764
+    },
+    {
+      "date": "27/05/2024",
+      "type": "long",
+      "entryPrice": 3895,
+      "exitPrice": 3875.6000000000004,
+      "exitReason": "stop loss limit order filled",
+      "stopLossBreached": true,
+      "breachCandleTime": "2024-05-27 14:06",
+      "breachCandleClose": 3875.6,
+      "limitOrderHistory": [
+        {
+          "action": "placed",
+          "price": 3875.6000000000004,
+          "time": "2024-05-27 14:06",
+          "candleIndex": 291,
+          "reason": "stop_loss_breach"
+        }
+      ],
+      "totalPriceUpdates": 0,
+      "originalLimitPrice": 3875.6000000000004,
+      "finalLimitPrice": 3875.6000000000004,
+      "orderFillDetails": {
+        "filledOrderPrice": 3875.6000000000004,
+        "fillTime": "2024-05-27 14:08",
+        "fillCandleHigh": 3875.65,
+        "fillCandleLow": 3871.8,
+        "timeBetweenPlaceAndFill": 2,
+        "placedAtCandleIndex": 291,
+        "filledAtCandleIndex": 293
+      },
+      "circuitBreakerTriggered": false,
+      "grossProfit": -2483.1999999999534,
+      "netProfit": -3079.9820799999534
+    },
+    {
+      "date": "06/06/2024",
+      "type": "short",
+      "entryPrice": 3760.25,
+      "exitPrice": 3783.75,
+      "exitReason": "stop loss limit order filled",
+      "stopLossBreached": true,
+      "breachCandleTime": "2024-06-06 12:34",
+      "breachCandleClose": 3774.2,
+      "limitOrderHistory": [
+        {
+          "action": "placed",
+          "price": 3774.2000000000003,
+          "time": "2024-06-06 12:34",
+          "candleIndex": 199,
+          "reason": "stop_loss_breach"
         },
         {
           "action": "updated",
-          "price": 342.45000000000005,
-          "time": "2019-06-06 13:31",
-          "candleIndex": 256,
+          "price": 3783.75,
+          "time": "2024-06-06 12:36",
+          "candleIndex": 201,
           "reason": "dynamic_adjustment"
         }
       ],
       "totalPriceUpdates": 1,
-      "originalLimitPrice": 343.5,
-      "finalLimitPrice": 342.45000000000005,
+      "originalLimitPrice": 3774.2000000000003,
+      "finalLimitPrice": 3783.75,
       "orderFillDetails": {
-        "filledOrderPrice": 342.45000000000005,
-        "fillTime": "2019-06-06 13:32",
-        "fillCandleHigh": 342.65,
-        "fillCandleLow": 341.6,
+        "filledOrderPrice": 3783.75,
+        "fillTime": "2024-06-06 12:37",
+        "fillCandleHigh": 3784.3,
+        "fillCandleLow": 3781.45,
         "timeBetweenPlaceAndFill": 3,
-        "placedAtCandleIndex": 254,
-        "filledAtCandleIndex": 257
+        "placedAtCandleIndex": 199,
+        "filledAtCandleIndex": 202
       },
       "circuitBreakerTriggered": false,
-      "grossProfit": -7898,
-      "netProfit": -8492.84864
-    },
-    {
-      "date": "08/07/2019",
-      "type": "short",
-      "entryPrice": 354.75,
-      "exitPrice": 357.35,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-07-08 14:38",
-      "breachCandleClose": 357.35,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 357.35,
-          "time": "2019-07-08 14:38",
-          "candleIndex": 323,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 357.35,
-      "finalLimitPrice": 357.35,
-      "orderFillDetails": {
-        "filledOrderPrice": 357.35,
-        "fillTime": "2019-07-08 14:40",
-        "fillCandleHigh": 357.75,
-        "fillCandleLow": 357.15,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 323,
-        "filledAtCandleIndex": 325
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3663.400000000032,
-      "netProfit": -4265.409340000032
-    },
-    {
-      "date": "26/07/2019",
-      "type": "long",
-      "entryPrice": 344.90000000000003,
-      "exitPrice": 341.65000000000003,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-07-26 13:30",
-      "breachCandleClose": 342.75,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 342.75,
-          "time": "2019-07-26 13:30",
-          "candleIndex": 255,
-          "reason": "stop_loss_breach"
-        },
-        {
-          "action": "updated",
-          "price": 342.40000000000003,
-          "time": "2019-07-26 13:32",
-          "candleIndex": 257,
-          "reason": "dynamic_adjustment"
-        },
-        {
-          "action": "updated",
-          "price": 341.65000000000003,
-          "time": "2019-07-26 13:33",
-          "candleIndex": 258,
-          "reason": "dynamic_adjustment"
-        }
-      ],
-      "totalPriceUpdates": 2,
-      "originalLimitPrice": 342.75,
-      "finalLimitPrice": 341.65000000000003,
-      "orderFillDetails": {
-        "filledOrderPrice": 341.65000000000003,
-        "fillTime": "2019-07-26 13:34",
-        "fillCandleHigh": 341.7,
-        "fillCandleLow": 340.9,
-        "timeBetweenPlaceAndFill": 4,
-        "placedAtCandleIndex": 255,
-        "filledAtCandleIndex": 259
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -4709.25,
-      "netProfit": -5306.13657
-    },
-    {
-      "date": "09/08/2019",
-      "type": "long",
-      "entryPrice": 296.40000000000003,
-      "exitPrice": 292.5,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-08-09 13:45",
-      "breachCandleClose": 292.5,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 292.5,
-          "time": "2019-08-09 13:45",
-          "candleIndex": 270,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 292.5,
-      "finalLimitPrice": 292.5,
-      "orderFillDetails": {
-        "filledOrderPrice": 292.5,
-        "fillTime": "2019-08-09 13:47",
-        "fillCandleHigh": 293.65,
-        "fillCandleLow": 292.95,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 270,
-        "filledAtCandleIndex": 272
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -6575.400000000058,
-      "netProfit": -7171.131240000058
-    },
-    {
-      "date": "26/08/2019",
-      "type": "short",
-      "entryPrice": 272.35,
-      "exitPrice": 275.35,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-08-26 12:12",
-      "breachCandleClose": 275.35,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 275.35,
-          "time": "2019-08-26 12:12",
-          "candleIndex": 177,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 275.35,
-      "finalLimitPrice": 275.35,
-      "orderFillDetails": {
-        "filledOrderPrice": 275.35,
-        "fillTime": "2019-08-26 12:14",
-        "fillCandleHigh": 275.75,
-        "fillCandleLow": 275.05,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 177,
-        "filledAtCandleIndex": 179
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -5505,
-      "netProfit": -6108.0177
-    },
-    {
-      "date": "29/08/2019",
-      "type": "long",
-      "entryPrice": 282.90000000000003,
-      "exitPrice": 281,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-08-29 11:25",
-      "breachCandleClose": 281,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 281,
-          "time": "2019-08-29 11:25",
-          "candleIndex": 130,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 281,
-      "finalLimitPrice": 281,
-      "orderFillDetails": {
-        "filledOrderPrice": 281,
-        "fillTime": "2019-08-29 11:27",
-        "fillCandleHigh": 281.1,
-        "fillCandleLow": 280.45,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 130,
-        "filledAtCandleIndex": 132
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -3357.30000000006,
-      "netProfit": -3955.14678000006
-    },
-    {
-      "date": "20/09/2019",
-      "type": "short",
-      "entryPrice": 270.95,
-      "exitPrice": 275.2,
-      "exitReason": "circuit breaker (200% max loss)",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-09-20 10:45",
-      "breachCandleClose": 273.2,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 273.2,
-          "time": "2019-09-20 10:45",
-          "candleIndex": 90,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 273.2,
-      "finalLimitPrice": 273.2,
-      "orderFillDetails": null,
-      "circuitBreakerTriggered": true,
-      "grossProfit": -7841.25,
-      "netProfit": -8445.83805
-    },
-    {
-      "date": "04/10/2019",
-      "type": "long",
-      "entryPrice": 258.55,
-      "exitPrice": 253.10000000000002,
-      "exitReason": "circuit breaker (200% max loss)",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-10-04 11:45",
-      "breachCandleClose": 256.55,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 256.55,
-          "time": "2019-10-04 11:45",
-          "candleIndex": 150,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 256.55,
-      "finalLimitPrice": 256.55,
-      "orderFillDetails": null,
-      "circuitBreakerTriggered": true,
-      "grossProfit": -10534.849999999979,
-      "netProfit": -11128.261669999978
-    },
-    {
-      "date": "06/12/2019",
-      "type": "short",
-      "entryPrice": 322.85,
-      "exitPrice": 325.85,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-12-06 13:17",
-      "breachCandleClose": 325.85,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 325.85,
-          "time": "2019-12-06 13:17",
-          "candleIndex": 242,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 325.85,
-      "finalLimitPrice": 325.85,
-      "orderFillDetails": {
-        "filledOrderPrice": 325.85,
-        "fillTime": "2019-12-06 13:19",
-        "fillCandleHigh": 325.4,
-        "fillCandleLow": 325.65,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 242,
-        "filledAtCandleIndex": 244
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -4644,
-      "netProfit": -5246.51256
-    },
-    {
-      "date": "10/12/2019",
-      "type": "long",
-      "entryPrice": 317.90000000000003,
-      "exitPrice": 315.20000000000005,
-      "exitReason": "stop loss limit order filled",
-      "stopLossBreached": true,
-      "breachCandleTime": "2019-12-10 12:39",
-      "breachCandleClose": 315.2,
-      "limitOrderHistory": [
-        {
-          "action": "placed",
-          "price": 315.20000000000005,
-          "time": "2019-12-10 12:39",
-          "candleIndex": 204,
-          "reason": "stop_loss_breach"
-        }
-      ],
-      "totalPriceUpdates": 0,
-      "originalLimitPrice": 315.20000000000005,
-      "finalLimitPrice": 315.20000000000005,
-      "orderFillDetails": {
-        "filledOrderPrice": 315.20000000000005,
-        "fillTime": "2019-12-10 12:41",
-        "fillCandleHigh": 315.3,
-        "fillCandleLow": 314.9,
-        "timeBetweenPlaceAndFill": 2,
-        "placedAtCandleIndex": 204,
-        "filledAtCandleIndex": 206
-      },
-      "circuitBreakerTriggered": false,
-      "grossProfit": -4244.399999999982,
-      "netProfit": -4841.539919999983
+      "grossProfit": -3102,
+      "netProfit": -3699.4848
     }
   ]
 }

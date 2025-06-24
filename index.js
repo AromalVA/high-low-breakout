@@ -18,8 +18,8 @@ const config ={
       "enabled": true,
       "specificDate": null,
       "dateRange": {
-        "start": "01/01/2017",
-        "end": "01/01/2020"
+        "start": "16/03/2024",
+        "end": "15/06/2024"
       }
     },
     "volumeConfirmation": {
@@ -54,15 +54,15 @@ const config ={
       "enabled": true,
       "tickSize": 0.05
     },
-    "minThreshold": 30,
-    "maxThreshold": 220,
-    "riskRewardRatio": 1,
-    "pullbackPercentage": 10,
-    "minimumStopLossPercent": 0.75
+    "minThreshold": 55,
+    "maxThreshold": 160,
+    "riskRewardRatio": 0.5,
+    "pullbackPercentage": 30,
+    "minimumStopLossPercent": 0.5
   }
 
 // Run the backtest
-const results = runBacktest('SBIN-EQ.json', config);
+const results = runBacktest('TCS-EQ.json', config);
 
 // Print summary
 console.log('=================== Backtest Results ===================');
