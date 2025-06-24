@@ -18,8 +18,8 @@ const config ={
       "enabled": true,
       "specificDate": null,
       "dateRange": {
-        "start": "02/01/2020",
-        "end": "01/01/2023"
+        "start": "01/01/2017",
+        "end": "01/01/2020"
       }
     },
     "volumeConfirmation": {
@@ -54,11 +54,11 @@ const config ={
       "enabled": true,
       "tickSize": 0.05
     },
-    "minThreshold": 50,
-    "maxThreshold": 280,
-    "riskRewardRatio": 2,
-    "pullbackPercentage": 0,
-    "minimumStopLossPercent": 1.75
+    "minThreshold": 30,
+    "maxThreshold": 220,
+    "riskRewardRatio": 1,
+    "pullbackPercentage": 10,
+    "minimumStopLossPercent": 0.75
   }
 
 // Run the backtest

@@ -14,7 +14,7 @@ const PARAM_RANGES = {
 
 // Validation settings
 const VALIDATION_SETTINGS = {
-  minimumTrades: 20,  // Minimum number of trades required for a configuration to be considered valid
+  minimumTrades: 30,  // Minimum number of trades required for a configuration to be considered valid
   description: "Only configurations with at least this many trades will be considered valid"
 };
 
@@ -100,6 +100,46 @@ function createConfig(params) {
 }
 
 /**
+ * Count total trades from backtest results - handles multiple possible field names
+ */
+function getTotalTrades(results) {
+  if (!results) return 0;
+  
+  // Try different possible field combinations
+  let totalTrades = 0;
+  
+  // Method 1: Sum of winning and losing days/trades
+  if (typeof results.totalWinningDays === 'number' && typeof results.totalLosingDays === 'number') {
+    totalTrades = results.totalWinningDays + results.totalLosingDays;
+  }
+  // Method 2: Sum of winning and losing trades
+  else if (typeof results.totalWinningTrades === 'number' && typeof results.totalLosingTrades === 'number') {
+    totalTrades = results.totalWinningTrades + results.totalLosingTrades;
+  }
+  // Method 3: Direct total trades field
+  else if (typeof results.totalTrades === 'number') {
+    totalTrades = results.totalTrades;
+  }
+  // Method 4: Count from allTrades array
+  else if (Array.isArray(results.allTrades)) {
+    // Count actual trades (filter out undefined/null profits)
+    totalTrades = results.allTrades.filter(trade => 
+      trade && (
+        typeof trade.profit === 'number' || 
+        typeof trade.netProfit === 'number' ||
+        typeof trade.totalProfit === 'number'
+      )
+    ).length;
+  }
+  // Method 5: Try other common field names
+  else if (typeof results.tradeCount === 'number') {
+    totalTrades = results.tradeCount;
+  }
+  
+  return totalTrades;
+}
+
+/**
  * Generate all valid parameter combinations
  */
 function generateAllCombinations() {
@@ -153,13 +193,20 @@ function splitIntoChunks(combinations, numChunks) {
  * Save the best configuration to file
  */
 function saveBestConfig(bestResult, combinationNumber, totalCombinations, isLiveSave = false) {
+  // STRICT VALIDATION: Only save if minimum trades requirement is met
+  const totalTrades = getTotalTrades(bestResult.results);
+  if (totalTrades < VALIDATION_SETTINGS.minimumTrades) {
+    console.log(`❌ SAVE BLOCKED: Configuration has only ${totalTrades} trades (minimum required: ${VALIDATION_SETTINGS.minimumTrades})`);
+    return false;
+  }
+  
   const output = {
     bestConfiguration: bestResult.config,
     results: {
       totalNetProfit: bestResult.profit,
       totalGrossProfit: bestResult.results.totalGrossProfit || 0,
       winRate: bestResult.results.winRate || 0,
-      totalTrades: (bestResult.results.totalWinningDays || 0) + (bestResult.results.totalLosingDays || 0),
+      totalTrades: totalTrades,
       averageNetProfitPerTrade: bestResult.results.averageNetProfitPerTrade || 0,
       totalNetReturnPercentage: bestResult.results.totalNetReturnPercentage || 0,
       averageGrossProfitPerTrade: bestResult.results.averageGrossProfitPerTrade || 0,
@@ -183,7 +230,9 @@ function saveBestConfig(bestResult, combinationNumber, totalCombinations, isLive
       threadsUsed: os.cpus().length,
       validationSettings: {
         minimumTradesRequired: VALIDATION_SETTINGS.minimumTrades,
-        volumeConfirmationEnabled: false
+        volumeConfirmationEnabled: false,
+        actualTradesFound: totalTrades,
+        validationPassed: true
       }
     },
     parameterValues: {
@@ -198,6 +247,7 @@ function saveBestConfig(bestResult, combinationNumber, totalCombinations, isLive
   try {
     // Write to main file only
     fs.writeFileSync('best_conf.json', JSON.stringify(output, null, 2));
+    console.log(`✅ Configuration saved with ${totalTrades} trades (required: ${VALIDATION_SETTINGS.minimumTrades}+)`);
     return true;
   } catch (error) {
     console.error(`❌ Error saving best configuration: ${error.message}`);
@@ -215,12 +265,19 @@ function loadExistingBestConfig() {
       const existing = JSON.parse(content);
       
       if (existing.results && typeof existing.results.totalNetProfit === 'number') {
-        console.log(`📁 Found existing best configuration with profit: ₹${existing.results.totalNetProfit.toFixed(2)}`);
-        return {
-          profit: existing.results.totalNetProfit,
-          config: existing.bestConfiguration,
-          results: existing.results
-        };
+        const existingTrades = existing.results.totalTrades || 0;
+        
+        // Validate that existing config meets current minimum trades requirement
+        if (existingTrades >= VALIDATION_SETTINGS.minimumTrades) {
+          console.log(`📁 Found valid existing configuration with profit: ₹${existing.results.totalNetProfit.toFixed(2)} (${existingTrades} trades)`);
+          return {
+            profit: existing.results.totalNetProfit,
+            config: existing.bestConfiguration,
+            results: existing.results
+          };
+        } else {
+          console.log(`📁 Found existing configuration but it only has ${existingTrades} trades (minimum required: ${VALIDATION_SETTINGS.minimumTrades}). Starting fresh.`);
+        }
       }
     }
   } catch (error) {
@@ -279,6 +336,7 @@ if (!isMainThread) {
     };
     
     let processedCount = 0;
+    let validConfigCount = 0; // Track configs that meet minimum trades
     const totalInChunk = combinations.length;
     
     if (totalInChunk === 0) {
@@ -287,20 +345,13 @@ if (!isMainThread) {
         type: 'result',
         workerId: workerId,
         bestResult: bestResult,
-        processedCount: 0
+        processedCount: 0,
+        validConfigCount: 0
       });
       process.exit(0);
     }
     
-    console.log(`Worker ${workerId}: Processing ${totalInChunk} combinations`);
-    
-    // Test first combination to ensure everything works
-    if (totalInChunk > 0) {
-      console.log(`Worker ${workerId}: Testing first combination...`);
-      const testParams = combinations[0];
-      const testConfig = createConfig(testParams);
-      console.log(`Worker ${workerId}: First config - minT: ${testConfig.minThreshold}, maxT: ${testConfig.maxThreshold}, RR: ${testConfig.riskRewardRatio}`);
-    }
+    console.log(`Worker ${workerId}: Processing ${totalInChunk} combinations (minimum ${VALIDATION_SETTINGS.minimumTrades} trades required)`);
     
     // Process each combination in this worker's chunk
     for (let i = 0; i < combinations.length; i++) {
@@ -318,75 +369,91 @@ if (!isMainThread) {
         
         processedCount++;
         
-        // Debug: Always log first 5 results to see what we're getting
-        if (processedCount <= 5) {
-          console.log(`Worker ${workerId}: Result ${processedCount}:`);
-          console.log(`  Config: minT=${params.minThreshold}, maxT=${params.maxThreshold}, RR=${params.riskRewardRatio}`);
-          console.log(`  Results type: ${typeof results}, has totalNetProfit: ${results?.hasOwnProperty('totalNetProfit')}`);
-          console.log(`  totalNetProfit: ${results?.totalNetProfit}, totalProfit: ${results?.totalProfit}`);
-          console.log(`  winningDays: ${results?.totalWinningDays}, losingDays: ${results?.totalLosingDays}`);
-          console.log(`  error: ${results?.error}`);
-          
-          if (results?.allTrades) {
-            const actualTrades = results.allTrades.filter(trade => trade.profit !== undefined || trade.netProfit !== undefined);
-            console.log(`  Total trades found: ${actualTrades.length}`);
-            if (actualTrades.length > 0) {
-              const sampleTrade = actualTrades[0];
-              console.log(`  Sample trade: ${sampleTrade.date}, profit: ${sampleTrade.netProfit || sampleTrade.profit}`);
-            }
-          }
-        }
-        
         // Validate results
         if (!results) {
-          console.log(`Worker ${workerId}: No results returned for combination ${i}`);
+          if (processedCount <= 5) {
+            console.log(`Worker ${workerId}: No results returned for combination ${i}`);
+          }
           continue;
         }
         
         if (results.error) {
-          console.log(`Worker ${workerId}: Backtest error for combination ${i}: ${results.error}`);
+          if (processedCount <= 5) {
+            console.log(`Worker ${workerId}: Backtest error for combination ${i}: ${results.error}`);
+          }
           continue;
         }
         
-        if (typeof results.totalNetProfit !== 'number') {
-          console.log(`Worker ${workerId}: Invalid totalNetProfit (${typeof results.totalNetProfit}): ${results.totalNetProfit}`);
-          // Try alternative profit fields
+        // Get profit value
+        let profit = results.totalNetProfit;
+        if (typeof profit !== 'number') {
           if (typeof results.totalProfit === 'number') {
-            console.log(`Worker ${workerId}: Using totalProfit instead: ${results.totalProfit}`);
-            results.totalNetProfit = results.totalProfit;
+            profit = results.totalProfit;
           } else {
-            console.log(`Worker ${workerId}: No valid profit field found, skipping`);
+            if (processedCount <= 5) {
+              console.log(`Worker ${workerId}: No valid profit field found for combination ${i}`);
+            }
             continue;
           }
         }
         
-        // Validate minimum trades requirement
-        const totalTrades = (results.totalWinningDays || 0) + (results.totalLosingDays || 0);
+        // Count total trades using improved function
+        const totalTrades = getTotalTrades(results);
+        
+        // Debug: Log first few results to understand data structure
+        if (processedCount <= 5) {
+          console.log(`Worker ${workerId}: Result ${processedCount}:`);
+          console.log(`  Config: minT=${params.minThreshold}, maxT=${params.maxThreshold}, RR=${params.riskRewardRatio}`);
+          console.log(`  Profit: ${profit}`);
+          console.log(`  Total trades found: ${totalTrades}`);
+          console.log(`  Result fields: ${Object.keys(results).join(', ')}`);
+          
+          // Show available trade-related fields
+          const tradeFields = Object.keys(results).filter(key => 
+            key.toLowerCase().includes('trade') || 
+            key.toLowerCase().includes('win') || 
+            key.toLowerCase().includes('los')
+          );
+          console.log(`  Trade-related fields: ${tradeFields.join(', ')}`);
+          
+          if (results.allTrades && Array.isArray(results.allTrades)) {
+            console.log(`  allTrades array length: ${results.allTrades.length}`);
+            if (results.allTrades.length > 0) {
+              const sampleTrade = results.allTrades[0];
+              console.log(`  Sample trade fields: ${Object.keys(sampleTrade || {}).join(', ')}`);
+            }
+          }
+        }
+        
+        // STRICT VALIDATION: Only accept configurations with minimum trades
         if (totalTrades < VALIDATION_SETTINGS.minimumTrades) {
-          if (processedCount <= 10) { // Log first few rejections for debugging
+          if (processedCount <= 20) { // Log first 20 rejections for debugging
             console.log(`Worker ${workerId}: Configuration rejected - only ${totalTrades} trades (minimum required: ${VALIDATION_SETTINGS.minimumTrades})`);
           }
           continue;
         }
         
+        validConfigCount++;
+        
         // Check if this is the best result in this chunk
-        if (results.totalNetProfit > bestResult.profit) {
+        if (profit > bestResult.profit) {
           bestResult = {
-            profit: results.totalNetProfit,
+            profit: profit,
             config: config,
             results: results,
             combinationIndex: i,
             params: params
           };
           
-          console.log(`Worker ${workerId}: New best profit: ₹${bestResult.profit.toFixed(2)} (was ₹${bestResult.profit === results.totalNetProfit ? 'first' : 'previous'})`);
+          console.log(`Worker ${workerId}: New best profit: ₹${bestResult.profit.toFixed(2)} with ${totalTrades} trades`);
           
           // Immediately notify main thread of new best result for live saving
           parentPort.postMessage({
             type: 'new_best',
             workerId: workerId,
             bestResult: bestResult,
-            processedCount: processedCount
+            processedCount: processedCount,
+            validConfigCount: validConfigCount
           });
         }
         
@@ -397,6 +464,7 @@ if (!isMainThread) {
             workerId: workerId,
             processed: processedCount,
             total: totalInChunk,
+            validConfigs: validConfigCount,
             bestProfit: bestResult.profit
           });
         }
@@ -413,14 +481,15 @@ if (!isMainThread) {
       }
     }
     
-    console.log(`Worker ${workerId}: Completed processing. Best profit: ₹${bestResult.profit.toFixed(2)}`);
+    console.log(`Worker ${workerId}: Completed processing. Valid configs: ${validConfigCount}/${processedCount}. Best profit: ${bestResult.profit === -Infinity ? 'None' : '₹' + bestResult.profit.toFixed(2)}`);
     
     // Send final result back to main thread
     parentPort.postMessage({
       type: 'result',
       workerId: workerId,
       bestResult: bestResult,
-      processedCount: processedCount
+      processedCount: processedCount,
+      validConfigCount: validConfigCount
     });
     
   } catch (error) {
@@ -483,14 +552,20 @@ async function main() {
     });
     
     const testResult = backtest(stockData, testConfig);
+    const testTrades = getTotalTrades(testResult);
+    
     console.log(`✓ Backtest test completed:`);
     console.log(`  totalNetProfit: ${testResult?.totalNetProfit}`);
     console.log(`  totalProfit: ${testResult?.totalProfit}`);
-    console.log(`  totalTrades: ${(testResult?.totalWinningDays || 0) + (testResult?.totalLosingDays || 0)}`);
+    console.log(`  Total trades detected: ${testTrades}`);
+    console.log(`  Available result fields: ${testResult ? Object.keys(testResult).join(', ') : 'None'}`);
     console.log(`  hasError: ${!!testResult?.error}`);
     
     if (testResult?.error) {
       console.error(`⚠️  Test backtest failed: ${testResult.error}`);
+    } else if (testTrades < VALIDATION_SETTINGS.minimumTrades) {
+      console.warn(`⚠️  Test configuration only generated ${testTrades} trades (minimum required: ${VALIDATION_SETTINGS.minimumTrades})`);
+      console.warn(`💡 Consider adjusting VALIDATION_SETTINGS.minimumTrades or expanding your parameter ranges`);
     }
     
   } catch (error) {
@@ -518,10 +593,10 @@ async function main() {
   
   // Initialize tracking variables
   let totalProcessed = 0;
+  let totalValidConfigs = 0;
   const startTime = Date.now();
   const workerStats = new Map();
   let lastProgressTime = startTime;
-  let lastSaveTime = startTime;
   
   // Create and start worker threads (limit to CPU count)
   console.log('\n🚀 Starting optimization with worker threads...\n');
@@ -541,7 +616,7 @@ async function main() {
     });
     
     workers.push(worker);
-    workerStats.set(i, { processed: 0, total: chunks[i].length, bestProfit: -Infinity });
+    workerStats.set(i, { processed: 0, total: chunks[i].length, validConfigs: 0, bestProfit: -Infinity });
     
     const workerPromise = new Promise((resolve, reject) => {
       worker.on('message', (message) => {
@@ -549,11 +624,13 @@ async function main() {
           workerStats.set(message.workerId, {
             processed: message.processed,
             total: workerStats.get(message.workerId).total,
+            validConfigs: message.validConfigs || 0,
             bestProfit: message.bestProfit
           });
           
-          // Update total processed
+          // Update totals
           totalProcessed = Array.from(workerStats.values()).reduce((sum, stat) => sum + stat.processed, 0);
+          totalValidConfigs = Array.from(workerStats.values()).reduce((sum, stat) => sum + stat.validConfigs, 0);
           
           // Report global progress 
           const currentTime = Date.now();
@@ -563,10 +640,9 @@ async function main() {
             const eta = (combinations.length - totalProcessed) / rate;
             const progress = (totalProcessed / combinations.length * 100).toFixed(2);
             
-            // Show actual best profit (even if negative) instead of 0.00
             const bestProfitDisplay = globalBestResult.profit === -Infinity ? 'None' : `₹${globalBestResult.profit.toFixed(2)}`;
             
-            console.log(`📈 Progress: ${totalProcessed.toLocaleString()}/${combinations.length.toLocaleString()} (${progress}%) | Rate: ${rate.toFixed(0)}/sec | ETA: ${(eta/60).toFixed(1)}min | Best: ${bestProfitDisplay}`);
+            console.log(`📈 Progress: ${totalProcessed.toLocaleString()}/${combinations.length.toLocaleString()} (${progress}%) | Valid: ${totalValidConfigs} | Rate: ${rate.toFixed(0)}/sec | ETA: ${(eta/60).toFixed(1)}min | Best: ${bestProfitDisplay}`);
             lastProgressTime = currentTime;
           }
           
@@ -574,7 +650,7 @@ async function main() {
           // Handle immediate best result notification for live saving
           if (message.bestResult.profit > globalBestResult.profit) {
             console.log(`🔄 LIVE UPDATE: New global best from Worker ${message.workerId}!`);
-            console.log(`   Previous best: ₹${globalBestResult.profit === -Infinity ? 'None' : globalBestResult.profit.toFixed(2)}`);
+            console.log(`   Previous best: ${globalBestResult.profit === -Infinity ? 'None' : '₹' + globalBestResult.profit.toFixed(2)}`);
             console.log(`   New best: ₹${message.bestResult.profit.toFixed(2)}`);
             
             globalBestResult = {
@@ -583,20 +659,18 @@ async function main() {
               results: message.bestResult.results
             };
             
-            // LIVE SAVE: Save immediately when new best is found
+            // LIVE SAVE: Save immediately when new best is found (with strict validation)
             const saveSuccess = saveBestConfig(globalBestResult, totalProcessed + message.processedCount, combinations.length, true);
             
             if (saveSuccess) {
               console.log(`   💾 ✅ LIVE SAVE: Configuration saved to best_conf.json`);
             } else {
-              console.log(`   💾 ❌ LIVE SAVE FAILED!`);
+              console.log(`   💾 ❌ LIVE SAVE BLOCKED: Configuration doesn't meet minimum trades requirement`);
             }
             
             if (message.bestResult.params) {
               console.log(`   📊 Config: minT=${message.bestResult.params.minThreshold}, maxT=${message.bestResult.params.maxThreshold}, RR=${message.bestResult.params.riskRewardRatio}, PB=${message.bestResult.params.pullbackPercentage}%, MinSL=${message.bestResult.params.minimumStopLossPercent}%`);
             }
-            
-            lastSaveTime = Date.now();
           }
           
         } else if (message.type === 'error') {
@@ -608,7 +682,7 @@ async function main() {
           }
           
         } else if (message.type === 'result') {
-          console.log(`📥 Final result from Worker ${message.workerId}: profit = ${message.bestResult.profit}`);
+          console.log(`📥 Final result from Worker ${message.workerId}: profit = ${message.bestResult.profit}, valid configs = ${message.validConfigCount}/${message.processedCount}`);
           
           // Check if this worker found a better result (shouldn't happen due to live updates, but just in case)
           if (message.bestResult.profit > globalBestResult.profit) {
@@ -619,18 +693,13 @@ async function main() {
               config: message.bestResult.config,
               results: message.bestResult.results
             };
-            
-            // Save the best configuration
-            const saveSuccess = saveBestConfig(globalBestResult, totalProcessed, combinations.length, false);
-            
-            if (saveSuccess) {
-              console.log(`   💾 Final configuration saved to best_conf.json`);
-            }
           }
           
           totalProcessed += message.processedCount;
+          totalValidConfigs += message.validConfigCount || 0;
+          
           const workerBestDisplay = message.bestResult.profit === -Infinity ? 'None' : `₹${message.bestResult.profit.toFixed(2)}`;
-          console.log(`✅ Worker ${message.workerId} completed: ${message.processedCount} combinations, best profit: ${workerBestDisplay}`);
+          console.log(`✅ Worker ${message.workerId} completed: ${message.processedCount} combinations, ${message.validConfigCount} valid, best profit: ${workerBestDisplay}`);
           resolve(message.bestResult);
         }
       });
@@ -657,14 +726,6 @@ async function main() {
     // Final cleanup
     workers.forEach(worker => worker.terminate());
     
-    // Final save (in case no live saves occurred)
-    if (globalBestResult.profit > -Infinity) {
-      const finalSaveSuccess = saveBestConfig(globalBestResult, combinations.length, combinations.length, false);
-      if (finalSaveSuccess) {
-        console.log(`💾 Final configuration confirmed in best_conf.json`);
-      }
-    }
-    
     // Final results
     const totalTime = (Date.now() - startTime) / 1000;
     console.log('\n' + '=' .repeat(70));
@@ -673,15 +734,18 @@ async function main() {
     console.log(`⏱️  Total time: ${(totalTime/60).toFixed(1)} minutes`);
     console.log(`🧵 Threads used: ${numCPUs}`);
     console.log(`📊 Combinations tested: ${combinations.length.toLocaleString()}`);
+    console.log(`📊 Valid configurations found: ${totalValidConfigs.toLocaleString()} (${((totalValidConfigs/combinations.length)*100).toFixed(1)}%)`);
     console.log(`📊 Minimum trades filter: ${VALIDATION_SETTINGS.minimumTrades}+ trades required`);
     console.log(`⚡ Average rate: ${(combinations.length/totalTime).toFixed(0)} combinations/second`);
     console.log(`🚀 Speed improvement: ~${numCPUs}x faster than single-threaded`);
     
     if (globalBestResult.profit > -Infinity) {
+      const finalTrades = getTotalTrades(globalBestResult.results);
+      
       console.log(`\n🏆 BEST CONFIGURATION FOUND:`);
       console.log(`💰 Total Net Profit: ₹${globalBestResult.profit.toFixed(2)}`);
-      console.log(`📈 Win Rate: ${globalBestResult.results.winRate.toFixed(2)}%`);
-      console.log(`📊 Total Trades: ${(globalBestResult.results.totalWinningDays || 0) + (globalBestResult.results.totalLosingDays || 0)}`);
+      console.log(`📈 Win Rate: ${globalBestResult.results.winRate?.toFixed(2) || 'N/A'}%`);
+      console.log(`📊 Total Trades: ${finalTrades}`);
       console.log(`💵 Average Profit/Trade: ₹${(globalBestResult.results.averageNetProfitPerTrade || 0).toFixed(2)}`);
       console.log(`📊 Return %: ${(globalBestResult.results.totalNetReturnPercentage || 0).toFixed(2)}%`);
       
@@ -693,13 +757,21 @@ async function main() {
       console.log(`   Minimum Stop Loss: ${globalBestResult.config.minimumStopLossPercent}%`);
       
       console.log(`\n💾 Final configuration saved to: best_conf.json`);
+      console.log(`✅ Validation: ${finalTrades} trades (required: ${VALIDATION_SETTINGS.minimumTrades}+)`);
       
       if (globalBestResult.profit < 0) {
         console.log(`\n⚠️  Note: Best configuration still shows a loss. Consider adjusting strategy parameters.`);
       }
+      
     } else {
-      console.log(`\n❌ No valid backtest results found - check data and strategy logic`);
-      console.log(`💡 Tip: Consider lowering VALIDATION_SETTINGS.minimumTrades (currently ${VALIDATION_SETTINGS.minimumTrades}) if no configurations meet the minimum trades requirement`);
+      console.log(`\n❌ No valid configurations found that meet the minimum trades requirement`);
+      console.log(`📊 Total configurations tested: ${combinations.length.toLocaleString()}`);
+      console.log(`📊 Valid configurations found: ${totalValidConfigs.toLocaleString()}`);
+      console.log(`💡 Suggestions:`);
+      console.log(`   • Lower VALIDATION_SETTINGS.minimumTrades (currently ${VALIDATION_SETTINGS.minimumTrades})`);
+      console.log(`   • Expand parameter ranges to test more configurations`);
+      console.log(`   • Check if your backtest function is returning the expected trade count fields`);
+      console.log(`   • Verify your stock data has sufficient trading days`);
     }
     
   } catch (error) {
@@ -731,5 +803,6 @@ module.exports = {
   saveBestConfig,
   generateAllCombinations,
   splitIntoChunks,
-  loadExistingBestConfig
+  loadExistingBestConfig,
+  getTotalTrades
 };
